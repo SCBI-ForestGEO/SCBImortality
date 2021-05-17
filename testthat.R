@@ -1,4 +1,3 @@
 library(testthat)
-library(SCBImortality)
 
-test_check("SCBImortality")
+test_dir("testthat", reporter = c("check", "progress"))
