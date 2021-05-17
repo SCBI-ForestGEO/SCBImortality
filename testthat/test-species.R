@@ -1,10 +1,10 @@
-
+library(testthat)
 
 test_that("All species are valid in latest mort census", {
   
   
   # read latest mortality census survey
-  all_mort_files <- list.files(here("raw_data"), pattern = "Mortality_Survey_.*csv", full.names = T)
+  all_mort_files <- list.files("../raw_data", pattern = "Mortality_Survey_.*csv", full.names = T)
   
   i <- which.max(as.numeric(substr(all_mort_files, nchar(all_mort_files)-7, nchar(all_mort_files)-4)))
   
