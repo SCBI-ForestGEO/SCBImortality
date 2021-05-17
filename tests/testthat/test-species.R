@@ -1,10 +1,8 @@
-test_that('working directory is set',{
-  setwd(here::here())
-  # test code here
-})
+
 
 test_that("All species are valid in latest mort census", {
   
+  setwd(here::here())
   
   # read latest mortality census survey
   all_mort_files <- list.files("raw data/", pattern = "Mortality_Survey_.*csv", full.names = T)
