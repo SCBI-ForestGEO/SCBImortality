@@ -1,3 +1,8 @@
+test_that('working directory is set',{
+  setwd(here::here())
+  # test code here
+})
+
 test_that("All species are valid in latest mort census", {
   
   
