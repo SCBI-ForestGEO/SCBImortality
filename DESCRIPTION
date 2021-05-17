@@ -17,8 +17,7 @@ Authors@R: c(
     person(given = "Cameron", family = "Dow", role = "aut"))
 Depends: R (>= 4.0.0)
 Imports: 
-    testthat,
-    here
+    testthat
 URL: https://github.com/SCBI-ForestGEO/SCBImortality
 BugReports: https://github.com/SCBI-ForestGEO/SCBImortality/issues
 Config/testthat/edition: 3
