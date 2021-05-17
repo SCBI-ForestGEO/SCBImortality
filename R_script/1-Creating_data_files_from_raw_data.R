@@ -23,7 +23,7 @@ library(allodb) # remotes::install_github("forestgeo/allodb")
 
 for(f in paste0("scbi.stem", 1:3)) {
   print(f)
-  x <-  read.csv(paste0("tree_main_census/data/census-csv-files/", f, ".csv"))
+  x <-  read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/", f, ".csv"))
   x$quadrat <-ifelse(nchar(x$quadrat) < 4, paste0("0",   x$quadrat),   x$quadrat)
   x$dbh <- as.numeric(x$dbh) # not numeric because of the "NULL" values
   assign(f,x)
@@ -32,11 +32,11 @@ for(f in paste0("scbi.stem", 1:3)) {
 
 ### get the species table ####
 f = "scbi.spptable"
-assign(f, read.csv(paste0("tree_main_census/data/census-csv-files/", f, ".csv")))
+assign(f, read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/", f, ".csv")))
 
 
 ## bring in raw mortality data + clean up and calculate allometries ####
-raw_data_path <- "tree_mortality/raw data/"
+raw_data_path <- "raw data/"
 
 survey_files <- list.files(raw_data_path, pattern = "Mortality_Survey_.*csv")
 
@@ -737,7 +737,7 @@ for (survey_year in mort.census.years) {
   final.mort <- final.mort[order(as.numeric(final.mort$tag), as.numeric(final.mort$StemTag)), ]
 
   assign(paste0("final.mort.", survey_year), final.mort)
-  write.csv(final.mort, file = paste0("tree_mortality/data/mortality_", survey_year, ".csv"), row.names = F)
+  write.csv(final.mort, file = paste0("data/mortality_", survey_year, ".csv"), row.names = F)
 }
 
 # also save one data frame for 2008, 2013 and 2018 ####
@@ -746,8 +746,8 @@ full.census.data <- full.census.data[order(as.numeric(full.census.data$tag), as.
 full.census.data$date.2008 <- as.Date(full.census.data$date.2008, format = "%m/%d/%Y")
 full.census.data$date.2013 <- as.Date(full.census.data$date.2013, format = "%m/%d/%Y")
 
-write.csv(data.2008, file = "tree_mortality/data/mortality_2008.csv", row.names = F)
-write.csv(full.census.data[, -grep("2018", names(full.census.data))], file = "tree_mortality/data/mortality_2013.csv", row.names = F)
+write.csv(data.2008, file = "data/mortality_2008.csv", row.names = F)
+write.csv(full.census.data[, -grep("2018", names(full.census.data))], file = "data/mortality_2013.csv", row.names = F)
 
 
 # CREATE allmort.rdata file ####
@@ -775,5 +775,5 @@ for(sc in status.columns) {
 
 head(allmort)
 
-write.csv(allmort, "tree_mortality/data/allmort.csv", row.names = F) # save as csv file
-save(allmort, file ="tree_mortality/data/allmort.rdata") # save as Rdata file
+write.csv(allmort, "data/allmort.csv", row.names = F) # save as csv file
+save(allmort, file ="data/allmort.rdata") # save as Rdata file
