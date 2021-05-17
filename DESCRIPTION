@@ -1,0 +1,21 @@
+Package: SCBImortality
+Title: Smithsonian Conservation Biology Institute (SCBI) ForestGEO Tree Mortality Data
+Description: This is the private data portal for the SCBI ForestGEO plot tree mortality raw data. A script generates the cleaned data, which is then puchsed to the public repo.
+License: MIT + file LICENSE
+Version: 0.1.0
+Authors@R: c(
+    person(given = "Kristina", family = "Anderson-Teixeira", role = "aut"),
+    person(given = "William", family = "McShea", role = "aut"),
+    person(given = "Erika", family = "Gonzalez-Akre", role = "aut"),
+    person(given = "Victoria", family = "Meakem", role = "aut"),
+    person(given = "Ryan", family = "Helcoski", role = "aut"),
+    person(given = "Ian", family = "McGregor", role = "aut"),
+    person(given = "Alyssa", family = "Terrell", role = "aut"),
+    person(given = c("Albert", "Y."), family = "Kim", role = c("cre", "aut"), email = "albert.ys.kim@gmail.com", comment = c(ORCID = "0000-0001-7824-306X")),
+    person(given = c("Valentine"), family = "Herrmann", role = c("aut"), email = "HerrmannV@si.edu", comment = c(ORCID = "0000-0002-4519-481X")),
+    person(given = "Nidhi", family = "Vinod", role = "aut"),
+    person(given = "Cameron", family = "Dow", role = "aut"))
+Depends: R (>= 4.0.0)
+URL: https://github.com/SCBI-ForestGEO/SCBImortality
+BugReports: https://github.com/SCBI-ForestGEO/SCBImortality/issues
+Config/testthat/edition: 3
