@@ -31,7 +31,7 @@ library(here)
   main_census <-  main_census[grepl("^fr..|^ch..", main_census$sp) | (!is.na(main_census$dbh) & main_census$dbh >= 100), ]
 
 ## remove trees that are dead ####
-  main_census <- main_census$status[!main_census$status %in% "D",]
+  main_census <- main_census[!main_census$status %in% "D",]
   
 # load species table ####
   
