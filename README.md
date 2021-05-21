@@ -1,5 +1,8 @@
 # SCBI tree mortality 
 
+## data entry issues to resolve?
+[![data-tests](https://github.com/SCBI-ForestGEO/SCBImortality/workflows/data-tests/badge.svg)](https://github.com/SCBI-ForestGEO/SCBImortality/actions)
+
 ## Sampling location
 [SCBI ForestGEO plot](https://forestgeo.si.edu/sites/north-america/smithsonian-conservation-biology-institute)
 
