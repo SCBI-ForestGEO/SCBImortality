@@ -69,3 +69,14 @@ library(here)
   }
   
   
+  
+# give a % completion status ####
+  percent_completion <- round(sum(paste(main_census$tag, main_census$StemTag) %in% paste(mort$tag, mort$stem)) / nrow(main_census) * 100)
+  
+  png(file.path(here("testthat"), "reports/percent_completion.png"), width = 1, height = 1, units = "in", res = 150)
+  par(mar = c(0,0,0,0))
+  plot(0,0, axes = F, xlab = "", ylab = "", type = "n")
+  text(0,0, paste(percent_completion, "%"))
+  dev.off()
+  # write.table(percent_completion, file = file.path(here("testthat"), "reports/percent_completion.txt"),  col.names = F, row.names = F)
+  
