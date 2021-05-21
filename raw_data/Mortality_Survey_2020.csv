@@ -7124,7 +7124,7 @@ fram,1509,3.5,14.4,150975,2,20,F;M,A,A,A,AU,A,DC,20,2,S,CR,,,,NA,0,5,0,none,NA,,
 fram,1509,1,7.2,153224,1,21,F,A,A,A,A,A,A,NA,NA,S,,,,,NA,NA,3,0,none,NA,,,,,6/15/2020,Cameron Dow
 fram,1509,1.1,13.7,150977,2,23,F;S,A,A,A,A,A,A,NA,NA,S,,,,,NA,NA,1,0,none,NA,,,,,6/15/2020,Cameron Dow
 fram,1509,13.9,4.9,150837,1,30,F,A,A,A,A,A,A,NA,NA,S,,,,,NA,NA,2,0,none,NA,,,,,6/15/2020,Cameron Dow
-frpe ,1509,13.5,7.2,150850,1,31,F,A,A,A,A,A,A,NA,NA,S,,,,,NA,NA,2,0,None,NA,"F, wilt",,,,6/15/2020,Cameron Dow
+frpe,1509,13.5,7.2,150850,1,31,F,A,A,A,A,A,A,NA,NA,S,,,,,NA,NA,2,0,None,NA,"F, wilt",,,,6/15/2020,Cameron Dow
 fram,1509,1.1,13.7,150977,1,58,F;M;I,A,DS,PD,PD,PD,PD,NA,NA,,,,,,NA,NA,NA,NA,,NA,,,,,6/15/2020,Cameron Dow
 quru,1509,8.9,13,150972,1,121,F,A,A,A,A,A,AU,NA,NA,I,B,R,,,NA,NA,NA,NA,,NA,,,stem break at 6m,,6/15/2020,Cameron Dow
 litu,1509,15.1,6.7,151503,1,158,F,A,A,A,A,A,A,NA,NA,,,,,,NA,NA,NA,NA,,NA,,,,,6/15/2020,Cameron Dow
