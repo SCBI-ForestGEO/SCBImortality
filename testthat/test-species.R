@@ -18,9 +18,9 @@ test_that("All species are valid in latest mort census", {
   # check if all species exist in species table
   
   if(!all(mort[,grepl("^sp", names(mort))] %in% spptable$sp)) {
-    write.csv(mort[!mort[,grepl("^sp", names(mort))] %in% spptable$sp,], file = file.path(here("raw_data"), "testthat/reports/species_code_error.csv"), row.names = F)
+    write.csv(mort[!mort[,grepl("^sp", names(mort))] %in% spptable$sp,], file = file.path(here("testthat"), "reports/species_code_error.csv"), row.names = F)
   } else {
-    file.remove(file.path(here("raw_data"), "testthat/reports/species_code_error.csv"))
+    if(file.exists(file.path(here("testthat"), "reports/species_code_error.csv")) ) file.remove(file.path(here("testthat"), "reports/species_code_error.csv"))
   }
   
   expect_true(all(mort[,grepl("^sp", names(mort))] %in% spptable$sp))
