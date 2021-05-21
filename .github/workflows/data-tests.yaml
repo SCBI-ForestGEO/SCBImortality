@@ -43,5 +43,4 @@ jobs:
           git commit -am "add data"
           git push     
       - name: Run tests
-        uses: Generate_reports
         run: Rscript testthat.R
