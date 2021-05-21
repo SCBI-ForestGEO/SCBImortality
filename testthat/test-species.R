@@ -20,7 +20,7 @@ test_that("All species are valid in latest mort census", {
   if(!all(mort[,grepl("^sp", names(mort))] %in% spptable$sp)) {
     write.csv(mort[!mort[,grepl("^sp", names(mort))] %in% spptable$sp,], file = file.path(here("raw_data"), "testthat/reports/species_code_error.csv"), row.names = F)
   } else {
-    file.remove("testthat/reports/species_code_error.csv")
+    file.remove(file.path(here("raw_data"), "testthat/reports/species_code_error.csv"))
   }
   
   expect_true(all(mort[,grepl("^sp", names(mort))] %in% spptable$sp))
