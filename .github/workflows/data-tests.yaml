@@ -30,12 +30,18 @@ jobs:
           options(crayon.enabled = TRUE)
           rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
-      - name: Run tests
-        run: Rscript testthat.R
+      - name: Generate reports
+        id: Generate_reports
+        run: |
+          source("R/Generate_reports.R")
+        shell: Rscript {0}
       - name: Commit new files
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add --all
           git commit -am "add data"
-          git push      
+          git push     
+      - name: Run tests
+        uses: Generate_reports
+        run: Rscript testthat.R
