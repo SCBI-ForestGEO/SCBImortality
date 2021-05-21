@@ -10,7 +10,7 @@ on:
       - main
       - master
 
-name: R-CMD-check
+name: data-tests
 
 jobs:
   R-CMD-check:
