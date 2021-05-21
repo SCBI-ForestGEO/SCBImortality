@@ -33,7 +33,7 @@ jobs:
       - name: Generate reports
         id: Generate_reports
         run: |
-          source("R/Generate_reports.R")
+          source("R_scripts/Generate_reports.R")
         shell: Rscript {0}
       - name: Commit new files
         run: |
