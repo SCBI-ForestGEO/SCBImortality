@@ -33,6 +33,7 @@ Avoid giving a tree the DN status; you need to do a thorough search for all tree
 ### Data Entry in FastField
 
 *(INSTRUCTIONS NEEDED HERE)*
+
 - Measure DBH on trees that have died. If a stem has fallen and it's DBH can't be measured with a tape, measure it later using a big caliper (find one in Radiotracking lab - Office Annex building). 
 - Take pictures: Take a picture of every unhealthy or dead tree found. Include photos of all factors associated with death (FADs). Make nice close-ups if any insect or insect galleries are found. 
 
