@@ -12,6 +12,7 @@ password: (request from Krista)
 
 ## App
 Fastfield app will be installed on lab iPads.
-You can also install on your personal phone or tablet if you have any reason to want that (e.g., to practice when you don't have access to lab iPads).
+You can also install on your personal phone or tablet if you have any reason to want that.
 
+There's also a web app, so no need to put app on your personal device for practice.
 
