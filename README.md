@@ -58,7 +58,8 @@ These data are public, but the more recent censuses may not yet have been used i
 
 ## Funding 
 - ForestGEO 
-- Virginia Native Plant Society
+- Virginia Native Plant Society (2017, 2019)
+- NSF Macrosystems (2021 - )
 
 ## Publications using these data
 
