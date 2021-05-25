@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 - [ ] DBH tape, calipers
 - [ ] Binoculars, IMPORTANT to check live status of very tall trees and to distinguish between leaves of lianas or tree under inspection.
 - [ ] Printed copies of visual guides, if desired (these could also be loaded on iPad)
-- [ ] Personal gear/ safety equipment
+- [ ] Personal gear/ safety equipmen
 
 
 ## Procedure
