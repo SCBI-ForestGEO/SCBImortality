@@ -97,12 +97,15 @@ To scrutinize the FAD’s, look at our [Visual Guides](https://github.com/SCBI-F
 
 ![](figures_tables/FAD table.png)
 
+### EAB census add-ons
+
 ![Guide to estimating EAB crown thinning via visual assessment per Smith/Flower 2013:](figures_tables/Ash_crown_assessment.png)
-1 = healthy tree with no symptoms of decline, no defoliation
-2 = slight reduction in leaf density (thinning), yet all top branches exposed to sunlight have leaves
-3 = thinning canopy and some top branches exposed to sunlight are defoliated (<50% dieback)
-4 = >50% defoliation/dieback
-5 = Dead tree with no leaves in canopy (excluding epicormic sprouting)
+
+**1** = healthy tree with no symptoms of decline, no defoliation
+**2** = slight reduction in leaf density (thinning), yet all top branches exposed to sunlight have leaves
+**3** = thinning canopy and some top branches exposed to sunlight are defoliated (<50% dieback)
+**4** = >50% defoliation/dieback
+**5** = Dead tree with no leaves in canopy (excluding epicormic sprouting)
 
 
 
@@ -117,7 +120,7 @@ To scrutinize the FAD’s, look at our [Visual Guides](https://github.com/SCBI-F
 
 
 
-*(CODES NEEDED HERE)*
+*(WE NEED TO CHECK THAT CODES ARE COMPLETE)*
 
 ## Coring of Dead Trees 
 If time allows, cores will be taken at the end of survey and saved for future analyses.
