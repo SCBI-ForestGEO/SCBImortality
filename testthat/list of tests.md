@@ -22,3 +22,9 @@ tree | completion check | newly censused trees (AU or dead) | at least one photo
 tree | consistency check | newly censused trees (AU or dead, with level selected for `wounded main stem`)| "wound" selected as FAD | not yet
 tree | consistency check | newly censused trees (AU or dead, with level selected for `canker,swelling,deformity`)| "canker" selected as FAD | not yet
 tree | consistency check | newly censused trees (AU or dead, with level selected for `rotting main stem`)| "rotting stem" or "hollow stem" selected as FAD| not yet
+
+
+## not yet incorporated
+- EAB census add-on
+- thorough review
+- consistency with past census (need to think about how strongly we constrain it here-- we probably want to generate warnings but not have tests fail. We do want to check DBH consistency)
