@@ -2,11 +2,11 @@
 # https://community.rstudio.com/new-topic?category=Package%20development&tags=github-actions
 on:
   push:
-    branches:
+    paths:
       - 'raw_data/**'
       - '!raw_data/README.md'
   pull_request:
-    branches:
+    paths:
       - 'raw_data/**'
       - '!raw_data/README.md'
 
