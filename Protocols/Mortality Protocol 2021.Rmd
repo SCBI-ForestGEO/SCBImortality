@@ -38,6 +38,7 @@ Avoid giving a tree the DN status; you need to do a thorough search for all tree
 - Take pictures: Take a picture of every unhealthy or dead tree found. Include photos of all factors associated with death (FADs). Make nice close-ups if any insect or insect galleries are found. 
 
 **Important notes:**
+
 - If a tree is recorded as Alive unhealthy (**AU**) or dead, there should always be at least one factor associated with death (FAD) recorded, and photos should be taken
 - Record Factors associated with death (FAD) ***in order of importance*** (will be listed in order selected). 
 - Sometimes a tree recorded dead in a previous year is “back to life”. If a dead tree is alive in the current census (meaning you are 100% sure it is alive), mark the tree as **A** or **AU** and make a note in comments.
