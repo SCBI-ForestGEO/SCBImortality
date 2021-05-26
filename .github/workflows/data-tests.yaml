@@ -3,12 +3,12 @@
 on:
   push:
     branches:
-      - main
-      - master
+      - 'raw_data/**'
+      - '!raw_data/README.md'
   pull_request:
     branches:
-      - main
-      - master
+      - 'raw_data/**'
+      - '!raw_data/README.md'
 
 name: data-tests
 
