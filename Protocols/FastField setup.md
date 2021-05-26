@@ -4,7 +4,7 @@ Starting 2021, we will use the FastField system/ app for data entry.
 ## FastField Account
 URL: https://manage.fastfieldforms.com/Account/Login
 
-**Lab account**:
+**Lab account** (to be used by all):
 
 username: ecoclimlab@gmail.com 
 
