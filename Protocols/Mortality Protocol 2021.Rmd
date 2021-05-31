@@ -48,7 +48,7 @@ To scrutinize the FAD’s, look at our [Visual Guides](https://github.com/SCBI-F
 
 ### Emerald Ash Borer Add-ons
 - Estimate crown thinning via visual assessment per Smith/Flower 2013 (see figure)
-- If DE are present then count all visible D-shaped holes around the circumference of the tree in an area ~50 cm long at breast height and record this number. At SCBI almost all tags are located at 1.3 m, so use the tag as reference to visually define the 50 cm area.
+- If DE are present then count all visible D-shaped holes around the circumference of the tree in an area 50 cm high at breast height and record this number. At SCBI almost all tags are located at 1.3 m, so use the tag as reference to visually define the 50 cm area. That is, search for DE all the way around the tree between 1.05 and 1.55m height.
 
 \newpage
 ## Codes
