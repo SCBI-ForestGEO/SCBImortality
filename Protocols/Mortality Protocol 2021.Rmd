@@ -179,6 +179,7 @@ To scrutinize the FAD’s, look at our [Visual Guides](https://github.com/SCBI-F
 4 = 76–100% liana cover. 
 
 ![](figures_tables/FAD table.png)
+![]
 
 \newpage
 
