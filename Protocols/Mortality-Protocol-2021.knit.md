@@ -3,9 +3,7 @@ title: "SCBI-ForestGEO Tree Health and Mortality Census Protocol 2021"
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 ## Supplies
 - [ ] iPad - set up with FastField and maps ([GitHub issue #6](https://github.com/SCBI-ForestGEO/SCBImortality/issues/6))
