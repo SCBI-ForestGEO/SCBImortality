@@ -31,17 +31,95 @@ Avoid giving a tree the DN status; you need to do a thorough search for all tree
 
 
 ### Data Entry in FastField
+### Tree Classification
+*If the status us "A":*
+(1) Mark status
+(2) Record crown position
+(3) Record percentage of crown still intact (%)
+(4) Record percentage of crown living
 
-*(INSTRUCTIONS NEEDED HERE)*
+*If the status is "AU"*
+AU is used for trees that are alive but noticeably unhealthy (e.g., fallen and uprooted but not yet dead, wounded, insect damage).
 
-- Measure DBH on trees that have died. If a stem has fallen and it's DBH can't be measured with a tape, measure it later using a big caliper (find one in Radiotracking lab - Office Annex building). 
-- Take pictures: Take a picture of every unhealthy or dead tree found. Include photos of all factors associated with death (FADs). Make nice close-ups if any insect or insect galleries are found. 
+(1)Record FADs in order of importance* (at least 1 factor)- See FAD codes below.
+(2)	Record crown position. 
+(3)	Record percentage of crown still intact (%). 
+(4)	Record percentage of crown living
+(5)	Record lean angle (if leaning > 15°)
+(6)	Record Liana load. 
+(7)	Record wound, canker, or rot categories (if applicable) 
+(8)	Take pictures: Take a picture of alive unhealthy tree if picture appropriately captures FAD. For example, take picture of wounds to main bole, but not of leaf damage high in canopy. Take a picture of the tag first then make 2-3 pics of main FADS. Make nice close-ups if any insect or insect galleries are found. 
+
+### *In FastFieldForms, click FAD in order of importance
+
+*If the status is "DS" & previously "A":*
+(1)	Record FADs in order of importance (at least 1 factor)- See FAD codes below.
+(2)	Record crown position. 
+(3)	Record Percentage of crown still intact (%). 
+(4)	Record percentage of crown living (%)
+(5)	Record lean angle (if leaning > 15°)
+(6)	Record Liana load. 
+(7)	Record wound, canker, or rot categories (if applicable) 
+(8)	Take pictures: Take a picture of dead tree if picture appropriately captures FAD. Take a picture of the tag first then make 2-3 pics of main FADS. Make nice close-ups if any insect or insect galleries are found. 
+ 
+*If the status is “DG” & previously “A”:*
+
+(1)	Record FADs in order of importance (at least 1 factor)- See FAD codes below.
+(2) Record Percentage of crown still intact (%). 
+(3)	Record percentage of crown living (%)
+(4)	Record Liana load. 
+(5)	Record wound, canker, or rot categories (if applicable) 
+(6)	Take pictures: Take a picture of dead tree if picture appropriately captures FAD. Take a picture of the tag first then make 2-3 pics of main FADS. Make nice close-ups if any insect or insect galleries are found. 
+
+--Note: for stems that were “A” and now “DG” (typically uncommon) it is unnecessary to record canopy position 
+
+*If the status is “DS” & previously “DS”:*
+(1)	Mark status 
+(2)	Record crown position*. 
+(3)	Record percentage of crown still intact (%)*
+(4)	Record percentage of crown living (%)*
+(5)	Record lean angle (if leaning > 15°)*
+(6)	Record Liana load*. 
+*record this information for remote sensing/crown delineation purposes 
+
+*If the status is “DG” & previously “DS”*  
+Record status and continue. 
+
+### --Additional Fields--
+###*Lean angle (%)*
+If tree is still rooted and is leaning, estimate the angle of lean in degrees from vertical. This angle is measured in degrees from the base through the POM (see figure below).
+###*Liana load (levels: 0 – 4)*
+0 = lianas absent 
+1 = up to 25% of the tree crown covered by lianas 
+2 = 26–50% liana cover 
+3 = 51–75% liana cover 
+4 = 76–100% liana cover. 
+
+###*Wounded main axis (levels: 1 = small, 2 = large, 3 = massive)—figure below*
+1 = small damage, smaller in area than a square of DBH  DBH in shape.
+2 = large damage, greater in area than a square of DBH  DBH in shape.
+3 = massive damage, affecting >50% of the basal area (i.e., a very deep and extensive wound; Figure 8c) or >50% of the living length (Figure 8d). These are cases of main stem breakage in which the breakage is not complete and the broken part is still connected and alive, and trunks that have been longitudinally split in two.
+
+###*Canker, swelling, deformity (levels: 1 = small, 2 = large, 3 = massive)*
+1 = small deformity area, smaller in area than a square of DBH  DBH in shape.
+2 = big deformity, greater in area than a square of DBH  DBH in shape.
+3 = massive deformity or canker, greater than >50% of the basal area or >50% of the main axis length.
+
+###*Rotting trunk (levels: 1 = small, 2 = large, 3 = massive)*
+1 = small rotting area, smaller in area than a square of DBH  DBH in shape.
+2 = big rotting area, greater in area than a square of DBH  DBH in shape.
+3 = massive rotting, affecting >50% of the basal area or >50% of the main axis length.
+
+
 
 **Important notes:**
 
 - If a tree is recorded as Alive unhealthy (**AU**) or dead, there should always be at least one factor associated with death (FAD) recorded, and photos should be taken
 - Record Factors associated with death (FAD) ***in order of importance*** (will be listed in order selected). 
 - Sometimes a tree recorded dead in a previous year is “back to life”. If a dead tree is alive in the current census (meaning you are 100% sure it is alive), mark the tree as **A** or **AU** and make a note in comments.
+- Measure DBH on trees that have died. If a stem has fallen and it's DBH can't be measured with a tape, measure it later using a big caliper (find one in Radiotracking lab - Office Annex building). 
+- Take pictures: Take a picture of every unhealthy or dead tree found. Include photos of all factors associated with death (FADs). Make nice close-ups if any insect or insect galleries are found. 
+- For tree conditions or agents of mortality not specifically defined below, record diagnosis in the notes or comments section of the form. 
 
 ### Identifying Factors Associated with Death (FADs)
 To scrutinize the FAD’s, look at our [Visual Guides](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/Protocols/Visual%20guides/Tree%20Mortality%20Guide_2020.pdf).
