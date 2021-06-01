@@ -26,6 +26,8 @@ for(f in paste0("scbi.stem", 1:3)) {
   x <-  read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/", f, ".csv"))
   x$quadrat <-ifelse(nchar(x$quadrat) < 4, paste0("0",   x$quadrat),   x$quadrat)
   x$dbh <- as.numeric(x$dbh) # not numeric because of the "NULL" values
+  x$gx <- round(x$gx,1)
+  x$gy <- round(x$gy,1)
   assign(f,x)
   }
 
@@ -36,7 +38,7 @@ assign(f, read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI
 
 
 ## bring in raw mortality data + clean up and calculate allometries ####
-raw_data_path <- "raw data/"
+raw_data_path <- "raw_data/"
 
 survey_files <- list.files(raw_data_path, pattern = "Mortality_Survey_.*csv")
 
@@ -91,6 +93,14 @@ for(survey_file in survey_files) {
   
   # remove extra spaces in sp
   mort$sp <- trimws(mort$sp)
+  
+  # if fraxinus or Chionanthus, fix change dead status from "DS" or "DC" to "AU" if fraxinus.crown.thinning ≤ 5 and fraxinus.epicormic.growth>0 
+  idx_sp <- grepl("^fr..|chvi", mort$sp)
+  idx_status <- grepl("DS|DC", mort[,paste("status",survey_year, sep = ".")])
+  idx_crwnthng <- !is.na(mort$fraxinus.crown.thinning) & mort$fraxinus.crown.thinning <= 5
+  idx_epicgrwth <- !is.na(mort$fraxinus.epicormic.growth) & mort$fraxinus.epicormic.growth > 0
+  
+  mort[idx_sp & idx_status & idx_crwnthng & idx_epicgrwth, which(names(mort) %in% paste0("status.", survey_year))] <- "AU"
   
   # consider dbh as numeric
   if(survey_year >= 2019) mort$dbh.2018 <- as.numeric(mort$dbh.2018) else mort$dbh.2013 <- as.numeric(mort$dbh.2013) 
