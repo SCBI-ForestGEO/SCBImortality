@@ -28,7 +28,7 @@ main_census$dbh <- as.numeric(main_census$dbh)
 ## only keep trees > 10cm except for fraxinus and Chionanthus virginicus
 main_census <-  main_census[grepl("^fr..|^ch..", main_census$sp) | (!is.na(main_census$dbh) & main_census$dbh >= 100), ]
 
-## remove trees that are dead ####
+## remove trees that are dead
 main_census <- main_census[!main_census$status %in% "D",]
 
 # load species table ####
@@ -49,7 +49,7 @@ if(any(idx_species_error)) {
 
 
 # for each quadrat censused, check all expected trees were censused ####
-reports_quad_censused_error_file <- file.path(here("testthat"), "reports/quadrat_censused_missing_stems.csv")
+reports_quad_censused_missing_stems <- file.path(here("testthat"), "reports/quadrat_censused_missing_stems.csv")
 
 
 idx_quadrat_censused <- main_census$quadrat %in% as.numeric(mort$Quad)
@@ -60,11 +60,28 @@ table(main_census[paste(main_census$tag, main_census$StemTag) %in% tag_stem_miss
 
 
 
-if(length(tag_stem_missing_from_main_census) > 1) {
-  write.csv(main_census[paste(main_census$tag, main_census$StemTag) %in% tag_stem_missing_from_main_census, ], file = reports_quad_censused_error_file, row.names = F)
+if(length(tag_stem_missing_from_main_census) > 0) {
+  write.csv(main_census[paste(main_census$tag, main_census$StemTag) %in% tag_stem_missing_from_main_census, ], file = reports_quad_censused_missing_stems, row.names = F)
 } else {
-  if(file.exists(reports_quad_censused_error_file) ) file.remove(reports_quad_censused_error_file)
+  if(file.exists(reports_quad_censused_missing_stems) ) file.remove(reports_quad_censused_missing_stems)
 }
+
+
+
+
+# for each quadrat censused, check that there is no duplicated stems ####
+reports_quad_censused_duplicated_stems <- file.path(here("testthat"), "reports/quadrat_censused_duplicated_stems.csv")
+
+
+tag_stem_duplicated <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$StemTag))]
+
+
+if(length(tag_stem_duplicated) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_duplicated, ], file = reports_quad_censused_duplicated_stems, row.names = F)
+} else {
+  if(file.exists(reports_quad_censused_duplicated_stems) ) file.remove(reports_quad_censused_duplicated_stems)
+}
+
 
 
 
