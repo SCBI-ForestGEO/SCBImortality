@@ -5,10 +5,12 @@ on:
     paths:
       - 'raw_data/**'
       - '!raw_data/README.md'
+      - 'R_scripts/Generate_reports.R'
   pull_request:
     paths:
       - 'raw_data/**'
       - '!raw_data/README.md'
+      - 'R_scripts/Generate_reports.R'
 
 name: data-tests
 
