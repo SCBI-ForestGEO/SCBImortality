@@ -150,7 +150,7 @@ filename <- file.path(here("testthat"), "reports/status_A_but_unhealthy.csv") # 
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
-idx_live_trees <- mort[, status_column] %in% "A"
+idx_trees <- mort[, status_column] %in% "A"
 idx_FAD <- !is.na(mort$FAD)
 idx_wound <- !is.na(mort$'Wounded main stem')
 idx_canker <- !is.na(mort$'Canker; swelling, deformity')
@@ -158,7 +158,7 @@ idx_rot <- !is.na(mort$'Rotting trunk')
 idx_DWR <- !mort$'DWR' %in% "False"
 
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_live_trees & (idx_FAD | idx_wound | idx_wound | idx_canker | idx_rot | idx_DWR)]
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & (idx_FAD | idx_wound | idx_wound | idx_canker | idx_rot | idx_DWR)]
 
 
 if(length(tag_stem_with_error) > 0) {
@@ -167,6 +167,26 @@ if(length(tag_stem_with_error) > 0) {
   if(file.exists(filename) ) file.remove(filename)
 }
 
+
+
+
+# check that status 'AU' does not have 	DWR (dead with resprouts)  selected ####
+filename <- file.path(here("testthat"), "reports/status_AU_but_DWR_selected.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% "AU"
+idx_DWR <- !mort$'DWR' %in% "False"
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_DWR]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
 
 
 # give a % completion status ####
