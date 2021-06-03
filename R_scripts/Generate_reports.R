@@ -87,7 +87,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 
-# check that all censused trees have a crown position is recorded ####
+# check that all censused trees have a crown position recorded ####
 filename <- file.path(here("testthat"), "reports/missing_crown_position.csv") # edit file name here
 
 
@@ -95,12 +95,25 @@ tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$`Crown position`
 
 
 if(length(tag_stem_with_error) > 0) {
-  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_missing_crwn_posititon, ], file = filename, row.names = F)
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
 } else {
   if(file.exists(filename) ) file.remove(filename)
 }
 
 
+
+# check that all censused trees have a percent of crown intact recorded ####
+filename <- file.path(here("testthat"), "reports/missing_percent_crown_intact.csv") # edit file name here
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$`Percentage of crown intact`)]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
 
 
 
