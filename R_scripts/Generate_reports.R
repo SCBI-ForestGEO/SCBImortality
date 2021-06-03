@@ -145,7 +145,7 @@ if(length(tag_stem_with_error) > 0) {
 }
 
 
-# check that newly censuded alive trees have no FAD is selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected ####
+# check that newly censused alive trees have no FAD is selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected ####
 filename <- file.path(here("testthat"), "reports/status_A_but_unhealthy.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
@@ -207,6 +207,25 @@ if(length(tag_stem_with_error) > 0) {
   if(file.exists(filename) ) file.remove(filename)
 }
 
+
+
+
+# check that newly censused 'AU', 'DS' or 'DC trees have at least one FAD  selected ####
+filename <- file.path(here("testthat"), "reports/status_AU_DS_or_DC_but_no_FAD.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
+idx_no_FAD <- is.na(mort$FAD)
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_no_FAD ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
 
 
 # give a % completion status ####
