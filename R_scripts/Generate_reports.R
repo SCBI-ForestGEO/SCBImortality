@@ -37,50 +37,70 @@ spptable <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-Fore
 
 
 # check if all species exist in species table, if not save a file, if yes, delete that file ####
-reports_species_code_error_file <- file.path(here("testthat"), "reports/species_code_error.csv")
+filename <- file.path(here("testthat"), "reports/species_code_error.csv")
 
-idx_species_error <- !mort$Species %in% spptable$sp
+idx_error <- !mort$Species %in% spptable$sp
 
-if(any(idx_species_error)) {
-  write.csv(mort[idx_species_error,], file = reports_species_code_error_file, row.names = F)
+if(any(idx_error)) {
+  write.csv(mort[idx_error,], file = filename, row.names = F)
 } else {
-  if(file.exists(reports_species_code_error_file) ) file.remove(reports_species_code_error_file)
+  if(file.exists(filename) ) file.remove(filename)
 }
 
 
 # for each quadrat censused, check all expected trees were censused ####
-reports_quad_censused_missing_stems <- file.path(here("testthat"), "reports/quadrat_censused_missing_stems.csv")
+filename <- file.path(here("testthat"), "reports/quadrat_censused_missing_stems.csv")
 
 
 idx_quadrat_censused <- main_census$quadrat %in% as.numeric(mort$Quad)
 
 
-tag_stem_missing_from_main_census <- paste(main_census$tag, main_census$StemTag)[idx_quadrat_censused] [!paste(main_census$tag, main_census$StemTag)[idx_quadrat_censused] %in% paste(mort$Tag, mort$StemTag)]
-table(main_census[paste(main_census$tag, main_census$StemTag) %in% tag_stem_missing_from_main_census, ]$sp)
+tag_stem_with_error <- paste(main_census$tag, main_census$StemTag)[idx_quadrat_censused] [!paste(main_census$tag, main_census$StemTag)[idx_quadrat_censused] %in% paste(mort$Tag, mort$StemTag)]
+table(main_census[paste(main_census$tag, main_census$StemTag) %in% tag_stem_with_error, ]$sp)
 
 
 
-if(length(tag_stem_missing_from_main_census) > 0) {
-  write.csv(main_census[paste(main_census$tag, main_census$StemTag) %in% tag_stem_missing_from_main_census, ], file = reports_quad_censused_missing_stems, row.names = F)
+if(length(tag_stem_with_error) > 0) {
+  write.csv(main_census[paste(main_census$tag, main_census$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
 } else {
-  if(file.exists(reports_quad_censused_missing_stems) ) file.remove(reports_quad_censused_missing_stems)
+  if(file.exists(filename) ) file.remove(filename)
 }
 
 
 
 
 # for each quadrat censused, check that there is no duplicated stems ####
-reports_quad_censused_duplicated_stems <- file.path(here("testthat"), "reports/quadrat_censused_duplicated_stems.csv")
+filename <- file.path(here("testthat"), "reports/quadrat_censused_duplicated_stems.csv")
 
 
-tag_stem_duplicated <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$StemTag))]
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$StemTag))]
 
 
-if(length(tag_stem_duplicated) > 0) {
-  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_duplicated, ], file = reports_quad_censused_duplicated_stems, row.names = F)
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
 } else {
-  if(file.exists(reports_quad_censused_duplicated_stems) ) file.remove(reports_quad_censused_duplicated_stems)
+  if(file.exists(filename) ) file.remove(filename)
 }
+
+
+
+
+
+
+# check that all censused trees have a crown position is recorded ####
+filename <- file.path(here("testthat"), "reports/missing_crown_position.csv") # edit file name here
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$`Crown position`)]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_missing_crwn_posititon, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
 
 
 
