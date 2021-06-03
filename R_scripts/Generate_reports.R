@@ -16,7 +16,7 @@ latest_FFFs <- list.files(here("raw_data/FFF_excel/"), pattern = ".xlsx", full.n
 
 ## load the latest mortality survey
 
-mort <- read_xlsx(latest_FFFs, sheet = "subform_1")
+mort <- as.data.frame(read_xlsx(latest_FFFs, sheet = "subform_1"))
 mort <- mort[!is.na(mort$Quad), ] # remove empty lines
 
 # load and clean up the 3rd main census ####
@@ -187,6 +187,26 @@ if(length(tag_stem_with_error) > 0) {
 } else {
   if(file.exists(filename) ) file.remove(filename)
 }
+
+
+# check that status 'DS' or 'DC' have a dbh measured  ####
+filename <- file.path(here("testthat"), "reports/status_DS_or_DC_but_DBH_measured.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("DS", "DC")
+idx_no_DBH_if_dead <- is.na(mort$'Dead DBH')
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_no_DBH_if_dead]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
 
 
 # give a % completion status ####
