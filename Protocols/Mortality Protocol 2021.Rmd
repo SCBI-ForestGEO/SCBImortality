@@ -45,7 +45,7 @@ AU is used for trees that are alive but noticeably unhealthy (e.g., fallen and u
 (2)	Record crown position. 
 (3)	Record percentage of crown still intact (%). 
 (4)	Record percentage of crown living
-(5)	Record lean angle (if leaning > 15°)
+(5)	Record lean angle (if leaning > 15^$\circ$)
 (6)	Record Liana load. 
 (7)	Record wound, canker, or rot categories (if applicable) 
 (8)	Take pictures: Take a picture of alive unhealthy tree if picture appropriately captures FAD. For example, take picture of wounds to main bole, but not of leaf damage high in canopy. Take a picture of the tag first then make 2-3 pics of main FADS. Make nice close-ups if any insect or insect galleries are found. 
@@ -57,7 +57,7 @@ AU is used for trees that are alive but noticeably unhealthy (e.g., fallen and u
 (2)	Record crown position. 
 (3)	Record Percentage of crown still intact (%). 
 (4)	Record percentage of crown living (%)
-(5)	Record lean angle (if leaning > 15°)
+(5)	Record lean angle (if leaning > 15^$\circ$)
 (6)	Record Liana load. 
 (7)	Record wound, canker, or rot categories (if applicable) 
 (8)	Take pictures: Take a picture of dead tree if picture appropriately captures FAD. Take a picture of the tag first then make 2-3 pics of main FADS. Make nice close-ups if any insect or insect galleries are found. 
@@ -78,7 +78,7 @@ AU is used for trees that are alive but noticeably unhealthy (e.g., fallen and u
 (2)	Record crown position*. 
 (3)	Record percentage of crown still intact (%)*
 (4)	Record percentage of crown living (%)*
-(5)	Record lean angle (if leaning > 15°)*
+(5)	Record lean angle (if leaning > 15^$\circ$)*
 (6)	Record Liana load*. 
 *record this information for remote sensing/crown delineation purposes 
 
@@ -86,28 +86,29 @@ AU is used for trees that are alive but noticeably unhealthy (e.g., fallen and u
 Record status and continue. 
 
 ### --Additional Fields--
-###*Lean angle (%)*
+### *Lean angle (%)*
 If tree is still rooted and is leaning, estimate the angle of lean in degrees from vertical. This angle is measured in degrees from the base through the POM (see figure below).
-###*Liana load (levels: 0 – 4)*
+
+### *Liana load (levels: 0 – 4)*
 0 = lianas absent 
 1 = up to 25% of the tree crown covered by lianas 
 2 = 26–50% liana cover 
 3 = 51–75% liana cover 
 4 = 76–100% liana cover. 
 
-###*Wounded main axis (levels: 1 = small, 2 = large, 3 = massive)—figure below*
-1 = small damage, smaller in area than a square of DBH  DBH in shape.
-2 = large damage, greater in area than a square of DBH  DBH in shape.
+### *Wounded main axis (levels: 1 = small, 2 = large, 3 = massive)—figure below*
+1 = small damage, smaller in area than a square of DBH **(SC)** DBH in shape.
+2 = large damage, greater in area than a square of DBH **(SC)** DBH in shape.
 3 = massive damage, affecting >50% of the basal area (i.e., a very deep and extensive wound; Figure 8c) or >50% of the living length (Figure 8d). These are cases of main stem breakage in which the breakage is not complete and the broken part is still connected and alive, and trunks that have been longitudinally split in two.
 
-###*Canker, swelling, deformity (levels: 1 = small, 2 = large, 3 = massive)*
-1 = small deformity area, smaller in area than a square of DBH  DBH in shape.
-2 = big deformity, greater in area than a square of DBH  DBH in shape.
+### *Canker, swelling, deformity (levels: 1 = small, 2 = large, 3 = massive)*
+1 = small deformity area, smaller in area than a square of DBH **(SC)** DBH in shape.
+2 = big deformity, greater in area than a square of DBH **(SC)** DBH in shape.
 3 = massive deformity or canker, greater than >50% of the basal area or >50% of the main axis length.
 
-###*Rotting trunk (levels: 1 = small, 2 = large, 3 = massive)*
-1 = small rotting area, smaller in area than a square of DBH  DBH in shape.
-2 = big rotting area, greater in area than a square of DBH  DBH in shape.
+### *Rotting trunk (levels: 1 = small, 2 = large, 3 = massive)*
+1 = small rotting area, smaller in area than a square of DBH **(SC)** DBH in shape.
+2 = big rotting area, greater in area than a square of DBH **(SC)** DBH in shape.
 3 = massive rotting, affecting >50% of the basal area or >50% of the main axis length.
 
 
@@ -179,7 +180,11 @@ To scrutinize the FAD’s, look at our [Visual Guides](https://github.com/SCBI-F
 4 = 76–100% liana cover. 
 
 ![](figures_tables/FAD table.png)
+
+\newpage
+
 ![*Crown illumination (taken from Arellano et al., 2020)*](figures_tables/Crown_illumination.png)
+
 5 = Canopy completely exposed to overhead and lateral light
 4 = Full overhead light; > 90% exposed to vertical light
 3 = some overhead light
@@ -187,8 +192,13 @@ To scrutinize the FAD’s, look at our [Visual Guides](https://github.com/SCBI-F
 1 = No direct light; only receives light filtered through other trees
 
 \newpage
+
 ***Lean angle (Taken from Arellano et al., 2020)***
+
 ![](figures_tables/Tree_angle.png)
+
+\newpage
+
 ### EAB census add-ons ([GitHub issue #5](https://github.com/SCBI-ForestGEO/SCBImortality/issues/5))
 
 ***EAB crown thinning***
@@ -200,12 +210,16 @@ To scrutinize the FAD’s, look at our [Visual Guides](https://github.com/SCBI-F
 **3** = thinning canopy and some top branches exposed to sunlight are defoliated (<50% dieback)
 **4** = >50% defoliation/dieback
 **5** = Dead tree with no leaves in canopy (excluding epicormic sprouting)
+
 ![](figures_tables/Crown_assessment.png)
+
 Crown assessment (taken from Arellano et al., 2020). 
 Top left is 100% crown intact and 100% crown living, top right—100% intact and 90% living, middle left—90% intact and 70% living, middle right—90% intact and 50% living, bottom left—70% intact and 30% living, bottom right—40% intact and 0% living 
 
 ***Schematic of wound size (taken from Arellano et al., 2020)***
+
 ![](figures_tables/Woundsize.png)
+
 \newpage
 ***Epicormics***
 
