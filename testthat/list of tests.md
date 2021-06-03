@@ -10,7 +10,7 @@ quadrat  | consistency check | newly censused quadrats | no trees are duplicated
 tree | completion check | newly censused trees (all) | `crown position` is recorded | 2021
 tree | completion check | newly censused trees (all) |`percentage of crown intact` is recorded | 2021
 tree | completion check | newly censused trees (all) |`percentage of crown living` is recorded | 2021
-tree | consistency check | newly censused trees (all) | `percentage of crown living` ≤ `percentage of crown intact` | not yet
+tree | consistency check | newly censused trees (all) | `percentage of crown living` ≤ `percentage of crown intact` | 2021
 tree | consistency check | newly censused trees (alive) | no FAD is selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected | not yet
 tree | consistency check | newly censused trees (AU) | DWR (dead with resprouts) not selected | not yet
 tree | consistency check | newly censused trees (dead) | DBH measured | not yet

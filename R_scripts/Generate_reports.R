@@ -131,6 +131,21 @@ if(length(tag_stem_with_error) > 0) {
 }
 
 
+# check percent of crown living <=  percent of crown intact####
+filename <- file.path(here("testthat"), "reports/crown_living_greater_than_crown_intact.csv") # edit file name here
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[!is.na(mort$`Percentage of crown living`) & !is.na(mort$`Percentage of crown intact`) & mort$`Percentage of crown living` > mort$`Percentage of crown intact`]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+
 # give a % completion status ####
 percent_completion <- round(sum(paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag)) / nrow(main_census) * 100)
 
