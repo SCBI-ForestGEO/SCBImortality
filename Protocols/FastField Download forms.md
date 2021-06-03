@@ -10,7 +10,7 @@ see [this](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/Protocols/F
 
 ## 4. click on `Download` and chose `Excel`
 
-## save as zip [here](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/raw_data/FFF_excel)
+## 5. save as zip [here](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/raw_data/FFF_excel)
 
-## unzip into the same folder (https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/raw_data/FFF_excel)
+## 6. unzip into the same folder (https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/raw_data/FFF_excel)
 
