@@ -91,7 +91,7 @@ if(length(tag_stem_with_error) > 0) {
 filename <- file.path(here("testthat"), "reports/missing_crown_position.csv") # edit file name here
 
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$`Crown position`)]
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Crown position')]
 
 
 if(length(tag_stem_with_error) > 0) {
@@ -106,7 +106,7 @@ if(length(tag_stem_with_error) > 0) {
 filename <- file.path(here("testthat"), "reports/missing_percent_crown_intact.csv") # edit file name here
 
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$`Percentage of crown intact`)]
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Percentage of crown intact')]
 
 
 if(length(tag_stem_with_error) > 0) {
@@ -121,7 +121,7 @@ if(length(tag_stem_with_error) > 0) {
 filename <- file.path(here("testthat"), "reports/missing_percent_crown_living.csv") # edit file name here
 
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$`Percentage of crown living`)]
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Percentage of crown living')]
 
 
 if(length(tag_stem_with_error) > 0) {
@@ -135,7 +135,30 @@ if(length(tag_stem_with_error) > 0) {
 filename <- file.path(here("testthat"), "reports/crown_living_greater_than_crown_intact.csv") # edit file name here
 
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[!is.na(mort$`Percentage of crown living`) & !is.na(mort$`Percentage of crown intact`) & mort$`Percentage of crown living` > mort$`Percentage of crown intact`]
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[!is.na(mort$'Percentage of crown living') & !is.na(mort$'Percentage of crown intact') & mort$'Percentage of crown living' > mort$'Percentage of crown intact']
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+# check that newly censuded alive trees have no FAD is selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected ####
+filename <- file.path(here("testthat"), "reports/status_A_but_unhealthy.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_live_trees <- mort[, status_column] %in% "A"
+idx_FAD <- !is.na(mort$FAD)
+idx_wound <- !is.na(mort$'Wounded main stem')
+idx_canker <- !is.na(mort$'Canker; swelling, deformity')
+idx_rot <- !is.na(mort$'Rotting trunk')
+idx_DWR <- !mort$'DWR' %in% "False"
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_live_trees & (idx_FAD | idx_wound | idx_wound | idx_canker | idx_rot | idx_DWR)]
 
 
 if(length(tag_stem_with_error) > 0) {
