@@ -228,6 +228,48 @@ if(length(tag_stem_with_error) > 0) {
 }
 
 
+
+# check that newly censused 'AU', 'DS' or 'DC trees have at one photo taken ####
+# filename <- file.path(here("testthat"), "reports/status_AU_DS_or_DC_but_no_photo.csv") # edit file name here
+# 
+# status_column <- rev(grep("Status", names(mort), value = T))[1]
+# 
+# idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
+# idx_no_FAD <- is.na(mort$FAD)
+# 
+# tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_no_FAD ]
+# 
+# 
+# if(length(tag_stem_with_error) > 0) {
+#   write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+# } else {
+#   if(file.exists(filename) ) file.remove(filename)
+# }
+# 
+# 
+
+# check that newly censused 'AU', 'DS' or 'DC with "wound" selected as FAD have selected a level for wounded main stem ####
+filename <- file.path(here("testthat"), "reports/wounded_but_no_level.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
+idx_wounded <- !is.na(mort$FAD) & grepl("W", mort$FAD)
+idx_wnd_main_stem <- !is.na(mort$'Wounded main stem')
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_wounded & !idx_wnd_main_stem ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+
+
 # give a % completion status ####
 percent_completion <- round(sum(paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag)) / nrow(main_census) * 100)
 
