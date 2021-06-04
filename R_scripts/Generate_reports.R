@@ -145,7 +145,7 @@ if(length(tag_stem_with_error) > 0) {
 }
 
 
-# check that newly censused alive trees have no FAD is selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected ####
+# check that newly censused alive trees have no FAD selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected ####
 filename <- file.path(here("testthat"), "reports/status_A_but_unhealthy.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
@@ -159,6 +159,31 @@ idx_DWR <- !mort$'DWR' %in% "False"
 
 
 tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & (idx_FAD | idx_wound | idx_wound | idx_canker | idx_rot | idx_DWR)]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+
+
+## and vice-versa ####
+filename <- file.path(here("testthat"), "reports/unhealthy_but_wrong_status.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("AU", "DC", "DS")
+idx_FAD <- !is.na(mort$FAD)
+idx_wound <- !is.na(mort$'Wounded main stem')
+idx_canker <- !is.na(mort$'Canker; swelling, deformity')
+idx_rot <- !is.na(mort$'Rotting trunk')
+idx_DWR <- !mort$'DWR' %in% "False"
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[!idx_trees & (idx_FAD | idx_wound | idx_wound | idx_canker | idx_rot | idx_DWR)]
 
 
 if(length(tag_stem_with_error) > 0) {
@@ -270,6 +295,28 @@ if(length(tag_stem_with_error) > 0) {
 
 
 
+## and vice versa ####
+filename <- file.path(here("testthat"), "reports/wounded_level_but_wrong_status_or_FAD.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
+idx_wounded <- !is.na(mort$FAD) & grepl("W", mort$FAD)
+idx_wnd_main_stem <- !is.na(mort$'Wounded main stem')
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[(!idx_trees | !idx_wounded) & idx_wnd_main_stem ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+
+
 # check that newly censused 'AU', 'DS' or 'DC with "canker" selected as FAD have selected a level for canker,swelling,deformity ####
 filename <- file.path(here("testthat"), "reports/canker_but_no_level.csv") # edit file name here
 
@@ -292,6 +339,28 @@ if(length(tag_stem_with_error) > 0) {
 
 
 
+## and vice versa ####
+filename <- file.path(here("testthat"), "reports/canker_level_but_wrong_status_or_FAD.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
+idx_canker <- !is.na(mort$FAD) & grepl("K", mort$FAD)
+idx_ckr_level <- !is.na(mort$'canker,swelling,deformity')
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[(!idx_trees & !idx_canker) & idx_ckr_level ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+
+
 # check that newly censused 'AU', 'DS' or 'DC with "rotting stem" selected as FAD have selected a level for rotting main stem ####
 filename <- file.path(here("testthat"), "reports/rot_but_no_level.csv") # edit file name here
 
@@ -303,6 +372,28 @@ idx_rot_level <- !is.na(mort$'rotting main stem')
 
 
 tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_rot & !idx_rot_level ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+
+
+## and vice versa ####
+filename <- file.path(here("testthat"), "reports/rot_level_but_wrong_status_or_FAD.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
+idx_rot <- !is.na(mort$FAD) & grepl("R\\>", mort$FAD)
+idx_rot_level <- !is.na(mort$'rotting main stem')
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[(!idx_trees & !idx_rot) & idx_rot_level ]
 
 
 if(length(tag_stem_with_error) > 0) {
