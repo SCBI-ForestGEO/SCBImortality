@@ -150,7 +150,7 @@ for(census in paste0("scbi.stem", 1:3)) {
       species = x$species,
       coords = c(-78.2, 38.9)
     ) / 1000 ,2) #  / 1000 to change to in Mg
-
+  
   assign(census, x)
 }
 
@@ -711,8 +711,26 @@ data.2018 <- scbi.stem3[, c("dbh", "codes", "status", "ExactDate", "agb")]
 names(data.2018) <- c("dbh.2018", "codes.2018", "status.2018", "date.2018", "agb.2018")
 
 
-full.census.data <- cbind(data.2008, data.2013, data.2018)
+full.census.data <- cbind(data.2008, data.2013, data.2018) # added local coordinates here
 head(full.census.data)
+
+# add local coordinates 
+x <- full.census.data
+x$lx <- x$gx - 20*((as.numeric(x$quadrat) %/% 100) - 1)
+x$ly <- x$gy - 20*((as.numeric(x$quadrat) %% 100) - 1)
+
+#round local coordinates to nearest tenth
+x$lx <- round(x$lx, digits = 1)
+x$ly <- round(x$ly, digits = 1)
+full.census.data <- x
+
+# oder the columns
+
+full.census.data <- full.census.data[,c("tag", "StemTag", "stemID", "quadrat", "sp", "Latin", "gx", 
+  "gy", "lx", "ly", "hom", "dbh.2008", "codes.2008", "status.2008", "date.2008", 
+  "agb.2008", "dbh.2013", "codes.2013", "status.2013", 
+  "date.2013", "agb.2013", "dbh.2018", "codes.2018", "status.2018", 
+  "date.2018", "agb.2018")]
 
 # double check order
 
@@ -728,7 +746,7 @@ for (survey_year in mort.census.years) {
   mort <- get(paste0("mort", substr(survey_year, 3,4)))
   head(mort)
 
-  current.census.data <-  mort[, c("lx", "ly", paste0("status.", survey_year), "dbh.if.dead", "agb.if.dead", "perc.crown", "crown.position", "fad1", "fad2", "fad3", "fad4", "DF", "liana.load", "fraxinus.crown.thinning", "fraxinus.epicormic.growth", "EABF", "DE.count", "comments", "date", "surveyors")]
+  current.census.data <-  mort[, c(paste0("status.", survey_year), "dbh.if.dead", "agb.if.dead", "perc.crown", "crown.position", "fad1", "fad2", "fad3", "fad4", "DF", "liana.load", "fraxinus.crown.thinning", "fraxinus.epicormic.growth", "EABF", "DE.count", "comments", "date", "surveyors")]
 
   if (!survey_year %in% 2014) {
     previous.census.data <- get(paste0("mort", substr(survey_year-1, 3,4)))[, paste0("status.", survey_year-1)]
@@ -761,7 +779,7 @@ write.csv(full.census.data[, -grep("2018", names(full.census.data))], file = "da
 
 
 # CREATE allmort.rdata file ####
-allmort <- cbind(full.census.data[, c("tag", "StemTag", "stemID", "quadrat", "Latin", "sp", "gx", "gy", "dbh.2008", "date.2008", "agb.2008", "status.2008", "dbh.2013", "date.2013", "agb.2013", "status.2013", "dbh.2018", "date.2018", "agb.2018", "status.2018")],
+allmort <- cbind(full.census.data[, c("tag", "StemTag", "stemID", "quadrat", "Latin", "sp", "gx", "gy", "lx", "ly", "dbh.2008", "date.2008", "agb.2008", "status.2008", "dbh.2013", "date.2013", "agb.2013", "status.2013", "dbh.2018", "date.2018", "agb.2018", "status.2018")],
 
                  do.call(cbind, lapply(mort.census.years, function(survey_year) {
                    final.mort <- get(paste0("final.mort.", survey_year))
