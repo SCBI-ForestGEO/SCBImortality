@@ -16,7 +16,7 @@ tree | consistency check | newly censused trees (AU) | DWR (dead with resprouts)
 tree | consistency check | newly censused trees (dead) | DBH measured | 2021
 tree | completion check | newly censused trees (AU or dead) | at least one FAD is selected | 2021
 tree | completion check | newly censused trees (AU or dead, with "wound" selected as FAD) | level selected for `wounded main stem` | 2021
-tree | completion check | newly censused trees (AU or dead, with "canker" selected as FAD) | level selected for `canker,swelling,deformity` | not yet
+tree | completion check | newly censused trees (AU or dead, with "canker" selected as FAD) | level selected for `canker,swelling,deformity` | 2021
 tree | completion check | newly censused trees (AU or dead, with "rotting stem" or "hollow stem" selected as FAD) | level selected for `rotting main stem` | not yet
 tree | completion check | newly censused trees (AU or dead) | at least one photo was taken | not yet
 tree | consistency check | newly censused trees (AU or dead, with level selected for `wounded main stem`)| "wound" selected as FAD, AU or dead selected as status | not yet
