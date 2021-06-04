@@ -292,6 +292,28 @@ if(length(tag_stem_with_error) > 0) {
 
 
 
+# check that newly censused 'AU', 'DS' or 'DC with "rotting stem" selected as FAD have selected a level for rotting main stem ####
+filename <- file.path(here("testthat"), "reports/rot_but_no_level.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
+idx_rot <- !is.na(mort$FAD) & grepl("R\\>", mort$FAD)
+idx_rot_level <- !is.na(mort$'rotting main stem')
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_rot & !idx_rot_level ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+
+
 # give a % completion status ####
 percent_completion <- round(sum(paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag)) / nrow(main_census) * 100)
 
