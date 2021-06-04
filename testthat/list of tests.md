@@ -4,7 +4,8 @@
 
 level | category | applied to | test  | coded | requires field fix? | auto fix (when applicable)
 ----  | ---- | ----  | ----  | ---- | ---- | ---- 
-plot | census progress | all stems in census | percent trees censused |  2021 | Y | NA 
+plot | census progress | all stems in census | percent trees censused |  2021 | NA | NA 
+plot | census progress | all stems in census | list or map of quadrats completed, with additional category for censused with fixes pending |  not yet | NA | NA 
 quadrat | completion check | newly censused quadrats | all trees censused |  2021 | Y | NA 
 quadrat  | consistency check | newly censused quadrats | no trees are duplicated |  2021 | N | use latest record 
 tree | completion check | newly censused trees (all) | `crown position` is recorded | 2021 | Y | NA 
