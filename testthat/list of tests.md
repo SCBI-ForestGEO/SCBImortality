@@ -12,6 +12,7 @@ tree | completion check | newly censused trees (all) | `crown position` is recor
 tree | completion check | newly censused trees (all) |`percentage of crown intact` is recorded | E | 2021 | Y | NA 
 tree | completion check | newly censused trees (all) |`percentage of crown living` is recorded | E | 2021 | Y | NA 
 tree | consistency check | newly censused trees (all) | `percentage of crown living` ≤ `percentage of crown intact` | E | 2021 | initially | [issue 13](https://github.com/SCBI-ForestGEO/SCBImortality/issues/13)
+tree | consistency check | newly censused trees (DS or DC) | `percentage of crown living` = 0 | E | 2021 | Y | NA
 tree | consistency check | newly censused trees (alive) | no FAD is selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected | E | 2021 | Y | NA
 tree | consistency check | newly censused trees (AU) | DWR (dead with resprouts) not selected |E |  2021 | initially | ---
 tree | completion check | newly censused trees (dead) | DBH measured | E | 2021 | Y | NA 
@@ -27,9 +28,15 @@ tree | consistency check | newly censused trees (AU or dead, with level selected
 tree | consistency check | newly censused trees (any FAD selected, or level selected for `canker,swelling,deformity`, `wounded main stem` , or `rotting main stem`)| status selected as AU or dead | W| 2021 | N | change live to AU 
 tree | consistency check - with previous | newly censused trees (A or AU) | tree was A or AU in previous year | W| not yet | Y | NA
 tree | consistency check - with previous | newly censused trees (A or AU or DS) | tree was not DC in previous year | W| not yet | Y | NA
+tree | completion check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | `Crown thinning`, `Epicormic growth`,  `D-shaped exit hole count`, `Crown position < 10 cm DBH` (for stems <10cm) all recorded | E | not yet | Y | NA 
+tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `Epicormic growth`>0, tree is AU | W | not yet | N | set status to AU 
+tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `Crown thinning`>1 , tree is AU or dead | E | not yet |  sometimes | 
+tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if any EABF recorded, tree is AU or dead | E | not yet | sometimes | --- 
+tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `D-shaped exit hole count`>0, tree is AU or dead | E | not yet | sometimes | --- 
+tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if tree is dead, `Epicormic growth`=0  | E | not yet | sometimes | --- 
+tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if tree is dead, `Crown thinning`=5 | E | not yet | sometimes | --- 
 
 
 ## not yet incorporated
-- EAB census add-on
 - thorough review
 
