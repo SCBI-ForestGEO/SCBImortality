@@ -28,7 +28,7 @@ Review info (species, size, position) of tree for which you're searching. Locate
 (4) check trees that otherwise don't seem to match what you're looking for
 (5) if a thorough search yields nothing, record as **DN** (no plant nor tag found)
 Avoid giving a tree the DN status; you need to do a thorough search for all trees on the list.
-
+*One of the challenges of this survey is getting frustrated when you can't find those little ash trees and wanting to give up. The solution is to go back another day or week with a fresh mind set and you'll usually find them. Sometimes they're just a stick on the ground, but they're there!* 
 
 ### Data Entry in FastField
 #### Tree Classification
