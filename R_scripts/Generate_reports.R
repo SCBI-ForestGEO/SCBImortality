@@ -63,7 +63,7 @@ if(any(idx_error)) {
 
 
 # for each quadrat censused, check all expected trees were censused ####
-filename <- file.path(here("testthat/reports/requires_field_fix"), "quadrat_censused_missing_stems.csv")
+filename <- file.path(here("testthat"), "reports/requires_field_fix/quadrat_censused_missing_stems.csv")
 
 
 idx_quadrat_censused <- main_census$quadrat %in% as.numeric(mort$Quad)

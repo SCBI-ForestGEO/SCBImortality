@@ -1,0 +1,1 @@
+This folder contains the lists of trees with issues that can be resolved automatically.
