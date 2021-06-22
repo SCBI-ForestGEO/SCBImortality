@@ -17,7 +17,8 @@ latest_FFFs <- list.files(here("raw_data/FFF_excel/"), pattern = ".xlsx", full.n
 ## load the latest mortality survey
 
 mort <- as.data.frame(read_xlsx(latest_FFFs, sheet = "subform_1"))
-mort <- mort[!is.na(mort$Quad), ] # remove empty lines
+
+
 
 # load and clean up the 3rd main census ####
 main_census <-  read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/scbi.stem3.csv"))
@@ -34,6 +35,17 @@ main_census <- main_census[!main_census$status %in% "D",]
 # load species table ####
 
 spptable <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/scbi.spptable.csv")
+
+
+# fix empty lines in mort ####
+idx_empty_line <- which(is.na(mort$Quad))
+EAB_columns <- c("Crown thinning","Epicormic growth","EABF","D-shaped exit hole count","Crown position < 10 cm DBH")
+
+# replace empty EAB column of line before by the EAB of empty lines
+mort[idx_empty_line-1, EAB_columns] <- mort[idx_empty_line, EAB_columns] 
+
+# remove empty lines
+mort <- mort[!is.na(mort$Quad), ] # fix empty lines
 
 
 # check if all species exist in species table, if not save a file, if yes, delete that file ####
