@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Supplies
 - [ ] iPad - set up with FastField and maps ([GitHub issue #6](https://github.com/SCBI-ForestGEO/SCBImortality/issues/6))
 - [ ] DBH tape, calipers
+- [ ] phone with clinometer app, or physical clinometer. I assume this could also be installed on the iPads.
 - [ ] Binoculars, IMPORTANT to check live status of very tall trees and to distinguish between leaves of lianas or tree under inspection.
 - [ ] Printed copies of visual guides, if desired (these could also be loaded on iPad)
 - [ ] Personal gear/ safety equipment
@@ -206,7 +207,7 @@ Record any relevant info for which there's no place in the form:
 
 \newpage
 
-*** Crown Assessment***
+***Crown Assessment***
 
 ![Crown Assessment (taken from Arellano et al., 2020)](figures_tables/Crown_assessment.png)
 Top left is 100% crown intact and 100% crown living, top right—100% intact and 90% living, middle left—90% intact and 70% living, middle right—90% intact and 50% living, bottom left—70% intact and 30% living, bottom right—40% intact and 0% living 
