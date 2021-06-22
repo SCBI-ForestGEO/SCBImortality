@@ -1,0 +1,23 @@
+"Submission.Id","Quad","Tag","StemTag","Species","QX","QY","DBH","Status.2020","HOM","Status.2021","DWR","Crown.position","Dead.crown.position","Dead.DBH","Percentage.of.crown.intact","Percentage.of.crown.living","Lean.angle.if.greater.than.15.degrees","Lianas","FAD","Wounded.main.stem","Canker..swelling..deformity","Rotting.trunk","Notes.2021","Crown.thinning","Epicormic.growth","EABF","D.shaped.exit.hole.count","Crown.position...10.cm.DBH"
+"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80573,1,"cato",2.6,4.8,116,"A",1.3,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80579,1,"cagl",11.8,11.1,529,"A",1.3,"A","False",4,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80580,1,"acru",19.8,10.2,332,"A",1.3,"A","False",3,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80582,1,"prav",17.6,14.7,261,"A",1.3,"A","False",3,NA,NA,100,100,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"23463380-182c-43a9-82de-4bdc2d12eb85",816,80694,1,"juni",4.4,4.3,463,"A",1.3,"AU","False",4,NA,NA,90,90,NA,0,"AN",NA,NA,NA,"Heavy woodpecker activity, possible insect infection",NA,NA,NA,NA,NA
+"62108cf2-7ff1-4a5e-a39e-9bb4062dff21",817,82039,1,"nysy",10.7,11.9,112,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ec2e5459-9d51-4860-96da-9ccdc0d08a1f",628,62373,1,"qupr",14,12.4,286,"A",1.3,"A","False",2,NA,NA,100,80,NA,0,"R",NA,NA,1,NA,NA,NA,NA,NA,NA
+"78934c6f-3a21-421f-a0de-32e6bfc25c7c",519,52096,1,"caca",1.5,13.6,100,"A",1.3,"A","False",1,NA,NA,100,85,NA,0,"W",2,NA,NA,NA,NA,NA,NA,NA,NA
+"c4579375-c5f2-4af3-8e62-ae49aac0ddad",613,60555,1,"acru",19.8,9.7,287,"AU",1.3,"A","False",2,NA,NA,50,95,NA,0,"B",3,NA,NA,NA,NA,NA,NA,NA,NA
+"ee51ab07-7d65-40f6-8b40-2af7da7eb7aa",428,42389,1,"qupr",1.2,5.1,387,"A",1.3,"A","False",1,NA,NA,80,80,NA,0,NA,1,NA,NA,NA,NA,NA,NA,NA,NA
+"cc651402-1f66-4ca1-8ecb-3c8fd9a717e1",317,32002,1,"quve",7.4,0.3,390,"A",1.3,"A","False",1,NA,NA,80,80,NA,0,NA,1,NA,NA,NA,NA,NA,NA,NA,NA
+"af735d25-e193-4e56-ad6a-f8d6af726b73",327,32381,1,"qupr",4.6,12.8,872,"A",1.3,"A","False",3,NA,NA,80,80,NA,0,NA,1,NA,NA,NA,NA,NA,NA,NA,NA
+"076eebb4-2cf2-4175-967d-56ea764e9612",130,12427,1,"litu",9.2,2.7,404,"A",1.3,"A","False",2,NA,NA,85,85,NA,0,"B",NA,NA,NA,"missing tag",NA,NA,NA,NA,NA
+"22d741ec-5ce0-4c02-b487-cb1c10fa9528",206,20537,1,"havi",25.8,120,131,"A",1.3,"A","True",1,NA,NA,100,90,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"22d741ec-5ce0-4c02-b487-cb1c10fa9528",206,20537,1,"havi",25.8,120,131,"A",1.3,"DC","False",1,"S",130,0,0,NA,NA,"UP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80573,1,"cato",142.60001,284.79999,116,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
+"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80579,1,"cagl",151.8,291.10001,529,"A",1.3,"A","False",2,NA,NA,95,95,NA,0,"B",2,NA,NA,NA,NA,NA,NA,NA,NA
+"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80580,1,"acru",159.8,290.20001,332,"A",1.3,"A","False",2,NA,NA,95,95,NA,0,"B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80582,1,"prav",157.60001,294.70001,261,"A",1.3,"A","False",2,NA,NA,100,100,NA,2,"K",NA,1,NA,NA,NA,NA,NA,NA,NA
+"ffb8acf9-2dc1-4386-a33c-b0dd3a06c8f3",109,10475,1,"qual",17.4,164.60001,135,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,"CR",NA,NA,NA,"missing tag",NA,NA,NA,NA,NA
+"ee488b9e-3db5-4a7e-9475-23ebb6f223c5",816,80694,1,"juni",144.39999,304.29999,463,"A",1.3,"A","False",3,NA,NA,90,90,NA,0,NA,1,NA,NA,"sapsucker holes",NA,NA,NA,NA,NA
+"bc26dc05-e609-490f-99b5-f5090c138b64",817,82039,1,"nysy",150.7,331.89999,112,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,NA,NA,1,NA,NA,NA,NA,NA,NA,NA
