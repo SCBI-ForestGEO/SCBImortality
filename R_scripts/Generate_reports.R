@@ -48,6 +48,8 @@ mort[idx_empty_line-1, EAB_columns] <- mort[idx_empty_line, EAB_columns]
 mort <- mort[!is.na(mort$Quad), ] # fix empty lines
 
 
+
+# --- PERFORM CHECKS ---- ####
 # check if all species exist in species table, if not save a file, if yes, delete that file ####
 filename <- file.path(here("testthat"), "reports/species_code_error.csv")
 
@@ -61,7 +63,7 @@ if(any(idx_error)) {
 
 
 # for each quadrat censused, check all expected trees were censused ####
-filename <- file.path(here("testthat"), "reports/quadrat_censused_missing_stems.csv")
+filename <- file.path(here("testthat"), "reports/requires_field_fix/quadrat_censused_missing_stems.csv")
 
 
 idx_quadrat_censused <- main_census$quadrat %in% as.numeric(mort$Quad)
@@ -82,7 +84,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # for each quadrat censused, check that there is no duplicated stems ####
-filename <- file.path(here("testthat"), "reports/quadrat_censused_duplicated_stems.csv")
+filename <- file.path(here("testthat"), "reports/will_auto_fix/quadrat_censused_duplicated_stems.csv")
 
 
 tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$StemTag))]
@@ -100,7 +102,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that all censused trees have a crown position recorded ####
-filename <- file.path(here("testthat"), "reports/missing_crown_position.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/missing_crown_position.csv") # edit file name here
 
 
 tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Crown position')]
@@ -115,7 +117,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that all censused trees have a percent of crown intact recorded ####
-filename <- file.path(here("testthat"), "reports/missing_percent_crown_intact.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/missing_percent_crown_intact.csv") # edit file name here
 
 
 tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Percentage of crown intact')]
@@ -130,7 +132,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that all censused trees have a percent of crown living recorded ####
-filename <- file.path(here("testthat"), "reports/missing_percent_crown_living.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/missing_percent_crown_living.csv") # edit file name here
 
 
 tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Percentage of crown living')]
@@ -144,7 +146,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check percent of crown living <=  percent of crown intact####
-filename <- file.path(here("testthat"), "reports/crown_living_greater_than_crown_intact.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/crown_living_greater_than_crown_intact.csv") # edit file name here
 
 
 tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[!is.na(mort$'Percentage of crown living') & !is.na(mort$'Percentage of crown intact') & mort$'Percentage of crown living' > mort$'Percentage of crown intact']
@@ -158,7 +160,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that newly censused alive trees have no FAD selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected ####
-filename <- file.path(here("testthat"), "reports/status_A_but_unhealthy.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/status_A_but_unhealthy.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -183,7 +185,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 ## and vice-versa ####
-filename <- file.path(here("testthat"), "reports/unhealthy_but_wrong_status.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/will_auto_fix/unhealthy_but_wrong_status.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -208,7 +210,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that status 'AU' does not have 	DWR (dead with resprouts)  selected ####
-filename <- file.path(here("testthat"), "reports/status_AU_but_DWR_selected.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/status_AU_but_DWR_selected.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -227,7 +229,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that status 'DS' or 'DC' have a dbh measured  ####
-filename <- file.path(here("testthat"), "reports/status_DS_or_DC_but_DBH_measured.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/status_DS_or_DC_but_DBH_measured.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -248,7 +250,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that newly censused 'AU', 'DS' or 'DC trees have at least one FAD  selected ####
-filename <- file.path(here("testthat"), "reports/status_AU_DS_or_DC_but_no_FAD.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/status_AU_DS_or_DC_but_no_FAD.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -286,7 +288,7 @@ if(length(tag_stem_with_error) > 0) {
 # 
 
 # check that newly censused 'AU', 'DS' or 'DC with "wound" selected as FAD have selected a level for wounded main stem ####
-filename <- file.path(here("testthat"), "reports/wounded_but_no_level.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/wounded_but_no_level.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -308,7 +310,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 ## and vice versa ####
-filename <- file.path(here("testthat"), "reports/wounded_level_but_wrong_status_or_FAD.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/will_auto_fix/wounded_level_but_wrong_status_or_FAD.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -330,7 +332,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that newly censused 'AU', 'DS' or 'DC with "canker" selected as FAD have selected a level for canker,swelling,deformity ####
-filename <- file.path(here("testthat"), "reports/canker_but_no_level.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/canker_but_no_level.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -352,7 +354,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 ## and vice versa ####
-filename <- file.path(here("testthat"), "reports/canker_level_but_wrong_status_or_FAD.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/will_auto_fix/canker_level_but_wrong_status_or_FAD.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -374,7 +376,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that newly censused 'AU', 'DS' or 'DC with "rotting stem" selected as FAD have selected a level for rotting main stem ####
-filename <- file.path(here("testthat"), "reports/rot_but_no_level.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/rot_but_no_level.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -396,7 +398,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 ## and vice versa ####
-filename <- file.path(here("testthat"), "reports/rot_level_but_wrong_status_or_FAD.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/will_auto_fix/rot_level_but_wrong_status_or_FAD.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -426,3 +428,6 @@ plot(0,0, axes = F, xlab = "", ylab = "", type = "n")
 text(0,0, paste(percent_completion, "%"))
 dev.off()
 # write.table(percent_completion, file = file.path(here("testthat"), "reports/percent_completion.txt"),  col.names = F, row.names = F)
+
+
+
