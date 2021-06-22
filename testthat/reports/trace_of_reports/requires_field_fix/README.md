@@ -1,0 +1,1 @@
+This folder contains the lists of trees that had issues that may have already been resolved in the field.

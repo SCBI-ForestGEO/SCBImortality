@@ -431,3 +431,17 @@ dev.off()
 
 
 
+
+# KEEP TRACK OF ALL THE ISSUES ####
+
+all_reports <- list.files(here("testthat/reports/", c("requires_field_fix", "will_auto_fix")), recursive = T, pattern = ".csv", full.names = T)
+
+
+for(f in all_reports) {
+  
+  new_f <- gsub("/reports/", "/reports/trace_of_reports/", f)
+  
+  if(file.exists(new_f)) write.csv(unique(rbind(read.csv(new_f), read.csv(f))), file = new_f, row.names = F)
+  else write.csv(read.csv(f), file = new_f, row.names = F)
+  
+}

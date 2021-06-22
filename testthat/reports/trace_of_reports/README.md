@@ -1,0 +1,1 @@
+This folder contains all the records that had an issue at any given points
