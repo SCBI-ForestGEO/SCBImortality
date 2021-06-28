@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 - [ ] phone with clinometer app, or physical clinometer. I assume this could also be installed on the iPads.
 - [ ] Binoculars, IMPORTANT to check live status of very tall trees and to distinguish between leaves of lianas or tree under inspection.
 - [ ] Printed copies of visual guides, if desired (these could also be loaded on iPad)
+- [ ] List of tree species codes, available [here](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv), if desired
 - [ ] Personal gear/ safety equipment
 
 
@@ -238,7 +239,6 @@ Top left is 100% crown intact and 100% crown living, top right—100% intact and
 ***Epicormics***
 
 ![6-class dwarf mistletoe rating system (Hawksworth 1977) to evaluate epicormic growth](figures_tables/epicormics_assessment.png)
-
 
 
 
