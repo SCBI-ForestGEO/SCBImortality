@@ -10,6 +10,9 @@
 ## mortality survey completion status
 ![percent_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/percent_completion.png)
 
+## map of warnings and errors pending field fix
+![map_of_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/map_of_error_and_warnings.png)
+
 ## Sampling location
 [SCBI ForestGEO plot](https://forestgeo.si.edu/sites/north-america/smithsonian-conservation-biology-institute)
 
