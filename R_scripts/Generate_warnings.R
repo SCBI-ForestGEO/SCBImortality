@@ -9,13 +9,13 @@ rm(list = ls())
 library(here)
 
 # check if files exist and generate a plot with the warning ####
-warnings_to_look_at <- list(
-  DBH_within_2cm =list(warning_message = "There are DBH measurements of dead trees that are not withing 2cm of previous census.",
-                       file = file.path(here("testthat"), "reports/warnings/requires_field_fix/DBH_dead_suspicious.csv")
-  ),
-  previously_dead_now_A = list(warning_message = "There trees that are alive but were previously dead.",
-                               file = file.path(here("testthat"), "reports/warnings/requires_field_fix/Dead_but_now_alive.csv"))
-)
+warnings_to_look_at <- list(list(warning_message = "There are DBH measurements of dead trees that are not withing 2cm of previous census.",
+                                 file = file.path(here("testthat"), "reports/warnings/requires_field_fix/DBH_dead_suspicious.csv")
+),
+list(warning_message = "There trees that are alive but were previously dead.",
+     file = file.path(here("testthat"), "reports/warnings/requires_field_fix/Dead_but_now_alive.csv")),
+     list(warning_message = "There are trees with epicormic growth but status is not AU.",
+          file = file.path(here("testthat"), "reports/warnings/will_auto_fix/epicormic_growth_but_not_AU.csv")))
 
 all_warns <- NULL
 for(i in seq_along(warnings_to_look_at)) {

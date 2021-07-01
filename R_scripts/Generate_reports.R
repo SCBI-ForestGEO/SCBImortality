@@ -483,7 +483,7 @@ if(length(tag_stem_with_error) > 0) {
   if(file.exists(filename) ) file.remove(filename)
 }
 
-# check that newly newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI), have Crown thinning, Epicormic growth, D-shaped exit hole count, Crown position < 10 cm DBH (for stems <10cm) all recorded ####
+# check that newly  censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI), have Crown thinning, Epicormic growth, D-shaped exit hole count, Crown position < 10 cm DBH (for stems <10cm) all recorded ####
 filename <- file.path(here("testthat"), "reports/requires_field_fix/missing_EAB_info.csv") # edit file name here
 
 
@@ -493,6 +493,30 @@ idx_missing_EAB_info <- !complete.cases(mort[, c("Crown thinning", "Epicormic gr
 
 
 tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_missing_EAB_info ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+
+
+# check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if Epicormic growth>0, tree is AU ####
+filename <- file.path(here("testthat"), "reports/warnings/will_auto_fix/epicormic_growth_but_not_AU.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+
+idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
+idx_epicormic <- !is.na(mort$`Epicormic growth`) & mort$`Epicormic growth` > 0
+idx_status <- mort[, status_column] %in% c("AU")
+
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_epicormic & !idx_status ]
 
 
 if(length(tag_stem_with_error) > 0) {
