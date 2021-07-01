@@ -484,7 +484,7 @@ if(length(tag_stem_with_error) > 0) {
 }
 
 # check that newly newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI), have Crown thinning, Epicormic growth, D-shaped exit hole count, Crown position < 10 cm DBH (for stems <10cm) all recorded ####
-filename <- file.path(here("testthat"), "reports/warnings/requires_field_fix/missing_EAB_info.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/requires_field_fix/missing_EAB_info.csv") # edit file name here
 
 
 
