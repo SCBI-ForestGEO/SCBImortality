@@ -548,6 +548,28 @@ if(length(tag_stem_with_error) > 0) {
 }
 
 
+# check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if any EABF recorded, tree is AU or dead ####
+filename <- file.path(here("testthat"), "reports/requires_field_fix/EABF_recorded_but_not_AU_or_dead.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+
+idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
+idx_EABF <- !is.na(mort$EABF) & !mort$EABF %in% "none"
+idx_status <- mort[, status_column] %in% c("A")
+
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_EABF & idx_status ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
 # give a % completion status ####
 percent_completion <- round(sum(paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag)) / nrow(main_census) * 100)
 
