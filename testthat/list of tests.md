@@ -30,7 +30,7 @@ tree | consistency check - with previous | newly censused trees (A or AU) | tree
 tree | consistency check - with previous | newly censused trees (A or AU or DS) | tree was not DC in previous year | W| 2021 | Y | NA
 tree | completion check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | `Crown thinning`, `Epicormic growth`,  `D-shaped exit hole count`, `Crown position < 10 cm DBH` (for stems <10cm) all recorded | E | 2021 | Y | NA 
 tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `Epicormic growth`>0, tree is AU | W | 2021 | N | set status to AU 
-tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `Crown thinning`>1 , tree is AU or dead | E | not yet |  sometimes | 
+tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `Crown thinning`>1 , tree is AU or dead | E | 2021 |  sometimes | 
 tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if any EABF recorded, tree is AU or dead | E | not yet | sometimes | --- 
 tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `D-shaped exit hole count`>0, tree is AU or dead | E | not yet | sometimes | --- 
 tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if tree is dead, `Epicormic growth`=0  | E | not yet | sometimes | --- 
