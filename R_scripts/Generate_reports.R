@@ -483,6 +483,23 @@ if(length(tag_stem_with_error) > 0) {
   if(file.exists(filename) ) file.remove(filename)
 }
 
+# check that newly newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI), have Crown thinning, Epicormic growth, D-shaped exit hole count, Crown position < 10 cm DBH (for stems <10cm) all recorded ####
+filename <- file.path(here("testthat"), "reports/warnings/requires_field_fix/missing_EAB_info.csv") # edit file name here
+
+
+
+idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
+idx_missing_EAB_info <- !complete.cases(mort[, c("Crown thinning", "Epicormic growth", "D-shaped exit hole count", "Crown position < 10 cm DBH") ])
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_missing_EAB_info ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
 
 
 # give a % completion status ####
