@@ -251,7 +251,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that status 'DS' or 'DC' have a dbh within 2cm of most recent census DBH  ####
-filename <- file.path(here("testthat"), "reports/requires_field_fix/DBH_dead_suspicious.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/warnings/requires_field_fix/DBH_dead_suspicious.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -430,6 +430,30 @@ idx_rot_level <- !is.na(mort$'rotting main stem')
 
 
 tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[(!idx_trees & !idx_rot) & idx_rot_level ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+
+
+
+# check that newly censused 'A' or 'AU', were A or AU in previous year ####
+filename <- file.path(here("testthat"), "reports/warnings/requires_field_fix/Dead_but_now_alive.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
+
+
+idx_trees <- mort[, status_column] %in% c("AU","A")
+idx_previously_dead <- !mort[,previous_status_column] %in% c("AU","A") & !is.na(mort[,previous_status_column])
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_previously_dead ]
 
 
 if(length(tag_stem_with_error) > 0) {
