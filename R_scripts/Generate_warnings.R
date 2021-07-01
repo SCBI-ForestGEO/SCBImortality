@@ -21,10 +21,15 @@ for(i in seq_along(warnings_to_look_at)) {
 }
 
 
-png(file.path(here("testthat"), "reports/warnings.png"), width = 6, height = 2*length(all_warns), units = "in", res = 300)
+filename <- file.path(here("testthat"), "reports/warnings.png")
+
+
+if(length(all_warns) == 0)  file.remove(filename)
+
+png(filename, width = 6, height = 2*length(all_warns), units = "in", res = 300)
 par(mar = c(0,0,0,0))
 plot(0,0, axes = F, xlab = "", ylab = "", type = "n")
-text(0,0, paste(all_warns, collapse = "\n"), col = "red", cex = 0.6)
+text(0,0, paste(c(all_warns, "CLICK HERE TO GO TO FOLDER"), collapse = "\n"), col = "red", cex = 0.6)
 title("warnings!!!", col.main= "red", xpd = NULL, line = -1)
 dev.off()
 
