@@ -533,12 +533,12 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
-idx_epicormic <- !is.na(mort$`Crown thinning`) & mort$`Crown thinning` > 1
+idx_crown <- !is.na(mort$`Crown thinning`) & mort$`Crown thinning` > 1
 idx_status <- mort[, status_column] %in% c("A")
 
 
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_epicormic & idx_status ]
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_crown & idx_status ]
 
 
 if(length(tag_stem_with_error) > 0) {
