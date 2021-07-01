@@ -463,6 +463,26 @@ if(length(tag_stem_with_error) > 0) {
 }
 
 
+# check that newly censused 'A' or 'AU' or 'DS', were not 'DC' in previous year ####
+filename <- file.path(here("testthat"), "reports/warnings/requires_field_fix/DC_but_now_A_AU_or_DS.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
+
+
+idx_trees <- mort[, status_column] %in% c("AU","A", "DS")
+idx_previously_dead <- mort[,previous_status_column] %in% c("DC") & !is.na(mort[,previous_status_column])
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_previously_dead ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
 
 
 # give a % completion status ####

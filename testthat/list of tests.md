@@ -27,7 +27,7 @@ tree | consistency check | newly censused trees (AU or dead, with level selected
 tree | consistency check | newly censused trees (AU or dead, with level selected for `rotting main stem`)| "rotting stem" or "hollow stem" selected as FAD| W| 2021 | N | add `rotting main stem` to FAD list* 
 tree | consistency check | newly censused trees (any FAD selected, or level selected for `canker,swelling,deformity`, `wounded main stem` , or `rotting main stem`)| status selected as AU or dead | W| 2021 | N | change live to AU 
 tree | consistency check - with previous | newly censused trees (A or AU) | tree was A or AU in previous year | W| 2021 | Y | NA
-tree | consistency check - with previous | newly censused trees (A or AU or DS) | tree was not DC in previous year | W| not yet | Y | NA
+tree | consistency check - with previous | newly censused trees (A or AU or DS) | tree was not DC in previous year | W| 2021 | Y | NA
 tree | completion check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | `Crown thinning`, `Epicormic growth`,  `D-shaped exit hole count`, `Crown position < 10 cm DBH` (for stems <10cm) all recorded | E | not yet | Y | NA 
 tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `Epicormic growth`>0, tree is AU | W | not yet | N | set status to AU 
 tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `Crown thinning`>1 , tree is AU or dead | E | not yet |  sometimes | 
