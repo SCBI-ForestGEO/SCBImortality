@@ -1,0 +1,8 @@
+"Submission.Id","Quad","Tag","StemTag","Species","QX","QY","DBH","Status.2020","HOM","Status.2021","DWR","Crown.position","Dead.crown.position","Dead.DBH","Percentage.of.crown.intact","Percentage.of.crown.living","Lean.angle.if.greater.than.15.degrees","Lianas","FAD","Wounded.main.stem","Canker..swelling..deformity","Rotting.trunk","Notes.2021","Crown.thinning","Epicormic.growth","EABF","D.shaped.exit.hole.count","Crown.position...10.cm.DBH"
+"bd4d5447-1222-463d-9b56-1988a0b6763d",801,80005,1,"fram",1.9,12.4,714,"PD",1.2,"PD","False",4,NA,NA,30,0,NA,0,"I",NA,NA,NA,NA,0,0,"AS,VB,W,DE",20,NA
+"052a5b07-fb00-4526-a134-25355745c398",616,60474,1,"fram",1.6,9.6,300,"AU",1.3,"PD","False",1,NA,NA,0,0,NA,0,"B",3,NA,3,NA,0,0,"AS,VB,W,DE",2,NA
+"a9467770-d757-4bac-9ba3-2776fdadc6d4",413,40888,1,"fram",14.2,3,163,"DS",1.3,"PD","False",1,NA,NA,50,0,NA,0,"I",NA,NA,NA,NA,0,0,"W,VB",NA,NA
+"a7eaae26-f7ec-46c3-a6a4-34f5b10c413e",411,40846,1,"frni",13.7,9.3,203,"AU",1.3,"DS","False",3,"CD",206,60,0,NA,0,"I",NA,NA,NA,NA,0,0,"W,AS",NA,NA
+"9d5d6d84-f774-483e-a333-803b1e8d4779",221,22154,1,"frni",18.5,9.7,114,"PD",1.3,"DS","False",2,"S",NA,25,0,NA,0,"U,I,R",NA,NA,NA,NA,0,0,"DE,VB,W,SS",4,"S"
+"fa0cf090-3a2d-4b2a-95dc-13a3c1539eb4",119,12083,1,"frpe",4.5,15.6,NA,"PD",1.3,"PD","False",1,NA,NA,0,0,NA,0,NA,2,NA,3,NA,0,0,NA,NA,NA
+"e5993146-b9ca-4495-8f63-ae4073ed1176",106,10379,1,"fram",2.6,103.1,NA,"PD",1.3,"PD","False",1,NA,NA,0,0,NA,0,"I",3,NA,NA,NA,0,0,"none",NA,NA
