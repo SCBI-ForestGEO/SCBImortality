@@ -600,12 +600,34 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
-idx_exit_hole <- !is.na(mort$`Epicormic growth`) & mort$`Epicormic growth` > 0
+idx_epicormic <- !is.na(mort$`Epicormic growth`) & mort$`Epicormic growth` > 0
 idx_status <- !mort[, status_column] %in% c("A", "AU")
 
 
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_exit_hole & idx_status ]
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_epicormic & idx_status ]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+# check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if tree is dead, Crown thinning=5 ####
+filename <- file.path(here("testthat"), "reports/requires_field_fix/dead_but_crown_thinning_less_than_5.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+
+idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
+idx_crown <- !is.na(mort$`Crown thinning`) & mort$`Crown thinning` <5
+idx_status <- !mort[, status_column] %in% c("A", "AU")
+
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_crown & idx_status ]
 
 
 if(length(tag_stem_with_error) > 0) {

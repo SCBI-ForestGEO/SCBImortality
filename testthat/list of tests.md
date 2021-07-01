@@ -34,7 +34,7 @@ No|level | category | applied to | test  | warning (W) or error (E) | coded | re
 28|tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if any EABF recorded, tree is AU or dead | E | 2021 | sometimes | --- 
 29|tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `D-shaped exit hole count`>0, tree is AU or dead | E | 2021 | sometimes | --- 
 30|tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if tree is dead, `Epicormic growth`=0  | E | 2021 | sometimes | --- 
-31|tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if tree is dead, `Crown thinning`=5 | E | not yet | sometimes | --- 
+31|tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if tree is dead, `Crown thinning`=5 | E | 2021 | sometimes | --- 
 
 
 ## not yet incorporated
