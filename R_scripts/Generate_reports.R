@@ -249,6 +249,28 @@ if(length(tag_stem_with_error) > 0) {
 
 
 
+
+# check that status 'DS' or 'DC' have a dbh within 2cm of most recent census DBH  ####
+filename <- file.path(here("testthat"), "reports/requires_field_fix/DBH_dead_suspicious.csv") # edit file name here
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("DS", "DC")
+idx_DBH_ouside_range <- !is.na(mort$'Dead DBH') & (abs(mort$'Dead DBH' - as.numeric(mort$DBH)) > 20)
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_DBH_ouside_range]
+
+
+if(length(tag_stem_with_error) > 0) {
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], file = filename, row.names = F)
+} else {
+  if(file.exists(filename) ) file.remove(filename)
+}
+
+
+
+
 # check that newly censused 'AU', 'DS' or 'DC trees have at least one FAD  selected ####
 filename <- file.path(here("testthat"), "reports/requires_field_fix/status_AU_DS_or_DC_but_no_FAD.csv") # edit file name here
 

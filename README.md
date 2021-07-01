@@ -3,6 +3,10 @@
 ## data entry issues to resolve?
 [![data-tests](https://github.com/SCBI-ForestGEO/SCBImortality/workflows/data-tests/badge.svg)](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports)
 
+## Warnings?
+[![warnings](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/warnings.png)](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports)
+
+
 ## mortality survey completion status
 ![percent_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/percent_completion.png)
 
