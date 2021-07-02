@@ -27,7 +27,7 @@ mort <- as.data.frame(read_xlsx(latest_FFFs, sheet = "subform_1"))
 
 # load all report that need to be fixed ####
 all_errors_to_be_fixed <- list.files(file.path(here("testthat"), "reports/requires_field_fix/"), pattern = ".csv", full.names = T)
-all_warnings_to_be_fixed <- list.files(file.path(here("testthat"), "reports/warnings/requires_field_fix/"), pattern = ".csv", full.names = T)
+all_warnings_to_be_fixed <- list.files(file.path(here("testthat"), "reports/warnings/"), pattern = ".csv", full.names = T)
 
 all_errors_to_be_fixed <- sapply(all_errors_to_be_fixed, read.csv)
 all_warnings_to_be_fixed <- do.call(rbind, lapply(all_warnings_to_be_fixed, read.csv))

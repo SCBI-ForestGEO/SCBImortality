@@ -251,7 +251,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that status 'DS' or 'DC' have a dbh within 2cm of most recent census DBH  ####
-filename <- file.path(here("testthat"), "reports/warnings/requires_field_fix/DBH_dead_suspicious.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/warnings/DBH_dead_suspicious.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -443,7 +443,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that newly censused 'A' or 'AU', were A or AU in previous year ####
-filename <- file.path(here("testthat"), "reports/warnings/requires_field_fix/Dead_but_now_alive.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/warnings/Dead_but_now_alive.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
@@ -464,7 +464,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that newly censused 'A' or 'AU' or 'DS', were not 'DC' in previous year ####
-filename <- file.path(here("testthat"), "reports/warnings/requires_field_fix/DC_but_now_A_AU_or_DS.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/warnings/DC_but_now_A_AU_or_DS.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
