@@ -505,7 +505,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if Epicormic growth>0, tree is AU ####
-filename <- file.path(here("testthat"), "reports/warnings/will_auto_fix/epicormic_growth_but_not_AU.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/will_auto_fix/epicormic_growth_but_not_AU.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
