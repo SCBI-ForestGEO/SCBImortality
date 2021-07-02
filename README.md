@@ -1,27 +1,31 @@
-# SCBI tree mortality 
+# SCBI Tree Mortality 
 
-## data entry issues to resolve?
+## Current Census Dashboard
+
+### data entry issues to resolve?
 [![data-tests](https://github.com/SCBI-ForestGEO/SCBImortality/workflows/data-tests/badge.svg)](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports)
 
-## Warnings?
+### Warnings?
 [![There_is_no_warnings_:-)](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/warnings.png)](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports/warnings)
 
 
-## mortality survey completion status
+### mortality survey completion status
 ![percent_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/percent_completion.png)
 
-## map of warnings and errors pending field fix
+### map of census progress
 ![map_of_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/map_of_error_and_warnings.png)
 
-## Sampling location
+## Census Info
+
+### Sampling location
 [SCBI ForestGEO plot](https://forestgeo.si.edu/sites/north-america/smithsonian-conservation-biology-institute)
 
 
-## Sampling dates
+### Sampling dates
 2014- 2020 
 
 
-## Protocols
+### Protocols
 
 The basic census is described in [Gonzalez-Akre et al. (2016)](https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1002/ecs2.1595). This publication covers methods used in 2014 and 2015. Since 2016, we started monitoring all ash tress (*Fraxinus spp.*) with stems >1cm DBH in order to capture dynamics of the Emerald Ash Borer (EAB) infestation. For updated methods please check [this folder](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/tree/master/tree_mortality/Protocols).
 
@@ -37,11 +41,11 @@ Numbers of trees and species cored since 2017 is as follows:
 As a resut of our annual surveys, We have been paying increasing attention to signs of insect pests and pathogens on newly dead and unhealthy trees. A list of pests and pathogens that may affect trees at the SCBI plot is given [here](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/tree/master/species_lists/insects_pathogens).
 
 
-## Data use
+### Data use
 
 These data are public, but the more recent censuses may not yet have been used in publications. Censuses are led by early-career scientists, and we wish to see these individuals receive appropriate credit (coauthorship for census leaders, acknowledgement for volunteers) in the first publication that uses the data they collected. **Therefore, we ask that any researchers interested in using data that have not yet been used in a publication (currently 2020 forward) contact us to discuss collaboration.**
 
-## Contributors
+### Contributors
 | name | GitHub ID| position* | role |
 | -----| ---- | ---- |---- |
 | Kristina Anderson-Teixeira | teixeirak | staff scientist, SCBI & STRI | PI overseeing project since 2016 |
@@ -58,17 +62,19 @@ These data are public, but the more recent censuses may not yet have been used i
 | Alex Georgopolis |   | field assistant, SCBI | volunteered for 2019 census |
 | Cameron Dow | camerondow35 | research assistant, SCBI | led 2020 census |
 | Albert Y. Kim | rudeboybert | visiting scholar, SCBI | volunteered for 2020 census |
-
+| Brianna Calkins | briannakcalkins | field assistant, SCBI | 2021 census leader |
+| Jennifer Jordan | jenajordan | field assistant, SCBI | 2021 census assistant |
+| Teagan Rogers | Troger4 | field assistant, SCBI | 2021 census assistant |
  
 *refers to position at time of main contribution to this repository
 
 
-## Funding 
+### Funding 
 - ForestGEO 
 - Virginia Native Plant Society (2017, 2019)
 - NSF Macrosystems (2021 - )
 
-## Publications using these data
+### Publications using these data
 
 Gonzalez-Akre, E. B., Meakem, V., Eng, C.Y., Tepley, A. J., Bourg, N. A., McShea, W. J., Davies, S. J. and Anderson-Teixeira, K. J. (2016). [Patterns of tree mortality in a temperate deciduous forest derived from a large forest dynamics plot.](https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1002/ecs2.1595) Ecosphere 7(12): e01595. doi: 10.1002/ecs2.1595.  
 *Data from this publication are published in [Dryad](http://dx.doi.org/10.5061/dryad.v5h24.)* 
