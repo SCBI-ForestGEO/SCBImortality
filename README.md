@@ -5,7 +5,12 @@
 ### data entry issues to resolve?
 [![data-tests](https://github.com/SCBI-ForestGEO/SCBImortality/workflows/data-tests/badge.svg)](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports)
 
-### Warnings?
+**[Click here to view error reports.](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports/)**
+
+### warnings? 
+*These do not cause the tests to fail, but may indicate problems and should be reviewed.*
+
+
 [![There_is_no_warnings_:-)](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/warnings.png)](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports/warnings)
 
 
