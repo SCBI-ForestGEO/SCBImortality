@@ -616,7 +616,7 @@ if(length(tag_stem_with_error) > 0) {
 
 
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if tree is dead, Crown thinning=5 ####
-filename <- file.path(here("testthat"), "reports/requires_field_fix/dead_but_crown_thinning_less_than_5.csv") # edit file name here
+filename <- file.path(here("testthat"), "reports/will_auto_fix/dead_but_crown_thinning_less_than_5.csv") # edit file name here
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
