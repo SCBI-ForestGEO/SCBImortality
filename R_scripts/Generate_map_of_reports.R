@@ -21,7 +21,9 @@ latest_FFFs <- list.files(here("raw_data/FFF_excel/"), pattern = ".xlsx", full.n
 
 ## load the latest mortality survey
 
-mort <- as.data.frame(read_xlsx(latest_FFFs, sheet = "subform_1"))
+mort <- as.data.frame(read_xlsx(latest_FFFs, sheet = "subform_1", .name_repair = "minimal" ))
+mort <- mort[, unique(names(mort))]# remove repeated columns
+
 
 
 

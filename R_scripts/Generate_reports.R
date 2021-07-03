@@ -16,9 +16,7 @@ latest_FFFs <- list.files(here("raw_data/FFF_excel/"), pattern = ".xlsx", full.n
 
 ## load the latest mortality survey
 
-mort <- as.data.frame(read_xlsx(latest_FFFs, sheet = "subform_1"))
-
-
+mort <- as.data.frame(read_xlsx(latest_FFFs, sheet = "subform_1", .name_repair = "minimal" ))
 
 # load and clean up the 3rd main census ####
 main_census <-  read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/scbi.stem3.csv"))
@@ -47,6 +45,8 @@ mort[idx_empty_line-1, EAB_columns] <- mort[idx_empty_line, EAB_columns]
 # remove empty lines
 mort <- mort[!is.na(mort$Quad), ] # fix empty lines
 
+# remove repeated columns
+mort <- mort[, unique(names(mort))]
 
 
 # --- PERFORM CHECKS ---- ####
