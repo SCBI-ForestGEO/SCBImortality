@@ -8,6 +8,7 @@ rm(list = ls())
 # load libraries ####
 library(here)
 library(rgdal)
+library(readxl)
 
 # load map of quadrats ####
 quadrats <- rgdal::readOGR(file.path(here(""),"maps/20m_grid/20m_grid.shp"))
