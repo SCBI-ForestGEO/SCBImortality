@@ -19,7 +19,8 @@ Depends: R (>= 4.0.0)
 Imports: 
     testthat,
     here,
-    readxl
+    readxl,
+    rgdal
 URL: https://github.com/SCBI-ForestGEO/SCBImortality
 BugReports: https://github.com/SCBI-ForestGEO/SCBImortality/issues
 Config/testthat/edition: 3
