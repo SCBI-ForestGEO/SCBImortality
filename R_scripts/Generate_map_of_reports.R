@@ -10,7 +10,7 @@ library(here)
 library(rgdal)
 
 # load map of quadrats ####
-quadrats <- readOGR(file.path(dirname(here("")),"SCBI-ForestGEO-Data/spatial_data/shapefiles/20m_grid.shp"))
+quadrats <- rgdal::readOGR(file.path(dirname(here("")),"SCBI-ForestGEO-Data/spatial_data/shapefiles/20m_grid.shp"))
 rgdal::readOGR("https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/spatial_data/shapefiles/20m_grid.shp")
 
 # load latest mortality data ####
