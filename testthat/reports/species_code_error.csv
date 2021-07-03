@@ -1,7 +1,7 @@
-"Submission Id","Quad","Tag...3","StemTag...4","Species","QX","QY","DBH","Status 2020","HOM","Status 2021","DWR","Crown position","Dead crown position","Dead DBH","Percentage of crown intact","Percentage of crown living","Lean angle if greater than 15 degrees","Lianas","FAD","Wounded main stem","Canker; swelling, deformity","Rotting trunk","Notes 2021","Tag...25","StemTag...26","Crown thinning","Epicormic growth","EABF","D-shaped exit hole count","Crown position < 10 cm DBH"
-"e46aea5c-cf65-4461-9546-88b2f16633f2","1329","132452",NA,NA,NA,NA,NA,NA,NA,"A","False","3",NA,NA,100,90,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"b69f6986-4b82-4ea4-8f36-8ef3348fb47c","1027","102418",NA,NA,NA,NA,NA,NA,NA,"A","False","4",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"aa82ef9a-cf82-40ed-b196-f3871661bd21","422",NA,NA,NA,NA,NA,NA,NA,NA,"A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"5edeb5b2-533f-42f8-a0f8-102fbee1abfd","208","20593",NA,NA,NA,NA,NA,NA,NA,"PD","False","2",NA,NA,0,0,NA,"0","I",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"a8b2d091-03c6-4a4a-a0e0-1e7a0e76b00e","209","20631",NA,NA,NA,NA,NA,NA,NA,"A","False","1",NA,NA,100,100,25,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"f12e2ddd-bf96-4710-b354-3d41e9e16b74","917","92037",NA,NA,NA,NA,NA,NA,NA,"A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Submission Id","Quad","Tag","StemTag","Species","QX","QY","DBH","Status 2020","HOM","Status 2021","DWR","Crown position","Dead crown position","Dead DBH","Percentage of crown intact","Percentage of crown living","Lean angle if greater than 15 degrees","Lianas","FAD","Wounded main stem","Canker; swelling, deformity","Rotting trunk","Notes 2021","Crown thinning","Epicormic growth","EABF","D-shaped exit hole count","Crown position < 10 cm DBH"
+"e46aea5c-cf65-4461-9546-88b2f16633f2","1329","132452",NA,NA,NA,NA,NA,NA,NA,"A","False","3",NA,NA,100,90,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"b69f6986-4b82-4ea4-8f36-8ef3348fb47c","1027","102418",NA,NA,NA,NA,NA,NA,NA,"A","False","4",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"aa82ef9a-cf82-40ed-b196-f3871661bd21","422",NA,NA,NA,NA,NA,NA,NA,NA,"A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"5edeb5b2-533f-42f8-a0f8-102fbee1abfd","208","20593",NA,NA,NA,NA,NA,NA,NA,"PD","False","2",NA,NA,0,0,NA,"0","I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"a8b2d091-03c6-4a4a-a0e0-1e7a0e76b00e","209","20631",NA,NA,NA,NA,NA,NA,NA,"A","False","1",NA,NA,100,100,25,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"f12e2ddd-bf96-4710-b354-3d41e9e16b74","917","92037",NA,NA,NA,NA,NA,NA,NA,"A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
