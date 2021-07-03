@@ -6,11 +6,15 @@ on:
       - 'raw_data/**'
       - '!raw_data/README.md'
       - 'R_scripts/Generate_reports.R'
+      - 'R_scripts/Generate_warnings.R'
+      - 'R_scripts/Generate_map_of_reports.R'
   pull_request:
     paths:
       - 'raw_data/**'
       - '!raw_data/README.md'
       - 'R_scripts/Generate_reports.R'
+      - 'R_scripts/Generate_warnings.R'
+      - 'R_scripts/Generate_map_of_reports.R'
 
 name: data-tests
 
