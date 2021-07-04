@@ -1,5 +1,7 @@
 # How to editing records with errors
 
+The lists of records with errors and quadarats with errors are [here](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports/requires_field_fix).
+
 1. Open the FFF's account and choose 'Legacy Portal'
 2. Go to 'Submissions' and in the 'Filters' section on the right select 'SCBI Mortality'
 3. Add a filter - this can be the quadrat name from the drop down list: Quad/lookuplistpicker_1
