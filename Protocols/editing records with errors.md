@@ -1,5 +1,7 @@
 # How to editing records with errors
 
+### Finding records of errors
+
 The lists of records with errors and missed trees are [here](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports/requires_field_fix).
 
 A summary of n errors by quadrat is [here](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/testthat/reports/quadrat_n_errors_summary.csv).
@@ -28,5 +30,15 @@ You can do several quadrats at once.
 
 
 ### 5. To the left of the submission there is a 'View' button with an arrow. Click on the arrow and 'Dispatch'
-8. Type ecoclimlab@gmail.com in the 'Users' box, then click 'Dispatch'
-9. Open the FFF's app on the iPad and open the Inbox to view the dispatched file. From there you can edit and resubmit and the submission should replace the original.
+
+<img width="339" alt="image" src="https://user-images.githubusercontent.com/6355854/124401823-bd8c7b80-dcf9-11eb-98f0-c86f55cbfb25.png">
+
+Unfortunately, this has to be done one quad at a time. 
+
+### 6. Type ecoclimlab@gmail.com in the 'Users' box, then click 'Dispatch'
+<img width="603" alt="image" src="https://user-images.githubusercontent.com/6355854/124401830-d72dc300-dcf9-11eb-8162-fe9c7804ea7e.png">
+
+
+### 7. Repeat steps 5-6 for all quadrats.
+
+### 8. Open the FFF's app on the iPad and open the Inbox to view the dispatched file. From there you can edit and resubmit and the submission should replace the original.
