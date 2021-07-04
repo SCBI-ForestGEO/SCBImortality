@@ -1,6 +1,8 @@
 # How to editing records with errors
 
-The lists of records with errors and quadarats with errors are [here](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports/requires_field_fix).
+The lists of records with errors and missed trees are [here](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports/requires_field_fix).
+
+A summary of n errors by quadrat is [here](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/testthat/reports/quadrat_n_errors_summary.csv).
 
 All fixes need to be done in FastField (unless this proves awful, in which case we can come up with an alternative). To send records back to FastField for editing, follow these steps:
 
