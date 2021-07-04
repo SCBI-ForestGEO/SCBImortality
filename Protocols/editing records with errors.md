@@ -13,6 +13,9 @@ All fixes need to be done in FastField (unless this proves awful, in which case 
  <img width="1488" alt="image" src="https://user-images.githubusercontent.com/6355854/124400980-764fbc00-dcf4-11eb-9be2-d636b2082b87.png">
 
 3. Add a filter - this can be the quadrat name from the drop down list: Quad/lookuplistpicker_1
+
+<img width="540" alt="image" src="https://user-images.githubusercontent.com/6355854/124401087-79977780-dcf5-11eb-97c0-3c22ed179a93.png">
+
 6. Apply the filter and you should have a list of the submissions for the quadrat (likely only 1)
 7. To the left of the submission there is a 'View' button with an arrow. Click on the arrow and 'Dispatch'
 8. Type ecoclimlab@gmail.com in the 'Users' box, then click 'Dispatch'
