@@ -22,6 +22,10 @@ All fixes need to be done in FastField (unless this proves awful, in which case 
 
 <img width="328" alt="image" src="https://user-images.githubusercontent.com/6355854/124401532-fcb9cd00-dcf7-11eb-8bf4-00709d7665a9.png">
 
+You can do several quadrats at once.
+<img width="328" alt="image" src="https://user-images.githubusercontent.com/6355854/124401649-82d61380-dcf8-11eb-8a55-c97140df5c1b.png">
+
+
 7. To the left of the submission there is a 'View' button with an arrow. Click on the arrow and 'Dispatch'
 8. Type ecoclimlab@gmail.com in the 'Users' box, then click 'Dispatch'
 9. Open the FFF's app on the iPad and open the Inbox to view the dispatched file. From there you can edit and resubmit and the submission should replace the original.
