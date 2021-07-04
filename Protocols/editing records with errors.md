@@ -41,4 +41,6 @@ Unfortunately, this has to be done one quad at a time.
 
 ### 7. Repeat steps 5-6 for all quadrats.
 
-### 8. Open the FFF's app on the iPad and open the Inbox to view the dispatched file. From there you can edit and resubmit and the submission should replace the original.
+### 8. Open the FFF's app on the iPad and open the Inbox to view the dispatched file. 
+They show up in the Inbox.
+From there you can edit and resubmit and the submission should replace the original.
