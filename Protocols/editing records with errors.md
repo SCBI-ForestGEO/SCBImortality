@@ -15,6 +15,11 @@ All fixes need to be done in FastField (unless this proves awful, in which case 
 
 ### 2. Go to 'Submissions' and in the 'Filters' section on the right select 'SCBI Mortality'
  <img width="1488" alt="image" src="https://user-images.githubusercontent.com/6355854/124400980-764fbc00-dcf4-11eb-9be2-d636b2082b87.png">
+ 
+ Be sure you select "all time" for submissions:
+ 
+ <img width="309" alt="image" src="https://user-images.githubusercontent.com/6355854/124512880-7bba0e80-dda7-11eb-8116-fda0a7fdeff5.png">
+
 
 ### 3. Add a filter - this can be the quadrat name from the drop down list: Quad/lookuplistpicker_1
 
