@@ -1,4 +1,4 @@
-# Push completed forms to this repository
+# Instructions for processing FastField Data
 
 ## 1. Log into FastFieldForms
 URL: https://manage.fastfieldforms.com/Account/Login
