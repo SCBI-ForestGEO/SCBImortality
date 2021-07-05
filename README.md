@@ -18,7 +18,7 @@
 ![percent_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/percent_completion.png)
 
 ### map of census progress
-![map_of_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/map_of_error_and_warnings.png)
+![map_of_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/map_of_error_and_warnings.png) 
 
 ## Census Info
 
