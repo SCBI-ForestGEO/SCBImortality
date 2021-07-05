@@ -41,8 +41,9 @@ You can do several quadrats at once.
 Unfortunately, this has to be done one quad at a time. 
 
 ### 6. Type ecoclimlab@gmail.com in the 'Users' box, then click 'Dispatch'
-<img width="603" alt="image" src="https://user-images.githubusercontent.com/6355854/124401830-d72dc300-dcf9-11eb-8162-fe9c7804ea7e.png">
+<img width="599" alt="image" src="https://user-images.githubusercontent.com/6355854/124513914-d6ed0080-dda9-11eb-89fe-d09504e388f6.png">
 
+You can name the dispatch, as above. I think it will be worth it to rename all with the quad numbers. It may also be helpful to list the n errors, but that slows down the process.  
 
 ### 7. Repeat steps 5-6 for all quadrats.
 
