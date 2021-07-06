@@ -1,4 +1,4 @@
-# Data tests for SCBI mortality
+# Data tests for mortality census
 
 ## Table of tests 
 
