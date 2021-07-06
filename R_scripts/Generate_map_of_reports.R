@@ -51,3 +51,5 @@ plot(quadrats[quadrats$PLOT %in%  intersect(quadrats_with_warnings, quadrats_wit
 legend("bottomleft", fill = c("grey", "yellow", "orange", "red"), legend = c("done", "warning pending", "error pending", "warning & error pending"), bty = "n")
 
 dev.off()
+
+file.copy(from = filename, to = paste0(gsub("reports/map_of_error_and_warnings.png", "reports/sequence_of_maps/map_of_error_and_warnings_", filename), Sys.Date(), ".png"))
