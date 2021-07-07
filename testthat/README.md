@@ -13,7 +13,7 @@ No|level | category | applied to | test  | warning (W) or error (E) | coded | re
 7|tree | completion check | newly censused trees (A, AU, DS) |`percentage of crown living` is recorded | E | 2021 | Y | NA | core
 8|tree | consistency check | newly censused trees (A, AU, DS) | `percentage of crown living` ≤ `percentage of crown intact` | E | 2021 | initially | [issue 13](https://github.com/SCBI-ForestGEO/SCBImortality/issues/13)| core
 9|tree | consistency check | newly censused trees (DS or DC) | `percentage of crown living` = 0 | E | 2021 | Y | NA| core
-10|tree | consistency check | newly censused trees (alive) | no FAD is selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected | E | 2021 | Y | NA| core
+10|tree | consistency check | newly censused trees (alive) | no FAD is selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected | E | 2021 | sometimes | if `percentage of crown living`>0, change status to AU; otherwise requires field check (to determine DS vs DC) | core
 11|tree | consistency check | newly censused trees (AU) | DWR (dead with resprouts) not selected |E |  2021 | initially | ---| core
 12|tree | completion check | newly censused trees (dead) | DBH measured | E | 2021 | Y | NA | core
 13|tree | consistency check - with previous | newly censused trees (dead) | `DBH` within 2cm of most recent census DBH | W | 2021 | Y | NA| SCBI
