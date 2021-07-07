@@ -9,8 +9,7 @@
 "DBH_dead_suspicious",NA,"5edeb5b2-533f-42f8-a0f8-102fbee1abfd","208","20602","1","qual","27.8","151.8","343","A","1.3","DS","False","3","CD",377,0,0,NA,"0","B",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious",NA,"86aa55ae-90e3-4666-b70e-8cd326938316","210","20661","1","qual","33.2","193.60001","724","AU","1.3","DS","False","3","CD",883,100,0,NA,"0","DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious","JJ","94a959c0-cb73-4a5b-82d9-94dec634afa9","213","20739","1","caca","11.2","2.8","111","DS","1.2","DS","False","1","S",70,0,0,NA,"0","U,F,R,DF,B","2",NA,"2",NA,NA,NA,NA,NA,NA
-"DBH_dead_suspicious","JJ","f94d4491-37cd-46e1-8b18-80b40363e752","218","22056","1","tiam","15.6","5.8","378","AU","1.3","DS","False","2","CD",340,40,0,NA,"0","U",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"DBH_dead_suspicious","JJ","99ed197c-77e2-4b19-be33-ce4a20828187","222","22207","1","fram","10.8","14.5","345","AU","1.3","DS","False",NA,"CD",308,55,0,NA,"0","I,R,F",NA,NA,"1",NA,"5","0","DE",4,NA
+"DBH_dead_suspicious","JJ,BC","f94d4491-37cd-46e1-8b18-80b40363e752","218","22056","1","tiam","15.6","5.8","378","AU","1.3","DS","False","2","CD",340,40,0,NA,"0","U",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious","BC","fb7cba12-89a3-4c7e-bafa-c1587821184f","226","22333","1","fram","5.5","2.7","430","A","1.3","DS","False","3","CD",640,90,0,NA,"0","I",NA,NA,"2",NA,"5","0","SS,W,AS,VB,DE",10,NA
 "DBH_dead_suspicious","BC","053eeaa2-d8f0-4efd-affe-c5a4eae22477","424","42248","1","quve","0.5","2.5","794","AU","1.3","DS","False","3","CD",815,60,0,NA,"0","DF",NA,NA,"2",NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious","BC","e9c39561-4e0e-42c7-a952-6e40321ad6aa","501","50047","1","litu","16.9","13.7","682","A","1.3","DS","False","4","D",720,100,0,NA,"0","DF",NA,NA,"1",NA,NA,NA,NA,NA,NA
