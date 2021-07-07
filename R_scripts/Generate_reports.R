@@ -111,7 +111,12 @@ if(length(tag_stem_with_error) > 0) {
 # check that all censused trees have a crown position recorded ####
 error_name <- "missing_crown_position"
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Crown position')]
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Crown position') & idx_trees]
 
 if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], error_name))
 
@@ -121,7 +126,11 @@ if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(requir
 error_name <- "missing_percent_crown_intact"
 
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Percentage of crown intact')]
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Percentage of crown intact') & idx_trees]
 
 
 if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], error_name))
@@ -130,7 +139,12 @@ if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(requir
 # check that all censused trees have a percent of crown living recorded ####
 error_name <- "missing_percent_crown_living"
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Percentage of crown living')]
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[is.na(mort$'Percentage of crown living') & idx_trees]
 
 
 if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ] , error_name))
@@ -140,7 +154,11 @@ if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(requir
 error_name <- "crown_living_greater_than_crown_intact"
 
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[!is.na(mort$'Percentage of crown living') & !is.na(mort$'Percentage of crown intact') & mort$'Percentage of crown living' > mort$'Percentage of crown intact']
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[!is.na(mort$'Percentage of crown living') & !is.na(mort$'Percentage of crown intact') & mort$'Percentage of crown living' > mort$'Percentage of crown intact' & idx_trees]
 
 
 if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ] , error_name))
