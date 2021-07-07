@@ -8,10 +8,10 @@ No|level | category | applied to | test  | warning (W) or error (E) | coded | re
 2|plot | census progress | all stems in census | list or map of quadrats completed, with additional category for censused with fixes pending | NA |  2021 | NA | NA | core 
 3|quadrat | completion check | newly censused quadrats | all trees censused |  E | 2021 | Y | NA | core
 4|quadrat  | consistency check | newly censused quadrats | no trees are duplicated |   W | 2021 | N | use latest record | core
-5|tree | completion check | newly censused trees (all) | `crown position` is recorded | E | 2021 | Y | NA | core
-6|tree | completion check | newly censused trees (all) |`percentage of crown intact` is recorded | E | 2021 | Y | NA | core
-7|tree | completion check | newly censused trees (all) |`percentage of crown living` is recorded | E | 2021 | Y | NA | core
-8|tree | consistency check | newly censused trees (all) | `percentage of crown living` ≤ `percentage of crown intact` | E | 2021 | initially | [issue 13](https://github.com/SCBI-ForestGEO/SCBImortality/issues/13)| core
+5|tree | completion check | newly censused trees (A, AU, DS) | `crown position` is recorded | E | 2021 | Y | NA | core
+6|tree | completion check | newly censused trees (A, AU, DS) |`percentage of crown intact` is recorded | E | 2021 | Y | NA | core
+7|tree | completion check | newly censused trees (A, AU, DS) |`percentage of crown living` is recorded | E | 2021 | Y | NA | core
+8|tree | consistency check | newly censused trees (A, AU, DS) | `percentage of crown living` ≤ `percentage of crown intact` | E | 2021 | initially | [issue 13](https://github.com/SCBI-ForestGEO/SCBImortality/issues/13)| core
 9|tree | consistency check | newly censused trees (DS or DC) | `percentage of crown living` = 0 | E | 2021 | Y | NA| core
 10|tree | consistency check | newly censused trees (alive) | no FAD is selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected | E | 2021 | Y | NA| core
 11|tree | consistency check | newly censused trees (AU) | DWR (dead with resprouts) not selected |E |  2021 | initially | ---| core
