@@ -428,10 +428,12 @@ error_name <- "missing_EAB_info"
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
-idx_missing_EAB_info <- !complete.cases(mort[, c("Crown thinning", "Epicormic growth", "D-shaped exit hole count", "Crown position < 10 cm DBH") ])
+idx_missing_EAB_info <- !complete.cases(mort[, c("Crown thinning", "Epicormic growth", "D-shaped exit hole count") ])
+idx_missing_crwn_pos <- !complete.cases(mort[, c("Crown position < 10 cm DBH")])
+idx_trees_less_10cm <-  !is.na( as.numeric(mort$DBH)) & as.numeric(mort$DBH) <100
+                                        
 
-
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_missing_EAB_info ]
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[(idx_trees & idx_missing_EAB_info) |  (idx_trees & idx_missing_crwn_pos & idx_trees_less_10cm)]
 
 
 if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], error_name))
