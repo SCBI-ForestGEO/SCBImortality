@@ -35,10 +35,10 @@ warning_messages <- c("unhealthy_but_wrong_status" = "There are living tress tha
 # check if files exist and generate a plot with the warning ####
 
 all_will_be_fixed <- NULL
-if(exists("will_auto_fix_error_file")) all_will_be_fixed <- warning_messages[unique(will_auto_fix_error_file$error_name)]
+if(file.exists(will_auto_fix_error_filepath)) all_will_be_fixed <- warning_messages[unique(will_auto_fix_error_file$error_name)]
 
 all_warns <- NULL
-if(exists("warning_file")) all_warns <- warning_messages[unique(warning_file$warning_name)]
+if(file.exists(warning_filepath)) all_warns <- warning_messages[unique(warning_file$warning_name)]
 
 
 filename <- file.path(here("testthat"), "reports/warnings.png")
