@@ -52,6 +52,15 @@ mort <- mort[!is.na(mort$Quad), ] # fix empty lines
 mort <- mort[, unique(names(mort))]
 
 
+# give a % completion status ####
+percent_completion <- round(sum(paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag)) / nrow(main_census) * 100)
+
+png(file.path(here("testthat"), "reports/percent_completion.png"), width = 1, height = 1, units = "in", res = 150)
+par(mar = c(0,0,0,0))
+plot(0,0, axes = F, xlab = "", ylab = "", type = "n")
+text(0,0, paste(percent_completion, "%"))
+dev.off()
+# write.table(percent_completion, file = file.path(here("testthat"), "reports/percent_completion.txt"),  col.names = F, row.names = F)
 
 
 # --- PERFORM CHECKS ---- ####
@@ -60,13 +69,6 @@ mort <- mort[, unique(names(mort))]
 require_field_fix_error_file <- NULL
 will_auto_fix_error_file <- NULL
 warning_file <- NULL
-
-# check if all species exist in species table, if not save a file, if yes, delete that file ####
-error_name <- "species_code_error"
-
-idx_error <- !mort$Species %in% spptable$sp
-
-require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_error,], error_name))
 
 
 # for each quadrat censused, check all expected trees were censused ####
@@ -86,6 +88,24 @@ if(length(tag_stem_with_error) > 0) {
 } else {
   if(file.exists(filename) ) file.remove(filename)
 }
+
+
+
+# remove any tree with current status DN as we don't need to check errors on those ####
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- !mort[, status_column] %in% c("DN")
+
+mort <- mort[idx_trees, ]
+
+
+# check if all species exist in species table, if not save a file, if yes, delete that file ####
+error_name <- "species_code_error"
+
+idx_error <- !mort$Species %in% spptable$sp
+
+require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_error,], error_name))
+
 
 
 
@@ -558,17 +578,6 @@ tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_crown & idx
 
 
 if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], error_name))
-
-
-# give a % completion status ####
-percent_completion <- round(sum(paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag)) / nrow(main_census) * 100)
-
-png(file.path(here("testthat"), "reports/percent_completion.png"), width = 1, height = 1, units = "in", res = 150)
-par(mar = c(0,0,0,0))
-plot(0,0, axes = F, xlab = "", ylab = "", type = "n")
-text(0,0, paste(percent_completion, "%"))
-dev.off()
-# write.table(percent_completion, file = file.path(here("testthat"), "reports/percent_completion.txt"),  col.names = F, row.names = F)
 
 
 
