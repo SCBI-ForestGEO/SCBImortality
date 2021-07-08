@@ -224,12 +224,14 @@ if(length(tag_stem_with_error) > 0) if(length(tag_stem_with_error) > 0) require_
 error_name <- "status_DS_or_DC_but_DBH_measured"
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
+previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
 
 idx_trees <- mort[, status_column] %in% c("DS", "DC")
+idx_previously_dead <- !mort[,previous_status_column] %in% c("AU","A") & !is.na(mort[,previous_status_column])
 idx_no_DBH_if_dead <- is.na(mort$'Dead DBH')
 
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_no_DBH_if_dead]
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[idx_trees & idx_no_DBH_if_dead & !idx_previously_dead]
 
 
 if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], error_name))
@@ -431,9 +433,18 @@ idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
 idx_missing_EAB_info <- !complete.cases(mort[, c("Crown thinning", "Epicormic growth", "D-shaped exit hole count") ])
 idx_missing_crwn_pos <- !complete.cases(mort[, c("Crown position < 10 cm DBH")])
 idx_trees_less_10cm <-  !is.na( as.numeric(mort$DBH)) & as.numeric(mort$DBH) <100
-                                        
+     
 
-tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[(idx_trees & idx_missing_EAB_info) |  (idx_trees & idx_missing_crwn_pos & idx_trees_less_10cm)]
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+idx_status <- !mort[, status_column] %in% c("DN")
+
+
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[((idx_trees & idx_missing_EAB_info) |  (idx_trees & idx_missing_crwn_pos & idx_trees_less_10cm)) & idx_status]
+
+
+
 
 
 if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ], error_name))
