@@ -332,7 +332,6 @@
 "unhealthy_but_wrong_status","BC","892555ab-a021-4623-907d-3947bd662498","624","62261","1","litu","4.7","4.9","157","PD","1.3","PD","False","1",NA,NA,NA,0,NA,"0","CR,R",NA,NA,"3",NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","892555ab-a021-4623-907d-3947bd662498","624","62266","1","cagl","2.1","4.7","101","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","CR",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","892555ab-a021-4623-907d-3947bd662498","624","62267","1","cagl","18","5.2","244","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","R",NA,NA,"3",NA,NA,NA,NA,NA,NA
-"unhealthy_but_wrong_status","BC","892555ab-a021-4623-907d-3947bd662498","624","62267","1","cagl","18","5.2","244","PD","1.3","DN","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","892555ab-a021-4623-907d-3947bd662498","624","62275","1","cagl","17.6","13.9","430","A","1.3","AU","False","3",NA,NA,100,95,NA,"0","R","2",NA,"2",NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","89ca277a-7e1b-4e77-a200-be4609d8dc27","627","62342","1","litu","13.3","11.4","161","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","DF,R",NA,NA,"3",NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","89ca277a-7e1b-4e77-a200-be4609d8dc27","627","62348","1","cagl","14.9","19.8","236","DS","1.3","PD","False","1",NA,NA,70,0,NA,"0","DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
