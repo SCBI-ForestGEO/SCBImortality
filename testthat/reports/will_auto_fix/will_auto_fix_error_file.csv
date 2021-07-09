@@ -133,6 +133,9 @@
 "unhealthy_but_wrong_status","BC","f678ad22-f3c4-4b7f-9b19-1b043229994e","1427","142586","1","fram","1.2","16.5","70","DS","1.3","PD","False","1",NA,NA,0,0,NA,"0","I",NA,NA,NA,NA,"5","0","W,DE,VB",1,"S"
 "unhealthy_but_wrong_status","BC","f678ad22-f3c4-4b7f-9b19-1b043229994e","1427","142605","1","qupr","18.4","7","535","PD","1.3","PD","False","3",NA,NA,30,0,NA,"0","DF,R",NA,NA,"2",NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","d73bc09c-5186-43bd-9f59-6fbc252c58b5","1430","142718","1","fram","8.7","7.6","165","DS","1.3","PD","False","2",NA,NA,20,0,NA,"0","I",NA,NA,NA,NA,"5","0","W,AS,VB,DE",1,NA
+"unhealthy_but_wrong_status","BC","4f6b740e-2dcc-474a-bb66-91841af40cef","1506","150798","2","nysy","5","0.3","NA","NA","1.3","PD","False","1",NA,NA,0,0,NA,"0","UP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","4f6b740e-2dcc-474a-bb66-91841af40cef","1506","150798","3","nysy","5","0.3","NA","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","UP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","4f6b740e-2dcc-474a-bb66-91841af40cef","1506","150798","3","nysy","5","0.3","NA","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","UP",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","0af6ccca-bc07-4959-be42-5584e99b53ee","1513","151163","1","frni","17.1","16.1","212","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","I","3",NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","0af6ccca-bc07-4959-be42-5584e99b53ee","1513","151163","1","frni","17.1","16.1","212","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","I","3",NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","eebbac48-dcf8-442d-a3d1-55610d5042c2","1514","151168","2","prav","10.5","2.6","153","A","1.3","AU","False","2",NA,NA,80,75,NA,"0","B,R","2",NA,"1",NA,NA,NA,NA,NA,NA
@@ -182,7 +185,11 @@
 "wounded_level_but_wrong_status_or_FAD","JJ,BC","386a30ff-1591-4d81-abba-87309dc19683","219","22095","1","nysy","13.3","2.2","298","DS","1.3","DS","False","1","I",298,0,0,NA,NA,"U,B,R","3",NA,"3",NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","JJ,BC","4551c318-1b6e-46e0-b288-af9962c2b64e","220","22132","1","juni","14.1","18.9","191","PD","1.3","PD","False","3",NA,NA,10,0,NA,"0","U,R,I",NA,NA,"2",NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","JJ,BC","9d5d6d84-f774-483e-a333-803b1e8d4779","221","22154","1","frni","18.5","9.7","114","PD","1.3","PD","False","2",NA,NA,25,0,NA,"0","U,I,R",NA,NA,NA,NA,"5","0","DE,VB,W,SS",4,"S"
-"unhealthy_but_wrong_status","BC","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22245","1","fram","9.7","13.4","78","PD","1.3","PD","False","1",NA,NA,0,0,NA,NA,"I",NA,NA,NA,NA,"5","0","VB,W,DE",6,"S"
+"unhealthy_but_wrong_status","BC,JJ","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22220","1","fram","9.1","5.4","66","DS","1.3","PD","False","2",NA,NA,0,0,NA,"0","I",NA,NA,NA,NA,"5","0","DE",2,"I"
+"unhealthy_but_wrong_status","JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab","223","22220","1","fram","9.1","5.4","66","DS","1.3","DS","False","2","S",NA,NA,0,NA,"0","I",NA,NA,NA,NA,"5","0","DE",2,"S"
+"unhealthy_but_wrong_status","BC,JJ","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22236","1","fram","13.5","8","101","DS","1.3","PD","False","1",NA,NA,40,0,NA,"0","I",NA,NA,NA,NA,"5","0","DE",1,"S"
+"unhealthy_but_wrong_status","JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab","223","22236","1","fram","13.5","8","101","DS","1.3","DS","False","1","S",NA,40,0,NA,"0","I",NA,NA,NA,NA,"5","0","DE",1,"S"
+"unhealthy_but_wrong_status","BC,JJ","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22245","1","fram","9.7","13.4","78","PD","1.3","PD","False","1",NA,NA,0,0,NA,NA,"I",NA,NA,NA,NA,"5","0","VB,W,DE",6,"S"
 "wounded_level_but_wrong_status_or_FAD","BC","04643821-6b78-45ab-8496-31bd59b473ee","225","22323","1","cato","6.7","6.7","108","A","1.3","AU","False","3",NA,NA,50,50,NA,"2","B","2",NA,NA,NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","fb7cba12-89a3-4c7e-bafa-c1587821184f","226","22331","1","caca","3.6","0.5","105","A","1.3","PD","False","3",NA,NA,0,0,NA,"0","UP","3",NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","fb7cba12-89a3-4c7e-bafa-c1587821184f","226","22331","1","caca","3.6","0.5","105","A","1.3","PD","False","3",NA,NA,0,0,NA,"0","UP","3",NA,NA,NA,NA,NA,NA,NA,NA
@@ -196,10 +203,9 @@
 "wounded_level_but_wrong_status_or_FAD","BC","ed220a57-a506-40d5-b502-ea2c530a0b83","301","30001","1","fram","1","1.7","503","PD","1.3","PD","False","3",NA,NA,0,0,NA,"0","I","3",NA,NA,NA,"5","0","VB,W,DE",2,NA
 "unhealthy_but_wrong_status","BC","079f6a8f-635d-4a3a-85ce-8a215ef2a753","302","30039","1","fram","4.6","2.7","926","PD","1.3","PD","False","3",NA,NA,0,0,NA,NA,"I",NA,NA,NA,NA,"5","0","VB,W,DE",15,NA
 "wounded_level_but_wrong_status_or_FAD","BC","079f6a8f-635d-4a3a-85ce-8a215ef2a753","302","30049","1","caca","9.6","7.6","130","A","1.3","AU","False","1",NA,NA,100,90,NA,"0","CR","1",NA,NA,NA,NA,NA,NA,NA,NA
-"unhealthy_but_wrong_status","BC","079f6a8f-635d-4a3a-85ce-8a215ef2a753","302","30145","1","frni","11.5","16.3","174","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","I","3",NA,NA,NA,"5",NA,"VB,W",NA,NA
-"wounded_level_but_wrong_status_or_FAD","BC","079f6a8f-635d-4a3a-85ce-8a215ef2a753","302","30145","1","frni","11.5","16.3","174","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","I","3",NA,NA,NA,"5",NA,"VB,W",NA,NA
-"unhealthy_but_wrong_status","BC","e3ef3f97-177c-4277-aa73-cd0150c920d8","303","30151","1","fram","17.4","2.7","716","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","I",NA,NA,NA,NA,"5","0","W,AS",NA,NA
-"wounded_level_but_wrong_status_or_FAD","BC","e3ef3f97-177c-4277-aa73-cd0150c920d8","303","30163","1","caco","8.1","12.4","165","AU","1.3","AU","False","1",NA,NA,80,50,NA,"0",NA,"1",NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","079f6a8f-635d-4a3a-85ce-8a215ef2a753","302","30145","1","frni","11.5","16.3","174","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","I","3",NA,NA,NA,"5","0","VB,W",0,NA
+"wounded_level_but_wrong_status_or_FAD","BC","079f6a8f-635d-4a3a-85ce-8a215ef2a753","302","30145","1","frni","11.5","16.3","174","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","I","3",NA,NA,NA,"5","0","VB,W",0,NA
+"unhealthy_but_wrong_status","BC","e3ef3f97-177c-4277-aa73-cd0150c920d8","303","30151","1","fram","17.4","2.7","716","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","I",NA,NA,NA,NA,"5","0","W,AS",0,NA
 "unhealthy_but_wrong_status","BC","062a6e5f-5e91-4807-b9f4-d1ef2b73e4c1","304","30070","1","juni","0.3","3.3","431","AU","1.3","PD","False",NA,NA,NA,0,0,NA,"0","B","3",NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","062a6e5f-5e91-4807-b9f4-d1ef2b73e4c1","304","30070","1","juni","0.3","3.3","431","AU","1.3","PD","False",NA,NA,NA,0,0,NA,"0","B","3",NA,NA,NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","062a6e5f-5e91-4807-b9f4-d1ef2b73e4c1","304","30072","1","fram","4.2","2.4","140","AU","1.3","PD","False","2",NA,NA,0,0,NA,"0","I","3",NA,NA,NA,"5","0","W,AS,VB",NA,NA
@@ -212,13 +218,11 @@
 "wounded_level_but_wrong_status_or_FAD","BC","fe61b6c1-f88b-4d3a-bb52-4f950af50964","309","30388","1","caca","17.3","5.7","182","AU","1.3","DC","False","1","S",186,0,0,NA,"0","L","3",NA,"3",NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","7f8b9888-cca5-49c5-aa58-8e03502708cb","313","30448","1","acru","11.9","5.5","363","A","1.3","AU","False","1",NA,NA,80,75,NA,"0","B","1",NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","7f8b9888-cca5-49c5-aa58-8e03502708cb","313","30453","1","acru","17.9","12.8","142","A","1.3","DS","False","1","S",150,0,0,NA,"0","CR","3",NA,"2",NA,NA,NA,NA,NA,NA
-"unhealthy_but_wrong_status","BC","383cf176-def4-42a1-a4fd-67571bfa51f9","314","30468","1","frni","13.4","0.3","158","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","B,R",NA,NA,NA,NA,"5","0","VB,W",NA,NA
+"unhealthy_but_wrong_status","BC","383cf176-def4-42a1-a4fd-67571bfa51f9","314","30468","1","frni","13.4","0.3","158","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","B,R",NA,NA,NA,NA,"5","0","VB,W",0,NA
 "unhealthy_but_wrong_status","BC","cf590ecf-1125-4729-ad34-b5712bc66214","315","30601","1","cagl","12.6","13.3","104","PD","1.3","PD","False","1",NA,NA,20,NA,0,"0","R,B",NA,NA,"3",NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","cf590ecf-1125-4729-ad34-b5712bc66214","315","30603","1","nysy","19.6","16.9","119","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","B,R,DF","3",NA,"3",NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","cf590ecf-1125-4729-ad34-b5712bc66214","315","30603","1","nysy","19.6","16.9","119","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","B,R,DF","3",NA,"3",NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","3ed529d7-acaa-47a1-a3e3-b9bc737f92fe","316","30574","1","cato","11.7","8.3","131","A","1.3","AU","False","2",NA,NA,50,50,NA,"0","B","2",NA,NA,NA,NA,NA,NA,NA,NA
-"unhealthy_but_wrong_status","BC","cc651402-1f66-4ca1-8ecb-3c8fd9a717e1","317","32002","1","quve","7.4","0.3","390","A","1.3","A","False","1",NA,NA,80,80,NA,"0",NA,"1",NA,NA,NA,NA,NA,NA,NA,NA
-"wounded_level_but_wrong_status_or_FAD","BC","cc651402-1f66-4ca1-8ecb-3c8fd9a717e1","317","32002","1","quve","7.4","0.3","390","A","1.3","A","False","1",NA,NA,80,80,NA,"0",NA,"1",NA,NA,NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","787757b2-c575-45a9-8311-637acd9002c3","319","32077","2","acru","11.2","3.4","128","DC","1.3","PD","False","1",NA,NA,0,0,90,"0","UP",NA,NA,"3",NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","787757b2-c575-45a9-8311-637acd9002c3","319","32081","1","frni","10.9","10.5","255","DS","1.3","PD","False","1",NA,NA,20,0,NA,"0","I",NA,NA,NA,NA,"5","0","W,VB,DE",3,NA
 "wounded_level_but_wrong_status_or_FAD","BC","787757b2-c575-45a9-8311-637acd9002c3","319","32087","1","caca","2","20","108","AU","1.3","AU","False","1",NA,NA,100,100,NA,"0","CR","1",NA,NA,NA,NA,NA,NA,NA,NA
@@ -229,8 +233,6 @@
 "wounded_level_but_wrong_status_or_FAD","BC","6db3fd49-520f-4813-8077-2d064fb77d97","322","32177","1","quve","19.2","16.2","631","PD","1.3","PD","False","4",NA,NA,0,0,NA,"0","R,W","3",NA,"3",NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","0db2a088-e9ad-4cba-9740-303e97431c7a","324","32281","1","litu","16.8","17.7","271","DS","1.3","PD","False","1",NA,NA,0,0,NA,"0","B","3",NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","0db2a088-e9ad-4cba-9740-303e97431c7a","324","32281","1","litu","16.8","17.7","271","DS","1.3","PD","False","1",NA,NA,0,0,NA,"0","B","3",NA,NA,NA,NA,NA,NA,NA,NA
-"unhealthy_but_wrong_status","BC","af735d25-e193-4e56-ad6a-f8d6af726b73","327","32381","1","qupr","4.6","12.8","872","A","1.3","A","False","3",NA,NA,80,80,NA,"0",NA,"1",NA,NA,NA,NA,NA,NA,NA,NA
-"wounded_level_but_wrong_status_or_FAD","BC","af735d25-e193-4e56-ad6a-f8d6af726b73","327","32381","1","qupr","4.6","12.8","872","A","1.3","A","False","3",NA,NA,80,80,NA,"0",NA,"1",NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","7dbae089-0511-431f-b08c-e81c3ee25d95","328","32396","1","quru","20","8.3","606","A","1.3","AU","False","3",NA,NA,80,70,NA,"0","U","1",NA,NA,"epicormic branches",NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","7dbae089-0511-431f-b08c-e81c3ee25d95","328","32398","1","litu","15.7","9.9","132","DS","1.3","PD","False","1",NA,NA,0,0,NA,"0","DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","9902b4d6-f9ff-468a-aaa5-2bb25a33b31c","330","32486","1","caovl","3","14.2","514","PD","1.3","PD","False","3",NA,NA,30,0,NA,"0","R",NA,NA,"3",NA,NA,NA,NA,NA,NA
@@ -243,6 +245,7 @@
 "unhealthy_but_wrong_status","BC","6495a27a-95b3-4007-a6ba-2b9f43b2af13","403","40131","1","fram","5.2","1","635","DS","1.3","PD","False","4",NA,NA,40,0,NA,"0","I",NA,NA,NA,NA,"5","0","VB,W,DE",3,NA
 "unhealthy_but_wrong_status","BC","9bd247b3-16f2-479b-90dc-446446db62f8","409","40599","1","ceca","0.9","5.9","131","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","UP","3",NA,"3",NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","BC","9bd247b3-16f2-479b-90dc-446446db62f8","409","40599","1","ceca","0.9","5.9","131","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","UP","3",NA,"3",NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","a7eaae26-f7ec-46c3-a6a4-34f5b10c413e","411","40853","1","fram","14.5","19","NA","A","1.3","PD","False","1",NA,NA,20,0,NA,"0","I",NA,NA,NA,NA,"5","0","W,DE,VB",1,NA
 "unhealthy_but_wrong_status","BC","a7eaae26-f7ec-46c3-a6a4-34f5b10c413e","411","40853","2","fram","14.5","19","302","PD","1.3","PD","False","3",NA,NA,0,0,NA,"0","B,I,R","3",NA,"3",NA,"5","0","AS,VB,W,DE",7,NA
 "wounded_level_but_wrong_status_or_FAD","BC","a7eaae26-f7ec-46c3-a6a4-34f5b10c413e","411","40853","2","fram","14.5","19","302","PD","1.3","PD","False","3",NA,NA,0,0,NA,"0","B,I,R","3",NA,"3",NA,"5","0","AS,VB,W,DE",7,NA
 "unhealthy_but_wrong_status","BC","a9467770-d757-4bac-9ba3-2776fdadc6d4","413","40888","1","fram","14.2","3","163","DS","1.3","PD","False","1",NA,NA,50,0,NA,"0","I",NA,NA,NA,NA,"5","0","W,VB",NA,NA

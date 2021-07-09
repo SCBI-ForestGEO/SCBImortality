@@ -1,4 +1,10 @@
 "SurveyorID","Submission Id","Quad","Tag","StemTag","Species","QX","QY","DBH","Status 2020","HOM","Status 2021","DWR","Crown position","Dead crown position","Dead DBH","Percentage of crown intact","Percentage of crown living","Lean angle if greater than 15 degrees","Lianas","FAD","Wounded main stem","Canker; swelling, deformity","Rotting trunk","Notes 2021","Crown thinning","Epicormic growth","EABF","D-shaped exit hole count","Crown position < 10 cm DBH"
+"JJ","fca9f86d-3400-486e-ab4c-a35e98409278","810","80619","1","cato","11.8","17.7","328","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"JJ","fca9f86d-3400-486e-ab4c-a35e98409278","810","80619","1","cato","11.8","17.7","328","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"JJ","12005e7a-8048-4eb7-94bc-6b2a425e48c9","811","80639","1","litu","3.9","14.8","178","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"JJ","12005e7a-8048-4eb7-94bc-6b2a425e48c9","811","80639","1","litu","3.9","14.8","178","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"BC","4f6b740e-2dcc-474a-bb66-91841af40cef","1506","150798","3","nysy","5","0.3","NA","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","UP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"BC","4f6b740e-2dcc-474a-bb66-91841af40cef","1506","150798","3","nysy","5","0.3","NA","PD","1.3","PD","False","1",NA,NA,0,0,NA,"0","UP",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","0d3458c9-3298-49b6-afc3-2f0f870e45ce","1432","142661","1","litu","19.1","14.1","741","A","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","0d3458c9-3298-49b6-afc3-2f0f870e45ce","1432","142661","1","litu","19.1","14.1","741","A","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "JJ","33d32bdf-9867-4804-a107-cbe52280d9e5","1414","140881","1","fram","7.2","13.3","630","A","1.3","AU","False","4",NA,NA,30,15,NA,"0","I",NA,NA,NA,NA,"4","2","DE",3,NA
@@ -7,10 +13,21 @@
 "JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794","1419","142082","1","fram","16.5","3.3","507","AU","1.3","DS","False",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
 "JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794","1419","142206","1","fram","18.5","16.5","876","DS","1.3","DS","False","3","CD",866,75,0,NA,"0","I,DF",NA,NA,NA,NA,"5","0","DE",1,NA
 "JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794","1419","142206","1","fram","18.5","16.5","876","DS","1.3","DS","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
+"BC","cf590ecf-1125-4729-ad34-b5712bc66214","315","30552","1","cagl","8.3","5.8","120","A","1.3","A","False","1",NA,NA,90,80,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"BC","cf590ecf-1125-4729-ad34-b5712bc66214","315","30552","1","cagl","8.3","5.8","120","A","1.3","A","False","1",NA,NA,90,90,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"BC","af735d25-e193-4e56-ad6a-f8d6af726b73","327","32367","1","cato","10.9","10.4","165","A","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"BC","af735d25-e193-4e56-ad6a-f8d6af726b73","327","32367","1","cato","10.9","10.4","165","A","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","a22ec385-637f-4984-8536-c362590280ee","124","12244","1","fram","19.7","11.1","625","AU","1.3","DS","True","4","D",625,100,0,NA,"0","I",NA,NA,NA,NA,"5","0","W,SS",NA,NA
 "BC","a22ec385-637f-4984-8536-c362590280ee","124","12244","1","fram","19.7","11.1","625","AU","1.3","DS","False","4","D",625,100,0,NA,"0","I",NA,NA,NA,NA,"5","0","SS,W",NA,NA
 "BC","21528247-2d0a-484e-b89e-a70f34f364ec","125","12274","1","fram","11.1","19","382","A","1.3","AU","False","3",NA,NA,100,2,NA,"0","I",NA,NA,NA,NA,"5","4","W,DE",4,NA
 "BC","21528247-2d0a-484e-b89e-a70f34f364ec","125","12274","1","fram","11.1","19","382","A","1.3","AU","False","3",NA,NA,50,20,NA,"0","I",NA,NA,NA,NA,"5","3","W",NA,NA
+"BC,JJ","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22219","1","caca","6.2","0.9","116","A","1.3","A","False","1",NA,NA,80,80,26,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"BC,JJ","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22220","1","fram","9.1","5.4","66","DS","1.3","PD","False","2",NA,NA,0,0,NA,"0","I",NA,NA,NA,NA,"5","0","DE",2,"I"
+"BC,JJ","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22221","1","fram","7.5","6.8","196","A","1.3","AU","False","2",NA,NA,70,20,NA,"0","I",NA,NA,NA,NA,"4","1","DE,W",2,NA
+"BC,JJ","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22223","1","frpe","4.5","7.3","72","A","1.3","AU","False","3",NA,NA,80,75,NA,"1","I",NA,NA,NA,NA,"3","0","DE",4,"CD"
+"BC,JJ","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22227","1","tiam","17.7","0.7","216","A","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"BC,JJ","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22236","1","fram","13.5","8","101","DS","1.3","PD","False","1",NA,NA,40,0,NA,"0","I",NA,NA,NA,NA,"5","0","DE",1,"S"
+"BC,JJ","f19f0501-a0c2-43b1-b329-7ef4e10031b4","223","22239","1","caca","11.5","3.3","168","A","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","a34d9719-c61b-446c-bedc-763d78194ff7","232","22624","1","litu","1","5.4","306","A","1.3","A","False","4",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","a34d9719-c61b-446c-bedc-763d78194ff7","232","22624","1","litu","1","5.4","306","A","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,"missing tags",NA,NA,NA,NA,NA
 "BC","893c2c42-3c91-4e6a-ae2c-6dae7b8c9c2a","123","12229","1","fram","1.5","13.6","201","A","1.3","AU","False","1",NA,NA,100,50,NA,"0","I",NA,NA,NA,NA,"3","3","W",0,NA
@@ -85,12 +102,15 @@ NA,"8c1c62a8-285e-4eb4-a237-3aa5dcfa26b7","818","82058","1","qual","1.7","8.6","
 "BC","8feb52de-6aea-49ca-848a-22e5022edacb","415","40975","1","caco","3.2","10.9","328","A","1.3","A","False","1",NA,NA,95,90,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","b7768755-33f3-4fab-8003-32ca9490647e","401","40028","2","ploc","9.5","6.3","408","AU","1.3","AU","False","4",NA,NA,100,50,NA,"1",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","b7768755-33f3-4fab-8003-32ca9490647e","401","40028","2","ploc","9.5","6.3","408","AU","1.3","AU","False","4",NA,NA,100,40,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"BC","cf590ecf-1125-4729-ad34-b5712bc66214","315","30552","1","cagl","8.3","5.8","120","A","1.3","A","False","1",NA,NA,90,80,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"BC","cf590ecf-1125-4729-ad34-b5712bc66214","315","30552","1","cagl","8.3","5.8","120","A","1.3","A","False","1",NA,NA,90,90,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","cbd1fc9b-ce2b-4594-a248-47ada9964f0e","326","32346","1","cagl","11.4","12.7","133","A","1.3","A","False","1",NA,NA,95,85,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","cbd1fc9b-ce2b-4594-a248-47ada9964f0e","326","32346","1","cagl","11.4","12.7","133","A","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"BC","af735d25-e193-4e56-ad6a-f8d6af726b73","327","32367","1","cato","10.9","10.4","165","A","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"BC","af735d25-e193-4e56-ad6a-f8d6af726b73","327","32367","1","cato","10.9","10.4","165","A","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab","223","22219","1","caca","6.2","0.9","116","A","1.3","A","False","1",NA,NA,80,80,26,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab","223","22220","1","fram","9.1","5.4","66","DS","1.3","DS","False","2","S",NA,NA,0,NA,"0","I",NA,NA,NA,NA,"5","0","DE",2,"S"
+"JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab","223","22221","1","fram","7.5","6.8","196","A","1.3","AU","False","2",NA,NA,70,20,NA,"0","I",NA,NA,NA,NA,"4","1","W,DE",2,NA
+"JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab","223","22223","1","frpe","4.5","7.3","72","A","1.3","AU","False","3",NA,NA,80,75,NA,"1","I",NA,NA,NA,NA,"3","0","DE",NA,"I"
+"JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab","223","22227","1","tiam","17.7","0.7","216","A","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab","223","22236","1","fram","13.5","8","101","DS","1.3","DS","False","1","S",NA,40,0,NA,"0","I",NA,NA,NA,NA,"5","0","DE",1,"S"
+"JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab","223","22239","1","caca","11.5","3.3","168","A","1.3","A","False","1",NA,NA,100,100,28,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 NA,"c2ce5ce7-3e75-4bbc-8453-2fbcc076dfa2","207",NA,"1","fram","23.5","126.2","655","DS","1.3","PD","False","3",NA,NA,0,0,NA,"0","B,I",NA,NA,NA,NA,"5","0","AS,VB,W,DE",7,NA
 NA,"c2ce5ce7-3e75-4bbc-8453-2fbcc076dfa2","207","20581","1","caca","31.4","139.10001","189","A","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 NA,"c2ce5ce7-3e75-4bbc-8453-2fbcc076dfa2","207","20581","1","caca","31.4","139.10001","189","A","1.3","A","False","1",NA,NA,100,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

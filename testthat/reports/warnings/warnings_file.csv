@@ -5,6 +5,7 @@
 "DBH_dead_suspicious","BC","2cf581b7-c6c4-4a92-b458-e4f26e6e8199","1213","121421","1","quru","11.7","15.1","495","AU","1.3","DS","False","3","CD",520,80,0,NA,"0","DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious","TR","8cb62d4c-821c-4795-8386-53ef1cf0c3b8","1216","121358","1","fram","10.9","12","1061","A","1.3","DS","False","4","D",1040,80,0,NA,"0","I,F",NA,NA,NA,NA,"5","0","AS,DE,SS",45,"D"
 "Dead_but_now_alive","BC","fb2aa4bf-c6b4-4236-a0b7-47c528cdb149","1230","122555","1","fram","2.2","12.8","121","DS","1.3","AU","False",NA,NA,NA,100,50,NA,"0","I",NA,NA,NA,NA,"4","6","AS,W",NA,NA
+"Dead_but_now_alive","BC","4f6b740e-2dcc-474a-bb66-91841af40cef","1506","150913","1","acru","6.7","19.9","305","PD","1.3","A","False","3",NA,NA,100,95,NA,"0",NA,NA,NA,NA,"Not sure why it says PD; it’s a very healthy tree",NA,NA,NA,NA,NA
 "DBH_dead_suspicious","BC","609d4eef-1354-4067-855f-05c797d5bd8e","1518","152044","2","qupr","4.6","4.5","352","AU","1.3","DS","False","3","CD",420,50,0,45,"0","B","3",NA,"3",NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious",NA,"5edeb5b2-533f-42f8-a0f8-102fbee1abfd","208","20602","1","qual","27.8","151.8","343","A","1.3","DS","False","3","CD",377,0,0,NA,"0","B",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious",NA,"86aa55ae-90e3-4666-b70e-8cd326938316","210","20661","1","qual","33.2","193.60001","724","AU","1.3","DS","False","3","CD",883,100,0,NA,"0","DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -13,4 +14,46 @@
 "DBH_dead_suspicious","BC","fb7cba12-89a3-4c7e-bafa-c1587821184f","226","22333","1","fram","5.5","2.7","430","A","1.3","DS","False","3","CD",640,90,0,NA,"0","I",NA,NA,"2",NA,"5","0","SS,W,AS,VB,DE",10,NA
 "DBH_dead_suspicious","BC","053eeaa2-d8f0-4efd-affe-c5a4eae22477","424","42248","1","quve","0.5","2.5","794","AU","1.3","DS","False","3","CD",815,60,0,NA,"0","DF",NA,NA,"2",NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious","BC","e9c39561-4e0e-42c7-a952-6e40321ad6aa","501","50047","1","litu","16.9","13.7","682","A","1.3","DS","False","4","D",720,100,0,NA,"0","DF",NA,NA,"1",NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70382","1","quru","16.8","2.1","800","NA","1.3","A","False","4",NA,NA,100,100,NA,"1",NA,NA,NA,NA,"no tag",NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70387","1","litu","14.3","7.1","387","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70388","1","caovl","13.2","7.3","170","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70397","1","caca","19.3","15.1","115","NA","1.2","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70399","1","litu","18.8","8.9","429","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70403","1","cato","0.3","1.5","354","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70407","1","quru","6.1","5.4","747","NA","1.3","A","False","4",NA,NA,100,80,NA,"0",NA,NA,NA,NA,"no tag",NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70412","1","cagl","1.9","8.1","187","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70416","1","litu","2.9","16.7","379","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious","BC","88d20c97-03fe-4ae3-9a82-aabc53a0cb0f","721","72202","1","quve","17.5","10.7","574","AU","1.3","DS","False","4","D",602,90,0,NA,"0","DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","e9c28542-247b-4841-9b40-12dd5f53a0fe","809","80491","1","quru","5.2","17.7","1480","NA","1.3","A","False","4",NA,NA,90,90,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","e9c28542-247b-4841-9b40-12dd5f53a0fe","809","80494","1","cagl","1.3","18","104","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","e9c28542-247b-4841-9b40-12dd5f53a0fe","809","80503","1","caovl","12.7","17.9","261","NA","1.3","A","False",NA,NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","e9c28542-247b-4841-9b40-12dd5f53a0fe","809","80506","1","caca","14.7","10.2","104","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","e9c28542-247b-4841-9b40-12dd5f53a0fe","809","80513","1","cato","16.5","14.4","159","DS","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","fca9f86d-3400-486e-ab4c-a35e98409278","810","80608","1","cagl","0.8","10","182","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","fca9f86d-3400-486e-ab4c-a35e98409278","810","80609","1","cato","3.3","11","116","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","fca9f86d-3400-486e-ab4c-a35e98409278","810","80615","1","litu","4.4","16.8","685","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","fca9f86d-3400-486e-ab4c-a35e98409278","810","80619","1","cato","11.8","17.7","328","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","fca9f86d-3400-486e-ab4c-a35e98409278","810","80619","1","cato","11.8","17.7","328","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","fca9f86d-3400-486e-ab4c-a35e98409278","810","80624","1","litu","18.2","19.7","540","NA","1.3","A","False","4",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","fca9f86d-3400-486e-ab4c-a35e98409278","810","80703","1","cato","10.7","2.8","172","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","fca9f86d-3400-486e-ab4c-a35e98409278","810","80706","1","cato","13.4","1.4","197","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","12005e7a-8048-4eb7-94bc-6b2a425e48c9","811","80628","1","quve","7.5","3","560","NA","1.3","A","False","3",NA,NA,85,70,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","12005e7a-8048-4eb7-94bc-6b2a425e48c9","811","80631","1","litu","0.2","6.1","541","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","12005e7a-8048-4eb7-94bc-6b2a425e48c9","811","80639","1","litu","3.9","14.8","178","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","12005e7a-8048-4eb7-94bc-6b2a425e48c9","811","80639","1","litu","3.9","14.8","178","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","12005e7a-8048-4eb7-94bc-6b2a425e48c9","811","80640","1","caovl","0.7","14.4","585","PD","1.3","A","False","4",NA,NA,100,100,NA,"0",NA,NA,NA,NA,"not dead",NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","12005e7a-8048-4eb7-94bc-6b2a425e48c9","811","80644","1","cato","7","17.4","182","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","12005e7a-8048-4eb7-94bc-6b2a425e48c9","811","80730","1","caovl","19.7","12","181","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","e94c0343-6a17-48cc-9392-3eae94c3b042","812","80661","1","caca","3.1","13","NA","PD","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,"not dead",NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","e94c0343-6a17-48cc-9392-3eae94c3b042","812","80739","1","litu","17.5","1.6","145","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","e94c0343-6a17-48cc-9392-3eae94c3b042","812","80744","1","nysy","12.7","8.8","118","NA","1.2","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","e94c0343-6a17-48cc-9392-3eae94c3b042","812","80751","1","litu","11.5","15.2","136","PD","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,"not dead",NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","508c66d7-013c-4418-bc59-13387d4552f6","813","80520","1","cato","1.6","1.8","103","NA","1.2","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","508c66d7-013c-4418-bc59-13387d4552f6","813","80522","1","quve","10.2","1.5","343","NA","1.3","A","False","3",NA,NA,100,80,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","508c66d7-013c-4418-bc59-13387d4552f6","813","80523","1","cato","10.5","1.6","141","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","508c66d7-013c-4418-bc59-13387d4552f6","813","80532","1","cagl","7.4","5.6","209","PD","1.3","AU","False","1",NA,NA,80,80,NA,"0","U,W","1",NA,"1","not dead",NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","508c66d7-013c-4418-bc59-13387d4552f6","813","80534","1","cagl","5.1","4.5","243","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","508c66d7-013c-4418-bc59-13387d4552f6","813","80542","1","cagl","15.8","11.6","271","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","508c66d7-013c-4418-bc59-13387d4552f6","813","80545","1","caovl","16.8","15.3","140","PD","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","508c66d7-013c-4418-bc59-13387d4552f6","813","80548","1","cato","20","18.5","103","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","508c66d7-013c-4418-bc59-13387d4552f6","813","80555","1","cato","4.8","12.8","190","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
