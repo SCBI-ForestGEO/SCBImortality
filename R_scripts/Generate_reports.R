@@ -184,6 +184,20 @@ tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[!is.na(mort$'Percentage of 
 if(length(tag_stem_with_error) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ] , error_name))
 
 
+# check percent newly censused trees (DS or DC)	have percentage of crown living = 0####
+error_name <- "dead_but_crown_living_not_zero"
+
+
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+
+idx_trees <- mort[, status_column] %in% c("DS", "DC")
+
+tag_stem_with_error <- paste(mort$Tag, mort$StemTag)[!is.na(mort$'Percentage of crown living') & mort$'Percentage of crown living'> 0 &  idx_trees]
+
+
+if(length(tag_stem_with_error) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[paste(mort$Tag, mort$StemTag) %in% tag_stem_with_error, ] , error_name))
+
+
 # check that newly censused alive trees have no FAD selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected ####
 error_name <- "status_A_but_unhealthy"
 
