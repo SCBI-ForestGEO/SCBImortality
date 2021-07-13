@@ -476,3 +476,19 @@
 "missing_crown_position","JJ","fca9f86d-3400-486e-ab4c-a35e98409278",810,80621,1,"cagl",11.5,15.6,264,"PD",1.2,"DS","False",NA,"S",NA,0,0,NA,0,NA,NA,NA,2,NA,NA,NA,NA,NA,NA
 "missing_crown_position","JJ","fca9f86d-3400-486e-ab4c-a35e98409278",810,80625,1,"cagl",16,19.7,385,"A",1.3,"DS","False",NA,"CD",NA,40,0,NA,0,"U,R,DF,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_DS_or_DC_but_DBH_measured","JJ","fca9f86d-3400-486e-ab4c-a35e98409278",810,80625,1,"cagl",16,19.7,385,"A",1.3,"DS","False",NA,"CD",NA,40,0,NA,0,"U,R,DF,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_measured","BC","30aabdf2-439b-4903-9ca3-dbf59cb417ae",708,70187,1,"cagl",4.6,5.6,NA,"AU",1.3,"DC","False",1,"S",NA,0,0,NA,0,"UP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","BC","5c3aa0af-fbdc-459d-a94c-9094592d6c3b",730,72417,1,"fram",11.7,16.2,121,"A",1.3,"AU","False",1,NA,NA,100,80,NA,0,"I",NA,NA,NA,NA,2,0,"W",NA,NA
+"status_A_but_unhealthy","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80573,1,"cato",2.6,4.8,116,"A",1.3,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_AU_DS_or_DC_but_no_FAD","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80576,1,"quve",3.5,8,585,"A",1.3,"A","False",4,NA,NA,100,80,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_A_but_unhealthy","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80579,1,"cagl",11.8,11.1,529,"A",1.3,"A","False",4,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_A_but_unhealthy","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80580,1,"acru",19.8,10.2,332,"A",1.3,"A","False",3,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_A_but_unhealthy","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80582,1,"prav",17.6,14.7,261,"A",1.3,"A","False",3,NA,NA,100,100,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_A_but_unhealthy","BC","23463380-182c-43a9-82de-4bdc2d12eb85",816,80694,1,"juni",4.4,4.3,463,"A",1.3,"AU","False",4,NA,NA,90,90,NA,0,"AN",NA,NA,NA,"Heavy woodpecker activity, possible insect infection",NA,NA,NA,NA,NA
+"missing_percent_crown_intact","BC","23463380-182c-43a9-82de-4bdc2d12eb85",816,80770,1,"caca",11.1,11.4,160,"A",1.3,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_living","BC","23463380-182c-43a9-82de-4bdc2d12eb85",816,80770,1,"caca",11.1,11.4,160,"A",1.3,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_crown_position","BC","23463380-182c-43a9-82de-4bdc2d12eb85",816,80776,1,"caca",7.9,18.5,107,"A",1.3,"A","False",2,NA,NA,90,90,25,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_intact","BC","23463380-182c-43a9-82de-4bdc2d12eb85",816,80776,1,"caca",7.9,18.5,107,"A",1.3,"A","False",2,NA,NA,90,90,25,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_living","BC","23463380-182c-43a9-82de-4bdc2d12eb85",816,80776,1,"caca",7.9,18.5,107,"A",1.3,"A","False",2,NA,NA,90,90,25,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_A_but_unhealthy","BC","62108cf2-7ff1-4a5e-a39e-9bb4062dff21",817,82039,1,"nysy",10.7,11.9,112,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_AU_DS_or_DC_but_no_FAD","BC","8c1c62a8-285e-4eb4-a237-3aa5dcfa26b7",818,82054,1,"qual",7.9,6.1,116,"AU",1.3,"AU","False",2,NA,NA,100,60,NA,0,"DF",NA,NA,NA,"Top kill",NA,NA,NA,NA,NA
+"missing_crown_position","BC","8c1c62a8-285e-4eb4-a237-3aa5dcfa26b7",818,82072,1,"qual",11.6,10.9,545,"A",1.3,"AU","False",3,NA,NA,95,95,NA,NA,"HS,R,W",1,NA,2,NA,NA,NA,NA,NA,NA

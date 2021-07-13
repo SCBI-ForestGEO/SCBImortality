@@ -470,3 +470,19 @@
 "unhealthy_but_wrong_status","BC","25c00a1f-a572-4b4d-9fe2-da16f1baa9b9",502,50202,1,"fram",13,5.9,485,"PD",1.3,"PD","False",3,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"VB,AS,W,DE",3,NA
 "unhealthy_but_wrong_status",NA,"0d92cbad-8db6-43ac-9d9a-4592c8ac1651",825,82284,1,"quve",1.3,12,850,"PD",1.3,"PD","False",4,NA,NA,0,0,NA,0,"R",NA,NA,2,NA,NA,NA,NA,NA,NA
 "dead_but_crown_living_not_zero",NA,"415ee26a-6e67-4f2a-bcee-d1a846beef37",104,10205,1,"fagr",11.8,75,125,"A",1.3,"DC","False",1,"S",125,100,90,NA,0,"UP",NA,NA,NA,"Recently fell over based on still alive crown",NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","bba5c606-e90a-4fa2-9cae-81759939c956",416,41039,1,"frni",15.6,17,392,NA,1.3,"PD","False",3,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,DE,VB",5,NA
+"unhealthy_but_wrong_status","BC","9d01038e-646a-421c-b20c-b9b5447aec6f",702,70228,1,"quve",15.6,10.3,687,"PD",1.3,"PD","False",3,NA,NA,0,0,NA,0,"DF,R",NA,NA,2,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","ef8e0cb6-7cf4-4727-a8c8-6b35ba80a620",703,70260,1,"prav",17.1,15.6,NA,NA,1.3,"PD","False",1,NA,NA,0,0,NA,0,"B,W",3,NA,3,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","fd25c8e1-926b-4e64-8c6a-3cd14583dc4a",706,70159,2,"qupr",3.3,16.7,358,NA,1.3,"PD","False",2,NA,NA,0,0,NA,0,"DF,R",NA,NA,2,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","30aabdf2-439b-4903-9ca3-dbf59cb417ae",708,70357,1,"cagl",19.7,0.1,115,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"B,W",3,NA,3,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","87c8291f-5658-4596-98c4-4b896f231ac8",710,70509,1,"caca",19.5,6.7,NA,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"UP,CR",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","4601f01e-b50f-4cc7-8805-45bcfb0bc034",712,70544,1,"caovl",11.5,0.5,119,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"B,W,R",3,NA,3,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","cf6dfd79-d8a9-4f85-9382-3d8a3522bd8b",713,70476,1,"quve",0.5,4.3,578,"PD",1.3,"PD","False",3,NA,NA,20,0,NA,0,"W,R",2,NA,3,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","cf6dfd79-d8a9-4f85-9382-3d8a3522bd8b",713,70570,1,"cato",15.6,11.5,306,NA,1.3,"PD","False",3,NA,NA,0,0,NA,3,"AN,R",NA,NA,3,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","17f60c3f-30fa-451a-b902-5db46b8e3da0",814,80676,1,"saal",19.6,9.6,NA,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"B,R,W",3,NA,2,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80573,1,"cato",2.6,4.8,116,"A",1.3,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80579,1,"cagl",11.8,11.1,529,"A",1.3,"A","False",4,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80580,1,"acru",19.8,10.2,332,"A",1.3,"A","False",3,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80582,1,"prav",17.6,14.7,261,"A",1.3,"A","False",3,NA,NA,100,100,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","23463380-182c-43a9-82de-4bdc2d12eb85",816,80694,1,"juni",4.4,4.3,463,"A",1.3,"AU","False",4,NA,NA,90,90,NA,0,"AN",NA,NA,NA,"Heavy woodpecker activity, possible insect infection",NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","62108cf2-7ff1-4a5e-a39e-9bb4062dff21",817,82039,1,"nysy",10.7,11.9,112,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
