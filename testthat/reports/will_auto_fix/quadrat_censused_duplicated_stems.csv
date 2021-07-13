@@ -13,6 +13,8 @@
 "JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794","1419","142082","1","fram","16.5","3.3","507","AU","1.3","DS","False",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
 "JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794","1419","142206","1","fram","18.5","16.5","876","DS","1.3","DS","False","3","CD",866,75,0,NA,"0","I,DF",NA,NA,NA,NA,"5","0","DE",1,NA
 "JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794","1419","142206","1","fram","18.5","16.5","876","DS","1.3","DS","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
+"BC","1a9052f8-4f27-4257-9d98-58c4f6d57555","1028","102428","1","litu","13","12.2","642","A","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"BC","1a9052f8-4f27-4257-9d98-58c4f6d57555","1028","102428","1","litu","13","12.2","642","A","1.3","A","False","3",NA,NA,100,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","cf590ecf-1125-4729-ad34-b5712bc66214","315","30552","1","cagl","8.3","5.8","120","A","1.3","A","False","1",NA,NA,90,80,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","cf590ecf-1125-4729-ad34-b5712bc66214","315","30552","1","cagl","8.3","5.8","120","A","1.3","A","False","1",NA,NA,90,90,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","af735d25-e193-4e56-ad6a-f8d6af726b73","327","32367","1","cato","10.9","10.4","165","A","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -36,8 +38,6 @@
 "BC","893c2c42-3c91-4e6a-ae2c-6dae7b8c9c2a","123","12224","1","caca","7.1","12.6","113","A","1.3","A","False","1",NA,NA,100,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","8d03b002-5b05-4e21-8ce1-db47f1ce7d0f","1214","121434","1","quru","9","13.1","755","AU","1.3","A","False","3",NA,NA,100,85,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "BC","8d03b002-5b05-4e21-8ce1-db47f1ce7d0f","1214","121434","1","quru","9","13.1","755","AU","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"BC","1a9052f8-4f27-4257-9d98-58c4f6d57555","1028","102428","1","litu","13","12.2","642","A","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"BC","1a9052f8-4f27-4257-9d98-58c4f6d57555","1028","102428","1","litu","13","12.2","642","A","1.3","A","False","3",NA,NA,100,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 NA,"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1","815","80564","1","litu","14.8","1","123","A","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 NA,"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1","815","80569","1","litu","18.1","4.3","418","A","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 NA,"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1","815","80570","1","pato","18.8","6.4","485","PD","1.3","DC","False",NA,NA,NA,NA,NA,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
