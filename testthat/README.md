@@ -17,7 +17,7 @@ No|level | category | applied to | test  | warning (W) or error (E) | coded | re
 11|tree | consistency check | newly censused trees (AU) | DWR (dead with resprouts) not selected |E |  2021 | initially | ---| core
 12|tree | completion check | newly censused trees (DS or DC) **that were live in previous census** | DBH measured | E | 2021 | Y | NA | SCBI
 13|tree | consistency check - with previous | newly censused trees (DS or DC) | `DBH` within 2cm of most recent census DBH | W | 2021 | Y | NA| SCBI
-14|tree | completion check | newly censused trees (AU, DS or DC) **that were live in previous census** | at least one FAD is selected (OR level selected for `wounded main stem`,`canker,swelling,deformity`, `rotting main stem`)* | E |2021 | Y | NA | core
+14|tree | completion check | newly censused trees (AU, DS or DC) **that were live in previous census** | at least one FAD is selected (OR level selected for `wounded main stem`,`canker,swelling,deformity`, `rotting main stem`)* OR **status is AU and `percentage of crown living`<100** | E |2021 | Y | NA | core
 15|tree | completion check | newly censused trees (AU or dead, with "wound" selected as FAD) | level selected for `wounded main stem` | E |2021 | Y | NA | core
 16|tree | completion check | newly censused trees (AU or dead, with "canker" selected as FAD) | level selected for `canker,swelling,deformity` |E | 2021 | Y | NA | core
 17|tree | completion check | newly censused trees (AU or dead, with "rotting stem" or "hollow stem" selected as FAD) | level selected for `rotting main stem` | E |2021 | Y | NA | core
