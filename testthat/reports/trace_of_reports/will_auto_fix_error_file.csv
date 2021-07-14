@@ -486,3 +486,20 @@
 "unhealthy_but_wrong_status","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80582,1,"prav",17.6,14.7,261,"A",1.3,"A","False",3,NA,NA,100,100,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","23463380-182c-43a9-82de-4bdc2d12eb85",816,80694,1,"juni",4.4,4.3,463,"A",1.3,"AU","False",4,NA,NA,90,90,NA,0,"AN",NA,NA,NA,"Heavy woodpecker activity, possible insect infection",NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","62108cf2-7ff1-4a5e-a39e-9bb4062dff21",817,82039,1,"nysy",10.7,11.9,112,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","777defe6-e42e-489a-b4b6-74e1a20618f4",1315,131272,1,"fram",18.5,2.2,956,"A",1.3,"PD","False",NA,NA,NA,0,0,NA,0,"B,I",3,NA,NA,"completely broken stem, unable to do any analysis",NA,0,"DE",0,NA
+"unhealthy_but_wrong_status","BC","87c8291f-5658-4596-98c4-4b896f231ac8",710,70506,1,"cagl",12.2,3.2,NA,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"UP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","91be5b43-8f21-4965-817a-55262c71e84e",805,80241,1,"litu",18,17.1,83,NA,1.3,"PD","False",1,NA,NA,0,0,NA,0,"B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","7fa4f346-04c1-4c7f-a927-09948293b51d",806,83628,1,"havi",2.2,14.5,103,"A",NA,"PD","False",1,NA,NA,30,0,NA,0,"W,HS",2,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","cc36fb9a-6aec-475c-8113-ecaa39299b40",807,80351,1,"ulru",13.3,6.3,NA,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","cc36fb9a-6aec-475c-8113-ecaa39299b40",807,80355,1,"saal",8,4.1,188,NA,1.3,"PD","False",1,NA,NA,0,0,40,0,"B,W",3,NA,3,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","cc36fb9a-6aec-475c-8113-ecaa39299b40",807,80398,1,"caco",0.2,19.7,191,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"B,W",3,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","43a53fc2-851d-47f9-8449-d974c64d6d82",808,80413,1,"unk",10.7,2,NA,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"B,R",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","43a53fc2-851d-47f9-8449-d974c64d6d82",808,80436,1,"quru",14.4,7.5,NA,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"UP,R,W",3,NA,3,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","43a53fc2-851d-47f9-8449-d974c64d6d82",808,80447,1,"qupr",1.4,4.6,NA,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","43a53fc2-851d-47f9-8449-d974c64d6d82",808,80466,1,"qupr",13.6,19.6,NA,"A",1.2,"PD","False",1,NA,NA,0,0,NA,0,"CR",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","5683c090-8e85-4e54-8eef-f3500cd78e4d",903,90131,1,"fram",10.4,12.9,619,"PD",1.3,"PD","False",1,NA,NA,40,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB,DE",7,NA
+"unhealthy_but_wrong_status","BC","aa2e0036-7840-4348-8f3b-43b569f063c2",906,90484,1,"nysy",19.4,12,NA,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"DF,R",NA,NA,2,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","a5e1284b-8e7e-4bc4-8a21-c3b74257dbd3",907,91454,1,"litu",17,17.8,NA,"A",1.3,"A","False",1,NA,NA,20,20,NA,0,"CR,B,W",3,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","212a1aca-4db0-48e5-a4f4-b7d2c2fd90a6",909,91382,1,"cato",4,6.4,NA,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"CR,B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","ecb75b27-3310-4279-92f2-f9940aac0ee6",910,90607,1,"litu",5.4,7.3,151,"AU",1.3,"PD","False",1,NA,NA,0,0,NA,0,NA,NA,NA,3,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","a0e9d6d5-f495-45b7-a138-5e84c8c7c980",913,90577,1,"quve",15.6,8.2,NA,"A",1.3,"PD","False",1,NA,NA,0,0,NA,0,"B",NA,NA,NA,NA,NA,NA,NA,NA,NA

@@ -492,3 +492,16 @@
 "status_A_but_unhealthy","BC","62108cf2-7ff1-4a5e-a39e-9bb4062dff21",817,82039,1,"nysy",10.7,11.9,112,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","BC","8c1c62a8-285e-4eb4-a237-3aa5dcfa26b7",818,82054,1,"qual",7.9,6.1,116,"AU",1.3,"AU","False",2,NA,NA,100,60,NA,0,"DF",NA,NA,NA,"Top kill",NA,NA,NA,NA,NA
 "missing_crown_position","BC","8c1c62a8-285e-4eb4-a237-3aa5dcfa26b7",818,82072,1,"qual",11.6,10.9,545,"A",1.3,"AU","False",3,NA,NA,95,95,NA,NA,"HS,R,W",1,NA,2,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","BC","777defe6-e42e-489a-b4b6-74e1a20618f4",1315,131272,1,"fram",18.5,2.2,956,"A",1.3,"PD","False",NA,NA,NA,0,0,NA,0,"B,I",3,NA,NA,"completely broken stem, unable to do any analysis",NA,0,"DE",0,NA
+"missing_crown_position","JJ","33d32bdf-9867-4804-a107-cbe52280d9e5",1414,140881,1,"fram",7.2,13.3,630,"A",1.3,"AU","False",3,NA,NA,30,15,NA,0,"I",NA,NA,NA,NA,4,2,"DE",3,NA
+"missing_percent_crown_intact","JJ","33d32bdf-9867-4804-a107-cbe52280d9e5",1414,140881,1,"fram",7.2,13.3,630,"A",1.3,"AU","False",3,NA,NA,30,15,NA,0,"I",NA,NA,NA,NA,4,2,"DE",3,NA
+"missing_percent_crown_living","JJ","33d32bdf-9867-4804-a107-cbe52280d9e5",1414,140881,1,"fram",7.2,13.3,630,"A",1.3,"AU","False",3,NA,NA,30,15,NA,0,"I",NA,NA,NA,NA,4,2,"DE",3,NA
+"status_AU_DS_or_DC_but_no_FAD","JJ","33d32bdf-9867-4804-a107-cbe52280d9e5",1414,140881,1,"fram",7.2,13.3,630,"A",1.3,"AU","False",3,NA,NA,30,15,NA,0,"I",NA,NA,NA,NA,4,2,"DE",3,NA
+"missing_EAB_info","JJ","33d32bdf-9867-4804-a107-cbe52280d9e5",1414,140881,1,"fram",7.2,13.3,630,"A",1.3,"AU","False",3,NA,NA,30,15,NA,0,"I",NA,NA,NA,NA,4,2,"DE",3,NA
+"EABF_recorded_but_not_AU_or_dead","BC","27ee1b89-e051-4870-8dd8-9b782a792bda",1520,152161,1,"frpe",17.8,3.3,373,"A",1.3,"A","False",4,NA,NA,100,100,NA,3,NA,NA,NA,NA,NA,1,0,"W",0,NA
+"missing_crown_position","JJ","220b9edb-8c2f-472c-abc6-ac746400bf5d",1717,172207,1,"cagl",19.9,11.9,182,"A",1.3,"A","False",NA,NA,NA,85,65,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_AU_DS_or_DC_but_no_FAD","BC","b7768755-33f3-4fab-8003-32ca9490647e",401,40028,1,"ploc",9.5,6.3,468,NA,1.3,"AU","False",4,NA,NA,100,50,NA,1,NA,NA,NA,NA,"No visible FAD, but thin crown (all 3 stems). One stem has lianas.",NA,NA,NA,NA,NA
+"status_AU_DS_or_DC_but_no_FAD","BC","579a6c7f-8f75-4549-8fa2-028e64f649ba",410,40719,1,"fram",3.8,3.9,235,"A",1.3,"AU","False",1,NA,NA,100,75,NA,0,NA,NA,NA,NA,NA,2,0,"W",0,NA
+"status_DS_or_DC_but_DBH_measured","JJ","fca9f86d-3400-486e-ab4c-a35e98409278",810,80625,1,"cagl",16,19.7,385,"A",1.3,"DS","False",3,"CD",NA,40,0,NA,0,"U,R,DF,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","BC","387b4f99-5b2c-49db-b514-18360f3ef1ec",902,90243,1,"fram",15.9,6,28,"AU",1.3,"DS","False",1,"S",29,20,0,NA,4,"I",NA,NA,NA,NA,5,0,"W,VB",NA,"S"
+"status_A_but_unhealthy","BC","a5e1284b-8e7e-4bc4-8a21-c3b74257dbd3",907,91454,1,"litu",17,17.8,NA,"A",1.3,"A","False",1,NA,NA,20,20,NA,0,"CR,B,W",3,NA,NA,NA,NA,NA,NA,NA,NA
