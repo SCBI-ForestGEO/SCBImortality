@@ -21,7 +21,6 @@ No|level | category | applied to | test  | warning (W) or error (E) | coded | re
 15|tree | completion check | newly censused trees (AU or dead, with "wound" selected as FAD) | level selected for `wounded main stem` | E |2021 | Y | NA | core
 16|tree | completion check | newly censused trees (AU or dead, with "canker" selected as FAD) | level selected for `canker,swelling,deformity` |E | 2021 | Y | NA | core
 17|tree | completion check | newly censused trees (AU or dead, with "rotting stem" or "hollow stem" selected as FAD) | level selected for `rotting main stem` | E |2021 | Y | NA | core
-18|tree | completion check | newly censused trees (AU, DS or DC) | at least one photo was taken | W | not yet | Y | NA | core
 19|tree | consistency check | newly censused trees (AU or dead, with level selected for `wounded main stem`)| "wound" selected as FAD, AU or dead selected as status | W| 2021 | N | add wound to FAD list* | core
 20|tree | consistency check | newly censused trees (AU or dead, with level selected for `canker,swelling,deformity`)| "canker" selected as FAD | W| 2021 | N | add canker to FAD list* | core
 21|tree | consistency check | newly censused trees (AU or dead, with level selected for `rotting main stem`)| "rotting stem" or "hollow stem" selected as FAD| W| 2021 | N | add `rotting main stem` to FAD list* | core
@@ -35,7 +34,7 @@ No|level | category | applied to | test  | warning (W) or error (E) | coded | re
 29|tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) | if `D-shaped exit hole count`>0, tree is AU or dead | E | 2021 | sometimes | --- | SCBI
 30|tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) **excluding DN and those dead in previous census**| if tree is dead, `Epicormic growth`=0  | E | 2021 | sometimes | --- | SCBI
 31|tree | consistency check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) **excluding DN and those dead in previous census**| if tree is dead, `Crown thinning`=5 | E | 2021 |  sometimes | Just the ones that are zero should be auto changed to 5.| SCBI
-32|tree | completion check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) with `EFDB` including `DE`|  `D-shaped exit hole count` has value (>0) | E | 2021 | Y | NA | SCBI
+32|tree | completion check | newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI) with `EFDB` including `DE`|  `D-shaped exit hole count` has value (>0) | E | not yet | Y | NA | SCBI
 
 
 
