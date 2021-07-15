@@ -72,22 +72,41 @@ warning_file <- NULL
 
 
 # for each quadrat censused, check all expected trees were censused ####
-filename <- file.path(here("testthat"), "reports/requires_field_fix/quadrat_censused_missing_stems.csv")
+# filename <- file.path(here("testthat"), "reports/requires_field_fix/quadrat_censused_missing_stems.csv")
+error_name = "missing_stem"
 
 
-idx_quadrat_censused <- main_census$quadrat %in% as.numeric(mort$Quad)
+# idx_quadrat_censused <- main_census$quadrat %in% as.numeric(mort$Quad)
 
 
-idx_errors <- paste(main_census$tag, main_census$StemTag)[idx_quadrat_censused] [!paste(main_census$tag, main_census$StemTag)[idx_quadrat_censused] %in% paste(mort$Tag, mort$StemTag)]
-table(main_census[paste(main_census$tag, main_census$StemTag) %in% idx_errors, ]$sp)
+idx_errors <- !paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag) & main_census$quadrat %in% as.numeric(mort$Quad)
+
 
 
 
 if(sum(idx_errors) > 0) {
-  write.csv(main_census[paste(main_census$tag, main_census$StemTag) %in% idx_errors, ], file = filename, row.names = F)
-} else {
-  if(file.exists(filename) ) file.remove(filename)
-}
+  # write.csv(main_census[paste(main_census$tag, main_census$StemTag) %in% idx_errors, ], file = filename, row.names = F)
+  data_to_add <- mort[1:sum(idx_errors),]
+  data_to_add[1:sum(idx_errors), ] <- NA
+  data_to_add[, c("Quad",
+                  "Tag",
+                  "StemTag",
+                  "Species",
+                  "QX",
+                  "QY",
+                  "DBH",
+                  "Status 2020",
+                  "HOM")] <-
+    main_census[idx_errors, c("quadrat", "tag", "StemTag", "sp", "gx", "gy", "dbh",  "status")]
+
+  require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(data_to_add, error_name))
+  
+  
+  
+} 
+# else {
+#   if(file.exists(filename) ) file.remove(filename)
+# }
 
 
 
@@ -104,7 +123,7 @@ error_name <- "species_code_error"
 
 idx_error <- !mort$Species %in% spptable$sp
 
-require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_error,], error_name))
+if(sum(idx_error) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_error,], error_name))
 
 
 
@@ -117,7 +136,7 @@ filename <- file.path(here("testthat"), "reports/will_auto_fix/quadrat_censused_
 idx_errors <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$StemTag))]
 
 
-if(sum(idx_errors) > 0) {
+if(length(idx_errors) > 0) {
   write.csv(mort[paste(mort$Tag, mort$StemTag) %in% idx_errors, ], file = filename, row.names = F)
 } else {
   if(file.exists(filename) ) file.remove(filename)
@@ -678,16 +697,16 @@ for(f in all_reports) {
 }
 
 # generate a file with summary for each quadrat ####
-quadrat_censused_missing_stems <- read.csv(file.path(here("testthat"), "reports/requires_field_fix/quadrat_censused_missing_stems.csv"))
+# quadrat_censused_missing_stems <- read.csv(file.path(here("testthat"), "reports/requires_field_fix/quadrat_censused_missing_stems.csv"))
 quadrat_censused_duplicated_stems <- read.csv(file.path(here("testthat"), "reports/will_auto_fix/quadrat_censused_duplicated_stems.csv"))
 
-quad_with_any_issue <- sort(unique(c(require_field_fix_error_file$Quad, will_auto_fix_error_file$Quad, warning_file$Quad, quadrat_censused_duplicated_stems$quadrat, quadrat_censused_missing_stems$Quad)))
+quad_with_any_issue <- sort(unique(c(require_field_fix_error_file$Quad, will_auto_fix_error_file$Quad, warning_file$Quad, quadrat_censused_duplicated_stems$quadrat)))
 
 quad_summary <- data.frame(Quad = quad_with_any_issue, 
-                           n_tag_error_field_fix = c(table(require_field_fix_error_file$Quad))[as.character(quad_with_any_issue)], 
+                           n_tag_error_field_fix = c(table(require_field_fix_error_file$Quad[!require_field_fix_error_file$error_name %in% "missing_stem"]))[as.character(quad_with_any_issue)], 
                            n_tag_error_auto_fix = c(table(will_auto_fix_error_file$Quad))[as.character(quad_with_any_issue)],
                            n_tag_warnings = c(table(warning_file$Quad))[as.character(quad_with_any_issue)],
-                           n_missing_tags = c(table(quadrat_censused_missing_stems$quadrat))[as.character(quad_with_any_issue)],
+                           n_missing_tags = c(table(require_field_fix_error_file$Quad[require_field_fix_error_file$error_name %in% "missing_stem"]))[as.character(quad_with_any_issue)],
                            n_duplicated_tags = c(table(quadrat_censused_duplicated_stems$Quad))[as.character(quad_with_any_issue)])
 
 quad_summary$sum_missing_and_errors <- quad_summary$n_missing_tags + quad_summary$n_tag_error_field_fix
