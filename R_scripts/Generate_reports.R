@@ -360,6 +360,7 @@ idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_wounded <- !is.na(mort$FAD) & grepl("W", mort$FAD)
 idx_wnd_main_stem <- !is.na(mort$'Wounded main stem')
 
+idx_errors <- idx_trees & !idx_wounded & idx_wnd_main_stem
 
 if(sum(idx_errors) > 0) {
   idx_errors <- (!idx_trees | !idx_wounded) & idx_wnd_main_stem
