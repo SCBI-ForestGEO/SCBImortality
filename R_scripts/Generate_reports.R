@@ -623,7 +623,7 @@ will_auto_fix_error_file <- will_auto_fix_error_file[!is.na(will_auto_fix_error_
 warning_file <- warning_file[!is.na(warning_file$Tag),]
 
 ## order by quadrat and tag
-require_field_fix_error_file <- require_field_fix_error_file[order(require_field_fix_error_file$Quad, require_field_fix_error_file$Tag, require_field_fix_error_file$StemTag),]
+require_field_fix_error_file <- require_field_fix_error_file[order(as.numeric(require_field_fix_error_file$Quad), require_field_fix_error_file$Tag, require_field_fix_error_file$StemTag),]
 
 will_auto_fix_error_file <- will_auto_fix_error_file[order(will_auto_fix_error_file$Quad, will_auto_fix_error_file$Tag, will_auto_fix_error_file$StemTag),]
 
@@ -670,5 +670,5 @@ quad_summary <- data.frame(Quad = quad_with_any_issue,
                            n_missing_tags = c(table(quadrat_censused_missing_stems$quadrat))[as.character(quad_with_any_issue)],
                            n_duplicated_tags = c(table(quadrat_censused_duplicated_stems$Quad))[as.character(quad_with_any_issue)])
 
-write.csv(quad_summary[order(quad_summary$n_tag_error_field_fix, decreasing = T), ], file.path(here("testthat"), "reports/quadrat_n_errors_summary.csv"), row.names = F)
+write.csv(quad_summary[order(as.numeric(quad_summary$Quad)), ], file.path(here("testthat"), "reports/quadrat_n_errors_summary.csv"), row.names = F)
 
