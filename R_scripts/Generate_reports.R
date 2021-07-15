@@ -255,7 +255,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 
 
 # check that status 'DS' or 'DC' have a dbh measured  ####
-error_name <- "status_DS_or_DC_but_DBH_measured"
+error_name <- "status_DS_or_DC_but_DBH_not_measured"
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 previous_status_column <- rev(grep("Status", names(mort), value = T))[2]

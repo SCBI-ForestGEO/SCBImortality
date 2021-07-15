@@ -3,7 +3,7 @@
 "missing_EAB_info","BC","048bb7f5-52d8-4304-a87b-ad3e7a3e16bb",1015,101186,1,"frni",4.2,11.2,310,"PD",1.3,"PD","False",1,NA,NA,0,0,NA,NA,"I",NA,NA,NA,NA,5,0,"W,VB,AS",NA,NA
 "status_AU_DS_or_DC_but_no_FAD","BC","27c37662-196b-4ba7-8dcf-338c9ddd5860",1017,102038,1,"cagl",19.2,14.6,399,"AU",1.3,"AU","False",4,NA,NA,100,85,NA,0,NA,NA,NA,NA,"epicormic branches",NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"d2632ea9-09a4-4f9c-8b63-28a2c9c9dd89",102,10013,1,"fram",5.5,23.5,268,"DS",1.3,"DS","False",3,"D",268,0,0,NA,4,NA,NA,NA,NA,NA,5,0,"DE,W,AS",4,NA
-"status_DS_or_DC_but_DBH_measured",NA,"d2632ea9-09a4-4f9c-8b63-28a2c9c9dd89",102,10021,1,"fram",5.1,30.1,206,"A",1.3,"DS","False",3,"CD",NA,50,0,NA,0,NA,NA,NA,NA,NA,5,0,"DE,AS,W",5,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"d2632ea9-09a4-4f9c-8b63-28a2c9c9dd89",102,10021,1,"fram",5.1,30.1,206,"A",1.3,"DS","False",3,"CD",NA,50,0,NA,0,NA,NA,NA,NA,NA,5,0,"DE,AS,W",5,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"d2632ea9-09a4-4f9c-8b63-28a2c9c9dd89",102,10021,1,"fram",5.1,30.1,206,"A",1.3,"DS","False",3,"CD",NA,50,0,NA,0,NA,NA,NA,NA,NA,5,0,"DE,AS,W",5,NA
 "missing_EAB_info","BC","22a3a36b-d1c2-476a-88f4-205de283bedf",1022,102260,1,"fram",3.3,13.1,117,"A",1.3,"AU","False",1,NA,NA,100,98,NA,0,"I",NA,NA,NA,NA,1,1,"SS,W",NA,NA
 "status_AU_DS_or_DC_but_no_FAD","BC","22a3a36b-d1c2-476a-88f4-205de283bedf",1022,102262,1,"qual",1.8,20,538,"A",1.3,"AU","False",3,NA,NA,100,75,NA,0,NA,NA,NA,1,"epicormic branches",NA,NA,NA,NA,NA
@@ -29,7 +29,7 @@
 "missing_crown_position","JJ","a577f382-b548-4acd-8f3c-d4865c6b1ea8",1116,111352,1,"vipr",10.7,10.3,130,"AU",1.3,"AU","False",NA,NA,NA,75,75,NA,0,"OT,B",1,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_crown_position","JJ","5753a817-fa77-4a3e-b8d7-30556a467ac7",1117,112053,1,"litu",3.8,3,404,"A",1.3,"AU","False",NA,NA,NA,80,80,33,0,"B",NA,NA,NA,"one main branch of stem broken",NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","214dc610-87fd-47a3-834c-02715142b9f6",1118,112084,1,"acru",3.2,1.1,112,"AU",1.3,"AU","False",1,NA,NA,20,5,NA,0,NA,3,NA,NA,"broken stem but still leaf growth",NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","781a7754-ab89-4b0c-a18d-4a33710b7b39",1119,112118,1,"quru",13.3,11.4,584,"DS",1.3,"DS","False",4,"CD",NA,60,0,NA,0,"U,F,DF,R1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","781a7754-ab89-4b0c-a18d-4a33710b7b39",1119,112118,1,"quru",13.3,11.4,584,"DS",1.3,"DS","False",4,"CD",NA,60,0,NA,0,"U,F,DF,R1",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","781a7754-ab89-4b0c-a18d-4a33710b7b39",1119,112130,1,"qual",17.2,18.3,149,"AU",1.3,"AU","False",1,NA,NA,100,100,NA,0,NA,2,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info",NA,"02474085-54ea-4dd7-b82a-3f3e84924639",112,10642,1,"fram",2.5,229.7,797,"A",1.3,"A","False",4,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,1,4,"W",NA,NA
 "EABF_recorded_but_not_AU_or_dead",NA,"02474085-54ea-4dd7-b82a-3f3e84924639",112,10642,1,"fram",2.5,229.7,797,"A",1.3,"A","False",4,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,1,4,"W",NA,NA
@@ -37,14 +37,14 @@
 "status_AU_DS_or_DC_but_no_FAD","JJ","a55d07e5-48b8-45ae-9c18-46e1396da0fc",1120,112142,1,"qual",16,3.5,398,"A",1.3,"AU","False",3,NA,NA,80,80,NA,0,NA,NA,1,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","a55d07e5-48b8-45ae-9c18-46e1396da0fc",1120,112148,1,"pist",15.1,14.6,155,"AU",1.3,"AU","False",1,NA,NA,75,75,NA,0,NA,2,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","a55d07e5-48b8-45ae-9c18-46e1396da0fc",1120,112165,1,"qufa",9.3,18.4,772,"A",1.3,"AU","False",3,NA,NA,100,100,NA,0,NA,1,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","fb1deb56-82e2-404b-b938-4b1dc1250749",1121,112191,1,"cagl",6.6,12.1,127,"DS",1.3,"DS","False",1,"S",NA,20,0,NA,0,"U,OT,DF,CR",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","fb1deb56-82e2-404b-b938-4b1dc1250749",1121,112191,1,"cagl",6.6,12.1,127,"DS",1.3,"DS","False",1,"S",NA,20,0,NA,0,"U,OT,DF,CR",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","56e9c62d-e2fd-45f5-920e-217584c34606",1122,112243,1,"caco",11.8,11.4,117,"AU",1.3,"DS","False",1,"S",117,40,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","56e9c62d-e2fd-45f5-920e-217584c34606",1122,112249,1,"quru",15.9,17.6,130,"DS",1.3,"DS","False",1,"S",130,75,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","56e9c62d-e2fd-45f5-920e-217584c34606",1122,112252,1,"litu",13.6,19.4,469,"A",1.3,"AU","False",4,NA,NA,100,100,NA,0,NA,1,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","7b923e77-794f-496d-9262-c0cd303e0f54",1123,112259,1,"pist",2.3,0.8,125,"PD",1.3,"DS","False",1,"S",NA,75,0,NA,0,NA,3,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","7b923e77-794f-496d-9262-c0cd303e0f54",1123,112259,1,"pist",2.3,0.8,125,"PD",1.3,"DS","False",1,"S",NA,75,0,NA,0,NA,3,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","7b923e77-794f-496d-9262-c0cd303e0f54",1123,112259,1,"pist",2.3,0.8,125,"PD",1.3,"DS","False",1,"S",NA,75,0,NA,0,NA,3,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","7b923e77-794f-496d-9262-c0cd303e0f54",1123,112285,1,"ceca",5.2,12.4,118,"AU",1.3,"AU","False",1,NA,NA,70,5,NA,0,NA,3,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","7b923e77-794f-496d-9262-c0cd303e0f54",1123,112290,1,"cato",15.3,19.3,143,"DS",1.3,"DS","False",1,"S",NA,30,0,NA,0,"U",2,NA,2,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","7b923e77-794f-496d-9262-c0cd303e0f54",1123,112290,1,"cato",15.3,19.3,143,"DS",1.3,"DS","False",1,"S",NA,30,0,NA,0,"U",2,NA,2,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","94a5748b-c2a5-4ec9-940e-60ba510f23fd",1124,112315,1,"frpe",4.6,20,216,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,1,0,NA,NA,NA
 "missing_EAB_info","BC","8a061aa7-b860-4b79-8d6c-eb10c0a20bb2",1127,112450,1,"frpe",10,7.5,145,"A",1.3,"AU","False",2,NA,NA,100,90,NA,0,"I",NA,NA,NA,NA,2,1,"W",NA,NA
 "missing_EAB_info","BC","cfa94965-f675-4647-b8c2-a6a89b189363",1128,112423,1,"frpe",8.5,14.6,136,"AU",1.3,"DS","False",1,"S",140,40,0,NA,0,"I",NA,NA,NA,NA,5,0,"SS,W,AS",NA,NA
@@ -122,7 +122,7 @@
 "missing_EAB_info","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12255,1,"fram",8.5,9.3,300,"A",1.3,"DS","False",3,"CD",300,60,0,NA,2,"I",NA,NA,NA,NA,5,0,"W",NA,NA
 "missing_EAB_info","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12266,1,"frpe",10.6,7.2,136,"A",1.3,"DS","False",2,"I",137,50,0,NA,0,"DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12267,1,"fram",19.9,12.6,NA,"PD",1.3,"DN","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12270,1,"tiam",19.4,19.6,304,"AU",1.3,"DS","False",3,NA,NA,100,0,NA,0,"DF",NA,NA,1,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12270,1,"tiam",19.4,19.6,304,"AU",1.3,"DS","False",3,NA,NA,100,0,NA,0,"DF",NA,NA,1,NA,NA,NA,NA,NA,NA
 "missing_crown_position","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12274,1,"fram",11.1,19,382,"A",1.3,"AU","False",4,NA,NA,100,2,NA,0,"I",NA,NA,NA,NA,5,4,"W,DE",4,NA
 "missing_crown_position","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12274,1,"fram",11.1,19,382,"A",1.3,"AU","False",NA,NA,NA,50,20,NA,0,"I",NA,NA,NA,NA,5,3,"W",NA,NA
 "missing_EAB_info","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12274,1,"fram",11.1,19,382,"A",1.3,"AU","False",4,NA,NA,100,2,NA,0,"I",NA,NA,NA,NA,5,4,"W,DE",4,NA
@@ -145,7 +145,7 @@
 "status_A_but_unhealthy","BC","076eebb4-2cf2-4175-967d-56ea764e9612",130,12427,1,"litu",9.2,2.7,404,"A",1.3,"A","False",2,NA,NA,85,85,NA,0,"B",NA,NA,NA,"missing tag",NA,NA,NA,NA,NA
 "missing_EAB_info","TR","2c50a3fe-a576-4343-aaeb-96abcf55f7ec",131,12475,1,"frpe",3.8,1.7,105,"PD",1.3,"PD","False",1,NA,NA,0,0,NA,0,"UP",3,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","777defe6-e42e-489a-b4b6-74e1a20618f4",1315,131272,1,"fram",18.5,2.2,956,"AU",1.3,"PD","False",NA,NA,NA,0,0,NA,0,"B,I",3,NA,NA,"completely broken stem, unable to do any analysis",NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","BC","777defe6-e42e-489a-b4b6-74e1a20618f4",1315,131273,1,"caco",18.5,3.1,240,"A",1.3,"DC","False",3,"CD",NA,0,0,NA,0,"CR",3,NA,1,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","BC","777defe6-e42e-489a-b4b6-74e1a20618f4",1315,131273,1,"caco",18.5,3.1,240,"A",1.3,"DC","False",3,"CD",NA,0,0,NA,0,"CR",3,NA,1,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","777defe6-e42e-489a-b4b6-74e1a20618f4",1315,131293,1,"fram",19.6,8,636,"PD",1.3,"PD","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","a8e13432-fb05-494a-b6d3-d938e36fe81f",1316,133461,1,"fram",5.5,3.3,321,"A",1.3,"AU","False",3,NA,NA,100,100,NA,0,"I",NA,NA,NA,NA,1,0,"W",NA,NA
 "missing_EAB_info","BC","6cc10801-f72b-4962-8c76-da1ef60d8aa3",1324,132280,1,"fram",6.1,18.2,103,"A",1.3,"AU","False",1,NA,NA,100,98,NA,0,"I",NA,NA,NA,NA,1,0,"W",NA,NA
@@ -172,15 +172,15 @@
 "missing_EAB_info","JJ","33d32bdf-9867-4804-a107-cbe52280d9e5",1414,140881,1,"fram",7.2,13.3,630,"A",1.3,"AU","False",4,NA,NA,30,15,NA,0,"I",NA,NA,NA,NA,4,2,"DE",3,NA
 "missing_EAB_info","JJ","33d32bdf-9867-4804-a107-cbe52280d9e5",1414,140881,1,"fram",7.2,13.3,630,"A",1.3,"AU","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"only o one stem not two",NA,NA,NA,NA,NA
 "missing_crown_position","JJ","33d32bdf-9867-4804-a107-cbe52280d9e5",1414,140883,1,"fram",5.3,17.4,710,"AU",1.3,"DS","False",NA,"D",710,90,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE,W",3,NA
-"status_DS_or_DC_but_DBH_measured","JJ","372cd194-3c7a-4473-b4d5-54e15b847037",1415,141094,1,"ceca",15.6,13.8,134,"PD",1.3,"DS","False",2,"S",NA,25,0,NA,4,"U",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","372cd194-3c7a-4473-b4d5-54e15b847037",1415,141094,1,"ceca",15.6,13.8,134,"PD",1.3,"DS","False",2,"S",NA,25,0,NA,4,"U",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","JJ","46d980fd-5f3d-4c79-a457-1e80a24aa718",1416,141124,1,"fram",18.3,0.4,194,"DS",1.3,"DN","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","JJ","46d980fd-5f3d-4c79-a457-1e80a24aa718",1416,141137,1,"chvi",17.3,16.9,75,"A",1.3,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_crown_position","JJ","46d980fd-5f3d-4c79-a457-1e80a24aa718",1416,141146,1,"caco",2.5,18.5,361,"DS",1.3,"DS","False",NA,NA,NA,0,0,NA,0,"U,DF,F",NA,NA,1,"tangle of dead trees",NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","46d980fd-5f3d-4c79-a457-1e80a24aa718",1416,141146,1,"caco",2.5,18.5,361,"DS",1.3,"DS","False",NA,NA,NA,0,0,NA,0,"U,DF,F",NA,NA,1,"tangle of dead trees",NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","46d980fd-5f3d-4c79-a457-1e80a24aa718",1416,141146,1,"caco",2.5,18.5,361,"DS",1.3,"DS","False",NA,NA,NA,0,0,NA,0,"U,DF,F",NA,NA,1,"tangle of dead trees",NA,NA,NA,NA,NA
 "missing_crown_position","JJ","167227be-f782-4892-b717-3c82176779ee",1417,142018,1,"quru",13.2,16.2,648,"PD",1.3,"DS","False",NA,"D",NA,NA,NA,NA,2,"U,F,DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_intact","JJ","167227be-f782-4892-b717-3c82176779ee",1417,142018,1,"quru",13.2,16.2,648,"PD",1.3,"DS","False",NA,"D",NA,NA,NA,NA,2,"U,F,DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_living","JJ","167227be-f782-4892-b717-3c82176779ee",1417,142018,1,"quru",13.2,16.2,648,"PD",1.3,"DS","False",NA,"D",NA,NA,NA,NA,2,"U,F,DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","167227be-f782-4892-b717-3c82176779ee",1417,142018,1,"quru",13.2,16.2,648,"PD",1.3,"DS","False",NA,"D",NA,NA,NA,NA,2,"U,F,DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","167227be-f782-4892-b717-3c82176779ee",1417,142018,1,"quru",13.2,16.2,648,"PD",1.3,"DS","False",NA,"D",NA,NA,NA,NA,2,"U,F,DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_A_but_unhealthy","JJ","6b16fefb-0e3b-4bef-bed0-9a0f17711474",1418,142174,1,"prav",0.7,16.5,125,"AU",1.3,"A","False",1,NA,NA,100,100,NA,0,"U",2,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_crown_position","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",4,"D",512,80,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",7,NA
 "missing_crown_position","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
@@ -188,8 +188,8 @@
 "missing_percent_crown_intact","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
 "missing_percent_crown_living","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",4,"D",512,80,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",7,NA
 "missing_percent_crown_living","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",4,"D",512,80,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",7,NA
-"status_DS_or_DC_but_DBH_measured","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",4,"D",512,80,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",7,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",4,"D",512,80,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",7,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
 "missing_EAB_info","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142082,1,"fram",16.5,3.3,507,"AU",1.3,"DS","False",4,"D",512,80,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",7,NA
@@ -200,13 +200,13 @@
 "missing_percent_crown_intact","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
 "missing_percent_crown_living","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",3,"CD",866,75,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",1,NA
 "missing_percent_crown_living","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",3,"CD",866,75,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",1,NA
-"status_DS_or_DC_but_DBH_measured","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",3,"CD",866,75,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",1,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",3,"CD",866,75,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",1,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
 "missing_EAB_info","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",3,"CD",866,75,0,NA,0,"I,DF",NA,NA,NA,NA,5,0,"DE",1,NA
 "missing_EAB_info","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142206,1,"fram",18.5,16.5,876,"DS",1.3,"DS","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one stem",NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142408,1,"cagl",7.8,16.8,420,"DS",1.3,"DS","False",3,"CD",NA,40,0,NA,0,"U,DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794",1419,142408,1,"cagl",7.8,16.8,420,"DS",1.3,"DS","False",3,"CD",NA,40,0,NA,0,"U,DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","BC","0af6ccca-bc07-4959-be42-5584e99b53ee",1513,151155,1,"litu",19.5,3.6,463,"AU",1.3,"AU","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,"epicormic branches",NA,NA,NA,NA,NA
 "missing_EAB_info","BC","0af6ccca-bc07-4959-be42-5584e99b53ee",1513,151163,1,"frni",17.1,16.1,212,"PD",1.3,"PD","False",1,NA,NA,0,0,NA,0,"I",3,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_crown_position","BC","b25ccd2d-f54d-4ab6-bc0a-0de1b5994235",1517,152003,1,"cagl",16.9,1.2,131,"A",1.3,"DS","False",NA,"S",131,30,0,NA,0,"CR",2,NA,NA,NA,NA,NA,NA,NA,NA
@@ -224,7 +224,7 @@
 "missing_EAB_info","BC","d49f96f8-a70b-471a-9a26-003100be520e",1529,152650,1,"fram",7.1,15.7,101,"PD",1.3,"PD","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","75c1f7f9-f62c-44b3-854e-a1c2b54d0834",1601,160201,1,"fram",16.8,0.2,284,"AU",1.3,"DN","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","57a7d8f6-c9ca-486b-95e8-a64635d1c67e",1602,160165,1,"fram",2.4,15.2,123,"A",1.3,"AU","False",1,NA,NA,100,60,NA,0,"I",NA,NA,NA,NA,3,1,"W",NA,NA
-"status_DS_or_DC_but_DBH_measured","BC","57a7d8f6-c9ca-486b-95e8-a64635d1c67e",1602,160286,1,"fram",17.5,0.2,275,"AU",1.3,"DC","False",1,NA,NA,0,0,NA,0,"UP,I",3,NA,NA,NA,5,0,"W",NA,NA
+"status_DS_or_DC_but_DBH_not_measured","BC","57a7d8f6-c9ca-486b-95e8-a64635d1c67e",1602,160286,1,"fram",17.5,0.2,275,"AU",1.3,"DC","False",1,NA,NA,0,0,NA,0,"UP,I",3,NA,NA,NA,5,0,"W",NA,NA
 "missing_EAB_info","BC","57a7d8f6-c9ca-486b-95e8-a64635d1c67e",1602,160286,1,"fram",17.5,0.2,275,"AU",1.3,"DC","False",1,NA,NA,0,0,NA,0,"UP,I",3,NA,NA,NA,5,0,"W",NA,NA
 "missing_percent_crown_intact","BC","9c932078-0091-4cd6-911f-0a605e55bcbf",1603,160618,1,"fram",6.6,7.4,125,"AU",1.3,"DS","False",1,"S",126,NA,NA,NA,0,"I",NA,NA,NA,NA,5,0,"W",NA,NA
 "missing_percent_crown_living","BC","9c932078-0091-4cd6-911f-0a605e55bcbf",1603,160618,1,"fram",6.6,7.4,125,"AU",1.3,"DS","False",1,"S",126,NA,NA,NA,0,"I",NA,NA,NA,NA,5,0,"W",NA,NA
@@ -242,7 +242,7 @@
 "missing_EAB_info","BC","97ecb9ca-7996-4698-b4d0-7b31a59cb492",1610,160793,1,"fram",16,1.4,NA,"PD",1.3,"DN","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info",NA,"2b719fce-b760-4b10-ab86-0036cb56e17e",201,20032,1,"fram",37.4,8.5,NA,"PD",1.3,"PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info",NA,"2b719fce-b760-4b10-ab86-0036cb56e17e",201,20040,1,"fram",32.1,12.7,274,"PD",1.3,"PD","False",NA,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"AS",NA,"I"
-"status_DS_or_DC_but_DBH_measured",NA,"3be0bd40-0216-4628-a00b-d3adfd653a7a",202,20122,1,"prav",29.1,32.2,168,"A",1.3,"DC","False",1,"S",NA,NA,NA,NA,0,"CR",3,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"3be0bd40-0216-4628-a00b-d3adfd653a7a",202,20122,1,"prav",29.1,32.2,168,"A",1.3,"DC","False",1,"S",NA,NA,NA,NA,0,"CR",3,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info",NA,"3be0bd40-0216-4628-a00b-d3adfd653a7a",202,20137,1,"fram",21,34.9,775,"PD",1.3,"PD","False",4,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB",NA,NA
 "missing_EAB_info",NA,"b9d49f48-f61d-4ffe-8c85-b1c83aa6e822",203,20144,1,"frni",20.9,44.1,NA,"PD",1.3,"DN","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info",NA,"b9d49f48-f61d-4ffe-8c85-b1c83aa6e822",203,20155,1,"frni",38.4,40.4,NA,"PD",1.3,"PD","False",2,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,NA,NA,NA
@@ -267,19 +267,19 @@
 "wounded_but_no_level",NA,"9057409f-e5ad-4e83-8739-2d527ce2a752",211,20683,1,"caca",23.8,213.2,100,"A",1.3,"AU","False",1,NA,NA,90,85,NA,0,"W",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_crown_position",NA,"adcd07e2-8f42-4929-8763-00263b4933c8",212,20715,1,"litu",26.5,235.7,191,"A",1.3,"A","False",NA,NA,NA,90,75,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info",NA,"adcd07e2-8f42-4929-8763-00263b4933c8",212,20727,1,"fram",37.8,239.8,174,"A",1.3,"AU","False",1,NA,NA,100,50,NA,0,"I",NA,NA,NA,NA,4,3,"W,SS",NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","3471c49a-2684-47ed-a3fe-0b1e6b632227",214,20783,1,"cagl",9,10,112,"DS",1.3,"DC","False",NA,NA,NA,0,0,NA,0,"U,R,F,DF,UP,B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","3471c49a-2684-47ed-a3fe-0b1e6b632227",214,20783,1,"cagl",9,10,112,"DS",1.3,"DC","False",NA,NA,NA,0,0,NA,0,"U,R,F,DF,UP,B",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","3471c49a-2684-47ed-a3fe-0b1e6b632227",214,20789,1,"litu",16.7,13.8,330,"A",1.3,"AU","False",3,NA,NA,100,100,NA,0,NA,2,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","7c9748eb-358f-4807-bbf2-27726a132b13",216,20825,1,"qual",14.7,7.2,660,"DS",1.3,"DS","False",4,"CD",NA,60,0,NA,0,"U,I",1,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","7c9748eb-358f-4807-bbf2-27726a132b13",216,20825,1,"qual",14.7,7.2,660,"DS",1.3,"DS","False",4,"CD",NA,60,0,NA,0,"U,I",1,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","7c9748eb-358f-4807-bbf2-27726a132b13",216,20837,1,"caovl",8,17,164,"A",1.3,"AU","False",3,NA,NA,100,100,NA,0,NA,1,1,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","4e3d6922-f473-435f-ac63-ddb9fc6bce23",217,22001,1,"caca",0.3,4.3,126,"AU",1.3,"AU","False",1,NA,NA,40,40,NA,0,NA,NA,2,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","4e3d6922-f473-435f-ac63-ddb9fc6bce23",217,22039,1,"caca",6.7,19.2,160,"A",0.8,"AU","False",1,NA,NA,20,20,NA,0,NA,2,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","f94d4491-37cd-46e1-8b18-80b40363e752",218,22057,1,"caca",15.2,5.8,116,"A",1.3,"AU","False",1,NA,NA,100,100,NA,0,NA,1,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","f94d4491-37cd-46e1-8b18-80b40363e752",218,22072,1,"caovl",7.5,11.2,135,"A",1.3,"AU","False",1,NA,NA,80,80,NA,0,NA,1,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","386a30ff-1591-4d81-abba-87309dc19683",219,22086,1,"caovl",3.4,9.8,266,"A",1.3,"AU","False",2,NA,NA,100,100,NA,0,NA,NA,1,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","386a30ff-1591-4d81-abba-87309dc19683",219,22095,1,"nysy",13.3,2.2,298,"DS",1.3,"DS","False",1,"I",NA,0,0,NA,NA,"U,B,R",3,NA,3,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","4551c318-1b6e-46e0-b288-af9962c2b64e",220,22132,1,"juni",14.1,18.9,191,"PD",1.3,"DS","False",3,"I",NA,10,0,NA,0,"U,R,I",NA,NA,2,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","386a30ff-1591-4d81-abba-87309dc19683",219,22095,1,"nysy",13.3,2.2,298,"DS",1.3,"DS","False",1,"I",NA,0,0,NA,NA,"U,B,R",3,NA,3,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","4551c318-1b6e-46e0-b288-af9962c2b64e",220,22132,1,"juni",14.1,18.9,191,"PD",1.3,"DS","False",3,"I",NA,10,0,NA,0,"U,R,I",NA,NA,2,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","4551c318-1b6e-46e0-b288-af9962c2b64e",220,22135,1,"qual",9.2,11.2,486,"AU",1.3,"AU","False",3,NA,NA,100,100,NA,0,NA,2,NA,1,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","9d5d6d84-f774-483e-a333-803b1e8d4779",221,22154,1,"frni",18.5,9.7,114,"PD",1.3,"DS","False",2,"S",NA,25,0,NA,0,"U,I,R",NA,NA,NA,NA,5,0,"DE,VB,W,SS",4,"S"
+"status_DS_or_DC_but_DBH_not_measured","JJ","9d5d6d84-f774-483e-a333-803b1e8d4779",221,22154,1,"frni",18.5,9.7,114,"PD",1.3,"DS","False",2,"S",NA,25,0,NA,0,"U,I,R",NA,NA,NA,NA,5,0,"DE,VB,W,SS",4,"S"
 "status_AU_DS_or_DC_but_no_FAD","JJ","9d5d6d84-f774-483e-a333-803b1e8d4779",221,22155,1,"tiam",19.1,14.7,127,"A",1.3,"AU","False",1,NA,NA,70,70,NA,0,NA,1,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","9d5d6d84-f774-483e-a333-803b1e8d4779",221,22156,1,"tiam",19.8,15.1,187,"AU",1.3,"AU","False",2,NA,NA,70,70,NA,0,NA,2,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","JJ","9d5d6d84-f774-483e-a333-803b1e8d4779",221,22162,1,"quve",4.2,12.1,507,"AU",1.3,"AU","False",3,NA,NA,80,80,NA,0,NA,1,NA,1,NA,NA,NA,NA,NA,NA
@@ -291,9 +291,9 @@
 "status_AU_DS_or_DC_but_no_FAD","JJ","99ed197c-77e2-4b19-be33-ce4a20828187",222,22205,1,"fram",16.2,19.6,143,"A",1.3,"AU","False",2,NA,NA,20,20,NA,NA,NA,NA,NA,NA,NA,4,2,"DE,SS",1,"I"
 "missing_crown_position","JJ","99ed197c-77e2-4b19-be33-ce4a20828187",222,22207,1,"fram",10.8,14.5,345,"AU",1.3,"DS","False",NA,"CD",308,55,0,NA,0,"I,R,F",NA,NA,1,NA,5,0,"DE",4,NA
 "missing_percent_crown_intact","JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab",223,22220,1,"fram",9.1,5.4,66,"DS",1.3,"DS","False",2,"S",NA,NA,0,NA,0,"I",NA,NA,NA,NA,5,0,"DE",2,"S"
-"status_DS_or_DC_but_DBH_measured","JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab",223,22220,1,"fram",9.1,5.4,66,"DS",1.3,"DS","False",2,"S",NA,NA,0,NA,0,"I",NA,NA,NA,NA,5,0,"DE",2,"S"
+"status_DS_or_DC_but_DBH_not_measured","JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab",223,22220,1,"fram",9.1,5.4,66,"DS",1.3,"DS","False",2,"S",NA,NA,0,NA,0,"I",NA,NA,NA,NA,5,0,"DE",2,"S"
 "missing_EAB_info","JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab",223,22223,1,"frpe",4.5,7.3,72,"A",1.3,"AU","False",3,NA,NA,80,75,NA,1,"I",NA,NA,NA,NA,3,0,"DE",NA,"I"
-"status_DS_or_DC_but_DBH_measured","JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab",223,22236,1,"fram",13.5,8,101,"DS",1.3,"DS","False",1,"S",NA,40,0,NA,0,"I",NA,NA,NA,NA,5,0,"DE",1,"S"
+"status_DS_or_DC_but_DBH_not_measured","JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab",223,22236,1,"fram",13.5,8,101,"DS",1.3,"DS","False",1,"S",NA,40,0,NA,0,"I",NA,NA,NA,NA,5,0,"DE",1,"S"
 "missing_EAB_info","BC","f19f0501-a0c2-43b1-b329-7ef4e10031b4",223,22241,1,"frpe",13.6,13,217,"A",1.3,"A","False",3,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","2d9cdeed-9038-4995-8e6d-8178d66780c6",224,22254,1,"fram",5.8,0.9,124,"A",1.3,"AU","False",1,NA,NA,90,5,NA,0,"I",NA,NA,NA,NA,5,1,"SS,W",NA,NA
 "missing_percent_crown_living","BC","2d9cdeed-9038-4995-8e6d-8178d66780c6",224,22255,1,"caca",3,7.1,123,"A",1.3,"A","False",1,NA,NA,100,NA,100,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -323,7 +323,7 @@
 "missing_EAB_info","BC","383cf176-def4-42a1-a4fd-67571bfa51f9",314,30537,1,"fram",15.1,17,295,"A",1.3,"DS","False",4,"D",296,50,0,NA,0,"I",NA,NA,NA,NA,5,0,"W",NA,NA
 "missing_crown_position","BC","cf590ecf-1125-4729-ad34-b5712bc66214",315,30485,1,"fagr",14.7,0.7,145,"A",1.3,"A","False",NA,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_A_but_unhealthy","BC","cc651402-1f66-4ca1-8ecb-3c8fd9a717e1",317,32002,1,"quve",7.4,0.3,390,"A",1.3,"A","False",1,NA,NA,80,80,NA,0,NA,1,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","BC","cc651402-1f66-4ca1-8ecb-3c8fd9a717e1",317,32021,1,"fram",12.6,6.5,106,"A",1.3,"DC","False",1,"S",NA,0,0,NA,NA,"I,CR",NA,NA,3,NA,5,0,"none",NA,NA
+"status_DS_or_DC_but_DBH_not_measured","BC","cc651402-1f66-4ca1-8ecb-3c8fd9a717e1",317,32021,1,"fram",12.6,6.5,106,"A",1.3,"DC","False",1,"S",NA,0,0,NA,NA,"I,CR",NA,NA,3,NA,5,0,"none",NA,NA
 "missing_EAB_info","BC","cc651402-1f66-4ca1-8ecb-3c8fd9a717e1",317,32021,1,"fram",12.6,6.5,106,"A",1.3,"DC","False",1,"S",NA,0,0,NA,NA,"I,CR",NA,NA,3,NA,5,0,"none",NA,NA
 "missing_EAB_info","BC","b7f00847-196a-4b73-bac0-69820de24dbe",318,32057,1,"fram",0.5,13.5,245,"A",1.3,"AU","False",3,NA,NA,60,10,NA,0,"I",NA,NA,NA,NA,5,5,"W,SS",NA,NA
 "status_AU_DS_or_DC_but_no_FAD","BC","787757b2-c575-45a9-8311-637acd9002c3",319,32082,1,"acru",10.9,10.5,226,"A",1.3,"AU","False",1,NA,NA,85,85,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -389,11 +389,11 @@
 "missing_EAB_info","BC","75134764-ffd3-40c2-a031-7172e0325bbb",716,70616,1,"fram",16.4,6.4,243,"A",1.3,"A","False",3,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","BC","3a3cc48b-eb29-4837-bf64-cd4f76c7df84",720,72140,1,"quru",9.4,8.3,562,"A",1.3,"AU","False",3,NA,NA,100,90,NA,0,NA,NA,NA,NA,"epicormics",NA,NA,NA,NA,NA
 "missing_EAB_info","BC","5c3aa0af-fbdc-459d-a94c-9094592d6c3b",730,72417,1,"fram",11.7,16.2,121,"A",1.3,"A","False",1,NA,NA,100,80,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured",NA,"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80560,1,"frpe",143,284,130,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80560,1,"frpe",143,284,130,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80560,1,"frpe",143,284,130,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info",NA,"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80560,1,"frpe",143,284,130,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured",NA,"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80570,1,"pato",18.8,6.4,485,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured",NA,"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80570,1,"pato",158.8,286.39999,485,"PD",1.3,"PD","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80570,1,"pato",18.8,6.4,485,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80570,1,"pato",158.8,286.39999,485,"PD",1.3,"PD","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80570,1,"pato",18.8,6.4,485,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80570,1,"pato",158.8,286.39999,485,"PD",1.3,"PD","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_A_but_unhealthy",NA,"223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80573,1,"cato",2.6,4.8,116,"A",1.3,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -408,15 +408,15 @@
 "status_A_but_unhealthy",NA,"23f4a54c-6998-4b55-9f8b-01d59e665cfe",815,80582,1,"prav",157.60001,294.70001,261,"A",1.3,"A","False",2,NA,NA,100,100,NA,2,"K",NA,1,NA,NA,NA,NA,NA,NA,NA
 "status_A_but_unhealthy",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80694,1,"juni",4.4,4.3,463,"A",1.3,"AU","False",4,NA,NA,90,90,NA,0,"AN",NA,NA,NA,"Heavy woodpecker activity, possible insect infection",NA,NA,NA,NA,NA
 "status_A_but_unhealthy",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5",816,80694,1,"juni",144.39999,304.29999,463,"A",1.3,"A","False",3,NA,NA,90,90,NA,0,NA,1,NA,NA,"sapsucker holes",NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80698,1,"frni",0.9,13.2,158,"DS",1.3,"DS","False",3,"OG",NA,85,0,NA,0,NA,NA,NA,NA,"Dead tree",5,0,"VB,AS,DE",5,"OG"
-"status_DS_or_DC_but_DBH_measured",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5",816,80698,1,"frni",140.89999,313.20001,158,"DS",1.3,"DS","False",3,"I",158,80,0,NA,0,"I",NA,1,NA,NA,5,0,"DE",2,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80698,1,"frni",0.9,13.2,158,"DS",1.3,"DS","False",3,"OG",NA,85,0,NA,0,NA,NA,NA,NA,"Dead tree",5,0,"VB,AS,DE",5,"OG"
+"status_DS_or_DC_but_DBH_not_measured",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5",816,80698,1,"frni",140.89999,313.20001,158,"DS",1.3,"DS","False",3,"I",158,80,0,NA,0,"I",NA,1,NA,NA,5,0,"DE",2,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80698,1,"frni",0.9,13.2,158,"DS",1.3,"DS","False",3,"OG",NA,85,0,NA,0,NA,NA,NA,NA,"Dead tree",5,0,"VB,AS,DE",5,"OG"
 "status_AU_DS_or_DC_but_no_FAD",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5",816,80698,1,"frni",140.89999,313.20001,158,"DS",1.3,"DS","False",3,"I",158,80,0,NA,0,"I",NA,1,NA,NA,5,0,"DE",2,NA
 "missing_percent_crown_intact",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80770,1,"caca",11.1,11.4,160,"A",1.3,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_intact",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5",816,80770,1,"caca",151.10001,311.39999,160,"A",1.3,"A","False",1,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_living",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80770,1,"caca",11.1,11.4,160,"A",1.3,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_living",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5",816,80770,1,"caca",151.10001,311.39999,160,"A",1.3,"A","False",1,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80773,1,"frni",19.6,17.3,NA,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80773,1,"frni",19.6,17.3,NA,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80773,1,"frni",19.6,17.3,NA,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80773,1,"frni",19.6,17.3,NA,"PD",1.3,"DC","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_crown_position",NA,"23463380-182c-43a9-82de-4bdc2d12eb85",816,80776,1,"caca",7.9,18.5,107,"A",1.3,"A","False",2,NA,NA,90,90,25,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -437,20 +437,20 @@
 "status_AU_DS_or_DC_but_no_FAD",NA,"e6494a3d-9bfa-4d69-9401-baca6289ae7f",821,82182,1,"nysy",12.4,19.2,119,"DS",1.3,"DS","False",1,"S",117,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"e6494a3d-9bfa-4d69-9401-baca6289ae7f",821,82193,1,"cagl",1.9,15,106,"A",1.3,"DS","False",2,"I",102,90,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"e6494a3d-9bfa-4d69-9401-baca6289ae7f",821,82194,1,"nysy",0.4,19.1,128,"PD",1.3,"DS","False",2,"I",119,5,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured",NA,"6bcd3c17-6714-427d-9219-e68987e1333b",822,82208,1,"qual",1.6,4.9,491,"PD",1.3,"DC","False",1,"S",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"6bcd3c17-6714-427d-9219-e68987e1333b",822,82208,1,"qual",1.6,4.9,491,"PD",1.3,"DC","False",1,"S",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"6bcd3c17-6714-427d-9219-e68987e1333b",822,82208,1,"qual",1.6,4.9,491,"PD",1.3,"DC","False",1,"S",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_intact",NA,"6bcd3c17-6714-427d-9219-e68987e1333b",822,82209,1,"cato",14.7,0.2,371,"A",1.3,"A","False",3,NA,NA,NA,100,100,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"d6529c58-9aaa-478d-bbe4-3b523a42cbce",823,82228,1,"quru",16.6,1.6,587,"PD",1.3,"DS","False",4,"CD",585,75,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured",NA,"57a4a19f-603d-4a51-a9d6-2cd8fe3066a0",824,82257,1,"nysy",10.9,14.6,104,"PD",1.3,"DC","False",1,"S",NA,0,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"57a4a19f-603d-4a51-a9d6-2cd8fe3066a0",824,82257,1,"nysy",10.9,14.6,104,"PD",1.3,"DC","False",1,"S",NA,0,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"57a4a19f-603d-4a51-a9d6-2cd8fe3066a0",824,82257,1,"nysy",10.9,14.6,104,"PD",1.3,"DC","False",1,"S",NA,0,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_intact",NA,"57a4a19f-603d-4a51-a9d6-2cd8fe3066a0",824,82261,1,"nysy",6.3,15.9,225,"A",1.3,"A","False",2,NA,NA,NA,100,100,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_intact",NA,"0d92cbad-8db6-43ac-9d9a-4592c8ac1651",825,82263,2,"cagl",4.9,2.4,351,"A",1.3,"A","False",3,NA,NA,NA,100,100,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured",NA,"0d92cbad-8db6-43ac-9d9a-4592c8ac1651",825,82284,1,"quve",1.3,12,850,"PD",1.3,"DS","False",4,"CD",NA,0,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"0d92cbad-8db6-43ac-9d9a-4592c8ac1651",825,82284,1,"quve",1.3,12,850,"PD",1.3,"DS","False",4,"CD",NA,0,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD",NA,"0d92cbad-8db6-43ac-9d9a-4592c8ac1651",825,82284,1,"quve",1.3,12,850,"PD",1.3,"DS","False",4,"CD",NA,0,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_intact",NA,"d19a7d40-ed9e-46ff-9cc4-f439e69d5daf",827,82322,1,"qual",2.3,3.4,796,"A",1.3,"A","False",4,NA,NA,NA,100,100,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","BC","cbf7c8d1-f233-47e6-ad17-431767895ad3",830,82399,1,"litu",2.9,11.2,513,"A",1.3,"AU","False",3,NA,NA,100,90,NA,0,NA,NA,NA,NA,"epicormic branches",NA,NA,NA,NA,NA
 "missing_EAB_info","BC","57a6e715-24c8-48c2-8d7f-c70972e0debd",832,82435,1,"fram",3.5,3.5,74,"A",1.3,"DN","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured",NA,"f12e2ddd-bf96-4710-b354-3d41e9e16b74",917,92029,1,"quru",171.5,334,594,"A",1.3,"DS","False",2,"I",NA,90,0,NA,0,"DF,U",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"f12e2ddd-bf96-4710-b354-3d41e9e16b74",917,92029,1,"quru",171.5,334,594,"A",1.3,"DS","False",2,"I",NA,90,0,NA,0,"DF,U",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "species_code_error",NA,"f12e2ddd-bf96-4710-b354-3d41e9e16b74",917,92037,NA,NA,NA,NA,NA,NA,NA,"A","False",1,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","cc223de2-66ce-4d5c-a53f-d0cfc0265bc9",923,92284,2,"fram",10.4,8.9,18,"PD",NA,"DN","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_A_but_unhealthy","BC","8a104c4f-88fd-4ff3-b276-5ed2ac12c14a",927,92458,1,"fram",10.4,15.9,63,"A",1.3,"A","False",1,NA,NA,100,98,NA,0,"I",NA,NA,NA,NA,1,0,"none",NA,"S"
@@ -460,7 +460,7 @@
 "dead_but_epicormic_more_than_0","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12266,1,"frpe",10.6,7.2,136,"A",1.3,"DS","False",2,"I",137,50,0,NA,0,"I",NA,NA,NA,NA,5,2,"W,SS",0,NA
 "missing_EAB_info","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12274,1,"fram",11.1,19,382,"A",1.3,"AU","False",3,NA,NA,100,2,NA,0,"I",NA,NA,NA,NA,5,4,"W,DE",4,NA
 "missing_EAB_info","BC","21528247-2d0a-484e-b89e-a70f34f364ec",125,12274,1,"fram",11.1,19,382,"A",1.3,"AU","False",3,NA,NA,50,20,NA,0,"I",NA,NA,NA,NA,5,3,"W",NA,NA
-"status_DS_or_DC_but_DBH_measured",NA,"b9d49f48-f61d-4ffe-8c85-b1c83aa6e822",203,20144,1,"frni",20.9,44.1,NA,"PD",1.3,"DC","False",1,"S",NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB",NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"b9d49f48-f61d-4ffe-8c85-b1c83aa6e822",203,20144,1,"frni",20.9,44.1,NA,"PD",1.3,"DC","False",1,"S",NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB",NA,NA
 "missing_EAB_info",NA,"b9d49f48-f61d-4ffe-8c85-b1c83aa6e822",203,20144,1,"frni",20.9,44.1,NA,"PD",1.3,"DC","False",1,"S",NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB",NA,NA
 "missing_EAB_info",NA,"b9d49f48-f61d-4ffe-8c85-b1c83aa6e822",203,20155,1,"frni",38.4,40.4,NA,"PD",1.3,"PD","False",2,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"none",NA,NA
 "missing_EAB_info",NA,"c6466bea-8292-4322-ad1c-4d42ca657c19",204,20251,1,"fram",23,66.4,73,"PD",1.3,"PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"VB,AS",0,NA
@@ -471,12 +471,12 @@
 "crown_thinning_more_than_1_but_not_AU_or_dead","BC","579a6c7f-8f75-4549-8fa2-028e64f649ba",410,40719,1,"fram",3.8,3.9,235,"A",1.3,"A","False",1,NA,NA,100,75,NA,0,NA,NA,NA,NA,NA,2,0,"W",0,NA
 "EABF_recorded_but_not_AU_or_dead","BC","579a6c7f-8f75-4549-8fa2-028e64f649ba",410,40719,1,"fram",3.8,3.9,235,"A",1.3,"A","False",1,NA,NA,100,75,NA,0,NA,NA,NA,NA,NA,2,0,"W",0,NA
 "crown_living_greater_than_crown_intact","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb",709,70415,1,"caca",3.8,13.9,NA,"A",1.3,"A","False",1,NA,NA,0,100,NA,0,NA,NA,NA,NA,"no tag",NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb",709,70415,2,"caca",3.8,13.9,NA,"A",1.3,"DC","False",1,"S",NA,0,0,NA,NA,"U,OT",NA,NA,NA,"no tag",NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb",709,70415,2,"caca",3.8,13.9,NA,"A",1.3,"DC","False",1,"S",NA,0,0,NA,NA,"U,OT",NA,NA,NA,"no tag",NA,NA,NA,NA,NA
 "missing_crown_position","JJ","e9c28542-247b-4841-9b40-12dd5f53a0fe",809,80503,1,"caovl",12.7,17.9,261,NA,1.3,"A","False",NA,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_crown_position","JJ","fca9f86d-3400-486e-ab4c-a35e98409278",810,80621,1,"cagl",11.5,15.6,264,"PD",1.2,"DS","False",NA,"S",NA,0,0,NA,0,NA,NA,NA,2,NA,NA,NA,NA,NA,NA
 "missing_crown_position","JJ","fca9f86d-3400-486e-ab4c-a35e98409278",810,80625,1,"cagl",16,19.7,385,"A",1.3,"DS","False",NA,"CD",NA,40,0,NA,0,"U,R,DF,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","JJ","fca9f86d-3400-486e-ab4c-a35e98409278",810,80625,1,"cagl",16,19.7,385,"A",1.3,"DS","False",NA,"CD",NA,40,0,NA,0,"U,R,DF,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_measured","BC","30aabdf2-439b-4903-9ca3-dbf59cb417ae",708,70187,1,"cagl",4.6,5.6,NA,"AU",1.3,"DC","False",1,"S",NA,0,0,NA,0,"UP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","fca9f86d-3400-486e-ab4c-a35e98409278",810,80625,1,"cagl",16,19.7,385,"A",1.3,"DS","False",NA,"CD",NA,40,0,NA,0,"U,R,DF,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","BC","30aabdf2-439b-4903-9ca3-dbf59cb417ae",708,70187,1,"cagl",4.6,5.6,NA,"AU",1.3,"DC","False",1,"S",NA,0,0,NA,0,"UP",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","5c3aa0af-fbdc-459d-a94c-9094592d6c3b",730,72417,1,"fram",11.7,16.2,121,"A",1.3,"AU","False",1,NA,NA,100,80,NA,0,"I",NA,NA,NA,NA,2,0,"W",NA,NA
 "status_A_but_unhealthy","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80573,1,"cato",2.6,4.8,116,"A",1.3,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","BC","223b1d04-8f5c-42b2-9c7b-ff5bad8c53d1",815,80576,1,"quve",3.5,8,585,"A",1.3,"A","False",4,NA,NA,100,80,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -502,6 +502,6 @@
 "missing_crown_position","JJ","220b9edb-8c2f-472c-abc6-ac746400bf5d",1717,172207,1,"cagl",19.9,11.9,182,"A",1.3,"A","False",NA,NA,NA,85,65,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","BC","b7768755-33f3-4fab-8003-32ca9490647e",401,40028,1,"ploc",9.5,6.3,468,NA,1.3,"AU","False",4,NA,NA,100,50,NA,1,NA,NA,NA,NA,"No visible FAD, but thin crown (all 3 stems). One stem has lianas.",NA,NA,NA,NA,NA
 "status_AU_DS_or_DC_but_no_FAD","BC","579a6c7f-8f75-4549-8fa2-028e64f649ba",410,40719,1,"fram",3.8,3.9,235,"A",1.3,"AU","False",1,NA,NA,100,75,NA,0,NA,NA,NA,NA,NA,2,0,"W",0,NA
-"status_DS_or_DC_but_DBH_measured","JJ","fca9f86d-3400-486e-ab4c-a35e98409278",810,80625,1,"cagl",16,19.7,385,"A",1.3,"DS","False",3,"CD",NA,40,0,NA,0,"U,R,DF,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","fca9f86d-3400-486e-ab4c-a35e98409278",810,80625,1,"cagl",16,19.7,385,"A",1.3,"DS","False",3,"CD",NA,40,0,NA,0,"U,R,DF,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","BC","387b4f99-5b2c-49db-b514-18360f3ef1ec",902,90243,1,"fram",15.9,6,28,"AU",1.3,"DS","False",1,"S",29,20,0,NA,4,"I",NA,NA,NA,NA,5,0,"W,VB",NA,"S"
 "status_A_but_unhealthy","BC","a5e1284b-8e7e-4bc4-8a21-c3b74257dbd3",907,91454,1,"litu",17,17.8,NA,"A",1.3,"A","False",1,NA,NA,20,20,NA,0,"CR,B,W",3,NA,NA,NA,NA,NA,NA,NA,NA
