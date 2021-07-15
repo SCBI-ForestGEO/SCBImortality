@@ -441,6 +441,28 @@ if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_fi
 
 
 
+# check that there is D.shaped.exit.hole.count when EABF is DE ####
+error_name <- "DE_but_no_exit_hole_count"
+
+idx_DE <- !is.na(mort$EABF) & grepl("DE", mort$EABF)
+idx_exit_count <- !is.na(mort$"D-shaped exit hole count") & mort$"D-shaped exit hole count">0
+
+
+idx_errors <- idx_DE & !idx_exit_count
+
+if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+
+
+
+
+## and vice versa ####
+error_name <- "exit_hole_count_no_DE_EABF"
+
+idx_errors <- !idx_DE & idx_exit_count
+
+if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+
+
 # check that newly censused 'A' or 'AU', were A or AU in previous year ####
 warning_name <- "Dead_but_now_alive"
 
@@ -474,12 +496,12 @@ idx_errors <- idx_trees & idx_previously_dead
 
 if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name)) 
 
-# check that newly  censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI), have Crown thinning, Epicormic growth, D-shaped exit hole count, Crown position < 10 cm DBH (for stems <10cm) all recorded ####
+# check that newly  censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI), have Crown thinning, Epicormic growth, Crown position < 10 cm DBH (for stems <10cm) all recorded ####
 error_name <- "missing_EAB_info"
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
-idx_missing_EAB_info <- !complete.cases(mort[, c("Crown thinning", "Epicormic growth", "D-shaped exit hole count") ])
+idx_missing_EAB_info <- !complete.cases(mort[, c("Crown thinning", "Epicormic growth") ])
 idx_missing_crwn_pos <- !complete.cases(mort[, c("Crown position < 10 cm DBH")])
 idx_trees_less_10cm <-  !is.na( as.numeric(mort$DBH)) & as.numeric(mort$DBH) <100
      
@@ -493,9 +515,6 @@ idx_previously_dead <- idx_previously_dead <- grepl("D", mort[,previous_status_c
 
 
 idx_errors <- ((idx_trees & idx_missing_EAB_info) |  (idx_trees & idx_missing_crwn_pos & idx_trees_less_10cm)) & (idx_status& !idx_previously_dead)
-
-
-
 
 
 if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
