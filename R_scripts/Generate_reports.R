@@ -670,5 +670,7 @@ quad_summary <- data.frame(Quad = quad_with_any_issue,
                            n_missing_tags = c(table(quadrat_censused_missing_stems$quadrat))[as.character(quad_with_any_issue)],
                            n_duplicated_tags = c(table(quadrat_censused_duplicated_stems$Quad))[as.character(quad_with_any_issue)])
 
+quad_summary$sum_missing_and_errors <- quad_summary$n_missing_tags + quad_summary$n_tag_error_field_fix
+
 write.csv(quad_summary[order(as.numeric(quad_summary$Quad)), ], file.path(here("testthat"), "reports/quadrat_n_errors_summary.csv"), row.names = F)
 
