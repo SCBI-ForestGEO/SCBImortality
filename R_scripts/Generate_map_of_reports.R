@@ -31,10 +31,10 @@ mort <- mort[, unique(names(mort))]# remove repeated columns
 all_errors_to_be_fixed <- list.files(file.path(here("testthat"), "reports/requires_field_fix/"), pattern = ".csv", full.names = T)
 all_warnings_to_be_fixed <- list.files(file.path(here("testthat"), "reports/warnings/"), pattern = ".csv", full.names = T)
 
-all_errors_to_be_fixed <- sapply(all_errors_to_be_fixed, read.csv)
+all_errors_to_be_fixed <- read.csv(all_errors_to_be_fixed)
 all_warnings_to_be_fixed <- do.call(rbind, lapply(all_warnings_to_be_fixed, read.csv))
 
-quadrats_with_error <- unique(unlist(sapply(all_errors_to_be_fixed, function(x) x[, grepl("quad", names(x), ignore.case = T)])))
+quadrats_with_error <- unique(all_errors_to_be_fixed$Quad)
 quadrats_with_warnings <- unique(all_warnings_to_be_fixed$Quad)
 
 
