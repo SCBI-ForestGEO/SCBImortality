@@ -114,11 +114,11 @@ require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(m
 filename <- file.path(here("testthat"), "reports/will_auto_fix/quadrat_censused_duplicated_stems.csv")
 
 
-idx_errors <- duplicated(paste(mort$Tag, mort$StemTag))
+idx_errors <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$StemTag))]
 
 
 if(sum(idx_errors) > 0) {
-  write.csv(mort[idx_errors, ], file = filename, row.names = F)
+  write.csv(mort[paste(mort$Tag, mort$StemTag) %in% idx_errors, ], file = filename, row.names = F)
 } else {
   if(file.exists(filename) ) file.remove(filename)
 }
