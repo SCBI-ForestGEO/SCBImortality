@@ -755,3 +755,18 @@
 "missing_stem",NA,NA,1610,163373,1,"fram",300.29999,181.10001,15,"A",1610,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,1610,163376,1,"fram",301.70001,188.10001,16,"A",1610,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,1610,163378,1,"fram",301.29999,189.60001,14,"A",1610,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"DE_but_no_exit_hole_count","BC","777defe6-e42e-489a-b4b6-74e1a20618f4",1315,131272,1,"fram",18.5,2.2,956,"A",1.3,"PD","False",NA,NA,NA,0,0,NA,0,"B,I",3,NA,NA,"completely broken stem, unable to do any analysis",5,0,"DE",0,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","237287db-0e43-4245-aebd-7ea363b99e06",1707,171243,1,"fram",330.70001,126.9,90,"A",1.3,"DC","False",NA,"CD",NA,0,0,NA,0,"I",NA,NA,3,"found as t tree on ground at coordinates no tag. looks long dead",NA,NA,NA,NA,NA
+"missing_EAB_info","JJ","237287db-0e43-4245-aebd-7ea363b99e06",1707,171243,1,"fram",330.70001,126.9,90,"A",1.3,"DC","False",NA,"CD",NA,0,0,NA,0,"I",NA,NA,3,"found as t tree on ground at coordinates no tag. looks long dead",NA,NA,NA,NA,NA
+"crown_living_greater_than_crown_intact","JJ","94ea77c1-22a1-4e40-a812-1554a6c163f3",1708,171257,1,"litu",332.20001,144.5,636,"A",1.3,"A","False",4,NA,NA,0,80,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_AU_DS_or_DC_but_no_FAD","JJ","c58557a0-d4d8-4b79-8451-05e014a7cdd0",1709,171271,1,"fram",337,174.10001,89,"A",1.3,"DS","False",1,"S",88,50,0,NA,0,NA,NA,NA,NA,NA,5,0,"SS",0,"S"
+"status_DS_or_DC_but_DBH_not_measured","JJ","8845d9a0-e7f9-4537-9af9-11175faee1f4",1710,171402,1,"litu",322.5,195,143,"A",1.3,"DS","False",1,"S",NA,25,0,NA,0,"U,OT,R",NA,NA,1,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,1710,171407,1,"cato",327.79999,199.7,123,"A",1710,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","4cc0313f-9434-4777-b178-754080bd836c",1712,171314,1,"quru",330,239.5,880,"A",1.3,"DC","False",3,"D",NA,20,0,NA,0,"U",NA,NA,NA,"recent fall? fungi present",NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","6ff3657d-bfe5-4ba3-940d-f758b2c35cc1",1714,171446,1,"fram",324.70001,260.29999,439,"A",1.3,"DS","False",4,"D",NA,50,0,NA,0,"I,F,DF",NA,NA,NA,NA,5,0,"W,VB,DE",8,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","fe998633-e5d5-40ed-9f48-6cd4c4200167",1715,171471,1,"qual",322.89999,289.10001,226,"A",1.3,"DS","False",1,"S",NA,40,0,NA,4,"U,OT",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_intact","BC","284b8d70-a97e-4970-a6bd-96e9518caa50",1728,172472,1,"fram",339.10001,559.29999,153,"A",1.3,"DS","False",2,"I",154,NA,NA,NA,0,"I",NA,NA,NA,NA,5,0,"W,SS,AS",NA,NA
+"missing_percent_crown_living","BC","284b8d70-a97e-4970-a6bd-96e9518caa50",1728,172472,1,"fram",339.10001,559.29999,153,"A",1.3,"DS","False",2,"I",154,NA,NA,NA,0,"I",NA,NA,NA,NA,5,0,"W,SS,AS",NA,NA
+"missing_stem",NA,NA,1731,172577,1,"quru",323.39999,600.5,768,"A",1731,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,1731,172616,1,"fram",329.5,601.40002,214,"A",1731,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","BC","59b8b9fe-3041-4e85-b57a-bbbccc71eb66",1731,172623,1,"fram",332.29999,609.29999,230,"A",1.3,"DS","False",2,"I",231,40,0,NA,0,"I",NA,NA,NA,NA,5,NA,"W,VB,DE",3,NA
