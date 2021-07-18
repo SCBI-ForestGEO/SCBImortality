@@ -31,7 +31,9 @@ main_census$dbh <- as.numeric(main_census$dbh)
 main_census <-  main_census[grepl("^fr..|^ch..", main_census$sp) | (!is.na(main_census$dbh) & main_census$dbh >= 100), ]
 
 ## remove trees that are dead
-main_census <- main_census[!main_census$status %in% "D",]
+# main_census <- main_census[!main_census$status %in% "D",]
+main_census <- main_census[!grepl("DC|DN|DT", main_census$codes),] # see https://github.com/SCBI-ForestGEO/SCBImortality/issues/31#issuecomment-881702404
+
 
 # load species table ####
 
