@@ -307,7 +307,7 @@ idx_errors <- idx_trees & idx_DBH_ouside_range
 
 if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name))
 
-# check that newly censused 'AU', 'DS' or 'DC trees that were alive in previous census have at least one FAD is selected (OR level selected for `wounded main stem`,`canker,swelling,deformity`, `rotting main stem`) OR **status is AU and `percentage of crown living`<100**  ####
+# check that newly censused 'AU', 'DS' or 'DC trees that were alive in previous census have at least one FAD is selected (OR level selected for `wounded main stem`,`canker,swelling,deformity`, `rotting main stem`) ####
 error_name <- "status_AU_DS_or_DC_but_no_FAD"
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
@@ -322,16 +322,16 @@ idx_wound <- is.na(mort$'Wounded main stem')
 idx_canker <- is.na(mort$'Canker; swelling, deformity')
 idx_rot <- is.na(mort$'Rotting trunk')
 
-idx_living_crown <- mort$"Percentage of crown living" == 100
+# idx_living_crown <- mort$"Percentage of crown living" == 100 # this was for OR **status is AU and `percentage of crown living`<100**  
 
 
 
 idx_errors <- idx_trees & (idx_no_FAD & idx_wound & idx_canker & idx_rot)  & !idx_previously_dead
 
-idx_errors[mort[, status_column] %in% "AU" & !idx_living_crown] <- FALSE # overwrite to FALSE for trees that are AU and crown not intact
+# idx_errors[mort[, status_column] %in% "AU" & !idx_living_crown] <- FALSE # overwrite to FALSE for trees that are AU and crown not intact
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name)) # this was for OR **status is AU and `percentage of crown living`<100**  
 
 
 # check that newly censused 'AU', 'DS' or 'DC trees have at one photo taken ####
