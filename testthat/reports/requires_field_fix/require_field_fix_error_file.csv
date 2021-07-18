@@ -99,6 +99,7 @@
 "missing_stem",NA,NA,"407","40622","1","cato","73.3","122.2","418","A","407",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"407","40626","1","litu","78.8","124.4","137","A","407",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"407","40634","1","litu","78.8","135.7","153","A","407",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_AU_DS_or_DC_but_no_FAD","BC","9bd247b3-16f2-479b-90dc-446446db62f8","409","40704","1","qual","15.2","15.7","479","AU","1.3","AU","False","2",NA,NA,95,85,NA,"0",NA,NA,NA,NA,"epicormic branches",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"410","40801","1","fram","78.2","191.3","69","A","410",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"415","40973","1","chvi","66.7","290.60001","36","A","415",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"415","41001","1","fagr","79.6","284.79999","108","A","415",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -175,6 +176,7 @@
 "missing_crown_position",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80776","1","caca","147.89999","318.5","107","A","1.3","A","False",NA,NA,NA,NA,NA,35,"2",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_intact",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80776","1","caca","147.89999","318.5","107","A","1.3","A","False",NA,NA,NA,NA,NA,35,"2",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_living",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80776","1","caca","147.89999","318.5","107","A","1.3","A","False",NA,NA,NA,NA,NA,35,"2",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_AU_DS_or_DC_but_no_FAD",NA,"a7291bcf-4a52-4ccf-99b8-8b3d371de6f1","818","82054","1","qual","147.89999","346.10001","116","AU","1.3","AU","False","1",NA,NA,25,25,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"820","82145","1","fram","151.89999","398.5","78","A","820",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"826","82297","1","fram","142.3","507.20001","76","A","826",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"829","82363","1","fram","157.2","569","222","A","829",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
