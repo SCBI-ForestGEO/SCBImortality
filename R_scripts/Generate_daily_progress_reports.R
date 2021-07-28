@@ -147,9 +147,9 @@ error_rate_plot <- error_rates %>%
   coord_cartesian(
     ylim = c(0, NA)
   ) +
-  theme(legend.position="bottom") +
   geom_vline(xintercept = ymd("2021-07-06"), col = "red") +
-  theme_bw()
+  theme_bw() + 
+  theme(legend.position = "bottom")
 
 
 # Output
