@@ -245,6 +245,10 @@
 "missing_stem",NA,NA,"1201","120266","1","fram","226.5","12","43","A","1201",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"1201","120279","1","fram","226.60001","8.1","48","A","1201",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"1201","120302","1","fram","223.8","13.5","21","A","1201",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_but_no_level","JJ","861c4bdd-0c9c-4002-aeed-4f952aa29936","1207","120983","1","caca","18.10001","6.3","104","A","1.3","AU","False","1",NA,NA,100,100,NA,"0","U,W",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","7c92d82c-0c27-461f-9a4d-a5d2e8ccf41d","1208","121156","1","litu","19.8","12.3","106","A","1.3","DC","False","1","S",NA,0,0,NA,"0","U,OT,B",NA,NA,NA,"no tag found. cannot measure dbh",NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","b4f8594e-47da-4d88-bac6-39dffd408f3b","1212","121405","1","cagl","18.60001","0.5","302","A","1.3","DC","False","1","CD",NA,30,0,NA,"0","U,UP",NA,NA,NA,"unable to measure dbh",NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured","JJ","b4f8594e-47da-4d88-bac6-39dffd408f3b","1212","121408","1","cagl","11.3","6","371","A","1.3","DC","False","1","CD",NA,50,0,NA,"0","U,UP",NA,NA,NA,"unable to measure dbh",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"1214","121343","1","cato","223.2","275.70001","112","A","1214",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"1220","122137","1","fram","228.10001","389.70001","88","A","1220",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,"1227","122421","1","fram","232.2","525.40002","61","A","1227",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -318,6 +322,22 @@
 "missing_percent_crown_intact","BC","284b8d70-a97e-4970-a6bd-96e9518caa50","1728","172472","1","fram","339.10001","559.29999","153","A","1.3","DS","False","2","I",154,NA,NA,NA,"0","I",NA,NA,NA,NA,"5","0","W,SS,AS",NA,NA
 "missing_percent_crown_living","BC","284b8d70-a97e-4970-a6bd-96e9518caa50","1728","172472","1","fram","339.10001","559.29999","153","A","1.3","DS","False","2","I",154,NA,NA,NA,"0","I",NA,NA,NA,NA,"5","0","W,SS,AS",NA,NA
 "missing_EAB_info","BC","59b8b9fe-3041-4e85-b57a-bbbccc71eb66","1731","172623","1","fram","332.29999","609.29999","230","A","1.3","DS","False","2","I",231,40,0,NA,"0","I",NA,NA,NA,NA,"5",NA,"W,VB,DE",3,NA
+"missing_percent_crown_living","BC","035e40ce-43f8-4758-903a-d6652c882610","1901","190016","1","cofl","6.79998999999998","4.2","117","A","1.3","A","False","1",NA,NA,100,NA,100,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","BC","7c44c8b5-1f33-4e7b-9246-0cf81f74adda","1905","190432","1","fram","9.20001000000002","4","65","A","1.3","AU","False","1",NA,NA,100,90,NA,"0","I",NA,NA,NA,NA,"2",NA,"W,SS",0,"S"
+"status_AU_DS_or_DC_but_no_FAD","BC","7c44c8b5-1f33-4e7b-9246-0cf81f74adda","1905","190631","1","fram","2.20001000000002","13.2","141","A","1.3","AU","False","1",NA,NA,100,40,NA,"0",NA,NA,NA,NA,NA,"4","2","W,DE",2,"S"
+"wounded_but_no_level","BC","dd149717-137b-4b0d-84e4-4057cc3dfd0a","1907","190664","1","litu","1.10001","13.3","615","A","1.3","AU","False","3",NA,NA,100,90,NA,"0","W",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"crown_living_greater_than_crown_intact","BC","61cd28dd-df31-4d33-906a-7ae9838491e7","1909","190498","1","cagl","0.70001000000002","8.80000000000001","479","A","1.3","A","False","2",NA,NA,1,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"exit_hole_count_no_DE_EABF","BC","3046857e-9e1f-4cfb-a1f8-86f7d355756b","1911","190722","1","fram","18","2.80000000000001","252","A","1.3","AU","False","2",NA,NA,100,10,NA,"0","I",NA,NA,NA,NA,"5","3","SS,W",2,NA
+"status_A_but_unhealthy","BC","3046857e-9e1f-4cfb-a1f8-86f7d355756b","1911","190729","1","fram","14.29999","7.39999","150","A","1.3","A","False","2",NA,NA,100,70,NA,"0","I",NA,NA,NA,NA,"3","5","W",0,NA
+"crown_thinning_more_than_1_but_not_AU_or_dead","BC","3046857e-9e1f-4cfb-a1f8-86f7d355756b","1911","190729","1","fram","14.29999","7.39999","150","A","1.3","A","False","2",NA,NA,100,70,NA,"0","I",NA,NA,NA,NA,"3","5","W",0,NA
+"EABF_recorded_but_not_AU_or_dead","BC","3046857e-9e1f-4cfb-a1f8-86f7d355756b","1911","190729","1","fram","14.29999","7.39999","150","A","1.3","A","False","2",NA,NA,100,70,NA,"0","I",NA,NA,NA,NA,"3","5","W",0,NA
+"missing_EAB_info","BC","e981b291-d967-47f8-bb0f-5579fbdac6a8","1912","190567","1","fram","0.20001000000002","18.3","71","A","1.3","AU","False","1",NA,NA,100,30,NA,"0","I",NA,NA,NA,NA,"4","4","W,SS",0,NA
+"missing_percent_crown_living","BC","e981b291-d967-47f8-bb0f-5579fbdac6a8","1912","190749","1","caco","16.10001","2.19999999999999","171","A","1.3","A","False","2",NA,NA,100,NA,100,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","BC","7c655d40-53ae-4e4d-8af0-173b2ed94472","1914","190904","1","fram","10.10001","16.60001","77","A","1.3","AU","False","1",NA,NA,100,70,NA,"0","I",NA,NA,NA,NA,"3","0","W",0,NA
+"missing_percent_crown_living","BC","a74ee6da-4776-43d4-8a06-e98c364b4a94","2005","200621","1","fram","15","3.09999999999999","52","A","1.3","AU","False","1",NA,NA,100,NA,40,"0","I",NA,NA,NA,NA,"4","0","W,DE",2,"S"
+"missing_stem",NA,NA,"2008","200676","1","litu","392.20001","146.89999","893","A","2008",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"species_code_error","BC","969b4f7b-eee0-4f12-b90c-381e34599570","2008","200827",NA,NA,NA,NA,NA,NA,NA,"A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,"2012","201235","1","caco","389.29999","228","172","A","2012",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_but_no_level","BC","aac098d6-0df4-4c35-a786-90ce4d501aa7","2022","202103","1","qupr","13.89999","6.5","123","A","1.3","AU","False","1",NA,NA,100,100,NA,"0","W",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_but_no_level","BC","717cebaa-3435-48b5-a9fb-426bbbd7a050","2023","202126","1","litu","11.79999","16.79999","135","A","1.3","AU","False","1",NA,NA,100,90,NA,"0","W",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_but_no_level","BC","6b9e7e95-b6d4-4156-b5e8-4a829082a35f","2025","202686","1","ulru","7.20001000000002","16.20001","102","A","1.3","AU","False","1",NA,NA,100,80,NA,"0","W",NA,NA,NA,NA,NA,NA,NA,NA,NA
