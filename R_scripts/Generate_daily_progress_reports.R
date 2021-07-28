@@ -149,7 +149,8 @@ error_rate_plot <- error_rates %>%
   ) +
   geom_vline(xintercept = ymd("2021-07-06"), col = "red") +
   theme_bw() + 
-  theme(legend.position = "bottom")
+  theme(legend.position = "bottom") +
+  stat_smooth(geom="line", method = "lm", alpha=0.5, se=FALSE, linetype = "dashed")
 
 
 # Output
