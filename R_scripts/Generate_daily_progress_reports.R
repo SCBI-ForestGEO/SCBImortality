@@ -50,8 +50,8 @@ quadrat_info <- read_xlsx(latest_FFFs, sheet = "Root", .name_repair = "minimal")
     quad = str_pad(quad, width = 4, side = "left", pad = "0")
   ) %>%
   arrange(date_time) %>%
-  # Stem counts from FFF were built off wrong census file, so replace
-  # census stem counts from above
+  # Stem counts from FFF were initially built off wrong census file, 
+  # so replace census stem counts from above
   left_join(census_quad_counts, by = "quad") %>%
   select(-stem_count) %>%
   rename(stem_count = n_census)
@@ -62,9 +62,10 @@ stems_censused_per_day <- quadrat_info %>%
 
 
 # Load trace of error reports ---------------------------------------
-# Field fix errors per day
+# Field fix errors per day (missing stems separately)
 field_fix_errors <- read_csv("testthat/reports/trace_of_reports/require_field_fix_error_file.csv") %>%
   clean_names() %>%
+  filter(error_name != "missing_stem") %>% 
   select(error_name, surveyor_id, submission_id, quad, tag, stem_tag) %>%
   left_join(
     quadrat_info %>% select(submission_id, date_time),
@@ -73,6 +74,21 @@ field_fix_errors <- read_csv("testthat/reports/trace_of_reports/require_field_fi
   # Determine level of aggregation:
   group_by(date_time) %>%
   summarize(field_fix = n())
+
+# Missing stems per day (split off from field fix errors above)
+missing_stems <- read_csv("testthat/reports/trace_of_reports/require_field_fix_error_file.csv") %>%
+  clean_names() %>%
+  filter(error_name == "missing_stem") %>% 
+  select(error_name, surveyor_id, submission_id, quad, tag, stem_tag) %>%
+  # Submission ID missing, so need to join by quad instead:
+  mutate(quad = str_pad(quad, width = 4, side = "left", pad = "0")) %>% 
+  left_join(
+    quadrat_info %>% select(quad, date_time),
+    by = "quad"
+  ) %>%
+  # Determine level of aggregation:
+  group_by(date_time) %>%
+  summarize(missing_stem = n())
 
 # Auto fixes
 auto_fix_errors <- read_csv("testthat/reports/trace_of_reports/will_auto_fix_error_file.csv") %>%
@@ -108,6 +124,7 @@ error_rates <-
   # Merge error reports
   field_fix_errors %>%
   left_join(auto_fix_errors, by = "date_time") %>%
+  left_join(missing_stems, by = "date_time") %>%
   left_join(quadrat_censused_duplicated_stems, by = "date_time") %>%
   filter(!is.na(date_time)) %>%
   replace(is.na(.), 0) %>%
@@ -139,8 +156,6 @@ census_rate_plot <- stems_censused_per_day %>%
   theme_bw()
 
 ## Daily new error analysis -----
-
-
 # Compute mean of daily error rate, for each type of error, for before
 # and after CI activation date
 mean_error_rates <- error_rates %>%
