@@ -16,7 +16,10 @@ library(ggplot2)
 
 # Load census stem counts --------------------------------
 # Get stem counts from main census (copied from Generate_reports.R)
-main_census <- read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/scbi.stem3.csv"))
+main_census <- 
+  "https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/scbi.stem3.csv" %>% 
+  paste0() %>% 
+  read.csv()
 
 ## convert dbh to numeric
 main_census$dbh <- as.numeric(main_census$dbh)
@@ -131,16 +134,38 @@ error_rates <-
   pivot_longer(cols = -c(date_time), names_to = "error_type", values_to = "n_errors") %>%
   # Get error rate being sure to account for days where 0 errors occurred
   full_join(stems_censused_per_day, by = "date_time") %>%
+  # Aggregate by week: round up using ceiling_date
+  mutate(date_time = ceiling_date(date_time, "week")) %>% 
+  group_by(date_time, error_type) %>% 
+  summarize(n_errors = sum(n_errors), n_stems = sum(n_stems)) %>% 
+  # Compute error rate
   mutate(errors_per_stem = n_errors / n_stems) %>%
   complete(date_time, error_type) %>%
   filter(!is.na(error_type)) %>%
-  replace(is.na(.), 0)
+  replace(is.na(.), 0) %>% 
+  ungroup()
 
 
 
 
 # Generate all plots ---------------------------------------
 ci_start_date <- ymd("2021-07-06")
+
+# Standardize date ranges of plots
+date_range <- c(
+  # Earliest census date
+  min(stems_censused_per_day$date_time),
+  # Lastest weekly cummulative summary date
+  max(error_rates$date_time)
+)
+date_breaks <- seq.Date(
+  from = date_range[1], 
+  to = date_range[2], 
+  by = 1
+) %>% 
+  ceiling_date("week") %>% 
+  unique()
+
 
 ## Daily new stems censused -----
 census_rate_plot <- stems_censused_per_day %>%
@@ -153,7 +178,9 @@ census_rate_plot <- stems_censused_per_day %>%
     title = "Daily new stems censused"
   ) +
   geom_vline(xintercept = ci_start_date, col = "black", linetype = "dashed") +
-  theme_bw()
+  theme_bw() +
+  scale_x_date(limits = date_range, breaks = ymd(date_breaks), date_labels = "%b %d")
+
 
 ## Daily new error analysis -----
 # Compute mean of daily error rate, for each type of error, for before
@@ -178,16 +205,17 @@ error_rate_plot <- error_rates %>%
     linetype = "dashed"
   ) +
   labs(
-    x = "Census date", y = "# of errors per stem censused",
+    x = "Weekly cummulative summary date", y = "# of errors per stem censused",
     col = "Error type",
-    title = "Daily new error rate"
+    title = "Weekly cummulative new error rate"
   ) +
   coord_cartesian(
     ylim = c(0, NA)
   ) +
   geom_vline(xintercept = ymd("2021-07-06"), col = "black", linetype = "dashed") +
   theme_bw() +
-  theme(legend.position = "bottom")
+  theme(legend.position = "bottom") +
+  scale_x_date(limits = date_range, breaks = ymd(date_breaks), date_labels = "%b %d")
 
 
 # Output
