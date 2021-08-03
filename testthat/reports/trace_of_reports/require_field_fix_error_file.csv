@@ -861,3 +861,12 @@
 "missing_stem",NA,NA,2008,200676,1,"litu",392.20001,146.89999,893,"A",2008,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "species_code_error","BC","969b4f7b-eee0-4f12-b90c-381e34599570",2008,200827,NA,NA,NA,NA,NA,NA,NA,"A","False",3,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,2012,201235,1,"caco",389.29999,228,172,"A",2012,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,1311,133404,1,"fram",258.5,215.10001,17,"A",1311,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_crown_position","JJ","8650de2a-dde3-4ffa-b444-dd9b9c642db9",1410,140810,1,"caovl",5.20001000000002,8.39999,222,"A",1.3,"A","False",NA,NA,NA,80,75,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"crown_thinning_more_than_1_but_not_AU_or_dead","JJ","36faf296-78bd-417b-83a6-c7d4eeb9a5d7",1510,153729,1,"fram",12.7,19.1,13,"A",1.3,"A","False",1,NA,NA,90,75,NA,0,NA,NA,NA,NA,"growing at base of now dying large cato that wasn’t unhealthy last census",2,0,"none",0,"S"
+"missing_percent_crown_living","BC","395596cc-ce39-49c6-8a3b-06ee68f57dda",1812,180972,1,"fram",1,14.8,81,"A",1.3,"DS","False",1,"S",81,20,NA,NA,0,"I",NA,NA,NA,NA,5,0,"W,SS",0,"S"
+"status_AU_DS_or_DC_but_no_FAD","BC","e3321318-9f50-498f-9269-fa135b815e79",1814,180832,1,"fram",14.60001,3.60001,421,"A",1.3,"DS","False",3,"CD",425,100,0,NA,0,NA,NA,NA,NA,NA,5,0,"SS,W,DE",6,NA
+"missing_stem",NA,NA,1827,182423,1,"fram",340.79999,521.70001,137,"A",1827,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"species_code_error","BC","630a93f1-ae92-4333-9229-4d2e5251ef99",1827,182423,NA,NA,NA,NA,NA,NA,NA,"AU","False",1,NA,NA,100,80,NA,0,"I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_living","BC","966122e1-a525-4deb-8cc9-cd7505d7053a",1832,182742,1,"ulru",15.20001,5,113,"A",1.3,"A","False",2,NA,NA,100,NA,100,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"exit_hole_count_no_DE_EABF","BC","d84439c2-3513-4696-bdaf-c34d15ad9097",1931,192568,1,"fram",15.39999,9.59997999999996,130,"A",1.3,"DS","False",1,"S",130,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB",3,NA

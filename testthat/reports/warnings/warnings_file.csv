@@ -24,7 +24,10 @@
 "Dead_but_now_alive","JJ","86d79793-b559-41d0-8a20-32c92202a079","1719","172229","1","litu","11.6","2","769","PD","1.3","A","False","4",NA,NA,80,80,NA,"0",NA,NA,NA,NA,"healthy not dead",NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","86d79793-b559-41d0-8a20-32c92202a079","1719","172245","1","cagl","13.9","16.3","106","PD","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,"alive and well",NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","86d79793-b559-41d0-8a20-32c92202a079","1719","172248","1","cato","19.2","19.3","283","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","BC","395596cc-ce39-49c6-8a3b-06ee68f57dda","1812","180820","1","fram","11.70001","17.2","98","D","1.3","AU","False","2",NA,NA,100,30,NA,"0","I",NA,NA,NA,NA,"3","3","W,SS,VB",0,"I"
+"Dead_but_now_alive","BC","395596cc-ce39-49c6-8a3b-06ee68f57dda","1812","180971","1","fram","2","12.89999","116","D","1.3","AU","False","1",NA,NA,100,60,NA,"0","I",NA,NA,NA,NA,"3","1","W",0,"S"
 "Dead_but_now_alive","BC","7c655d40-53ae-4e4d-8af0-173b2ed94472","1914","190792","1","fram","14.60001","0.5","69","D","1.3","AU","False","1",NA,NA,100,80,NA,"0","I",NA,NA,NA,NA,"2","0","W",0,"S"
+"Dead_but_now_alive","BC","4c5154eb-e7ce-4c96-9877-0b653e9eacfc","1924","192350","1","fram","7.89999","2","125","D","1.3","AU","False","2",NA,NA,100,80,NA,"0","I",NA,NA,NA,NA,"2","1","W,VB",0,"S"
 "Dead_but_now_alive","BC","ce8a8444-10d5-4fb5-91ce-432df1e400fe","2012","201209","1","fram","2","2.10001","128","D","1.3","AU","False","1",NA,NA,100,30,NA,"0","I",NA,NA,NA,NA,"4","0","W",0,NA
 "Dead_but_now_alive","BC","ce8a8444-10d5-4fb5-91ce-432df1e400fe","2012","201211","1","fram","3.39999","1.80000000000001","110","D","1.3","AU","False","1",NA,NA,90,50,NA,"0","I",NA,NA,NA,NA,"3","2","SS,W,DE",2,NA
 "DBH_dead_suspicious",NA,"5edeb5b2-533f-42f8-a0f8-102fbee1abfd","208","20602","1","qual","27.8","151.8","343","A","1.3","DS","False","3","CD",377,0,0,NA,"0","B",NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -88,24 +91,24 @@
 "Dead_but_now_alive","BC","9731527c-3637-42d9-8515-f6bb142862b0","707","70354","1","cato","17","12.1","118","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","BC","30aabdf2-439b-4903-9ca3-dbf59cb417ae","708","70200","1","cato","7.8","18.2","112","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","BC","30aabdf2-439b-4903-9ca3-dbf59cb417ae","708","70363","1","litu","15.4","6.8","247","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70382","1","quru","16.8","2.1","800","NA","1.3","A","False","4",NA,NA,100,80,NA,"1",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70382","1","quru","16.8","2.1","800","NA","1.3","A","False","4",NA,NA,100,100,NA,"1",NA,NA,NA,NA,"no tag",NA,NA,NA,NA,NA
-"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70387","1","litu","14.3","7.1","387","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70382","1","quru","16.8","2.1","800","NA","1.3","A","False","4",NA,NA,100,80,NA,"1",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70387","1","litu","14.3","7.1","387","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70388","1","caovl","13.2","7.3","170","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70387","1","litu","14.3","7.1","387","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70388","1","caovl","13.2","7.3","170","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70397","1","caca","19.3","15.1","115","NA","1.2","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70388","1","caovl","13.2","7.3","170","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70397","1","caca","19.3","15.1","115","NA","1.2","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70399","1","litu","18.8","8.9","429","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70397","1","caca","19.3","15.1","115","NA","1.2","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70399","1","litu","18.8","8.9","429","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70403","1","cato","0.3","1.5","354","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70399","1","litu","18.8","8.9","429","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70403","1","cato","0.3","1.5","354","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70407","1","quru","6.1","5.4","747","NA","1.3","A","False","3",NA,NA,90,80,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70403","1","cato","0.3","1.5","354","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70407","1","quru","6.1","5.4","747","NA","1.3","A","False","4",NA,NA,100,80,NA,"0",NA,NA,NA,NA,"no tag",NA,NA,NA,NA,NA
-"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70412","1","cagl","1.9","8.1","187","NA","1.3","A","False","2",NA,NA,100,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70407","1","quru","6.1","5.4","747","NA","1.3","A","False","3",NA,NA,90,80,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70412","1","cagl","1.9","8.1","187","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70416","1","litu","2.9","16.7","379","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70412","1","cagl","1.9","8.1","187","NA","1.3","A","False","2",NA,NA,100,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","43ce6d43-9bff-4f64-b3c1-40d6f075cefb","709","70416","1","litu","2.9","16.7","379","NA","1.3","A","False","3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","BC","24296789-c4b7-4e5a-846d-6c17c5095dfc","709","70416","1","litu","2.9","16.7","379","NA","1.3","A","False","2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","BC","87c8291f-5658-4596-98c4-4b896f231ac8","710","70422","1","cato","7","0.5","226","NA","1.3","A","False","1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","BC","87c8291f-5658-4596-98c4-4b896f231ac8","710","70423","1","caca","4.6","1.9","132","NA","1.3","AU","False","1",NA,NA,70,70,NA,"0","B,W","2",NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","BC","87c8291f-5658-4596-98c4-4b896f231ac8","710","70427","1","caca","8.1","4.1","122","NA","1.3","AU","False","1",NA,NA,80,70,NA,"0","W,B","2",NA,NA,NA,NA,NA,NA,NA,NA
