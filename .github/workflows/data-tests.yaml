@@ -8,6 +8,7 @@ on:
       - 'R_scripts/Generate_reports.R'
       - 'R_scripts/Generate_warnings.R'
       - 'R_scripts/Generate_map_of_reports.R'
+      - 'R_scripts/Generate_daily_progress_reports.R'
   pull_request:
     paths:
       - 'raw_data/**'
@@ -15,6 +16,7 @@ on:
       - 'R_scripts/Generate_reports.R'
       - 'R_scripts/Generate_warnings.R'
       - 'R_scripts/Generate_map_of_reports.R'
+      - 'R_scripts/Generate_daily_progress_reports.R'
 
 name: data-tests
 
@@ -51,6 +53,11 @@ jobs:
         run: |
           source("R_scripts/Generate_map_of_reports.R")
         shell: Rscript {0}
+      - name: Generate daily progress reports
+        id: Generate_daily_progress_reports
+        run: |
+          source("R_scripts/Generate_daily_progress_reports.R")
+        shell: Rscript {0}        
       - name: Commit new files
         run: |
           git config --local user.email "actions@github.com"
