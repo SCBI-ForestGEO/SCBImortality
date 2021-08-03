@@ -20,7 +20,14 @@
 ### map of census progress
 ![map_of_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/map_of_error_and_warnings.png) 
 
-### daily progress reports
+### progress reports
+
+- Dashed black vertical line indicates date continuous integration was officially "switched on" on July 7.
+- Weekly cummulative new error rate = # of errors for that week / # of stems censused that week.  
+Ex: Weekly summary on June 6 represents 3 days of censusing
+- Dashed horizontal colored lines indicate mean weekly error rate, before and after CI was "switched on".  
+Ex: Horizontal lines before July 7 are averages over 5 weeks
+
 ![daily_progress](testthat/reports/daily_progress.png) 
 
 
