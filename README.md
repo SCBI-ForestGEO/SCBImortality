@@ -20,6 +20,12 @@
 ### map of census progress
 ![map_of_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/testthat/reports/map_of_error_and_warnings.png) 
 
+### daily progress reports
+![daily_progress](testthat/reports/daily_progress.png) 
+
+
+
+
 ## Census Info
 
 ### Sampling location
