@@ -307,3 +307,4 @@
 "Dead_but_now_alive","BC","395596cc-ce39-49c6-8a3b-06ee68f57dda",1812,180820,1,"fram",11.70001,17.2,98,"D",1.3,"AU","False",2,NA,NA,100,30,NA,0,"I",NA,NA,NA,NA,3,3,"W,SS,VB",0,"I"
 "Dead_but_now_alive","BC","395596cc-ce39-49c6-8a3b-06ee68f57dda",1812,180971,1,"fram",2,12.89999,116,"D",1.3,"AU","False",1,NA,NA,100,60,NA,0,"I",NA,NA,NA,NA,3,1,"W",0,"S"
 "Dead_but_now_alive","BC","4c5154eb-e7ce-4c96-9877-0b653e9eacfc",1924,192350,1,"fram",7.89999,2,125,"D",1.3,"AU","False",2,NA,NA,100,80,NA,0,"I",NA,NA,NA,NA,2,1,"W,VB",0,"S"
+"DBH_dead_suspicious","TR","fbac56c1-7993-4fd3-a196-9e77057d75d0",403,40131,1,"fram",5.2,1,635,"A",1.3,"DS","False",3,"I",610,70,0,NA,0,"DF,I,AN",NA,NA,NA,NA,5,0,"W,DE",1,"I"
