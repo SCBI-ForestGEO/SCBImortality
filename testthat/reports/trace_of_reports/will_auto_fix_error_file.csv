@@ -651,3 +651,9 @@
 "wounded_level_but_wrong_status_or_FAD","TR","78f336da-d45e-4beb-a45e-9285b62b2c7a",504,50272,1,"quve",5.90000000000001,19.3,651,"A","1.3","AU","False",NA,NA,NA,40,10,NA,0,"B",3,NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","TR","2534b768-916e-46fc-8216-e31885aa2301",509,50387,1,"caca",2.5,4.80000000000001,119,"D","1.3","DS","False",2,"S",119,0,0,NA,0,"U",3,NA,NA,NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","TR","2534b768-916e-46fc-8216-e31885aa2301",509,50473,1,"juni",13.9,15.7,326,"A","1.3","PD","False",NA,NA,NA,NA,NA,NA,NA,"U",NA,NA,NA,"Tree cut down near trail.",NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","416cc070-b750-4c02-a64f-78bb9eebc47f",1203,120397,1,"fram",18.8,0.899999999999999,161,"A","1.3","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W",0,"S"
+"unhealthy_but_wrong_status","BC","416cc070-b750-4c02-a64f-78bb9eebc47f",1203,120689,1,"fram",15,17.3,23,"A","1.3","A","False",1,NA,NA,100,100,NA,0,"I",NA,NA,NA,NA,1,0,"none",0,"S"
+"unhealthy_but_wrong_status","BC","59c86f4e-9fae-4b11-b4b7-2393b89d089c",1204,120831,1,"ulru",15,8.90000000000001,153,"A","1.3","A","False",1,NA,NA,100,60,NA,0,"U",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","83bd953f-4568-4706-9256-d7a347b14815",1304,133170,1,"fram",0.5,8,15,"A","1.3","A","False",1,NA,NA,100,100,NA,0,"I",NA,NA,NA,NA,1,0,"none",0,"S"
+"unhealthy_but_wrong_status","BC","59020f41-bf41-4939-ab64-cb5b7d0f42f7",1307,130992,1,"cato",12.7,4,159,"D","1.3","PD","False",1,NA,NA,0,0,NA,0,"B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","911b1346-7d93-4612-991e-c7310edafc29",1408,143354,1,"fram",15.70001,7.19999999999999,24,"A","1.3","A","False",1,NA,NA,100,100,NA,0,"I",NA,NA,NA,NA,1,0,"none",0,"S"

@@ -880,3 +880,13 @@
 "missing_crown_position","BC","d2da5a52-d499-4544-a0c4-9577f7827419",1617,162010,1,"litu",8.79998999999998,11.39999,500,"A",1.3,"A","False",NA,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_but_no_level","BC","cde6006c-c8ea-4756-a5be-c86641933feb",1626,162429,1,"quve",17.29999,5.89999,126,"A",1.3,"AU","False",1,NA,NA,100,30,NA,0,"W,R",NA,NA,2,NA,NA,NA,NA,NA,NA
 "wounded_but_no_level","BC","c37bdc9f-6c3a-4459-a10f-219315d50ef3",1811,180952,1,"quru",2.60001,14.60001,588,"A",1.3,"AU","False",3,NA,NA,90,90,20,0,"W,R",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_A_but_unhealthy","BC","416cc070-b750-4c02-a64f-78bb9eebc47f",1203,120689,1,"fram",15,17.3,23,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,"I",NA,NA,NA,NA,1,0,"none",0,"S"
+"missing_stem",NA,NA,1204,120755,1,"litu",226.8,70,685,"A",1204,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_A_but_unhealthy","BC","59c86f4e-9fae-4b11-b4b7-2393b89d089c",1204,120831,1,"ulru",15,8.90000000000001,153,"A",1.3,"A","False",1,NA,NA,100,60,NA,0,"U",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_A_but_unhealthy","BC","83bd953f-4568-4706-9256-d7a347b14815",1304,133170,1,"fram",0.5,8,15,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,"I",NA,NA,NA,NA,1,0,"none",0,"S"
+"missing_EAB_info","BC","8bb07eb2-2f4f-4a50-acb7-b452050aabdd",1305,133193,1,"fram",5.89999,3.7,13,"A",1.3,"A","False",1,NA,NA,100,100,NA,NA,NA,NA,NA,NA,NA,1,0,"none",0,NA
+"missing_stem",NA,NA,1308,130761,1,"litu",243.5,140.39999,216,"A",1308,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"species_code_error","BC","bb8e25cb-7a5c-4cb2-82d5-bf0701c6dea8",1308,130761,NA,NA,NA,NA,NA,NA,NA,"A","False",2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,1308,130783,1,"juni",240.39999,156.2,565,"A",1308,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_crown_position","BC","911b1346-7d93-4612-991e-c7310edafc29",1408,140930,1,"quve",12.89999,2,561,"A",1.3,"A","False",NA,NA,NA,100,100,25,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"status_A_but_unhealthy","BC","911b1346-7d93-4612-991e-c7310edafc29",1408,143354,1,"fram",15.70001,7.19999999999999,24,"A",1.3,"A","False",1,NA,NA,100,100,NA,0,"I",NA,NA,NA,NA,1,0,"none",0,"S"
