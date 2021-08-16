@@ -5,6 +5,7 @@
 "DBH_dead_suspicious","BC","2cf581b7-c6c4-4a92-b458-e4f26e6e8199","1213","121421","1","quru","11.7","15.1","495","AU","1.3","DS","False","3","CD",520,80,0,NA,"0","DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious","TR,BC","8cb62d4c-821c-4795-8386-53ef1cf0c3b8","1216","121358","1","fram","10.9","12","1061","A","1.3","DS","False","4","D",1040,80,0,NA,"0","I,F",NA,NA,NA,NA,"5","0","AS,DE,SS",45,"D"
 "Dead_but_now_alive","BC","fb2aa4bf-c6b4-4236-a0b7-47c528cdb149","1230","122555","1","fram","2.2","12.8","121","DS","1.3","AU","False","1",NA,NA,100,50,NA,"0","I",NA,NA,NA,NA,"4","6","AS,W",0,NA
+"Dead_but_now_alive",NA,"103696be-6dab-4d0a-b7e6-6ca7db15d1fc","125","12263","1","fram","18.9","9.5","NA","D","NULL","AU","False","3",NA,NA,85,80,NA,"0","I",NA,NA,NA,NA,"2","0","AS,W,SS",0,"I"
 "DBH_dead_suspicious","JJ","cc4103fa-c56e-4856-aed9-3ce2e18a3794","1419","142206","1","fram","18.5","16.5","876","A","1.3","DS","False","4","D",512,80,0,NA,"0","I,DF",NA,NA,NA,NA,"5","0","DE",7,NA
 "Dead_but_now_alive","BC","4f6b740e-2dcc-474a-bb66-91841af40cef","1506","150913","1","acru","6.7","19.9","305","PD","1.3","A","False","3",NA,NA,100,95,NA,"0",NA,NA,NA,NA,"Not sure why it says PD; it’s a very healthy tree",NA,NA,NA,NA,NA
 "DBH_dead_suspicious","BC","609d4eef-1354-4067-855f-05c797d5bd8e","1518","152044","2","qupr","4.6","4.5","352","AU","1.3","DS","False","3","CD",420,50,0,45,"0","B","3",NA,"3",NA,NA,NA,NA,NA,NA

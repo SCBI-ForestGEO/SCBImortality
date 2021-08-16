@@ -657,3 +657,39 @@
 "unhealthy_but_wrong_status","BC","83bd953f-4568-4706-9256-d7a347b14815",1304,133170,1,"fram",0.5,8,15,"A","1.3","A","False",1,NA,NA,100,100,NA,0,"I",NA,NA,NA,NA,1,0,"none",0,"S"
 "unhealthy_but_wrong_status","BC","59020f41-bf41-4939-ab64-cb5b7d0f42f7",1307,130992,1,"cato",12.7,4,159,"D","1.3","PD","False",1,NA,NA,0,0,NA,0,"B",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","911b1346-7d93-4612-991e-c7310edafc29",1408,143354,1,"fram",15.70001,7.19999999999999,24,"A","1.3","A","False",1,NA,NA,100,100,NA,0,"I",NA,NA,NA,NA,1,0,"none",0,"S"
+"unhealthy_but_wrong_status","BC","5af3f192-f24c-45b1-8aa3-e0874549ec04",1015,101259,1,"fram",12.39999,17.60001,NA,"D","NULL","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB,DE",10,NA
+"unhealthy_but_wrong_status","BC","821a7253-5393-484f-8544-89475dde882f",1123,112264,1,"frpe",14.5,3.10001,49,"D","1.3","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB",0,"S"
+"epicormic_growth_but_not_AU",NA,"d542b6de-02bc-4e31-b924-73c1b7858be2",1220,122137,1,"fram",8.10001,9.70001000000002,88,"A","1.3","DC","True",1,"S",86,0,0,NA,0,"I,R",NA,NA,NA,NA,5,2,"VB,AS,DE,SS,W",1,"S"
+"epicormic_growth_but_not_AU",NA,"9ace92ac-78f7-49f7-885c-4e308577c73f",1227,122421,1,"fram",12.2,5.40002000000004,61,"A","1.3","DS","True",1,"S",60,90,0,NA,0,"I,DF",NA,NA,NA,NA,5,3,"DE,SS,VB,W",2,"S"
+"epicormic_growth_but_not_AU",NA,"b4e9f681-49fb-47a7-adc1-d9b24ef85316",126,12307,1,"fram",1.4,1.39999,71,"A","1.3","DS","True",3,"I",70,95,0,NA,0,"I",NA,NA,NA,NA,5,2,"SS,DE,W,VB,AS",2,"I"
+"epicormic_growth_but_not_AU",NA,"5f009efb-265f-4943-8551-2f51e9e93422",130,12432,1,"fram",7.2,8.70001000000002,49,"A","1.3","DS","True",1,"S",47,75,0,NA,0,"I",NA,NA,NA,NA,5,1,"AS,VB,W,DE,SS",1,"S"
+"epicormic_growth_but_not_AU",NA,"574a7366-3070-443b-ae2b-0f14fae79b79",132,12554,1,"fram",3.4,8.90002000000004,60,"A","1.3","DS","True",2,"I",59,85,0,NA,NA,NA,NA,NA,NA,NA,2,3,"DE,SS,W,VB",2,"I"
+"epicormic_growth_but_not_AU",NA,"6e2c193d-f85c-429b-8a2b-12453dfc29c8",1326,132387,1,"frpe",14.89999,11.89999,52,"A","1.3","DS","True",1,"S",50,98,0,NA,0,"I,DF",NA,NA,NA,NA,5,2,"DE,VB,SS",1,"S"
+"epicormic_growth_but_not_AU",NA,"fd795076-e56b-434a-84f8-54bcc35a026f",1332,132543,1,"frpe",16.29999,7.09997999999996,87,"A","1.3","DS","True",1,"S",85,80,0,NA,0,"DF,U",NA,NA,NA,"not eab",5,3,"none,SS",0,"S"
+"dead_but_crown_living_not_zero","BC","d4fab486-6fcb-4d69-ab37-f8e1ce395f1e",1427,142400,1,"fram",12.20001,4.70001000000002,72,"A","1.3","DS","False",1,"S",74,100,100,NA,0,"I",NA,NA,NA,NA,5,0,"SS,W,VB",0,"S"
+"unhealthy_but_wrong_status","BC","3d3a9dca-1dc1-47c1-af31-21b492e33c8b",1428,142594,1,"fram",8,1.5,56,"D","1.3","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,AS,VB",0,"S"
+"unhealthy_but_wrong_status","BC","4438dd9a-cb21-4f8f-8962-ac79df3554f5",1525,152511,1,"fram",5.29998999999998,16.39999,47,"D","1.3","PD","False",1,NA,NA,50,0,NA,0,"I",NA,NA,NA,NA,5,0,"SS,VB,W,DE",2,"S"
+"unhealthy_but_wrong_status","BC","ccbbdcd1-9362-418e-ac44-57b5c1413b4a",1526,152539,1,"fram",2.89999,14.29999,NA,"D","NULL","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,AS,VB,SS",0,"S"
+"unhealthy_but_wrong_status","BC","f43ff018-9e61-4c00-989a-b6f540bc28c7",1532,152723,1,"fram",18.89999,14.20001,NA,"D","NULL","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,3,NA,5,0,"W",0,"S"
+"epicormic_growth_but_not_AU",NA,"31775a1a-d14c-49af-9c0d-5fe980ee1549",226,22333,2,"fram",5.5,2.70001000000002,378,"A","1.4","DS","False",4,"CD",378,90,0,NA,0,"I",NA,NA,NA,"98% sure it’s dead",5,1,"AS,VB,DE,W",10,"CD"
+"unhealthy_but_wrong_status","BC","5572d7a2-af9b-4e14-9f8b-b2922c84eb71",301,30109,1,"fram",13.7,2.5,544,"D","1.3","PD","False",1,NA,NA,50,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB,DE",12,NA
+"unhealthy_but_wrong_status","BC","694dcdca-a555-4095-b45f-f4062c1e05ac",302,30145,2,"frni",11.5,16.3,159,"D","1.3","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,DE",3,NA
+"unhealthy_but_wrong_status","BC","e4787730-945c-46ec-aa9e-a8f798f1fd99",303,30062,1,"fram",4.2,17.6,NA,"D","NULL","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB",0,"S"
+"unhealthy_but_wrong_status","BC","c3ae7925-6be5-42cc-bd50-88af1d9e0ccc",305,30308,1,"fram",8.7,11.5,NA,"D","NULL","PD","False",3,NA,NA,10,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB",7,NA
+"unhealthy_but_wrong_status","BC","c3ae7925-6be5-42cc-bd50-88af1d9e0ccc",305,30309,1,"caovl",11.4,10,234,"A","1.3","PD","False",1,NA,NA,0,0,NA,0,"CR",3,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","BC","c3ae7925-6be5-42cc-bd50-88af1d9e0ccc",305,30309,1,"caovl",11.4,10,234,"A","1.3","PD","False",1,NA,NA,0,0,NA,0,"CR",3,NA,NA,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","838c5dde-ca9e-42c1-b59c-fca743c91c41",315,33337,1,"cagl",10.1,8.29998999999998,149,"D","1.3","PD","False",1,NA,NA,0,0,NA,0,"U",NA,NA,NA,"on the ground",NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","BC","0060b768-f48e-400d-8df9-8fbef76f6c03",326,32351,1,"cofl",14.8,17.09998,103,"A","1.3","DS","False",1,"S",111,50,0,NA,0,"DF,R",2,NA,1,NA,NA,NA,NA,NA,NA
+"unhealthy_but_wrong_status","BC","ff595bd2-6144-419e-be7d-c2e776527dab",329,32418,1,"frpe",10,8.5,65,"A","1.3","A","False",1,NA,NA,100,90,NA,0,"I",NA,NA,NA,NA,2,2,"none",0,"S"
+"epicormic_growth_but_not_AU","BC","ff595bd2-6144-419e-be7d-c2e776527dab",329,32418,1,"frpe",10,8.5,65,"A","1.3","A","False",1,NA,NA,100,90,NA,0,"I",NA,NA,NA,NA,2,2,"none",0,"S"
+"unhealthy_but_wrong_status","BC","2cb6adeb-20d7-4f34-86b6-209f6eddfb3b",401,40085,1,"fram",20,17.1,NA,"D","NULL","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,AS,VB,DE",5,"S"
+"unhealthy_but_wrong_status","BC","2cb6adeb-20d7-4f34-86b6-209f6eddfb3b",401,40085,2,"fram",20,17.1,NA,"D","NULL","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB",0,"S"
+"unhealthy_but_wrong_status","BC","154fd173-01bd-4d6f-b8c4-a39e074f936c",420,42113,1,"fram",12.5,12.10001,68,"A","1.3","A","False",2,NA,NA,100,50,NA,0,"I",NA,NA,NA,NA,3,1,"SS,W,DE",1,"S"
+"epicormic_growth_but_not_AU","BC","154fd173-01bd-4d6f-b8c4-a39e074f936c",420,42113,1,"fram",12.5,12.10001,68,"A","1.3","A","False",2,NA,NA,100,50,NA,0,"I",NA,NA,NA,NA,3,1,"SS,W,DE",1,"S"
+"unhealthy_but_wrong_status","BC","822eddbd-21f5-4ddb-b61f-def39f5b1047",501,50024,1,"fram",10.6,11.5,NA,"D","NULL","PD","False",1,NA,NA,100,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,DE",3,"S"
+"unhealthy_but_wrong_status","BC","3657aaa9-d5b5-4657-a8cd-3d64c1baa322",601,60205,1,"fram",3,2.3,NA,"G","NULL","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB,AS",0,"S"
+"unhealthy_but_wrong_status","BC","ae7bf323-97ba-453b-81cf-33e21e11c877",715,70599,1,"fram",19.8,3.79998999999998,79,"D","1.3","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W",0,"S"
+"unhealthy_but_wrong_status","BC","b64024ba-b851-48ec-b1af-b78f692a779c",816,80695,1,"frni",5.30000000000001,7.89999,NA,"D","NULL","PD","False",1,NA,NA,100,0,NA,0,"I",NA,NA,NA,"dead standing",5,0,"W,VB,DE",9,NA
+"unhealthy_but_wrong_status","BC","9162aaa4-0332-48a1-8d8a-8884643efb41",832,82432,1,"fram",11.60001,16.59998,139,"A","1.3","A","False",1,NA,NA,100,60,NA,0,"I",NA,NA,NA,NA,3,0,"SS,W",0,NA
+"unhealthy_but_wrong_status","BC","b53c824a-6b89-446b-802b-9af976051041",916,90716,1,"frni",7.60001,8.20001000000002,NA,"D","NULL","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB,AS",0,"S"
+"unhealthy_but_wrong_status","BC","b53c824a-6b89-446b-802b-9af976051041",916,90718,1,"frni",9,11.29999,NA,"D","NULL","PD","False",1,NA,NA,0,0,NA,0,"I",NA,NA,NA,NA,5,0,"SS,W",0,"S"
