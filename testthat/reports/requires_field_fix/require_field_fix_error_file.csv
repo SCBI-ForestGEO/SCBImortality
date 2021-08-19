@@ -1,93 +1,19 @@
 "error_name","SurveyorID","Submission.Id","Quad","Tag","StemTag","Species","QX","QY","DBH","Status.2018","HOM","Status.2021","DWR","Crown.position","Dead.crown.position","Dead.DBH","Percentage.of.crown.intact","Percentage.of.crown.living","Lean.angle.if.greater.than.15.degrees","Lianas","FAD","Wounded.main.stem","Canker..swelling..deformity","Rotting.trunk","Notes.2021","Crown.thinning","Epicormic.growth","EABF","D.shaped.exit.hole.count","Crown.position...10.cm.DBH"
-"status_AU_DS_or_DC_but_no_FAD",NA,"a969a9b0-abd3-4082-b044-08696a6623cf","123","12229","2","fram","1.5","13.60001","180","A","1.3","AU","False","2",NA,NA,95,85,NA,"0",NA,NA,NA,NA,NA,"2","0","VB,W",6,"I"
-"exit_hole_count_no_DE_EABF",NA,"a969a9b0-abd3-4082-b044-08696a6623cf","123","12229","2","fram","1.5","13.60001","180","A","1.3","AU","False","2",NA,NA,95,85,NA,"0",NA,NA,NA,NA,NA,"2","0","VB,W",6,"I"
-"dead_but_epicormic_more_than_0",NA,"b4e9f681-49fb-47a7-adc1-d9b24ef85316","126","12307","1","fram","1.4","1.39999","71","A","1.3","DS","True","3","I",70,95,0,NA,"0","I",NA,NA,NA,NA,"5","2","SS,DE,W,VB,AS",2,"I"
-"dead_but_epicormic_more_than_0",NA,"5f009efb-265f-4943-8551-2f51e9e93422","130","12432","1","fram","7.2","8.70001000000002","49","A","1.3","DS","True","1","S",47,75,0,NA,"0","I",NA,NA,NA,NA,"5","1","AS,VB,W,DE,SS",1,"S"
-"status_AU_DS_or_DC_but_no_FAD",NA,"574a7366-3070-443b-ae2b-0f14fae79b79","132","12554","1","fram","3.4","8.90002000000004","60","A","1.3","DS","True","2","I",59,85,0,NA,NA,NA,NA,NA,NA,NA,"2","3","DE,SS,W,VB",2,"I"
-"dead_but_epicormic_more_than_0",NA,"574a7366-3070-443b-ae2b-0f14fae79b79","132","12554","1","fram","3.4","8.90002000000004","60","A","1.3","DS","True","2","I",59,85,0,NA,NA,NA,NA,NA,NA,NA,"2","3","DE,SS,W,VB",2,"I"
-"dead_but_crown_thinning_less_than_5",NA,"574a7366-3070-443b-ae2b-0f14fae79b79","132","12554","1","fram","3.4","8.90002000000004","60","A","1.3","DS","True","2","I",59,85,0,NA,NA,NA,NA,NA,NA,NA,"2","3","DE,SS,W,VB",2,"I"
-"missing_stem",NA,NA,"203","20181","3","frni","29.8","59.2","28","A","203",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_AU_DS_or_DC_but_no_FAD",NA,"560926f0-30a2-4793-947f-c249592e625b","220","22130","1","fram","15.1","11.10001","556","A","1.3","DS","False","3","CD",555,0,0,NA,"0",NA,NA,NA,NA,NA,"5","0","DE,W,VB",1,"CD"
 "DE_but_no_exit_hole_count","JJ","004d33b6-696c-4bd1-97c7-fc892df0f4ab","223","22223","1","frpe","4.5","7.3","72","A","1.3","AU","False","3",NA,NA,80,75,NA,"1","I",NA,NA,NA,NA,"3","0","DE",NA,"I"
-"dead_but_epicormic_more_than_0",NA,"31775a1a-d14c-49af-9c0d-5fe980ee1549","226","22333","2","fram","5.5","2.70001000000002","378","A","1.4","DS","False","4","CD",378,90,0,NA,"0","I",NA,NA,NA,"98% sure it’s dead","5","1","AS,VB,DE,W",10,"CD"
-"exit_hole_count_no_DE_EABF","BC","c3ae7925-6be5-42cc-bd50-88af1d9e0ccc","305","30308","1","fram","8.7","11.5","NA","D","NULL","PD","False","3",NA,NA,10,0,NA,"0","I",NA,NA,NA,NA,"5","0","W,VB",7,NA
-"status_A_but_unhealthy","BC","ff595bd2-6144-419e-be7d-c2e776527dab","329","32418","1","frpe","10","8.5","65","A","1.3","A","False","1",NA,NA,100,90,NA,"0","I",NA,NA,NA,NA,"2","2","none",0,"S"
-"crown_thinning_more_than_1_but_not_AU_or_dead","BC","ff595bd2-6144-419e-be7d-c2e776527dab","329","32418","1","frpe","10","8.5","65","A","1.3","A","False","1",NA,NA,100,90,NA,"0","I",NA,NA,NA,NA,"2","2","none",0,"S"
-"status_AU_DS_or_DC_but_no_FAD","BC","9bd247b3-16f2-479b-90dc-446446db62f8","409","40704","1","qual","15.2","15.7","479","AU","1.3","AU","False","2",NA,NA,95,85,NA,"0",NA,NA,NA,NA,"epicormic branches",NA,NA,NA,NA,NA
-"status_A_but_unhealthy","BC","154fd173-01bd-4d6f-b8c4-a39e074f936c","420","42113","1","fram","12.5","12.10001","68","A","1.3","A","False","2",NA,NA,100,50,NA,"0","I",NA,NA,NA,NA,"3","1","SS,W,DE",1,"S"
-"crown_thinning_more_than_1_but_not_AU_or_dead","BC","154fd173-01bd-4d6f-b8c4-a39e074f936c","420","42113","1","fram","12.5","12.10001","68","A","1.3","A","False","2",NA,NA,100,50,NA,"0","I",NA,NA,NA,NA,"3","1","SS,W,DE",1,"S"
-"EABF_recorded_but_not_AU_or_dead","BC","154fd173-01bd-4d6f-b8c4-a39e074f936c","420","42113","1","fram","12.5","12.10001","68","A","1.3","A","False","2",NA,NA,100,50,NA,"0","I",NA,NA,NA,NA,"3","1","SS,W,DE",1,"S"
-"exit_hole_count_but_not_AU_or_dead","BC","154fd173-01bd-4d6f-b8c4-a39e074f936c","420","42113","1","fram","12.5","12.10001","68","A","1.3","A","False","2",NA,NA,100,50,NA,"0","I",NA,NA,NA,NA,"3","1","SS,W,DE",1,"S"
-"missing_stem",NA,NA,"605","60108","2","cagl","109.6","94.8","277","G","605",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"610","60196","1","caca","116.4","181.8","226","A","610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"610","60198","1","caca","113.5","184.5","495","A","610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"610","60199","1","caca","116.5","188.8","101","A","610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"610","60200","1","caca","119","191.3","163","A","610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"610","60200","2","caca","119","191.3","145","A","610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"610","60410","1","fram","107.3","195.7","469","A","610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"610","60507","1","qual","111.5","199.5","415","A","610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"706","70159","1","qupr","123.3","116.7","358","G","706",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"802","80028","1","quve","145","31.8","691","A","802",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"802","80040","2","fram","145.1","38.5","12","A","802",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"802","83027","1","fram","153.89999","32.5","11","D","802",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"802","83708","1","fram","159.3","23.5","11","A","802",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"802","83725","1","fram","154.1","38.9","11","A","802",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"803","83248","1","fram","154.4","43.3","10","A","803",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"804","83217","1","fram","147.7","69.8","11","A","804",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"804","83263","1","fram","153.1","65.8","11","A","804",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"808","83589","1","fram","154.4","149.5","14","A","808",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"808","83627","1","fram","156.7","145.3","12","A","808",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_A_but_unhealthy",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80694","1","juni","144.39999","304.29999","463","A","1.3","A","False","3",NA,NA,90,90,NA,"0",NA,"1",NA,NA,"sapsucker holes",NA,NA,NA,NA,NA
-"missing_percent_crown_intact",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80770","1","caca","151.10001","311.39999","160","A","1.3","A","False","1",NA,NA,NA,NA,NA,"2",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_percent_crown_living",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80770","1","caca","151.10001","311.39999","160","A","1.3","A","False","1",NA,NA,NA,NA,NA,"2",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_crown_position",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80776","1","caca","147.89999","318.5","107","A","1.3","A","False",NA,NA,NA,NA,NA,35,"2",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_intact",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80776","1","caca","147.89999","318.5","107","A","1.3","A","False",NA,NA,NA,NA,NA,35,"2",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_living",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80776","1","caca","147.89999","318.5","107","A","1.3","A","False",NA,NA,NA,NA,NA,35,"2",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_A_but_unhealthy","BC","9162aaa4-0332-48a1-8d8a-8884643efb41","832","82432","1","fram","11.60001","16.59998","139","A","1.3","A","False","1",NA,NA,100,60,NA,"0","I",NA,NA,NA,NA,"3","0","SS,W",0,NA
-"crown_thinning_more_than_1_but_not_AU_or_dead","BC","9162aaa4-0332-48a1-8d8a-8884643efb41","832","82432","1","fram","11.60001","16.59998","139","A","1.3","A","False","1",NA,NA,100,60,NA,"0","I",NA,NA,NA,NA,"3","0","SS,W",0,NA
-"EABF_recorded_but_not_AU_or_dead","BC","9162aaa4-0332-48a1-8d8a-8884643efb41","832","82432","1","fram","11.60001","16.59998","139","A","1.3","A","False","1",NA,NA,100,60,NA,"0","I",NA,NA,NA,NA,"3","0","SS,W",0,NA
-"missing_stem",NA,NA,"902","93678","1","fram","161.1","33","11","A","902",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"904","93481","1","fram","179","76.8","12","A","904",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"906","93564","1","fram","172.9","104.2","10","A","906",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"907","83567","1","fram","170.5","128.7","10","A","907",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"907","93487","1","fram","160.3","126.3","11","A","907",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"907","93489","1","frsp","161.7","128.5","12","A","907",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"911","93881","1","fram","175.8","203.4","11","A","911",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"913","90658","1","fagr","160.3","245.39999","265","A","913",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"913","93993","1","fram","166.5","256.2","11","A","913",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"913","93995","1","fram","164.4","253.8","10","A","913",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"927","92444","1","frpe","166.5","520.20001","58","A","927",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"927","92462","1","fram","169","532.90002",NA,"D","927",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1106","113200","1","fram","204.39999","104.3","15","A","1106",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1108","111052","1","cagl","216.5","154.3","115","A","1108",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_crown_position",NA,"08d9b538-0b98-471a-882e-8337a0a0e166","904","93481","1","fram","19","16.8","12","A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species is Carya cordiformis- ljm",NA,NA,NA,NA,NA
+"missing_percent_crown_intact",NA,"08d9b538-0b98-471a-882e-8337a0a0e166","904","93481","1","fram","19","16.8","12","A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species is Carya cordiformis- ljm",NA,NA,NA,NA,NA
+"missing_percent_crown_living",NA,"08d9b538-0b98-471a-882e-8337a0a0e166","904","93481","1","fram","19","16.8","12","A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species is Carya cordiformis- ljm",NA,NA,NA,NA,NA
+"missing_EAB_info",NA,"08d9b538-0b98-471a-882e-8337a0a0e166","904","93481","1","fram","19","16.8","12","A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species is Carya cordiformis- ljm",NA,NA,NA,NA,NA
+"missing_crown_position",NA,"e4aa927f-3030-400c-b817-a463fa22f55e","907","93487","1","fram","0.300000000000011","6.3","11","A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species CARGLA -ljm",NA,NA,NA,NA,NA
+"missing_percent_crown_intact",NA,"e4aa927f-3030-400c-b817-a463fa22f55e","907","93487","1","fram","0.300000000000011","6.3","11","A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species CARGLA -ljm",NA,NA,NA,NA,NA
+"missing_percent_crown_living",NA,"e4aa927f-3030-400c-b817-a463fa22f55e","907","93487","1","fram","0.300000000000011","6.3","11","A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species CARGLA -ljm",NA,NA,NA,NA,NA
+"missing_EAB_info",NA,"e4aa927f-3030-400c-b817-a463fa22f55e","907","93487","1","fram","0.300000000000011","6.3","11","A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species CARGLA -ljm",NA,NA,NA,NA,NA
 "missing_crown_position","JJ","a577f382-b548-4acd-8f3c-d4865c6b1ea8","1116","111352","1","vipr","10.7","10.3","130","AU","1.3","AU","False",NA,NA,NA,75,75,NA,"0","OT,B","1",NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1201","120068","1","fram","235.5","19.2",NA,"D","1201",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1201","120266","1","fram","226.5","12","43","A","1201",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1201","120279","1","fram","226.60001","8.1","48","A","1201",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1201","120302","1","fram","223.8","13.5","21","A","1201",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"dead_but_epicormic_more_than_0",NA,"d542b6de-02bc-4e31-b924-73c1b7858be2","1220","122137","1","fram","8.10001","9.70001000000002","88","A","1.3","DC","True","1","S",86,0,0,NA,"0","I,R",NA,NA,NA,NA,"5","2","VB,AS,DE,SS,W",1,"S"
-"dead_but_epicormic_more_than_0",NA,"9ace92ac-78f7-49f7-885c-4e308577c73f","1227","122421","1","fram","12.2","5.40002000000004","61","A","1.3","DS","True","1","S",60,90,0,NA,"0","I,DF",NA,NA,NA,NA,"5","3","DE,SS,VB,W",2,"S"
-"status_AU_DS_or_DC_but_no_FAD",NA,"6d559110-8ba9-493f-9158-5b73f0f19b14","1230","122556","1","fram","2","14.29999","171","A","1.3","AU","False","2",NA,NA,90,80,NA,"2",NA,NA,NA,NA,NA,"3","2","DE,AS,VB,W,SS",2,"I"
-"missing_stem",NA,NA,"1302","130348","1","litu","259.89999","21.9","598","A","1302",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1311","133404","1","fram","258.5","215.10001","17","A","1311",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"dead_but_epicormic_more_than_0",NA,"6e2c193d-f85c-429b-8a2b-12453dfc29c8","1326","132387","1","frpe","14.89999","11.89999","52","A","1.3","DS","True","1","S",50,98,0,NA,"0","I,DF",NA,NA,NA,NA,"5","2","DE,VB,SS",1,"S"
-"status_AU_DS_or_DC_but_no_FAD",NA,"45fd36cc-afb7-48de-bbb0-3cac9c9dbb9d","1328","132431","1","fram","2.10001","14.29999","61","A","1.3","AU","False","2",NA,NA,90,35,NA,"0",NA,NA,NA,NA,NA,"4","2","VB,W,DE,SS",1,"I"
-"dead_but_epicormic_more_than_0",NA,"fd795076-e56b-434a-84f8-54bcc35a026f","1332","132543","1","frpe","16.29999","7.09997999999996","87","A","1.3","DS","True","1","S",85,80,0,NA,"0","DF,U",NA,NA,NA,"not eab","5","3","none,SS",0,"S"
-"missing_stem",NA,NA,"1403","140449","1","fram","273.60001","49.9","198","A","1403",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","BC","1c5cab7a-889a-46e2-a553-90858f1d5fb8","1426","142396","1","fram","10.60001","14.20001","46","A","1.3","A","False","1",NA,NA,100,100,NA,"1",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1502","150395","1","fram","288.20001","31.9","84","A","1502",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1503","150543","1","fram","292.60001","44.2","89","A","1503",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"exit_hole_count_no_DE_EABF","BC","eea0e658-6332-4d64-9fae-454cede531e3","1531","152702","1","fram","14.5","14.40002","419","A","1.3","DS","False","1","S",425,80,0,NA,"0","I",NA,NA,NA,NA,"5","0","W,VB,SS",14,NA
-"missing_stem",NA,NA,"1601","160001","1","fram","300.79999","2.1","64","A","1601",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1604","160733","1","fram","311.60001","62.2","63","A","1604",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1604","160733","2","fram","311.60001","62.2","65","A","1604",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1605","160692","1","fram","308.29999","94.4","66","A","1605",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1605","160746","1","fram","310.70001","89","42","D","1605",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1605","160749","1","fram","313.39999","97.4","103","A","1605",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1607","160771","1","fram","316.39999","136.2","85","A","1607",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1609","163367","1","fram","300.10001","171.10001","14","A","1609",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1609","163367","2","fram","300.1","171.1","14","A","1609",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1610","160797","1","fram","312.10001","180.10001","53","A","1610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1610","163373","1","fram","300.29999","181.10001","15","A","1610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1610","163376","1","fram","301.70001","188.10001","16","A","1610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_stem",NA,NA,"1610","163378","1","fram","301.29999","189.60001","14","A","1610",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info",NA,"5e1e966b-34af-43bc-89c0-b7324d53c035","1503","150543","1","fram","12.60001","4.2","89","A","1.3","AU","False","2",NA,NA,90,50,NA,"4","I",NA,NA,NA,NA,NA,"3","AS,DE,W,VB,SS",5,"I"
+"wounded_but_no_level",NA,"77e509d5-fe63-48cf-9f17-7647bf04db6d","1604","160733","1","fram","11.60001","2.2","63","A","1.3","AU","False","1",NA,NA,95,75,NA,"0","W",NA,NA,NA,NA,"1","0","none",0,"S"
+"status_DS_or_DC_but_DBH_not_measured",NA,"c9cb99e9-c724-4bf0-a28e-1721e3239f42","1610","163373","1","fram","0.29998999999998","1.10001","15","A","1.3","DC","True","1","S",NA,NA,NA,NA,"0","U",NA,NA,NA,NA,"5","0","none",0,"S"
+"missing_EAB_info",NA,"c9cb99e9-c724-4bf0-a28e-1721e3239f42","1610","163376","1","fram","1.70001000000002","8.10001","16","A","1.3","A","False","2",NA,NA,100,89,NA,NA,NA,NA,NA,NA,NA,NA,"0","none",0,"S"

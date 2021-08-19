@@ -917,3 +917,15 @@
 "dead_but_epicormic_more_than_0",NA,"fd795076-e56b-434a-84f8-54bcc35a026f",1332,132543,1,"frpe",16.29999,7.09997999999996,87,"A","1.3","DS","True",1,"S",85,80,0,NA,0,"DF,U",NA,NA,NA,"not eab",5,3,"none,SS",0,"S"
 "missing_EAB_info","BC","1c5cab7a-889a-46e2-a553-90858f1d5fb8",1426,142396,1,"fram",10.60001,14.20001,46,"A","1.3","A","False",1,NA,NA,100,100,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "exit_hole_count_no_DE_EABF","BC","eea0e658-6332-4d64-9fae-454cede531e3",1531,152702,1,"fram",14.5,14.40002,419,"A","1.3","DS","False",1,"S",425,80,0,NA,0,"I",NA,NA,NA,NA,5,0,"W,VB,SS",14,NA
+"missing_crown_position",NA,"08d9b538-0b98-471a-882e-8337a0a0e166",904,93481,1,"fram",19,16.8,12,"A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species is Carya cordiformis- ljm",NA,NA,NA,NA,NA
+"missing_percent_crown_intact",NA,"08d9b538-0b98-471a-882e-8337a0a0e166",904,93481,1,"fram",19,16.8,12,"A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species is Carya cordiformis- ljm",NA,NA,NA,NA,NA
+"missing_percent_crown_living",NA,"08d9b538-0b98-471a-882e-8337a0a0e166",904,93481,1,"fram",19,16.8,12,"A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species is Carya cordiformis- ljm",NA,NA,NA,NA,NA
+"missing_EAB_info",NA,"08d9b538-0b98-471a-882e-8337a0a0e166",904,93481,1,"fram",19,16.8,12,"A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species is Carya cordiformis- ljm",NA,NA,NA,NA,NA
+"missing_crown_position",NA,"e4aa927f-3030-400c-b817-a463fa22f55e",907,93487,1,"fram",0.300000000000011,6.3,11,"A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species CARGLA -ljm",NA,NA,NA,NA,NA
+"missing_percent_crown_intact",NA,"e4aa927f-3030-400c-b817-a463fa22f55e",907,93487,1,"fram",0.300000000000011,6.3,11,"A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species CARGLA -ljm",NA,NA,NA,NA,NA
+"missing_percent_crown_living",NA,"e4aa927f-3030-400c-b817-a463fa22f55e",907,93487,1,"fram",0.300000000000011,6.3,11,"A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species CARGLA -ljm",NA,NA,NA,NA,NA
+"missing_EAB_info",NA,"e4aa927f-3030-400c-b817-a463fa22f55e",907,93487,1,"fram",0.300000000000011,6.3,11,"A","1.3","A","False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"error species CARGLA -ljm",NA,NA,NA,NA,NA
+"missing_EAB_info",NA,"5e1e966b-34af-43bc-89c0-b7324d53c035",1503,150543,1,"fram",12.60001,4.2,89,"A","1.3","AU","False",2,NA,NA,90,50,NA,4,"I",NA,NA,NA,NA,NA,3,"AS,DE,W,VB,SS",5,"I"
+"wounded_but_no_level",NA,"77e509d5-fe63-48cf-9f17-7647bf04db6d",1604,160733,1,"fram",11.60001,2.2,63,"A","1.3","AU","False",1,NA,NA,95,75,NA,0,"W",NA,NA,NA,NA,1,0,"none",0,"S"
+"status_DS_or_DC_but_DBH_not_measured",NA,"c9cb99e9-c724-4bf0-a28e-1721e3239f42",1610,163373,1,"fram",0.29998999999998,1.10001,15,"A","1.3","DC","True",1,"S",NA,NA,NA,NA,0,"U",NA,NA,NA,NA,5,0,"none",0,"S"
+"missing_EAB_info",NA,"c9cb99e9-c724-4bf0-a28e-1721e3239f42",1610,163376,1,"fram",1.70001000000002,8.10001,16,"A","1.3","A","False",2,NA,NA,100,89,NA,NA,NA,NA,NA,NA,NA,NA,0,"none",0,"S"
