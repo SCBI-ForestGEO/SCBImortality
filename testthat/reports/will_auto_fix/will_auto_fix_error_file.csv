@@ -501,6 +501,7 @@
 "wounded_level_but_wrong_status_or_FAD","BC","17f60c3f-30fa-451a-b902-5db46b8e3da0","814","80676","1","saal","19.6","9.6","NA","A","1.3","PD","False","1",NA,NA,0,0,NA,"0","B,R,W","3",NA,"2",NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD",NA,"23f4a54c-6998-4b55-9f8b-01d59e665cfe","815","80579","1","cagl","151.8","291.10001","529","A","1.3","AU","False","2",NA,NA,95,95,NA,"0","B","2",NA,NA,NA,NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80694","1","juni","144.39999","304.29999","463","A","1.3","A","False","3",NA,NA,90,90,NA,"0",NA,"1",NA,NA,"sapsucker holes",NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD",NA,"1571dc78-f07e-4a99-90c2-7133ea42c35c","816","80694","1","juni","4.39999","4.29998999999998","463","A","1.3","AU","False",NA,NA,NA,NA,NA,NA,NA,"AN","1",NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80694","1","juni","144.39999","304.29999","463","A","1.3","A","False","3",NA,NA,90,90,NA,"0",NA,"1",NA,NA,"sapsucker holes",NA,NA,NA,NA,NA
 "unhealthy_but_wrong_status","BC","b64024ba-b851-48ec-b1af-b78f692a779c","816","80695","1","frni","5.30000000000001","7.89999","NA","D","NULL","PD","False","1",NA,NA,100,0,NA,"0","I",NA,NA,NA,"dead standing","5","0","W,VB,DE",9,NA
 "wounded_level_but_wrong_status_or_FAD",NA,"ee488b9e-3db5-4a7e-9475-23ebb6f223c5","816","80775","1","fram","150.89999","319.89999","341","DS","1.3","DS","False","3","I",349,75,0,NA,"0","I,F","2",NA,"2",NA,"5","0","DE,W",4,NA

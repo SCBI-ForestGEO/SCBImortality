@@ -1,5 +1,6 @@
 "SurveyorID","Submission Id","Quad","Tag","StemTag","Species","QX","QY","DBH","Status 2018","HOM","Status 2021","DWR","Crown position","Dead crown position","Dead DBH","Percentage of crown intact","Percentage of crown living","Lean angle if greater than 15 degrees","Lianas","FAD","Wounded main stem","Canker; swelling, deformity","Rotting trunk","Notes 2021","Crown thinning","Epicormic growth","EABF","D-shaped exit hole count","Crown position < 10 cm DBH"
 NA,"31fa3945-5820-4b73-8def-afb0682cbc31","223","22223","1","frpe","4.5","7.29998999999998","72","A","1.3","AU","False","3",NA,NA,95,90,NA,"0","I",NA,NA,NA,NA,"2","0","DE,VB,W",1,"I"
+NA,"1571dc78-f07e-4a99-90c2-7133ea42c35c","816","80694","1","juni","4.39999","4.29998999999998","463","A","1.3","AU","False",NA,NA,NA,NA,NA,NA,NA,"AN","1",NA,NA,NA,NA,NA,NA,NA,NA
 NA,"49de8764-1e4d-4609-a955-0391f21df4af","203","20181","2","frni","9.8","19.2","49","A","1.3","AU","False","2",NA,NA,100,100,NA,"4","OT",NA,NA,NA,"liana attack","1","0","none",0,"S"
 "TR","cb38257d-7460-4262-b1a3-2b3d43aefd2a","503","50220","1","prav","17.3","0.100000000000001","182","A","1.3","AU","False","2",NA,NA,90,80,NA,"1","U",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "TR","cb38257d-7460-4262-b1a3-2b3d43aefd2a","503","50218","1","cagl","12.3","2","120","A","1.3","A","False","2",NA,NA,100,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
