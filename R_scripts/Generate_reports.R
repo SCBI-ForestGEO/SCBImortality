@@ -685,7 +685,7 @@ if(!is.null(require_field_fix_error_file) & nrow(require_field_fix_error_file>0)
 
 
 
-if(!is.null(will_auto_fix_error_file & nrow(will_auto_fix_error_file) > 0)) {
+if(!is.null(will_auto_fix_error_file) & nrow(will_auto_fix_error_file) > 0) {
   write.csv(
     will_auto_fix_error_file[, c(ncol(will_auto_fix_error_file), 1:(ncol(will_auto_fix_error_file) -1))], 
     file = file.path(here("testthat"), "reports/will_auto_fix/will_auto_fix_error_file.csv"), 
