@@ -21,7 +21,7 @@ if(file.exists(warning_file_path)) warning_file <- read.csv(warning_file_path)
 
 # write warning messages ####
 
-warning_messages <- c("unhealthy_but_wrong_status" = "There are living tress that are unhealthy but status is not AU.",
+warning_messages <- c("unhealthy_but_wrong_status" = "There are living trees that are unhealthy but status is not AU.",
                       "wounded_level_but_wrong_status_or_FAD" = "There are trees with wounded level but no W in FAD.", 
                       "canker_level_but_wrong_status_or_FAD" = "There are trees with canker level but no K in FAD.",
                       "rot_level_but_wrong_status_or_FAD" = "There are trees with rot level but no R in FAD",
