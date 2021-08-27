@@ -41,6 +41,7 @@ assign(f, read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI
 raw_data_path <- "raw_data/"
 
 survey_files <- list.files(raw_data_path, pattern = "Mortality_Survey_.*csv")
+survey_files <- survey_files[as.numeric(regmatches(survey_files, regexpr("20\\d\\d", survey_files))) < 2021] # only consider files before 2021 as starting 2021 is the CI files
 
 mort.census.years <- NULL
 
