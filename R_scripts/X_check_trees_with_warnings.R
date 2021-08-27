@@ -33,9 +33,9 @@ load("C:/Users/herrmannV/Dropbox (Smithsonian)/GitHub/SCBI-ForestGEO/SCBImortali
 table(w$warning_name) # add code if some are not adressed below
 
 # check status history of status issues ####
-st <- w[w$warning_name %in% "Dead_but_now_alive", ]
+x <- w[w$warning_name %in% "Dead_but_now_alive", ]
 
-status_history <- cbind(st[, c("Quad", "Tag", "StemTag", "DBH")], allmort[match(paste(st$Tag, st$StemTag), paste(allmort$tag, allmort$StemTag)), sort(grep("status", names(allmort), value = T))], "/" = "/", st[,grep("Status", names(st))], st$Notes.2021)
+status_history <- cbind(x[, c("Quad", "Tag", "StemTag", "DBH")], allmort[match(paste(x$Tag, x$StemTag), paste(allmort$tag, allmort$StemTag)), sort(grep("status", names(allmort), value = T))], "/" = "/", x[,grep("Status", names(x))], x["Notes.2021"])
 
 status_history$status.2018.1 <- NULL
 
@@ -44,3 +44,18 @@ status_history <- status_history[order(status_history$Status.2018), ]
 View(status_history)
 
 write.csv(status_history, "temporary_files_for_QA_QC/status_history_Dead_but_now_alive.csv", row.names = F)
+
+
+
+# check dbh history of status issues ####
+x <- w[w$warning_name %in% "DBH_dead_suspicious", ]
+
+dbh_history <- cbind(x[, c("Quad", "Tag", "StemTag")], allmort[match(paste(x$Tag, x$StemTag), paste(allmort$tag, allmort$StemTag)), sort(grep("dbh.\\d", names(allmort), value = T))], "/" = "/", x[, c("DBH", "Dead.DBH", "Notes.2021")])
+
+dbh_history <- dbh_history[order(dbh_history$DBH), ]
+
+
+View(dbh_history)
+
+write.csv(dbh_history, "temporary_files_for_QA_QC/dbh_history_DBH_dead_suspicious.csv", row.names = F)
+
