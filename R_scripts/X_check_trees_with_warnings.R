@@ -43,4 +43,4 @@ status_history <- status_history[order(status_history$Status.2018), ]
 
 View(status_history)
 
-write.table(status_history, "temporary_files_for_QA_QC/status_history_Dead_but_now_alive.csv", sep = "|", quote = F, row.names = F)
+write.csv(status_history, "temporary_files_for_QA_QC/status_history_Dead_but_now_alive.csv", row.names = F)
