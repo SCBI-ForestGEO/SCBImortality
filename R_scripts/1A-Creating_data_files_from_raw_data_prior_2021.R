@@ -1,7 +1,6 @@
 #############################################################################
-# Purpose: clean and merge all mortality census data
+# Purpose: clean and merge all mortality census data prior to CI, which was implemented in 2021
 # Developped by: Valentine Herrmann - HerrmannV@si.edu
-# R version 3.4.4 (2018-03-15)
 ##########################################################################
 
 # Clean environment ####
