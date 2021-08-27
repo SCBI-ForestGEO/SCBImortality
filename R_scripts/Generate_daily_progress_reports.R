@@ -41,6 +41,8 @@ census_quad_counts <- main_census %>%
 # Load quadrat info --------------------------------
 # Get latest FFF
 latest_FFFs <- list.files(here("raw_data/FFF_excel/"), pattern = ".xlsx", full.names = T)
+latest_FFFs <- latest_FFFs[which.max(as.numeric(regmatches(latest_FFFs, regexpr("20\\d\\d", latest_FFFs))))] # take the latest file only
+
 
 # Get info on all quadrats censused so far
 quadrat_info <- read_xlsx(latest_FFFs, sheet = "Root", .name_repair = "minimal") %>%

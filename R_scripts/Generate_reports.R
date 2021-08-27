@@ -12,6 +12,7 @@ library(readxl)
 
 ## get the name of latest excel form
 latest_FFFs <- list.files(here("raw_data/FFF_excel/"), pattern = ".xlsx", full.names = T)
+latest_FFFs <- latest_FFFs[which.max(as.numeric(regmatches(latest_FFFs, regexpr("20\\d\\d", latest_FFFs))))] # take the latest file only
 
 
 ## load the latest mortality survey
