@@ -692,7 +692,7 @@ if(!is.null(require_field_fix_error_file) & nrow(require_field_fix_error_file>0)
   if(file.exists(file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"))) file.remove(file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"))
   
   # if not error, save the current mort file as CSV
-  write.csv(mort, file  = csv_mort_filename)
+  write.csv(mort, file  = csv_mort_filename, row.names = F)
   
 }
 
