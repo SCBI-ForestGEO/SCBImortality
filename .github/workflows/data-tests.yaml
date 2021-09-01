@@ -3,7 +3,7 @@
 on:
   push:
     paths:
-      - 'raw_data/**'
+      - 'raw_data/FFF_excel**'
       - '!raw_data/README.md'
       - 'R_scripts/Generate_reports.R'
       - 'R_scripts/Generate_warnings.R'
@@ -11,7 +11,7 @@ on:
       - 'R_scripts/Generate_daily_progress_reports.R'
   pull_request:
     paths:
-      - 'raw_data/**'
+      - 'raw_data/FFF_excel**'
       - '!raw_data/README.md'
       - 'R_scripts/Generate_reports.R'
       - 'R_scripts/Generate_warnings.R'
