@@ -56,22 +56,28 @@ for(survey_file in survey_files) {
   mort <- read.csv(paste0(raw_data_path, survey_file), stringsAsFactors = F)
 
   # fix column names to be consistant
+  names(mort) <- tolower(names(mort))
+  
   names(mort) <- gsub("species", "sp", names(mort))
-  # names(mort) <- gsub("codes", "code", names(mort)) # commenting this out to ignor code.2013 that is causing more problem than we need...
+  names(mort) <- gsub("^stem$", "stemtag", names(mort))
   names(mort) <- gsub("previous.condition", paste0("status.", survey_year -1 ), names(mort))
   names(mort) <- gsub("new.condition|new.status", paste0("status.", survey_year ), names(mort))
+  names(mort) <- gsub("x\\d*.comments", "notes", names(mort))
+  names(mort) <- gsub("surveyors", "surveyor", names(mort))
+  names(mort) <- gsub("de.count", "d.shaped.exit.hole.count", names(mort))
+  
+  # names(mort) <- gsub("codes", "code", names(mort)) # commenting this out to ignor code.2013 that is causing more problem than we need...
   names(mort) <- gsub("status\\.\\.","status.", names(mort))
   names(mort) <- gsub("fad\\.", "fad", names(mort))
   names(mort) <- gsub(" ", ".", names(mort))
-  names(mort) <- gsub("Comments", "comments", names(mort), ignore.case = F)
-  names(mort) <- gsub("Date", "date", names(mort), ignore.case = F)
-  names(mort) <- gsub("X2018.comments", "comments", names(mort))
-  names(mort) <- gsub("stem", "StemTag", names(mort))
-  names(mort) <- gsub("surveyor\\b", "surveyors", names(mort))
-  names(mort) <- gsub("X2019.comments", "comments", names(mort))
+  
 
 
-  # add columns and fill with NA if they don't exist
+
+  # add/remove columns
+  mort$old.comments <- NULL
+  mort[, c("vb", "ss", "as", "w", "de")] <- NULL # for 2017, no need of those.
+  
   if(!any(grepl("lx", names(mort)))) mort$lx <- NA
   if(!any(grepl("ly", names(mort)))) mort$ly <- NA
   if(!any(grepl("dbh.if.dead", names(mort)))) mort$dbh.if.dead <- NA
