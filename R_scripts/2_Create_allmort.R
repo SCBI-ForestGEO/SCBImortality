@@ -14,6 +14,21 @@ setwd(".")
 
 
 # Load data ####
+data_path <- "data/"
+
+survey_files <- list.files(raw_data_path, pattern = "Mortality_Survey_.*csv", full.names = T)
+
+
+all_morts <- sapply(survey_files, read.csv)
+names(all_morts) <-  regmatches(names(all_morts), regexpr("\\d{4}", names(all_morts)))
+
+View(sort(table(unlist(sapply(all_morts, names)))))
+
+x <- data.frame(names = tolower(unlist(sapply(all_morts, names))))
+x$year <- substr(row.names(x), 1, 4)
+
+x$names <- gsub("codes", "code", x$names)
+write.csv(table(x$names, x$year), "clipboard")
 
 
 
