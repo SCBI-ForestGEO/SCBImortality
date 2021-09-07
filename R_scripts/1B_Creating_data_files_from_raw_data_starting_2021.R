@@ -111,36 +111,45 @@ for(survey_file in survey_files) {
   warnings_file <- read.csv("testthat/reports/warnings/warnings_file.csv")
   dup_tags[dup_tags %in%  paste(warnings_file$Tag, warnings_file$StemTag)]
   
-  x1 <- mort[paste(mort$tag, mort$stemtag) %in% dup_tags, ]
-  head(x1)
-x1 <- do.call(rbind, lapply(as.list(unique( paste(x1$tag, x1$stemtag))), function(t) {
-   x <- x1[paste(x1$tag, x1$stemtag) %in% t, ]
+  
+  mort <- do.call(rbind, lapply(as.list(unique( paste(mort$tag, mort$stemtag))), function(t) {
+    x <- mort[paste(mort$tag, mort$stemtag) %in% t, ]
     if(nrow(x) > 1) {
-    if(any(grepl("BC", x$surveyorid))) x <- x[x$surveyorid %in% c("BC", "BC,JJ"), ]
-    if(sum(duplicated(x[, c("status.2021", "fad", "eabf")])) == (nrow(x) -1)) x <- x[which.max(x$date),]
+      if(any(grepl("BC", x$surveyor))) x <- x[x$surveyor %in% c("BC", "BC,JJ"), ] # keep Bri first
+      if(sum(duplicated(x[, c("status.2021", "fad", "eabf")])) == (nrow(x) -1)) x <- x[which.max(x$date),] # keep latest date if still need to pick
     }
-  return(x)
-    }))
+    return(x)
+  }))
+  
+  
+  sum(duplicated(mort[, c("tag", "stemtag")])) # should be 0
+  
+#   x1 <- mort[paste(mort$tag, mort$stemtag) %in% dup_tags, ]
+#   head(x1)
+# x1 <- do.call(rbind, lapply(as.list(unique( paste(x1$tag, x1$stemtag))), function(t) {
+#    x <- x1[paste(x1$tag, x1$stemtag) %in% t, ]
+#     if(nrow(x) > 1) {
+#     if(any(grepl("BC", x$surveyorid))) x <- x[x$surveyor %in% c("BC", "BC,JJ"), ]
+#     if(sum(duplicated(x[, c("status.2021", "fad", "eabf")])) == (nrow(x) -1)) x <- x[which.max(x$date),]
+#     }
+#   return(x)
+#     }))
+# 
+# dup_tags <- paste(x1$tag, x1$stemtag)[duplicated(x1[, c("tag", "stemtag")])]
+# x2 <- x1[paste(x1$tag, x1$stemtag) %in% dup_tags, ]
+# 
+# if(nrow(x2) > 0) write.csv(x2, "temporary_files_for_QA_QC/remaining_concerning_duplicates.csv", row.names = F) else file.remove("temporary_files_for_QA_QC/remaining_concerning_duplicates.csv")
+# 
+# x2 <- do.call(rbind, lapply(as.list(unique( paste(x2$tag, x2$stemtag))), function(t) {
+#   x <- x2[paste(x2$tag, x2$stemtag) %in% t, ]
+#   if(nrow(x) > 1) {
+#     if(any(grepl("BC", x$surveyorid))) x <- x[x$surveyorid %in% c("BC", "BC,JJ"), ]
+#     if(sum(duplicated(x[, -which(names(x) %in% c("id", "surveyorid", "submission.id"))])) == (nrow(x) -1)) x <- x[which.max(x$date),]
+#   }
+#   return(x)
+# }))
 
-dup_tags <- paste(x1$tag, x1$stemtag)[duplicated(x1[, c("tag", "stemtag")])]
-x2 <- x1[paste(x1$tag, x1$stemtag) %in% dup_tags, ]
-View(x2)
 
-if(nrow(x2) > 0) write.csv(x2, "temporary_files_for_QA_QC/remaining_concerning_duplicates.csv", row.names = F) else file.remove("temporary_files_for_QA_QC/remaining_concerning_duplicates.csv")
-
-x2 <- do.call(rbind, lapply(as.list(unique( paste(x2$tag, x2$stemtag))), function(t) {
-  x <- x2[paste(x2$tag, x2$stemtag) %in% t, ]
-  if(nrow(x) > 1) {
-    if(any(grepl("BC", x$surveyorid))) x <- x[x$surveyorid %in% c("BC", "BC,JJ"), ]
-    if(sum(duplicated(x[, -which(names(x) %in% c("id", "surveyorid", "submission.id"))])) == (nrow(x) -1)) x <- x[which.max(x$date),]
-  }
-  return(x)
-}))
-
-
- 
- 
- View(x)
   
   # padd quadrats with 0
   mort$quadrat <- as.character(  mort$quadrat)
