@@ -32,10 +32,10 @@ idx_dbh <- allmort$dbh.2018[match(paste(mort$tag, mort$stemtag), paste(allmort$t
 tag_stemtag <- paste(mort$tag, mort$stemtag)[idx_status & idx_dbh] # get the tag and stemtag we want
                                                                                  
 
-x <- scbi.stem3[paste(scbi.stem3$tag, scbi.stem3$StemTag) %in% tag_stemtag, ] # take main census data first
+x <- scbi.stem3[paste(scbi.stem3$tag, scbi.stem3$StemTag) %in% tag_stemtag, c("tag", "StemTag", "sp", "quadrat", "gx", "gy", "dbh", "hom", "status") ] # take main census data first
 
-names(x) <- gsub("status", "status.2018", names(x))
-x$status.2020 <- allmort$status.2020[paste(allmort$tag, allmort$StemTag) %in% tag_stemtag] # add 2020 status
+names(x) <- gsub("status", "s18main", names(x))
+x[, paste0("s", c(8, 13:20))] <- ifelse(allmort[paste(allmort$tag, allmort$StemTag) %in% tag_stemtag, paste0("status.", c(2008, 2013:2020))]== "Live", "A", "D") # add previous status
 x$status.2021 <- mort$status.2021[paste(mort$tag, mort$stemtag) %in% tag_stemtag] # add 2021 status
 
 
@@ -47,11 +47,11 @@ x$dendroband <- ifelse(paste(x$tag, x$StemTag) %in% paste(dendro$tag, dendro$ste
 sum(x$dendroband ) # 32 trees have dendroband
 
 # is tree > 50 cm ?
-x$above_50cm_dbh <- ifelse(x$dbh>500, 1, 0) # 81 of them
+x$above_50cm_dbh <- ifelse(x$dbh>500, 1, 0); sum(x$above_50cm_dbh) # 81 of them
 
 
 # is tree an oak ?
-x$oak <- ifelse(grepl("qu", x$sp), 1, 0) # 98 of them
+x$oak <- ifelse(grepl("qu", x$sp), 1, 0); sum(x$oak ) # 98 of them
 
 
 # randomly select smaller trees, not oak, no dendro
@@ -63,5 +63,7 @@ x$small_non_oak_no_dendro_random[c( x$dendroband+ x$above_50cm_dbh+ x$oak) == 0]
 
 # save
 
-write.csv(x[c("tag", "StemTag", "sp", "quadrat", "gx", "gy", "dbh", "hom", "status.2018", "status.2020", "status.2021", 
-              "dendroband", "above_50cm_dbh", "oak", "small_non_oak_no_dendro_random")], file = "data/list_trees_to_core_temporary_file.csv", row.names = F)
+write.csv(x[c("tag", "StemTag", "sp", "quadrat", "gx", "gy", "dbh", "hom", 
+              "s8", "s13", "s14", "s15", "s16", "s17", "s18main", "s18", "s19", 
+              "s20", "status.2021", "dendroband", "above_50cm_dbh", "oak", 
+              "small_non_oak_no_dendro_random")], file = "data/list_trees_to_core_temporary_file.csv", row.names = F)
