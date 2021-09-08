@@ -18,6 +18,8 @@ assign(f,x)
 # read dendroband data 
 dendro <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/Dendrobands/master/data/scbi.dendroAll_2021.csv?token=AEWDCIIQUI6FLGNPAFUIBYDBIECF4")
 
+# list cored trees 
+cored <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_cores/list_cored_trees.csv")
 
 # find trees that match criteria for being cored
 
@@ -61,9 +63,12 @@ x$small_non_oak_no_dendro_random[c( x$dendroband+ x$above_50cm_dbh+ x$oak) == 0]
 
 
 
+# check that none of these trees were cored
+x$cored_dead <- ifelse(paste(x$tag, x$StemTag) %in% paste(cored$tag, cored$stemtag)[cored$status %in% "dead"], 1, 0) ; sum(x$cored)
+
 # save
 
 write.csv(x[c("tag", "StemTag", "sp", "quadrat", "gx", "gy", "dbh", "hom", 
               "s8", "s13", "s14", "s15", "s16", "s17", "s18main", "s18", "s19", 
               "s20", "status.2021", "dendroband", "above_50cm_dbh", "oak", 
-              "small_non_oak_no_dendro_random")], file = "data/list_trees_to_core_temporary_file.csv", row.names = F)
+              "small_non_oak_no_dendro_random", "cored_dead")], file = "data/list_trees_to_core_temporary_file.csv", row.names = F)
