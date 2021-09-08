@@ -115,16 +115,17 @@ dput(unique(apply(cbind(allmort$status.2020[match(paste(mort$tag, mort$stemtag),
 
 ## looking at raw data 2020
 mort2020 <- all_morts_by_year$"2020"
+
 unique(cbind(mort2020$status.2020[match(paste(mort$tag, mort$stemtag), paste(mort2020$tag, mort2020$stemtag))], mort$status.2021))
 dput(unique(apply(cbind(mort2020$status.2020[match(paste(mort$tag, mort$stemtag), paste(mort2020$tag, mort2020$stemtag))], mort$status.2021),1 , paste, collapse = " "))) # look at all variations of being alive then dead, looking at 2020 census for prior year
 
 
 idx_status <- apply(cbind(allmort$status.2020[match(paste(mort$tag, mort$stemtag), paste(allmort$tag, allmort$StemTag))], mort$status.2021),1 , paste, collapse = " ") %in% c("Live DS", "Live PD","Live DC") # get the variations we want -- allmort
-# idx_status <- apply(cbind(mort2020$status.2020[match(paste(mort$tag, mort$stemtag), paste(mort2020$tag, mort2020$stemtag))], mort$status.2021),1 , paste, collapse = " ") %in% c("A DS", "AU DS", "AU DC", "AU PD",   "A DC", "A PD") # get the variations we want -- looking at raw data 2020
+idx_status <- apply(cbind(mort2020$status.2020[match(paste(mort$tag, mort$stemtag), paste(mort2020$tag, mort2020$stemtag))], mort$status.2021),1 , paste, collapse = " ") %in% c("A DS", "AU DS", "AU DC", "AU PD",   "A DC", "A PD") # get the variations we want -- looking at raw data 2020
 
 
 idx_dbh <- allmort$dbh.2018[match(paste(mort$tag, mort$stemtag), paste(allmort$tag, allmort$StemTag))] > 100 & !is.na(allmort$dbh.2018[match(paste(mort$tag, mort$stemtag), paste(allmort$tag, allmort$StemTag))] ) # keep only when dbh > 100 mm (10 cm)-- allmort
-# idx_dbh <- mort2020$dbh.2018[match(paste(mort$tag, mort$stemtag), paste(mort2020$tag, mort2020$stemtag))] > 100 & !is.na(mort2020$dbh.2018[match(paste(mort$tag, mort$stemtag), paste(mort2020$tag, mort2020$stemtag))] ) # keep only when dbh > 100 mm (10 cm)-- looking at raw data 2020
+idx_dbh <- mort2020$dbh.2018[match(paste(mort$tag, mort$stemtag), paste(mort2020$tag, mort2020$stemtag))] > 100 & !is.na(mort2020$dbh.2018[match(paste(mort$tag, mort$stemtag), paste(mort2020$tag, mort2020$stemtag))] ) # keep only when dbh > 100 mm (10 cm)-- looking at raw data 2020
 
 
 tag_stemtag <- paste(mort$tag, mort$stemtag)[idx_status & idx_dbh] # get the tag and stemtag we want
@@ -133,9 +134,13 @@ tag_stemtag <- paste(mort$tag, mort$stemtag)[idx_status & idx_dbh] # get the tag
 x <- scbi.stem3[match(tag_stemtag, paste(scbi.stem3$tag, scbi.stem3$StemTag)), c("tag", "StemTag", "sp", "quadrat", "gx", "gy", "dbh", "hom", "status") ] # take main census data first
 
 names(x) <- gsub("status", "s18main", names(x))
-x[, paste0("s", c(8, 13:20))] <- ifelse(allmort[match(tag_stemtag, paste(allmort$tag, allmort$StemTag)), paste0("status.", c(2008, 2013:2020))]== "Live", "A", "D") # add previous status-- allmort
-# x[, paste0("s", c(8, 13:20))] <- ifelse(allmort[match(tag_stemtag, paste(allmort$tag, allmort$StemTag)), paste0("status.", c(2008, 2013:2020))]== "Live", "A", "D") # add previous status-- looking at raw data 2020
+# x[, paste0("s", c(8, 13:20))] <- ifelse(allmort[match(tag_stemtag, paste(allmort$tag, allmort$StemTag)), paste0("status.", c(2008, 2013:2020))]== "Live", "A", "D") # add previous status-- allmort
+x[, paste0("s", c(14:20))] <- sapply(names(all_morts_by_year), function(y) {all_morts_by_year[[y]][match(tag_stemtag, paste(all_morts_by_year[[y]]$tag, all_morts_by_year[[y]]$stemtag)), paste0("status.", y)]}) # add previous status-- looking at raw data 2020
+
 x$status.2021 <- mort$status.2021[match(tag_stemtag, paste(mort$tag, mort$stemtag))] # add 2021 status
+
+
+
 
 
 # add priorities: see this issue: https://github.com/SCBI-ForestGEO/SCBImortality/issues/50
@@ -143,14 +148,14 @@ x$status.2021 <- mort$status.2021[match(tag_stemtag, paste(mort$tag, mort$stemta
 # find out who has dendroband
 
 x$dendroband <- ifelse(paste(x$tag, x$StemTag) %in% paste(dendro$tag, dendro$stemtag), 1, 0)
-sum(x$dendroband ) # 32 trees have dendroband
+sum(x$dendroband ) # 32 trees have dendroband, 16 if looking at raw data
 
 # is tree > 50 cm ?
-x$above_50cm_dbh <- ifelse(x$dbh>500, 1, 0); sum(x$above_50cm_dbh) # 81 of them
+x$above_50cm_dbh <- ifelse(x$dbh>500, 1, 0); sum(x$above_50cm_dbh) # 81 of them, 40 if looking at raw data
 
 
 # is tree an oak ?
-x$oak <- ifelse(grepl("qu", x$sp), 1, 0); sum(x$oak ) # 98 of them
+x$oak <- ifelse(grepl("qu", x$sp), 1, 0); sum(x$oak ) # 98 of them, 46 if looking at raw data
 
 
 # randomly select smaller trees, not oak, no dendro
@@ -161,11 +166,10 @@ x$small_non_oak_no_dendro_random[c( x$dendroband+ x$above_50cm_dbh+ x$oak) == 0]
 
 
 # check that none of these trees were cored
-x$cored_dead <- ifelse(paste(x$tag, x$StemTag) %in% paste(cored$tag, cored$stemtag)[cored$status %in% "dead"], 1, 0) ; sum(x$cored)
+x$cored_dead <- ifelse(paste(x$tag, x$StemTag) %in% paste(cored$tag, cored$stemtag)[cored$status %in% "dead"], 1, 0) ; sum(x$cored) #50 with allmort 0 of looking at raw data
 
 # save
 
-write.csv(x[c("tag", "StemTag", "sp", "quadrat", "gx", "gy", "dbh", "hom", 
-              "s8", "s13", "s14", "s15", "s16", "s17", "s18main", "s18", "s19", 
+write.csv(x[c("tag", "StemTag", "sp", "quadrat", "gx", "gy", "dbh", "hom", "s14", "s15", "s16", "s17", "s18main", "s18", "s19", 
               "s20", "status.2021", "dendroband", "above_50cm_dbh", "oak", 
               "small_non_oak_no_dendro_random", "cored_dead")], file = "data/list_trees_to_core_temporary_file.csv", row.names = F)
