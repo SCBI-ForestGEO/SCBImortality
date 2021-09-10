@@ -1,5 +1,5 @@
 ---
-title: "SCBI-ForestGEO Tree Health and Mortality Census Protocol 2021"
+title: "SCBI-ForestGEO Tree Health and Mortality Census Protocol 2022"
 output: pdf_document
 ---
 
@@ -256,8 +256,4 @@ Follow steps in document “Coring_instructions_SCBI” located in ‘Protocol�
 
 
 ## Changes from previous years
-- Adding some measurements to align with censuses at other plots under NSF Macrosystems grant (PI Johnson)
-- Some categorical measurements are replaced with more specific measurements: e.g., categories for percentage crown intact replaced with continuous estimate. 
-- Switching from manual data entry in spreadsheet (iPad spreadsheet or, previously, printed data sheets) to FastField App
-- Starting data checking with continuous integration
-- No coring of dead trees during census (if time allows, it will be done once survey is completed)
+- PD (previously dead) is no longer an option in FastField (was not in 2021 protocol)
