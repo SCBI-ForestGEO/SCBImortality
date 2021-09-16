@@ -1,0 +1,25 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(here)
+library(readr)
+opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README_figure/README-"
+)
+```
+
+
+# Data tests for mortality census
+
+## Table of tests 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(read_csv(here("testthat/table_of_tests.csv")))
+```
