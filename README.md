@@ -4,6 +4,8 @@
 
 ### data entry issues to resolve?
 [![data-tests](https://github.com/SCBI-ForestGEO/SCBImortality/workflows/data-tests/badge.svg)](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports)
+[![DOI](https://zenodo.org/badge/368213779.svg)](https://zenodo.org/badge/latestdoi/368213779)
+
 
 **[Click here to view error reports.](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports/)**
 
