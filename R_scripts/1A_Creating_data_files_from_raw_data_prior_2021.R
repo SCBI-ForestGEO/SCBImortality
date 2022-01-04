@@ -62,7 +62,7 @@ for(survey_file in survey_files) {
   names(mort) <- gsub("^stem$", "stemtag", names(mort))
   names(mort) <- gsub("previous.condition", paste0("status.", survey_year -1 ), names(mort))
   names(mort) <- gsub("new.condition|new.status", paste0("status.", survey_year ), names(mort))
-  names(mort) <- gsub("x\\d*.comments", "notes", names(mort))
+  names(mort) <- gsub("x\\d*.comments|comments", "notes", names(mort))
   names(mort) <- gsub("surveyors", "surveyor", names(mort))
   names(mort) <- gsub("de.count", "d.shaped.exit.hole.count", names(mort))
   
@@ -112,11 +112,11 @@ for(survey_file in survey_files) {
   if(survey_year >= 2019) mort$dbh.2018 <- as.numeric(mort$dbh.2018) else mort$dbh.2013 <- as.numeric(mort$dbh.2013) 
 
   # order the columns the way we want it
-  mort <- mort[, c("quadrat", "tag", "StemTag", "sp", "lx", "ly", ifelse(survey_year >= 2019, "dbh.2018", "dbh.2013"),
+  mort <- mort[, c("quadrat", "tag", "stemtag", "sp", "lx", "ly", ifelse(survey_year >= 2019, "dbh.2018", "dbh.2013"),
   grep("status", names(mort), value = T), "dbh.if.dead",
   "perc.crown", "crown.position", "fad1", "fad2", "fad3", "fad4",
   "DF", "liana.load", "fraxinus.crown.thinning", "fraxinus.epicormic.growth",
-  "EABF","DE.count", "comments", "date", "surveyors")]
+  "EABF","DE.count", "notes", "date", "surveyor")]
 
   
   ## calculated allometries ####
@@ -169,37 +169,37 @@ for(census in paste0("scbi.stem", 1:3)) {
 
 ## order rows the same way as year 2018 ####
 
-tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$StemTag, sep = "_")
+tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$stemtag, sep = "_")
 
 for(survey_year in mort.census.years) {
   print(survey_year)
 
   mort <- get(paste0("mort", substr(survey_year, 3, 4)))
-  tag_stems <- paste(mort$tag, mort$StemTag, sep = "_")
+  tag_stems <- paste(mort$tag, mort$stemtag, sep = "_")
 
   if(!all(tag_stems %in% tag_stem_in_order)) {
     print("Not all tags are in core census")
 
     tag_stems[which(!tag_stems %in% tag_stem_in_order)]
-    print(mort[ paste(mort$tag, mort$StemTag, sep = "_") %in% tag_stems[which(!tag_stems %in% tag_stem_in_order)], ])
+    print(mort[ paste(mort$tag, mort$stemtag, sep = "_") %in% tag_stems[which(!tag_stems %in% tag_stem_in_order)], ])
   }
 }
 
 ## FIXING PROBLEMS ####
 
 
-#### the tag and species ID issue: In full census data, tag 33331 appears 2 times. Looking like a 2-stem quru. In 2014 it was found that the biggest stem was actually tagged with tag 30365. The tag number was changed only in mortality census 2017 and Maya and Ryan ID-ed that second stem as fram. but the species ID was never changed. I am fixing that in all mortality related data now, by changing tag# StemTag and species in all dataframes. BUT, after 2018 main census, it seems that instructions were given to Suzanne Lao to change the tag number but on both stems.... so we end up with the same issue of having tag 30365 appearing 2 times, with same StemTag #1... So I'll, ignore that for now but eventually, this will need to be fixed.
+#### the tag and species ID issue: In full census data, tag 33331 appears 2 times. Looking like a 2-stem quru. In 2014 it was found that the biggest stem was actually tagged with tag 30365. The tag number was changed only in mortality census 2017 and Maya and Ryan ID-ed that second stem as fram. but the species ID was never changed. I am fixing that in all mortality related data now, by changing tag# stemtag and species in all dataframes. BUT, after 2018 main census, it seems that instructions were given to Suzanne Lao to change the tag number but on both stems.... so we end up with the same issue of having tag 30365 appearing 2 times, with same stemtag #1... So I'll, ignore that for now but eventually, this will need to be fixed.
 ### issue put in github that might explain this better:
-# 33331 vs 30365: Up until the 2018 main census, in full census data, tag 33331 appeared 2 times with same StemTag 1, looking like a 2-stem quru with wrong StemTag on smaller stem. In 2014 it was found that the biggest stem was actually tagged with tag 30365. The tag number was changed only in mortality census 2017 and Maya and Ryan ID-ed that second stem as being a fram, but the species ID was never changed in the data sets.
+# 33331 vs 30365: Up until the 2018 main census, in full census data, tag 33331 appeared 2 times with same stemtag 1, looking like a 2-stem quru with wrong stemtag on smaller stem. In 2014 it was found that the biggest stem was actually tagged with tag 30365. The tag number was changed only in mortality census 2017 and Maya and Ryan ID-ed that second stem as being a fram, but the species ID was never changed in the data sets.
 # So it seems that the truth would be:
 # 33331 1 quru 161.2
 # 30365 1 fram 992.0
 #
-# BUT, after 2018 main census, it seems that instructions were given to Suzanne Lao to change the tag number and species of BOTH stems, instead of the biggest stem only. So tag 33331 disappeared and we ended up with the same issue of having tag 30365 StemTag 1 appearing 2 times (but this time on a fram).
+# BUT, after 2018 main census, it seems that instructions were given to Suzanne Lao to change the tag number and species of BOTH stems, instead of the biggest stem only. So tag 33331 disappeared and we ended up with the same issue of having tag 30365 stemtag 1 appearing 2 times (but this time on a fram).
 #
 # So:
 # Long term solution: tell Suzanne that smaller stem is a quru with tag 33331.
-# Short term solution (for building new master mortality census data) changing 33331 quru to 30365 fram AND, for here, put a StemTag = 2 to smaller stem
+# Short term solution (for building new master mortality census data) changing 33331 quru to 30365 fram AND, for here, put a stemtag = 2 to smaller stem
 
 
 scbi.stem1[scbi.stem1$tag %in% 33331,]; scbi.stem1[scbi.stem1$tag %in% 30365,]
@@ -217,9 +217,9 @@ mort20[mort20$tag %in% 33331, ]; mort20[mort20$tag %in% 30365, ]
 
 # # original and correct fix, before main census were wrongly corrected...
 #
-# mort14[mort14$tag %in% 33331, ]$StemTag <- c(1, 1)
-# mort15[mort15$tag %in% 33331, ]$StemTag <- c(1, 1)
-# mort16[mort16$tag %in% 33331, ]$StemTag <- c(1, 1)
+# mort14[mort14$tag %in% 33331, ]$stemtag <- c(1, 1)
+# mort15[mort15$tag %in% 33331, ]$stemtag <- c(1, 1)
+# mort16[mort16$tag %in% 33331, ]$stemtag <- c(1, 1)
 #
 #
 # scbi.stem1[scbi.stem1$tag %in% 33331,]$sp <- c("fram", "quru")
@@ -254,21 +254,21 @@ mort18[mort18$tag %in% 33331, ]$tag <- 30365
 
 
 
-# scbi.stem1[scbi.stem1$tag %in% 30365,]$StemTag <- c(1,2)[order(scbi.stem1[scbi.stem1$tag %in% 30365,]$dbh, decreasing = T)]
-# scbi.stem2[scbi.stem2$tag %in% 30365,]$StemTag <- c(1,2)[order(scbi.stem1[scbi.stem1$tag %in% 30365,]$dbh, decreasing = T)]
-# scbi.stem3[scbi.stem3$tag %in% 30365,]$StemTag <- c(1,2)[order(scbi.stem1[scbi.stem1$tag %in% 30365,]$dbh, decreasing = T)]○
+# scbi.stem1[scbi.stem1$tag %in% 30365,]$stemtag <- c(1,2)[order(scbi.stem1[scbi.stem1$tag %in% 30365,]$dbh, decreasing = T)]
+# scbi.stem2[scbi.stem2$tag %in% 30365,]$stemtag <- c(1,2)[order(scbi.stem1[scbi.stem1$tag %in% 30365,]$dbh, decreasing = T)]
+# scbi.stem3[scbi.stem3$tag %in% 30365,]$stemtag <- c(1,2)[order(scbi.stem1[scbi.stem1$tag %in% 30365,]$dbh, decreasing = T)]○
 
-mort14[mort14$tag %in% 30365, ]$StemTag <- c(1,2)[order(mort14[mort14$tag %in% 30365,]$dbh.2013 , decreasing = T)]
-mort15[mort15$tag %in% 30365, ]$StemTag <- c(1,2)[order(mort15[mort15$tag %in% 30365,]$dbh.2013, decreasing = T)]
-mort16[mort16$tag %in% 30365, ]$StemTag <- c(1,2)[order(mort16[mort16$tag %in% 30365,]$dbh.2013, decreasing = T)]
-mort17[mort17$tag %in% 30365, ]$StemTag <- c(1,2)[order(mort17[mort17$tag %in% 30365,]$dbh.2013, decreasing = T)]
-mort18[mort18$tag %in% 30365, ]$StemTag <- c(1,2)[order(mort18[mort18$tag %in% 30365,]$dbh.2013, decreasing = T)]
-mort19[mort19$tag %in% 30365, ]$StemTag <- c(1,2)[order(mort19[mort19$tag %in% 30365,]$dbh.2018, decreasing = T)]
-mort20[mort20$tag %in% 30365, ]$StemTag <- c(1,2)[order(mort20[mort20$tag %in% 30365,]$dbh.2018, decreasing = T)]
+mort14[mort14$tag %in% 30365, ]$stemtag <- c(1,2)[order(mort14[mort14$tag %in% 30365,]$dbh.2013 , decreasing = T)]
+mort15[mort15$tag %in% 30365, ]$stemtag <- c(1,2)[order(mort15[mort15$tag %in% 30365,]$dbh.2013, decreasing = T)]
+mort16[mort16$tag %in% 30365, ]$stemtag <- c(1,2)[order(mort16[mort16$tag %in% 30365,]$dbh.2013, decreasing = T)]
+mort17[mort17$tag %in% 30365, ]$stemtag <- c(1,2)[order(mort17[mort17$tag %in% 30365,]$dbh.2013, decreasing = T)]
+mort18[mort18$tag %in% 30365, ]$stemtag <- c(1,2)[order(mort18[mort18$tag %in% 30365,]$dbh.2013, decreasing = T)]
+mort19[mort19$tag %in% 30365, ]$stemtag <- c(1,2)[order(mort19[mort19$tag %in% 30365,]$dbh.2018, decreasing = T)]
+mort20[mort20$tag %in% 30365, ]$stemtag <- c(1,2)[order(mort20[mort20$tag %in% 30365,]$dbh.2018, decreasing = T)]
 
 
 
-#### "tag 133461 StemTag 1 (bigger stem) (quadrat 1316, comment in 2015: Ojo:this is not caco, it is fram. Not 2 stem! Fram tag=131352)"
+#### "tag 133461 stemtag 1 (bigger stem) (quadrat 1316, comment in 2015: Ojo:this is not caco, it is fram. Not 2 stem! Fram tag=131352)"
 ## looks like the bigger stem has a different tag and is fram. After 2018 main census, the tag and species were fixed but the species of the smaller stem (tag 133461), which was originally caco, was also changed to fram, not sure if it was made on purpose. I will do the same here...
 
 scbi.stem1[scbi.stem1$tag %in% 133461,]; scbi.stem1[scbi.stem1$tag %in% 131352,]
@@ -286,41 +286,41 @@ mort20[mort20$tag %in% 133461, ]; mort20[mort20$tag %in% 131352, ]
 
 # scbi.stem1[scbi.stem1$tag %in% 133461 & scbi.stem1$dbh > 900, ]$sp <- "fram"
 # scbi.stem2[scbi.stem2$tag %in% 133461 & scbi.stem2$dbh > 900, ]$sp <- "fram"
-# scbi.stem1[scbi.stem1$tag %in% 133461 & scbi.stem1$dbh < 900, ]$StemTag <- 1
-# scbi.stem2[scbi.stem2$tag %in% 133461 & scbi.stem2$dbh < 900, ]$StemTag <- 1
+# scbi.stem1[scbi.stem1$tag %in% 133461 & scbi.stem1$dbh < 900, ]$stemtag <- 1
+# scbi.stem2[scbi.stem2$tag %in% 133461 & scbi.stem2$dbh < 900, ]$stemtag <- 1
 # scbi.stem1[scbi.stem1$tag %in% 133461 & scbi.stem1$dbh > 900, ]$tag <- 131352
 # scbi.stem2[scbi.stem2$tag %in% 133461 & scbi.stem2$dbh > 900, ]$tag <- 131352
 
 mort14[mort14$tag %in% 133461, ]$sp <- "fram"
-mort14[mort14$tag %in% 133461 & mort14$dbh.2013 < 900, ]$StemTag <- 1
+mort14[mort14$tag %in% 133461 & mort14$dbh.2013 < 900, ]$stemtag <- 1
 mort14[mort14$tag %in% 133461 & mort14$dbh.2013 > 900, ]$tag <- 131352
 
 
 mort15[mort15$tag %in% 133461, ]$sp <- "fram"
-mort15[mort15$tag %in% 133461 & mort15$dbh.2013 < 900, ]$StemTag <- 1
+mort15[mort15$tag %in% 133461 & mort15$dbh.2013 < 900, ]$stemtag <- 1
 mort15[mort15$tag %in% 133461 & mort15$dbh.2013 > 900, ]$tag <- 131352
 
 
 mort16[mort16$tag %in% 133461, ]$sp <- "fram"
 mort16 <- mort16[!(mort16$tag %in% 133461 & mort16$dbh.2013 > 900), ]
-mort16[mort16$tag %in% 133461 & mort16$dbh.2013 < 900, ]$StemTag <- 1
+mort16[mort16$tag %in% 133461 & mort16$dbh.2013 < 900, ]$stemtag <- 1
 
 # mort16[mort16$tag %in% 133461 & mort16$dbh.2013 > 900, ]$sp <- "fram"
-# mort16[mort16$tag %in% 133461 & mort16$dbh.2013 < 900, ]$StemTag <- 1
+# mort16[mort16$tag %in% 133461 & mort16$dbh.2013 < 900, ]$stemtag <- 1
 # mort16[mort16$tag %in% 133461 & mort16$dbh.2013 > 900, ]$tag <- 131352
 
 mort17[mort17$tag %in% 133461, ]$sp <- "fram"
 mort17 <- mort17[!(mort17$tag %in% 133461 & mort17$dbh.2013 > 900), ]
-mort17[mort17$tag %in% 133461 & mort17$dbh.2013 < 900, ]$StemTag <- 1
+mort17[mort17$tag %in% 133461 & mort17$dbh.2013 < 900, ]$stemtag <- 1
 
 # mort17[mort17$tag %in% 133461 & mort17$dbh.2013 > 900, ]$sp <- "fram"
-# mort17[mort17$tag %in% 133461 & mort17$dbh.2013 < 900, ]$StemTag <- 1
+# mort17[mort17$tag %in% 133461 & mort17$dbh.2013 < 900, ]$stemtag <- 1
 # mort17[mort17$tag %in% 133461 & mort17$dbh.2013 > 900, ]$tag <- 131352
 
 mort18[mort18$tag %in% 133461, ]$sp <- "fram"
 mort18 <- mort18[!(mort18$tag %in% 131352 & mort18$EABF %in% "AS;W;DE"),]
 # mort18[mort18$tag %in% 133461 & mort18$dbh.2013 > 900, ]$sp <- "fram"
-# mort18[mort18$tag %in% 133461 & mort18$dbh.2013 < 900, ]$StemTag <- 1
+# mort18[mort18$tag %in% 133461 & mort18$dbh.2013 < 900, ]$stemtag <- 1
 # mort18[mort18$tag %in% 133461 & mort18$dbh.2013 > 900, ]$tag <- 131352
 
 
@@ -376,25 +376,25 @@ mort19[mort19$tag %in% 40873, ]; mort19[mort19$tag %in% 40874, ]
 mort20[mort20$tag %in% 40873, ]; mort20[mort20$tag %in% 40874, ]
 
 
-mort14[mort14$tag %in% 40873 & mort14$StemTag %in% 1, ]$sp <- "quve"
-mort15[mort15$tag %in% 40873 & mort15$StemTag %in% 1, ]$sp <- "quve"
-mort16[mort16$tag %in% 40873 & mort16$StemTag %in% 1, ]$sp <- "quve"
-mort17[mort17$tag %in% 40873 & mort17$StemTag %in% 1, ]$sp <- "quve"
-mort18[mort18$tag %in% 40873 & mort18$StemTag %in% 1, ]$sp <- "quve"
+mort14[mort14$tag %in% 40873 & mort14$stemtag %in% 1, ]$sp <- "quve"
+mort15[mort15$tag %in% 40873 & mort15$stemtag %in% 1, ]$sp <- "quve"
+mort16[mort16$tag %in% 40873 & mort16$stemtag %in% 1, ]$sp <- "quve"
+mort17[mort17$tag %in% 40873 & mort17$stemtag %in% 1, ]$sp <- "quve"
+mort18[mort18$tag %in% 40873 & mort18$stemtag %in% 1, ]$sp <- "quve"
 # no need to do after 2018
 
-mort14[mort14$tag %in% 40873 & mort14$StemTag %in% 2, ]$tag  <- 40874
-mort15[mort15$tag %in% 40873 & mort15$StemTag %in% 2, ]$tag  <- 40874
-mort16[mort16$tag %in% 40873 & mort16$StemTag %in% 2, ]$tag  <- 40874
-mort17[mort17$tag %in% 40873 & mort17$StemTag %in% 2, ]$tag  <- 40874
-mort18[mort18$tag %in% 40873 & mort18$StemTag %in% 2, ]$tag  <- 40874
+mort14[mort14$tag %in% 40873 & mort14$stemtag %in% 2, ]$tag  <- 40874
+mort15[mort15$tag %in% 40873 & mort15$stemtag %in% 2, ]$tag  <- 40874
+mort16[mort16$tag %in% 40873 & mort16$stemtag %in% 2, ]$tag  <- 40874
+mort17[mort17$tag %in% 40873 & mort17$stemtag %in% 2, ]$tag  <- 40874
+mort18[mort18$tag %in% 40873 & mort18$stemtag %in% 2, ]$tag  <- 40874
 # no need to do after 2018
 
 
 ## fixing dbh issues ####
-scbi.stem1[scbi.stem1$tag %in% 190691 & scbi.stem1$StemTag == 1, ]$dbh
-scbi.stem2[scbi.stem2$tag %in% 190691 & scbi.stem2$StemTag == 1, ]$dbh
-scbi.stem3[scbi.stem3$tag %in% 190691 & scbi.stem3$StemTag == 1, ]$dbh
+scbi.stem1[scbi.stem1$tag %in% 190691 & scbi.stem1$stemtag == 1, ]$dbh
+scbi.stem2[scbi.stem2$tag %in% 190691 & scbi.stem2$stemtag == 1, ]$dbh
+scbi.stem3[scbi.stem3$tag %in% 190691 & scbi.stem3$stemtag == 1, ]$dbh
 mort14[mort14$tag %in% 190691, ]$dbh.2013
 mort15[mort15$tag %in% 190691, ]$dbh.2013
 mort16[mort16$tag %in% 190691, ]$dbh.2013 <- 32.8
@@ -420,12 +420,12 @@ mort17[mort17$tag %in% 80560, ]
 mort18[mort18$tag %in% 80560, ]
 mort19[mort19$tag %in% 80560, ]
 
-# mort14 <- mort14[-which(mort14$tag %in% 80560 & mort14$StemTag %in% 2), ]
-# mort16 <- mort16[-which(mort16$tag %in% 80560 & mort16$StemTag %in% 2), ]
-# mort17 <- mort17[-which(mort17$tag %in% 80560 & mort17$StemTag %in% 2), ]
-# mort18 <- mort18[-which(mort18$tag %in% 80560 & mort18$StemTag %in% 2), ]
-# mort19 <- mort19[-which(mort19$tag %in% 80560 & mort19$StemTag %in% 2), ]
-# mort20 <- mort20[-which(mort20$tag %in% 80560 & mort20$StemTag %in% 2), ]
+# mort14 <- mort14[-which(mort14$tag %in% 80560 & mort14$stemtag %in% 2), ]
+# mort16 <- mort16[-which(mort16$tag %in% 80560 & mort16$stemtag %in% 2), ]
+# mort17 <- mort17[-which(mort17$tag %in% 80560 & mort17$stemtag %in% 2), ]
+# mort18 <- mort18[-which(mort18$tag %in% 80560 & mort18$stemtag %in% 2), ]
+# mort19 <- mort19[-which(mort19$tag %in% 80560 & mort19$stemtag %in% 2), ]
+# mort20 <- mort20[-which(mort20$tag %in% 80560 & mort20$stemtag %in% 2), ]
 
 
 scbi.stem2[scbi.stem2$tag %in% 172262, ]$dbh
@@ -596,23 +596,23 @@ mort16$status.2016[mort16$tag %in% 40853 & mort16$dbh.2013 %in% 297.5] <- "AU"
 
 # double checking that all tags exist now ####
 
-tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$StemTag, sep = "_")
+tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$stemtag, sep = "_")
 
 All_mortality_tag_stems <- NULL
 for(survey_year in mort.census.years) {
   print(survey_year)
 
   mort <- get(paste0("mort", substr(survey_year, 3, 4)))
-  tag_stems <- paste(mort$tag, mort$StemTag, sep = "_")
+  tag_stems <- paste(mort$tag, mort$stemtag, sep = "_")
 
   if(!all(tag_stems %in% tag_stem_in_order)) {
     print("Not all tags are in core census")
 
     tag_stems[which(!tag_stems %in% tag_stem_in_order)]
-    print(mort[ paste(mort$tag, mort$StemTag, sep = "_") %in% tag_stems[which(!tag_stems %in% tag_stem_in_order)], ])
+    print(mort[ paste(mort$tag, mort$stemtag, sep = "_") %in% tag_stems[which(!tag_stems %in% tag_stem_in_order)], ])
   }
 
-  All_mortality_tag_stems <- c(All_mortality_tag_stems, paste(mort$tag, mort$StemTag, sep = "_"))
+  All_mortality_tag_stems <- c(All_mortality_tag_stems, paste(mort$tag, mort$stemtag, sep = "_"))
 } #--> if no data shows up, good!
 
 ## Now re-order all data frames to be in the same format
@@ -628,13 +628,13 @@ scbi.stem3 <- scbi.stem3[tag_stem_in_order %in% All_mortality_tag_stems, ]
 tag_stem_in_order <- tag_stem_in_order[tag_stem_in_order %in% All_mortality_tag_stems]
 
 
-all(tag_stem_in_order == paste(scbi.stem2$tag, scbi.stem2$StemTag, sep = "_")) # has to be TRUE
+all(tag_stem_in_order == paste(scbi.stem2$tag, scbi.stem2$stemtag, sep = "_")) # has to be TRUE
 
 for(survey_year in mort.census.years) {
   print(survey_year)
 
   mort <- get(paste0("mort", substr(survey_year, 3, 4)))
-  tag_stems <- paste(mort$tag, mort$StemTag, sep = "_")
+  tag_stems <- paste(mort$tag, mort$stemtag, sep = "_")
 
   m <- match(tag_stem_in_order, tag_stems)
   mort <- mort[m, ]
@@ -649,7 +649,7 @@ for(survey_year in mort.census.years) {
 
 all(apply(cbind(scbi.stem1$tag, scbi.stem2$tag, mort14$tag, mort15$tag, mort16$tag, mort17$tag, mort18$tag, mort18$tag), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # has to be TRUE
 
-all(apply(cbind(scbi.stem1$StemTag, scbi.stem2$StemTag, mort14$StemTag, mort15$StemTag, mort16$StemTag, mort17$StemTag, mort18$StemTag, mort19$StemTag), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # has to be TRUE
+all(apply(cbind(scbi.stem1$stemtag, scbi.stem2$stemtag, mort14$stemtag, mort15$stemtag, mort16$stemtag, mort17$stemtag, mort18$stemtag, mort19$stemtag), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # has to be TRUE
 
 
 all(apply(round(cbind(scbi.stem2$dbh, mort14$dbh.2013, mort15$dbh.2013, mort16$dbh.2013, mort17$dbh.2013, mort18$dbh.2013), 2), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) #should be TRUE --> is not see next code
@@ -707,8 +707,8 @@ head(mort14)
 
 
 
-data.2008 <- scbi.stem1[, c("tag", "StemTag",  "stemID","quadrat", "sp", "Latin", "gx", "gy", "hom", "dbh", "codes", "status", "ExactDate", "agb")]
-names(data.2008) <- c("tag", "StemTag",  "stemID","quadrat", "sp", "Latin", "gx", "gy", "hom", "dbh.2008", "codes.2008", "status.2008", "date.2008", "agb.2008")
+data.2008 <- scbi.stem1[, c("tag", "stemtag",  "stemID","quadrat", "sp", "Latin", "gx", "gy", "hom", "dbh", "codes", "status", "ExactDate", "agb")]
+names(data.2008) <- c("tag", "stemtag",  "stemID","quadrat", "sp", "Latin", "gx", "gy", "hom", "dbh.2008", "codes.2008", "status.2008", "date.2008", "agb.2008")
 
 data.2013 <- scbi.stem2[, c("dbh", "codes", "status", "ExactDate", "agb")]
 names(data.2013) <- c("dbh.2013", "codes.2013", "status.2013", "date.2013", "agb.2013")
@@ -732,7 +732,7 @@ full.census.data <- x
 
 # oder the columns
 
-full.census.data <- full.census.data[,c("tag", "StemTag", "stemID", "quadrat", "sp", "Latin", "gx", 
+full.census.data <- full.census.data[,c("tag", "stemtag", "stemID", "quadrat", "sp", "Latin", "gx", 
   "gy", "lx", "ly", "hom", "dbh.2008", "codes.2008", "status.2008", "date.2008", 
   "agb.2008", "dbh.2013", "codes.2013", "status.2013", 
   "date.2013", "agb.2013", "dbh.2018", "codes.2018", "status.2018", 
@@ -742,7 +742,7 @@ full.census.data <- full.census.data[,c("tag", "StemTag", "stemID", "quadrat", "
 
 all(apply(cbind(data.2008$tag, data.2013$tag, mort14$tag, mort15$tag, mort16$tag, mort17$tag, mort18$tag, mort19$tag), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # has to be TRUE
 
-all(apply(cbind(data.2008$StemTag, data.2013$StemTag, mort14$StemTag, mort15$StemTag, mort16$StemTag, mort17$StemTag, mort18$StemTag), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # has to be TRUE
+all(apply(cbind(data.2008$stemtag, data.2013$stemtag, mort14$stemtag, mort15$stemtag, mort16$stemtag, mort17$stemtag, mort18$stemtag), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # has to be TRUE
 
 
 for (survey_year in mort.census.years) {
@@ -768,15 +768,15 @@ for (survey_year in mort.census.years) {
 
 
   final.mort <- cbind(full.census.data, mort)
-  final.mort <- final.mort[order(as.numeric(final.mort$tag), as.numeric(final.mort$StemTag)), ]
+  final.mort <- final.mort[order(as.numeric(final.mort$tag), as.numeric(final.mort$stemtag)), ]
 
   assign(paste0("final.mort.", survey_year), final.mort)
   write.csv(final.mort, file = paste0("data/mortality_", survey_year, ".csv"), row.names = F)
 }
 
 # also save one data frame for 2008, 2013 and 2018 ####
-data.2008 <- data.2008[order(as.numeric(data.2008$tag), as.numeric(data.2008$StemTag)), ]
-full.census.data <- full.census.data[order(as.numeric(full.census.data$tag), as.numeric(full.census.data$StemTag)), ]
+data.2008 <- data.2008[order(as.numeric(data.2008$tag), as.numeric(data.2008$stemtag)), ]
+full.census.data <- full.census.data[order(as.numeric(full.census.data$tag), as.numeric(full.census.data$stemtag)), ]
 full.census.data$date.2008 <- as.Date(full.census.data$date.2008, format = "%m/%d/%Y")
 full.census.data$date.2013 <- as.Date(full.census.data$date.2013, format = "%m/%d/%Y")
 
@@ -785,11 +785,11 @@ write.csv(full.census.data[, -grep("2018", names(full.census.data))], file = "da
 # 
 # 
 # # CREATE allmort.rdata file ####
-# allmort <- cbind(full.census.data[, c("tag", "StemTag", "stemID", "quadrat", "Latin", "sp", "gx", "gy", "lx", "ly", "dbh.2008", "date.2008", "agb.2008", "status.2008", "dbh.2013", "date.2013", "agb.2013", "status.2013", "dbh.2018", "date.2018", "agb.2018", "status.2018")],
+# allmort <- cbind(full.census.data[, c("tag", "stemtag", "stemID", "quadrat", "Latin", "sp", "gx", "gy", "lx", "ly", "dbh.2008", "date.2008", "agb.2008", "status.2008", "dbh.2013", "date.2013", "agb.2013", "status.2013", "dbh.2018", "date.2018", "agb.2018", "status.2018")],
 # 
 #                  do.call(cbind, lapply(mort.census.years, function(survey_year) {
 #                    final.mort <- get(paste0("final.mort.", survey_year))
-#                    final.mort <- final.mort[match(paste(full.census.data$tag, full.census.data$StemTag), paste(final.mort$tag, final.mort$StemTag)), paste0(c("status.", "date.", "dbh.if.dead.", "agb.if.dead."), survey_year)]
+#                    final.mort <- final.mort[match(paste(full.census.data$tag, full.census.data$stemtag), paste(final.mort$tag, final.mort$stemtag)), paste0(c("status.", "date.", "dbh.if.dead.", "agb.if.dead."), survey_year)]
 #                    return(final.mort)
 #                  })),
 #                  Latin = full.census.data$Latin
