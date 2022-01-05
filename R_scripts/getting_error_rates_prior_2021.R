@@ -1,6 +1,6 @@
 # Generate reports for mortality census prior to 2021 ####
 
-## ***** this script shoud be run after running lines 1-47 of script 1A *****
+## ***** this script shoud be run after running lines 1-138 of script 1A *****
 
 
 # load and clean up the 3rd main census ####
@@ -110,7 +110,7 @@ status_column <- rev(grep("status", names(mort), value = T))[1]
 
 idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
 
-idx_errors <-( is.na(mort$'crown.position')|mort$'crown.position'=="") & idx_trees
+idx_errors <- NA #( is.na(mort$'crown.position')|mort$'crown.position'=="") & idx_trees
 
 
 require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(error_name, n = sum(idx_errors), survey_year))
@@ -500,6 +500,8 @@ idx_status <- mort[, status_column] %in% c("A")
 
 
 idx_errors <- idx_trees & idx_crown & idx_status
+if(survey_year %in% c(2014, 2015))    idx_errors <- NA
+
 
 require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(error_name, n = sum(idx_errors), survey_year))
 
@@ -583,6 +585,8 @@ require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(e
 
 } # for(survey_year in mort.census.years) {
 
+require_field_fix_error_file
+
 require_field_fix_error_file$error_rate <- round(require_field_fix_error_file$n *100 / sapply(mort.census.years, function(survey_year) nrow( get(paste0("mort", substr(survey_year, 3, 4)))))[match(require_field_fix_error_file$survey_year, mort.census.years)],2)
 
 will_auto_fix_error_file$error_rate <- round(will_auto_fix_error_file$n *100 / sapply(mort.census.years, function(survey_year) nrow( get(paste0("mort", substr(survey_year, 3, 4)))))[match(will_auto_fix_error_file$survey_year, mort.census.years)],2)
@@ -594,14 +598,28 @@ warning_file$error_rate <- round(warning_file$n *100 / sapply(mort.census.years,
 
 field_fix_errors <- unstack(require_field_fix_error_file, n ~ survey_year)
 rownames(field_fix_errors) <-require_field_fix_error_file$error_name[require_field_fix_error_file$survey_year %in% 2014]
-round(colSums(field_fix_errors, na.rm = T) *100 / sapply(mort.census.years, function(survey_year) nrow( get(paste0("mort", substr(survey_year, 3, 4))))), 2)
 
+write.csv(t(field_fix_errors), file = "R_results/field_fix_errors_priorCI.csv")
+
+round(colSums(field_fix_errors, na.rm = T) *100 / sapply(mort.census.years, function(survey_year) nrow( get(paste0("mort", substr(survey_year, 3, 4))))), 2)
 
 field_fix_errors_rate <- unstack(require_field_fix_error_file, error_rate ~ survey_year)
 rownames(field_fix_errors_rate) <-require_field_fix_error_file$error_name[require_field_fix_error_file$survey_year %in% 2014]
 
+
+auto_fix_errors <- unstack(will_auto_fix_error_file, n ~ survey_year)
+rownames(auto_fix_errors) <-will_auto_fix_error_file$error_name[will_auto_fix_error_file$survey_year %in% 2014]
+
+write.csv(t(auto_fix_errors), file = "R_results/auto_fix_errors_priorCI.csv")
+
 auto_fix_error_rate <- unstack(will_auto_fix_error_file, error_rate ~ survey_year)
 rownames(auto_fix_error_rate) <-will_auto_fix_error_file$error_name[will_auto_fix_error_file$survey_year %in% 2014]
+
+
+warnings <- unstack(warning_file, n ~ survey_year)
+rownames(warnings) <-warning_file$warning_name[warning_file$survey_year %in% 2014]
+
+write.csv(t(warnings), file = "R_results/warnings_priorCI.csv")
 
 warnings_rate <- unstack(warning_file, error_rate ~ survey_year)
 rownames(warnings_rate) <-warning_file$error_name[warning_file$survey_year %in% 2014]
@@ -609,4 +627,6 @@ rownames(warnings_rate) <-warning_file$error_name[warning_file$survey_year %in% 
 
 round(colMeans(field_fix_errors_rate, na.rm = T),2)
 
+
+summary(mort14)
 
