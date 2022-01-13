@@ -14,7 +14,7 @@ Column,Field,Description,Storage.Type,Variable.Codes,Units,Populated.by
 13 / M,status.2019,,,,,
 14 / N,new.status,,,,,
 15 / O,dbh.if.dead,,,,,
-16 / P,perc.crown,,,,,
+16 / P,perc.crown,Percentage of crown still intact ,numeric (integer) ,1 = only 0-25% of the crown is intact (almost gone); 2 = 26-50% of the crown is intact; 3 = 51-75% of the crown is intact; 4 = 76-100% of the crown is intact (none or few branches lost),-,
 17 / Q,crown.position,,,,,
 18 / R,fad1,,,,,
 19 / S,fad2,,,,,
