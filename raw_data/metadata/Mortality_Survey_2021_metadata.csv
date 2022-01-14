@@ -25,7 +25,7 @@ Column,Field,Description,Units,Variable.Codes,Storage.Type,Populated.by,Conditio
 24 / X,"Canker; swelling, deformity",,,,,,,
 25 / Y,Rotting trunk,,,,,,,
 26 / Z,Notes 2021,,,,,,,
-27 / AA,Crown thinning,,,,,,,
+27 / AA,Crown thinning,Estimate of crown thinning for trees in the emerald ash borer add-on census,-,"1 = healthy tree with no symptoms of decline, no defoliation; 2 = slight reduction in leaf density (thinning), yet all top branches exposed to sunlight have leaves; 3 = thinning canopy and some top branches exposed to sunlight are defoliated (<50% dieback); 4 = >50% defoliation/dieback; 5 = Dead tree with no leaves in canopy (excluding epicormic sprouting)",numeric (integer) ,field tech - freehand,all,"FRAM, FRNI, FRPE, FRSP, CHVI"
 28 / AB,Epicormic growth,,,,,,,
 29 / AC,EABF,,,,,,,
 30 / AD,D-shaped exit hole count,,,,,,,
