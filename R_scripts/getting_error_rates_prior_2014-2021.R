@@ -27,28 +27,16 @@ warning_file <- NULL
 
 
 
-for(survey_year in mort.census.years) {
+for(survey_year in survey_years) {
   
   print(survey_year)
   
   
   # load  mortality data ####
   
-  mort <- get(paste0("mort", substr(survey_year, 3, 4)))
-  
-  
-  
-  # replace "" by NA in FAD columns
-  mort[grepl("fad", names(mort))] <- apply( mort[,grepl("fad", names(mort))], 2, function(x) gsub(" ", "", x))
-  mort[grep("fad", names(mort))][mort[, grep("fad", names(mort))] == ""] <- NA
-  
-  
-  # mort$"dbh.if.dead" as numeric
-  mort$"dbh.if.dead" <- as.numeric(mort$"dbh.if.dead")
-  
+  mort <- get(paste0("mort", survey_year))
+ 
   # --- PERFORM CHECKS ---- ####
-  
-  
   
   # for each quadrat censused, check all expected trees were censused ####
   # filename <- file.path(here("testthat"), "reports/requires_field_fix/quadrat_censused_missing_stems.csv")
@@ -70,6 +58,10 @@ for(survey_year in mort.census.years) {
   idx_trees <- !mort[, status_column] %in% c("DN")
   
   mort <- mort[idx_trees, ]
+  
+  # only keep trees that died ####
+  
+  trees_that_died <- grepl("D", mort$current_year_status) & grepl("A", mort$previous_year_status)
   
   
   # check if all species exist in species table, if not save a file, if yes, delete that file ####
