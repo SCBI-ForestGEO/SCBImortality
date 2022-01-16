@@ -45,7 +45,7 @@ raw_data_path <- "raw_data/"
 survey_files <- list.files(raw_data_path, pattern = "Mortality_Survey_.*csv")
 survey_files <- survey_files[as.numeric(regmatches(survey_files, regexpr("20\\d\\d", survey_files))) <= 2021] # only consider files before 2021 as starting 2021 is the CI files
 
-mort.census.years <- NULL
+survey_years <- NULL
 
 
 eafb_recorded_on_wrong_species <- NULL
@@ -54,7 +54,7 @@ for(survey_file in survey_files) {
   
   survey_year <- as.numeric(gsub("Mortality_Survey_|\\.csv", "", survey_file))
   
-  mort.census.years <- c(mort.census.years, survey_year)
+  survey_years <- c(survey_years, survey_year)
   
   cat(paste("cleaning up", survey_year), "...\n")
   
@@ -74,16 +74,26 @@ for(survey_file in survey_files) {
   mort[, grep("delete", colnames(mort))] <- NULL
 
   # standardize status ####
+  
+  ## remove spaces
   mort$previous_year_status <- toupper(gsub(" ", "", mort$previous_year_status))
   mort$current_year_status <- toupper(gsub(" ", "", mort$current_year_status))
   
-  mort$previous_year_status[grepl("SAMPLED", mort$previous_year_status )| mort$previous_year_status == "" ] <- NA  # change to NA if not sampled
-  mort$current_year_status[grepl("SAMPLED", mort$current_year_status ) | mort$current_year_status == "" ] <- NA  # change to NA if not sampled
+  ## replace empty and "not sampled" by NA
+  mort$previous_year_status[grepl("SAMPLED", mort$previous_year_status )| mort$previous_year_status == "" ] <- NA 
+  mort$current_year_status[grepl("SAMPLED", mort$current_year_status ) | mort$current_year_status == "" ] <- NA
   
   ## make sure status is defined
+  mort$previous_year_status[mort$previous_year_status %in%"DT"] <- "DN" # this if for one case in 2014, where code was wrongly entered in status for that tree
+  
   if(!all(na.omit(c(mort$previous_year_status,  mort$current_year_status)) %in% c("A", "AU", "DC", "DN", "DS", "PD"))) stop("some statuses are not defined ")
   
-  
+  ## fill in previous_year_status when not there
+  if(all(is.na(mort$previous_year_status))) {
+    ref_mort <- get(paste0("mort", survey_year-1))
+    mort$previous_year_status <- ref_mort$current_year_status[match(paste(mort$tag, mort$StemTag), paste(ref_mort$tag, ref_mort$StemTag))]
+  }
+
   # standardize fraxinus_eabf ####
   
   # make a logical column to say if species is susceptivle to emerald ash borer
@@ -146,6 +156,31 @@ for(survey_file in survey_files) {
   # if(survey_year >= 2019) mort$dbh.2018 <- as.numeric(mort$dbh.2018) else mort$dbh.2013 <- as.numeric(mort$dbh.2013) 
 
   
+
+  # save
+  assign(paste0("mort", survey_year), mort)
+
+}
+  
+  
+
+if(!any(grepl("lx", names(mort)))) mort$lx <- NA
+  if(!any(grepl("ly", names(mort)))) mort$ly <- NA
+
+ 
+
+# This is where we can run the code that finds out the errors rate for Albert Kim's paper (optional later) #### 
+
+# this is where we can run the code that "manually" fixes issues found the the raw data (like wrong species, wrong tag, wrong dbh etc...)
+
+# this is where we fix consistent issues/warnings
+
+# this is where we calculate allometries
+
+for(survey_year in survey_year) {
+  
+  mort <- get(paste0(mort, survey_year))
+  
   ## calculate allometries ####
   
   cat(paste("calculating alomertries for", survey_year), "...\n")
@@ -154,7 +189,7 @@ for(survey_file in survey_files) {
   
   mort$genus <- scbi.spptable$Genus[match(mort$sp, scbi.spptable$sp)]
   mort$species <- scbi.spptable$Species[match(mort$sp, scbi.spptable$sp)]
-
+  
   
   mort$last_main_census_agb_Mg <-
     round(get_biomass(
@@ -173,21 +208,11 @@ for(survey_file in survey_files) {
       coords = c(-78.2, 38.9)# SCBI coordinates
     ) / 1000 ,2) #  / 1000 to change to in Mg
 
+  
   # save
   assign(paste0("mort", substr(survey_year, 3,4)), mort)
-
+  
 }
-  
-  
-
-if(!any(grepl("lx", names(mort)))) mort$lx <- NA
-  if(!any(grepl("ly", names(mort)))) mort$ly <- NA
-
- 
-
-# This is where we can run the code that finds out the errors rate for Albert Kim's paper (optional later) #### 
-
-
   
   # if fraxinus or Chionanthus, fix change dead status from "DS" or "DC" to "AU" if fraxinus.crown.thinning ≤ 5 and fraxinus.epicormic.growth>0 
   idx_sp <- grepl("^fr..|chvi", mort$sp)
@@ -217,7 +242,7 @@ for(survey_file in survey_files) {
 
   survey_year <- as.numeric(gsub("Mortality_Survey_|\\.csv", "", survey_file))
 
-  mort.census.years <- c(mort.census.years, survey_year)
+  survey_years <- c(survey_years, survey_year)
 
   cat(paste("cleaning and calculating allometries on", survey_year), "...\n")
 
@@ -272,7 +297,7 @@ for(census in paste0("scbi.stem", 1:3)) {
 
 tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$stemtag, sep = "_")
 
-for(survey_year in mort.census.years) {
+for(survey_year in survey_years) {
   print(survey_year)
   
   mort <- get(paste0("mort", substr(survey_year, 3, 4)))
@@ -292,7 +317,7 @@ for(survey_year in mort.census.years) {
 tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$stemtag, sep = "_")
 
 All_mortality_tag_stems <- NULL
-for(survey_year in mort.census.years) {
+for(survey_year in survey_years) {
   print(survey_year)
   
   mort <- get(paste0("mort", substr(survey_year, 3, 4)))
@@ -323,7 +348,7 @@ tag_stem_in_order <- tag_stem_in_order[tag_stem_in_order %in% All_mortality_tag_
 
 all(tag_stem_in_order == paste(scbi.stem2$tag, scbi.stem2$stemtag, sep = "_")) # has to be TRUE
 
-for(survey_year in mort.census.years) {
+for(survey_year in survey_years) {
   print(survey_year)
   
   mort <- get(paste0("mort", substr(survey_year, 3, 4)))
@@ -438,7 +463,7 @@ all(apply(cbind(data.2008$tag, data.2013$tag, mort14$tag, mort15$tag, mort16$tag
 all(apply(cbind(data.2008$stemtag, data.2013$stemtag, mort14$stemtag, mort15$stemtag, mort16$stemtag, mort17$stemtag, mort18$stemtag), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # has to be TRUE
 
 
-for (survey_year in mort.census.years) {
+for (survey_year in survey_years) {
   
   print(paste("Preparing and saving final data set for", survey_year))
   
@@ -480,7 +505,7 @@ write.csv(full.census.data[, -grep("2018", names(full.census.data))], file = "da
 # # CREATE allmort.rdata file ####
 # allmort <- cbind(full.census.data[, c("tag", "stemtag", "stemID", "quadrat", "Latin", "sp", "gx", "gy", "lx", "ly", "dbh.2008", "date.2008", "agb.2008", "status.2008", "dbh.2013", "date.2013", "agb.2013", "status.2013", "dbh.2018", "date.2018", "agb.2018", "status.2018")],
 # 
-#                  do.call(cbind, lapply(mort.census.years, function(survey_year) {
+#                  do.call(cbind, lapply(survey_years, function(survey_year) {
 #                    final.mort <- get(paste0("final.mort.", survey_year))
 #                    final.mort <- final.mort[match(paste(full.census.data$tag, full.census.data$stemtag), paste(final.mort$tag, final.mort$stemtag)), paste0(c("status.", "date.", "dbh.if.dead.", "agb.if.dead."), survey_year)]
 #                    return(final.mort)
