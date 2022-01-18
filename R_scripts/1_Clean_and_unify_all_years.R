@@ -73,6 +73,20 @@ for(survey_file in survey_files) {
   ## delete columns we don't want
   mort[, grep("delete", colnames(mort))] <- NULL
 
+  # fill in  mort$last_main_census_dbh, last_main_cenus_status and , last_main_cenus_codes ####
+  if(survey_year <= 2018) {
+    ref_main <- scbi.stem2
+  }
+  if(survey_year > 2018 & survey_year <= 2022) {
+    ref_main <- scbi.stem3
+  }
+  if(survey_year > 2022) stop("need to code for new main census")
+  
+  idx <- match(paste(mort$tag, mort$StemTag), paste(ref_main$tag, ref_main$StemTag))
+  mort$last_main_census_dbh <- ref_main$dbh[idx]
+  mort$last_main_cenus_status <- ref_main$status[idx]
+  mort$last_main_census_codes <- ref_main$codes[idx]
+   
   # standardize status ####
   
   ## remove spaces
@@ -128,15 +142,26 @@ for(survey_file in survey_files) {
   
   ## combine all fad into one column
   mort$fad <- apply(mort[, sort(grep("fad", colnames(mort), value = T))], 1, paste, collapse = ",")
-  mort$fad <- gsub("(,NA){1,}|NA", "",   mort$fad )
+  mort$fad <- gsub("(,NA){1,}|NA|,,|^,", "",   mort$fad )
+  mort$fad <- gsub("^,|,$", "",   mort$fad )
+  
   mort[grep("fad\\d", names(mort), value = T)] <- NULL
   
   ## replace "" by NA for trees with current status "A"
   mort$fad[mort$current_year_status %in% "A" &  mort$fad %in% ""] <- NA
 
   
-  # translate 2021 percent_of_crown_living and percent_of_crown_intact into corresponding scores ####
+  # standardize score crown intact and score crown living ####
+  mort$score_crown_intact <- gsub("\\D| ", "", mort$score_crown_intact)
+  mort$score_crown_intact[mort$score_crown_intact %in% c("", "0")] <- NA
+  mort$score_crown_intact <- as.numeric(mort$score_crown_intact)
+
+  mort$score_crown_living <- gsub("\\D| ", "", mort$score_crown_living)
+  mort$score_crown_living[mort$score_crown_living %in% c("", "0")] <- NA
+  mort$score_crown_living <- as.numeric(mort$score_crown_living)
   
+  
+  ## translate >= 2021 percent_of_crown_living and percent_of_crown_intact into corresponding scores
   if(all(is.na(mort$score_crown_intact))& !all(is.na(mort$percent_of_crown_intact))) mort$score_crown_intact <- cut(mort$percent_of_crown_intact, breaks = c(0, 25, 50, 75, 100), include.lowest = F, labels = F)
   if(all(is.na(mort$score_crown_living)) & !all(is.na(mort$percent_of_crown_living))) mort$score_crown_living <- cut(mort$percent_of_crown_living, breaks = c(0, 25, 50, 75, 100), include.lowest = F, labels = F)
   
