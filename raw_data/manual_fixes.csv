@@ -1,0 +1,55 @@
+ID,issue_name,survey_years_to_apply_fix,fix,description_of_issue
+1,33331 vs 30365,"c(2014, 2015, 2016)","mort[mort$tag %in% 33331, ]$sp <- ""fram"" ; mort[mort$tag %in% 33331, ]$tag <- 30365 ; mort[mort$tag %in% 30365, ]$StemTag <- c(1,2)[order(mort[mort$tag %in% 30365,]$last_main_census_dbh, decreasing = T)]","# 33331 vs 30365: Up until the 2018 main census, in full census data, tag 33331 appeared 2 times with same StemTag 1, looking like a 2-stem quru with wrong StemTag on smaller stem. In 2014 it was found that the biggest stem was actually tagged with tag 30365. The tag number was changed only in mortality census 2017 and Maya and Ryan ID-ed that second stem as being a fram, but the species ID was never changed in the data sets.
+# So it seems that the truth would be:
+# 33331 1 quru 161.2
+# 30365 1 fram 992.0
+#
+# BUT, after 2018 main census, it seems that instructions were given to Suzanne Lao to change the tag number and species of BOTH stems, instead of the biggest stem only. So tag 33331 disappeared and we ended up with the same issue of having tag 30365 StemTag 1 appearing 2 times (but this time on a fram).
+#
+# So:
+# Long term solution: tell Suzanne that smaller stem is a quru with tag 33331.
+# Short term solution (for building new master mortality census data) changing 33331 quru to 30365 fram AND, for here, put a StemTag = 2 to smaller stem"
+2,33331 vs 30365,"c(2017, 2018)","mort[mort$tag %in% 33331, ]$sp <- ""fram"" ; mort[mort$tag %in% 33331, ]$tag <- 30365 ; mort[mort$tag %in% 30365, ]$StemTag <- 2","# 33331 vs 30365: Up until the 2018 main census, in full census data, tag 33331 appeared 2 times with same StemTag 1, looking like a 2-stem quru with wrong StemTag on smaller stem. In 2014 it was found that the biggest stem was actually tagged with tag 30365. The tag number was changed only in mortality census 2017 and Maya and Ryan ID-ed that second stem as being a fram, but the species ID was never changed in the data sets.
+# So it seems that the truth would be:
+# 33331 1 quru 161.2
+# 30365 1 fram 992.0
+#
+# BUT, after 2018 main census, it seems that instructions were given to Suzanne Lao to change the tag number and species of BOTH stems, instead of the biggest stem only. So tag 33331 disappeared and we ended up with the same issue of having tag 30365 StemTag 1 appearing 2 times (but this time on a fram).
+#
+# So:
+# Long term solution: tell Suzanne that smaller stem is a quru with tag 33331.
+# Short term solution (for building new master mortality census data) changing 33331 quru to 30365 fram AND, for here, put a StemTag = 2 to smaller stem"
+3,133461 vs 131352,"c(2014, 2015)","mort[mort$tag %in% 133461, ]$sp <- ""fram""; mort[mort$tag %in% 133461 & mort$last_main_census_dbh < 900, ]$StemTag <- 1; mort[mort$tag %in% 133461 & mort$last_main_census_dbh > 900, ]$tag <- 131352","# ""tag 133461 StemTag 1 (bigger stem) (quadrat 1316, comment in 2015: Ojo:this is not caco, it is fram. Not 2 stem! Fram tag=131352)""
+## looks like the bigger stem has a different tag and is fram. After 2018 main census, the tag and species were fixed but the species of the smaller stem (tag 133461), which was originally caco, was also changed to fram, not sure if it was made on purpose. I will do the same here..."
+4,133461 vs 131352,"c(2016, 2017)","mort[mort$tag %in% 133461, ]$sp <- ""fram"" ; mort <- mort[!(mort$tag %in% 133461 & mort$last_main_census_dbh > 900), ] ; mort[mort$tag %in% 133461 & mort$last_main_census_dbh < 900, ]$StemTag <- 1","# ""tag 133461 StemTag 1 (bigger stem) (quadrat 1316, comment in 2015: Ojo:this is not caco, it is fram. Not 2 stem! Fram tag=131352)""
+## looks like the bigger stem has a different tag and is fram. After 2018 main census, the tag and species were fixed but the species of the smaller stem (tag 133461), which was originally caco, was also changed to fram, not sure if it was made on purpose. I will do the same here..."
+5,133461 vs 131352,c(2018),"mort[mort$tag %in% 133461, ]$sp <- ""fram"" ; mort <- mort[!(mort$tag %in% 131352 & mort$fraxinus_eabf %in% ""AS;W;DE""),]","# ""tag 133461 StemTag 1 (bigger stem) (quadrat 1316, comment in 2015: Ojo:this is not caco, it is fram. Not 2 stem! Fram tag=131352)""
+## looks like the bigger stem has a different tag and is fram. After 2018 main census, the tag and species were fixed but the species of the smaller stem (tag 133461), which was originally caco, was also changed to fram, not sure if it was made on purpose. I will do the same here..."
+6,170982 is fram and not liriodendron,"c(2014, 2015, 2016, 2017, 2018)","mort[mort$tag %in% 170982, ]$sp <- ""fram""",# 170982 is fram in main cencus but liriodendron in mort census --> will change to fram
+7,80180 is cagl and not quru,"c(2014, 2015, 2016, 2017, 2018, 2019, 2020)","mort[mort$tag %in% 80180, ]$sp <- ""cagl""","# 80180 is cagl in main census, qupr in mort census --> will change to cagl"
+8,131272 is fram,c(2020),"mort[mort$tag %in% 131272, ]$sp <- ""fram""",# 131272 is fram in all censuses except mort20 where it is juni
+9,123412 is fram,c(2020),"mort[mort$tag %in% 123412, ]$sp <- ""fram""",# 123412 is fram in all main censuses but frpe in mort20
+10,123412 quad is 1204,c(2020),"mort[mort$tag %in% 123412, ]$quadrat <- ""1204""",# 123412 quadrat is wrong in mort20 (1203 instead of 1204)
+11,40873 vs 40874,"c(2014, 2015, 2016, 2017, 2018)","mort[mort$tag %in% 40873 & mort$StemTag %in% 1, ]$sp <- ""quve"" ; mort[mort$tag %in% 40873 & mort$StemTag %in% 2, ]$tag  <- 40874","## truth in 2013
+## 40874 1 fagr 641.3
+## 40874 2 fagr 161.8
+## 40873 1 quve 325"
+12,190691 dbh,"c(2016, 2017)","mort[mort$tag %in% 190691, ]$last_main_census_dbh <- 32.8",
+13,203751 dbh,"c(2014, 2015, 2016, 2017)","mort[mort$tag %in% 203751, ]$last_main_census_dbh <- 14.3",
+14,172262 dbh,c(2017),"mort[mort$tag %in% 172262, ]$last_main_census_dbh <- 170.7",
+15,missing 172262 in 2018,c(2018),"    row_to_add <- get(paste0(""mort"",( survey_year-1))) ; row_to_add <- row_to_add[ row_to_add$tag %in% 172262, intersect(names(row_to_add), names(mort)) ] ; row_to_add$ExactDate <- unique(mort[mort$quadrat %in% 1720, ]$ExactDate) ; row_to_add$surveyor <- unique(mort[mort$quadrat %in% 1720, ]$surveyor) ; row_to_add$previous_year_status <- row_to_add$current_year_status ;row_to_add$current_year_status <- ""A"" ; mort[(nrow(mort) +1), intersect(names(row_to_add), names(mort))] <- row_to_add
+    ",
+16,quadrat 317,c(2014),"quadrat.317 <- scbi.stem1$quadrat %in% ""0317"" ; mort$quadrat[mort$tag %in% scbi.stem1$tag[quadrat.317]] <- ""0317""",# not quite sure what is right but will follow main census...
+17,quadrat 319,"c(2014, 2015, 2016, 2017, 2018)","quadrat.319 <- scbi.stem1$quadrat %in% ""0319"" ; mort$quadrat[mort$tag %in% scbi.stem1$tag[quadrat.319]] <- ""0319""",# not quite sure what is right but will follow main census...
+18,quadrat 608,"c(2017, 2018)","quadrat.608 <- scbi.stem1$quadrat %in% ""0608"" ; mort$quadrat[mort$tag %in% scbi.stem1$tag[quadrat.608]] <- ""0608""",
+19,species ID issues,"c(2014, 2015, 2016, 2017, 2018, 2019)","tags_to_fix <- c(""92425"", ""12269"", ""20655"", ""30097"", ""30262"", ""32197"", ""32416"",
+                 ""42175"", ""42349"", ""42522"", ""62307"", ""72059"", ""80007"", ""90268"",
+                 ""90281"", ""90357"", ""91454"", ""92444"", ""100533"", ""100623"", ""100647"",
+                 ""112412"", ""122117"", ""131272"", ""150278"", ""180838"", ""180973"", ""190136"",
+                 ""103217"") ; for(t in tags_to_fix) {
+  idx_main <- scbi.stem1$tag %in% t
+  if( all(c(scbi.stem1$sp[idx_main], scbi.stem2$sp[idx_main], scbi.stem3$sp[idx_main]) %in% scbi.stem1$sp[idx_main]) & length(unique(scbi.stem1$sp[idx_main] == 1))) {
+    mort$sp[mort$tag %in% t] <- unique(scbi.stem1$sp[idx_main])} else { stop(""species ID are not the same accross main censuses"")}
+}",
+20,status 92465,c(2016),"mort$current_year_status[mort$tag %in% 92465] <- ""PD""",
+21,status 40853,c(2016),"mort$current_year_status[mort$tag %in% 40853 & mort$last_main_census_dbh %in% 297.5] <- ""AU""",
