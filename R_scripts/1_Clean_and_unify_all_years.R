@@ -39,6 +39,12 @@ assign(f, read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI
 ### bring in table that unifies the colomn names across years ####
 unified_colnames <-  read.csv("raw_data/standardizing_colnames.csv")
 
+
+### bring in table for fixes we want to do ####
+manual_fixes <-  read.csv("raw_data/manual_fixes.csv")
+consistent_fixes <- read.csv("raw_data/consitent_fixes.csv")
+
+
 ## bring in raw mortality data + clean up and calculate allometries ####
 raw_data_path <- "raw_data/"
 
@@ -72,7 +78,21 @@ for(survey_file in survey_files) {
   
   ## delete columns we don't want
   mort[, grep("delete", colnames(mort))] <- NULL
-
+  
+  
+  # make manual fixes ####
+  
+  for(i in 1:nrow(manual_fixes)) {
+    
+    if(survey_year %in% eval(parse(text = manual_fixes$survey_years_to_apply_fix[i]))) {
+      cat("Implementing manual fix ", manual_fixes$ID[i], ": ", manual_fixes$issue_name[i], "\n", sep = "")
+      eval(parse(text = manual_fixes$fix[i]))
+      # print(head(mort))
+    }
+   
+  }
+ 
+  
   # fill in  mort$last_main_census_dbh, last_main_cenus_status and , last_main_cenus_codes ####
   if(survey_year <= 2018) {
     ref_main <- scbi.stem2
@@ -180,31 +200,64 @@ for(survey_file in survey_files) {
   
   # if(survey_year >= 2019) mort$dbh.2018 <- as.numeric(mort$dbh.2018) else mort$dbh.2013 <- as.numeric(mort$dbh.2013) 
 
+  # retrieve global coordinates and recalulate local ones ####
+  mort$gx <- scbi.stem3$gx[match(paste(mort$tag, mort$StemTag), paste(scbi.stem3$tag, scbi.stem3$StemTag))]
+  mort$gy <- scbi.stem3$gy[match(paste(mort$tag, mort$StemTag), paste(scbi.stem3$tag, scbi.stem3$StemTag))]
   
-
+  mort$gx[mort$gx %in% 400] <- 399.9 # can't be 400 really
+  mort$gx[mort$gy %in% 640] <- 639.9 # can't be 400 really
+  
+  
+  mort$lx <-  mort$gx - floor( mort$gx / 20)*20
+  mort$ly <-  mort$gy - floor( mort$gy / 20)*20
+  
+  # make consistent fixes ####
+  for(i in 1:nrow(consistent_fixes)) {
+    
+    if(survey_year %in% eval(parse(text = consistent_fixes$survey_years_to_apply_fix[i]))) {
+      cat("Implementing consistent  fix ", consistent_fixes$ID[i], ": ", consistent_fixes$issue_name[i], "\n", sep = "")
+      eval(parse(text = consistent_fixes$fix[i]))
+      # print(head(mort))
+    }
+    
+  }
+    
   # save
   assign(paste0("mort", survey_year), mort)
 
 }
+
+
+# Calculate allometries ####
+
+## on main census data
+
+for(census in paste0("scbi.stem", 1:3)) {
+  
+  cat("cleaning and calculating allometries on", census, "...\n")
+  
+  x <- get(census)
+  x$dbh <- as.numeric(x$dbh) # not numeric because of the "NULL" values
+  x$genus <- scbi.spptable$Genus[match(x$sp, scbi.spptable$sp)]
+  x$species <- scbi.spptable$Species[match(x$sp, scbi.spptable$sp)]
   
   
-
-if(!any(grepl("lx", names(mort)))) mort$lx <- NA
-  if(!any(grepl("ly", names(mort)))) mort$ly <- NA
-
- 
-
-# This is where we can run the code that finds out the errors rate for Albert Kim's paper (optional later) #### 
-
-# this is where we can run the code that "manually" fixes issues found the the raw data (like wrong species, wrong tag, wrong dbh etc...)
-
-# this is where we fix consistent issues/warnings
-
-# this is where we calculate allometries
-
-for(survey_year in survey_year) {
+  x$agb <-
+    round(get_biomass(
+      dbh = x$dbh/10, # in cm
+      genus = x$genus,
+      species = x$species,
+      coords = c(-78.2, 38.9)
+    ) / 1000 ,2) #  / 1000 to change to in Mg
   
-  mort <- get(paste0(mort, survey_year))
+  assign(census, x)
+}
+
+## on mortality census
+
+for(survey_year in survey_years) {
+  
+  mort <- get(paste0("mort", survey_year))
   
   ## calculate allometries ####
   
@@ -235,217 +288,51 @@ for(survey_year in survey_year) {
 
   
   # save
-  assign(paste0("mort", substr(survey_year, 3,4)), mort)
+  assign(paste0("mort", survey_year), mort)
   
 }
   
-  # if fraxinus or Chionanthus, fix change dead status from "DS" or "DC" to "AU" if fraxinus.crown.thinning ≤ 5 and fraxinus.epicormic.growth>0 
-  idx_sp <- grepl("^fr..|chvi", mort$sp)
-  idx_status <- grepl("DS|DC", mort[,paste("status",survey_year, sep = ".")])
-  idx_crwnthng <- !is.na(mort$fraxinus.crown.thinning) & mort$fraxinus.crown.thinning <= 5
-  idx_epicgrwth <- !is.na(mort$fraxinus.epicormic.growth) & mort$fraxinus.epicormic.growth > 0
-  
-  mort[idx_sp & idx_status & idx_crwnthng & idx_epicgrwth, which(names(mort) %in% paste0("status.", survey_year))] <- "AU"
 
-  
-  # order the columns the way we want it
-  mort <- mort[, c("quadrat", "tag", "stemtag", "sp", "lx", "ly", ifelse(survey_year >= 2019, "dbh.2018", "dbh.2013"),
-                   grep("status", names(mort), value = T), "dbh.if.dead",
-                   "perc.crown", "crown.position", "fad1", "fad2", "fad3", "fad4",
-                   "DF", "liana.load", "fraxinus.crown.thinning", "fraxinus.epicormic.growth",
-                   "EABF","DE.count", "notes", "date", "surveyor")]
-  
-  
-  
+# check all tags exist in core census data if any problem, add in "manual_fixes.csv" ####
 
-
-
-
-# understanding_perc.crown_DF_fraxinus.crown.thinning <- NULL
-
-for(survey_file in survey_files) {
-
-  survey_year <- as.numeric(gsub("Mortality_Survey_|\\.csv", "", survey_file))
-
-  survey_years <- c(survey_years, survey_year)
-
-  cat(paste("cleaning and calculating allometries on", survey_year), "...\n")
-
-  # load
-  mort <- read.csv(paste0(raw_data_path, survey_file), stringsAsFactors = F)
-
-  all_colnames <- rbind(all_colnames, data.frame(Year = survey_year, colnames = colnames(mort)))
-  
-  # mort$DF <- as.numeric(mort$DF)
-  # mort$fraxinus <- grepl("fr|ch", mort[,grep("sp", colnames(mort))])
-  # understanding_perc.crown_DF_fraxinus.crown.thinning <- rbind(understanding_perc.crown_DF_fraxinus.crown.thinning, 
-  #                                                              cbind(survey_year, unique(mort[, c("perc.crown", "DF", "fraxinus.crown.thinning", "new.status", "fraxinus")])))
-  # # print(summary(mort[,  c("perc.crown", "DF", "fraxinus.crown.thinning")]))
-  # write.csv(understanding_perc.crown_DF_fraxinus.crown.thinning, "clipboard", row.names = F)
-  
-  # fix column names to be consistant
-}
-
-# write.csv(all_colnames, "clipboard", row.names = F)
-
-# Calculate allometries on full census data ####
-
-for(census in paste0("scbi.stem", 1:3)) {
-  
-  cat("cleaning and calculating allometries on", census, "...\n")
-  
-  x <- get(census)
-  x$dbh <- as.numeric(x$dbh) # not numeric because of the "NULL" values
-  x$genus <- scbi.spptable$Genus[match(x$sp, scbi.spptable$sp)]
-  x$species <- scbi.spptable$Species[match(x$sp, scbi.spptable$sp)]
-  
-  
-  x$agb <-
-    round(get_biomass(
-      dbh = x$dbh/10, # in cm
-      genus = x$genus,
-      species = x$species,
-      coords = c(-78.2, 38.9)
-    ) / 1000 ,2) #  / 1000 to change to in Mg
-  
-  assign(census, x)
-}
-
-
-
-
-
-# find out if all tags exist in core census data and fix any problem with that ####
-
-
-## order rows the same way as year 2018 ####
-
-tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$stemtag, sep = "_")
+tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$StemTag, sep = "_")
 
 for(survey_year in survey_years) {
   print(survey_year)
   
-  mort <- get(paste0("mort", substr(survey_year, 3, 4)))
-  tag_stems <- paste(mort$tag, mort$stemtag, sep = "_")
+  mort <- get(paste0("mort", survey_year))
+  tag_stems <- paste(mort$tag, mort$StemTag, sep = "_")
   
   if(!all(tag_stems %in% tag_stem_in_order)) {
     print("Not all tags are in core census")
     
     tag_stems[which(!tag_stems %in% tag_stem_in_order)]
-    print(mort[ paste(mort$tag, mort$stemtag, sep = "_") %in% tag_stems[which(!tag_stems %in% tag_stem_in_order)], ])
+    print(mort[ paste(mort$tag, mort$StemTag, sep = "_") %in% tag_stems[which(!tag_stems %in% tag_stem_in_order)], ])
   }
-}
-
-
-# double checking that all tags exist now ####
-
-tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$stemtag, sep = "_")
-
-All_mortality_tag_stems <- NULL
-for(survey_year in survey_years) {
-  print(survey_year)
-  
-  mort <- get(paste0("mort", substr(survey_year, 3, 4)))
-  tag_stems <- paste(mort$tag, mort$stemtag, sep = "_")
-  
-  if(!all(tag_stems %in% tag_stem_in_order)) {
-    print("Not all tags are in core census")
-    
-    tag_stems[which(!tag_stems %in% tag_stem_in_order)]
-    print(mort[ paste(mort$tag, mort$stemtag, sep = "_") %in% tag_stems[which(!tag_stems %in% tag_stem_in_order)], ])
-  }
-  
-  All_mortality_tag_stems <- c(All_mortality_tag_stems, paste(mort$tag, mort$stemtag, sep = "_"))
-} #--> if no data shows up, good!
-
-## Now re-order all data frames to be in the same format
-All_mortality_tag_stems <- unique(All_mortality_tag_stems)
-length(All_mortality_tag_stems)
-
-all(All_mortality_tag_stems %in% tag_stem_in_order ) # has to be TRUE
-
-scbi.stem1 <- scbi.stem1[tag_stem_in_order %in% All_mortality_tag_stems, ]
-scbi.stem2 <- scbi.stem2[tag_stem_in_order %in% All_mortality_tag_stems, ]
-scbi.stem3 <- scbi.stem3[tag_stem_in_order %in% All_mortality_tag_stems, ]
-
-tag_stem_in_order <- tag_stem_in_order[tag_stem_in_order %in% All_mortality_tag_stems]
-
-
-all(tag_stem_in_order == paste(scbi.stem2$tag, scbi.stem2$stemtag, sep = "_")) # has to be TRUE
-
-for(survey_year in survey_years) {
-  print(survey_year)
-  
-  mort <- get(paste0("mort", substr(survey_year, 3, 4)))
-  tag_stems <- paste(mort$tag, mort$stemtag, sep = "_")
-  
-  m <- match(tag_stem_in_order, tag_stems)
-  mort <- mort[m, ]
-  assign(paste0("mort", substr(survey_year, 3,4)), mort)
-  
-  print(dim(mort))
-  
-}
-
-
-## Now we double check that all match well and fix what does not... ####
-
-all(apply(cbind(scbi.stem1$tag, scbi.stem2$tag, mort14$tag, mort15$tag, mort16$tag, mort17$tag, mort18$tag, mort18$tag), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # has to be TRUE
-
-all(apply(cbind(scbi.stem1$stemtag, scbi.stem2$stemtag, mort14$stemtag, mort15$stemtag, mort16$stemtag, mort17$stemtag, mort18$stemtag, mort19$stemtag), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # has to be TRUE
-
-
-all(apply(round(cbind(scbi.stem2$dbh, mort14$dbh.2013, mort15$dbh.2013, mort16$dbh.2013, mort17$dbh.2013, mort18$dbh.2013), 2), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) #should be TRUE --> is not see next code
-
-cbind(scbi.stem1$quadrat, scbi.stem1$tag, as.character(scbi.stem1$sp), scbi.stem1$dbh, as.character(scbi.stem1$status), scbi.stem2$dbh, as.character(scbi.stem2$status),mort14$dbh.2013, mort15$dbh.2013, mort16$dbh.2013, mort17$dbh.2013, mort18$dbh.2013)[!apply(round(cbind(scbi.stem2$dbh, mort14$dbh.2013, mort15$dbh.2013, mort16$dbh.2013, mort17$dbh.2013, mort18$dbh.2013), 2), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] )), ] # most of the problems here are just due to trees that died and or grew or resprouted or problem that will be fixed if we only keep dbh in 2013. Bigger problems were fixed earlier in the script
-
-all(apply(round(cbind(scbi.stem3$dbh, mort19$dbh.2018,  as.numeric(mort20$dbh.2018)), 2), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) #should be TRUE
-
-cbind(scbi.stem3$quadrat, scbi.stem3$tag, as.character(scbi.stem3$sp), scbi.stem3$dbh, as.character(scbi.stem3$status), mort19$dbh.2018,  as.numeric(mort20$dbh.2018))[!apply(round(cbind(scbi.stem3$dbh, mort19$dbh.2018,  as.numeric(mort20$dbh.2018)), 2), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] )), ]
+} # should all be empty (only year should show up)
 
 
 
-all(apply(cbind(scbi.stem1$quadrat, scbi.stem2$quadrat, scbi.stem3$quadrat, mort14$quadrat, mort15$quadrat, mort16$quadrat, mort17$quadrat, mort18$quadrat, mort19$quadrat, mort20$quadrat), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # Has to be TRUE (fixed (problem of 317 and 319 mostly))
+# # Now re-order all data to all have same rows ####
+# tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$StemTag, sep = "_")
+# 
+# tag_stem_in_order <- tag_stem_in_order[tag_stem_in_order %in% unique(unlist(sapply(survey_years, function(survey_year) {
+#   mort <- get(paste0("mort", survey_year))
+#   paste(mort$tag, mort$StemTag, sep = "_")
+# })))] # only keep the ones that were mort sampled at some point
+# 
+# for(survey_year in survey_years) {
+#   print(survey_year)
+#   
+#   mort <- get(paste0("mort", survey_year))
+#   tag_stems <- paste(mort$tag, mort$StemTag, sep = "_")
+#   
+#   m <- match(tag_stem_in_order, tag_stems)
+#   mort <- mort[m, ]
+#   assign(paste0("mort", survey_year), mort)  
+# 
+# }
 
-cbind( scbi.stem1$tag, scbi.stem1$quadrat, scbi.stem2$quadrat, scbi.stem3$quadrat, mort14$quadrat, mort15$quadrat, mort16$quadrat, mort17$quadrat, mort18$quadrat, mort19$quadrat, mort20$quadrat)[!apply(cbind(scbi.stem2$quadrat, mort14$quadrat, mort15$quadrat, mort16$quadrat, mort17$quadrat, mort18$quadrat, mort19$quadrat, mort20$quadrat), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] )), ]
-
-
-all(apply(cbind(scbi.stem1$sp, scbi.stem2$sp, scbi.stem3$sp, mort14$sp, mort15$sp, mort16$sp, mort17$sp, mort18$sp, mort19$sp, mort20$sp), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) # Has to be TRUE -  (fixed problems above, keeping full census species ID for now)
-
-cbind( scbi.stem1$tag, scbi.stem1$sp,scbi.stem2$sp, scbi.stem3$sp, mort14$sp, mort15$sp, mort16$sp, mort17$sp, mort18$sp, mort19$sp, mort20$sp)[!apply(cbind(scbi.stem1$sp, scbi.stem2$sp, mort14$sp, mort15$sp, mort16$sp, mort17$sp, mort18$sp, mort19$sp, mort20$sp), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] )), ] # keeping full census species ID for now.
-
-
-# status in 2013
-
-table(as.character(scbi.stem2$codes), as.character(scbi.stem2$DFstatus))
-
-# status in 2014 # big problems... # will ignore all but in actual 2014 year
-data.frame( scbi.stem1$quadrat,  scbi.stem1$tag, scbi.stem1$sp, scbi.stem2$dbh, scbi.stem2$status, mort14$status.2014, mort15$status.2014, mort16$status.2014)[(!apply(cbind(mort14$status.2014, mort15$status.2014, mort16$status.2014), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] ))) & scbi.stem2$dbh >= 100 & !is.na(scbi.stem2$dbh), ]
-
-# status in 2015
-data.frame( scbi.stem1$quadrat,  scbi.stem1$tag, scbi.stem1$sp, scbi.stem2$dbh, mort15$status.2015, mort16$status.2015, mort17$status.2015, mort18$status.2015, mort19$status.2015)[!apply(cbind(mort15$status.2015, mort16$status.2015, mort17$status.2015, mort18$status.2015, mort19$status.2015), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] )), ] # mort15$status.2015 correct for 10346, 20134, 190691, 83043
-
-# status in 2016
-data.frame( scbi.stem1$quadrat,  scbi.stem1$tag, scbi.stem1$sp, scbi.stem2$dbh,  mort14$status.2014, mort15$status.2015, mort16$status.2016, mort17$status.2016, mort18$status.2016, mort19$status.2016)[!apply(cbind(mort16$status.2016, mort17$status.2016, mort18$status.2016, mort19$status.2016), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] )), ]  # mort16.status.2016 should be fixed to "PD" for 92465 (fixed earlier), is correct for 40853 302.5, and should be "AU" for 40853 297.5 (fixed earlier)
-
-# status in 2017
-data.frame( scbi.stem1$quadrat,  scbi.stem1$tag, scbi.stem1$sp, mort17$status.2017, mort18$status.2017, mort19$status.2017)[!apply(cbind(mort17$status.2017, mort18$status.2017, mort19$status.2017), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] )), ]# mort17$status.2017 correct for 60205, 60205
-
-
-#status in 2018
-data.frame( scbi.stem1$quadrat,  scbi.stem1$tag, scbi.stem1$sp, mort18$status.2018, mort19$status.2018)[!apply(cbind( mort18$status.2018, mort19$status.2018), 1 , function(x) all( x[!is.na(x)] == x[!is.na(x)][1] )), ]  # mort18$status.2018 correct for 30365
-
-
-# append "Latin" to scbi.stem1, 2 and 3 ####
-scbi.stem1 <- cbind(scbi.stem1, Latin = scbi.spptable$Latin[match(scbi.stem1$sp, scbi.spptable$sp)])
-scbi.stem2 <- cbind(scbi.stem2, Latin = scbi.spptable$Latin[match(scbi.stem2$sp, scbi.spptable$sp)])
-scbi.stem3 <- cbind(scbi.stem3, Latin = scbi.spptable$Latin[match(scbi.stem3$sp, scbi.spptable$sp)])
-
-# Getting data ready for each mortality census year + saving output ####
-head(scbi.stem1)
-head(scbi.stem2)
-head(scbi.stem3)
-head(mort14)
 
 
 
@@ -473,7 +360,7 @@ x$lx <- round(x$lx, digits = 1)
 x$ly <- round(x$ly, digits = 1)
 full.census.data <- x
 
-# oder the columns
+# order the columns
 
 full.census.data <- full.census.data[,c("tag", "stemtag", "stemID", "quadrat", "sp", "Latin", "gx", 
                                         "gy", "lx", "ly", "hom", "dbh.2008", "codes.2008", "status.2008", "date.2008", 
@@ -525,32 +412,44 @@ full.census.data$date.2013 <- as.Date(full.census.data$date.2013, format = "%m/%
 
 write.csv(data.2008, file = "data/mortality_2008.csv", row.names = F)
 write.csv(full.census.data[, -grep("2018", names(full.census.data))], file = "data/mortality_2013.csv", row.names = F)
-# 
-# 
-# # CREATE allmort.rdata file ####
-# allmort <- cbind(full.census.data[, c("tag", "stemtag", "stemID", "quadrat", "Latin", "sp", "gx", "gy", "lx", "ly", "dbh.2008", "date.2008", "agb.2008", "status.2008", "dbh.2013", "date.2013", "agb.2013", "status.2013", "dbh.2018", "date.2018", "agb.2018", "status.2018")],
-# 
-#                  do.call(cbind, lapply(survey_years, function(survey_year) {
-#                    final.mort <- get(paste0("final.mort.", survey_year))
-#                    final.mort <- final.mort[match(paste(full.census.data$tag, full.census.data$stemtag), paste(final.mort$tag, final.mort$stemtag)), paste0(c("status.", "date.", "dbh.if.dead.", "agb.if.dead."), survey_year)]
-#                    return(final.mort)
-#                  })),
-#                  Latin = full.census.data$Latin
-#       ) # forgeting about fad and positions
-# 
-# # Add Genus, spsecies, Familly
-# allmort <- cbind(allmort, scbi.spptable[match(allmort$sp,scbi.spptable$sp), c("Genus", "Species", "Family")])
-# 
-# # change status format
-# status.columns <- sort(unique(names(allmort)[grepl("status", names(allmort))]))
-# 
-# for(sc in status.columns) {
-#   allmort[, sc] <- ifelse(is.na(allmort[, sc]), NA,
-#                           ifelse(allmort[, sc] %in% "P", "Prior",
-#                                  ifelse(grepl("A", allmort[, sc]), "Live", "Dead")))
-# }
-# 
-# head(allmort)
-# 
-# write.csv(allmort, "data/allmort.csv", row.names = F) # save as csv file
-# save(allmort, file ="data/allmort.rdata") # save as Rdata file
+
+
+# CREATE allmort.rdata file ####
+allmort <- cbind(full.census.data[, c("tag", "stemtag", "stemID", "quadrat", "Latin", "sp", "gx", "gy", "lx", "ly", "dbh.2008", "date.2008", "agb.2008", "status.2008", "dbh.2013", "date.2013", "agb.2013", "status.2013", "dbh.2018", "date.2018", "agb.2018", "status.2018")],
+
+                 do.call(cbind, lapply(survey_years, function(survey_year) {
+                   final.mort <- get(paste0("final.mort.", survey_year))
+                   final.mort <- final.mort[match(paste(full.census.data$tag, full.census.data$stemtag), paste(final.mort$tag, final.mort$stemtag)), paste0(c("status.", "date.", "dbh.if.dead.", "agb.if.dead."), survey_year)]
+                   return(final.mort)
+                 })),
+                 Latin = full.census.data$Latin
+      ) # forgeting about fad and positions
+
+# Add Genus, spsecies, Familly
+allmort <- cbind(allmort, scbi.spptable[match(allmort$sp,scbi.spptable$sp), c("Genus", "Species", "Family")])
+
+# change status format
+status.columns <- sort(unique(names(allmort)[grepl("status", names(allmort))]))
+
+for(sc in status.columns) {
+  allmort[, sc] <- ifelse(is.na(allmort[, sc]), NA,
+                          ifelse(allmort[, sc] %in% "P", "Prior",
+                                 ifelse(grepl("A", allmort[, sc]), "Live", "Dead")))
+}
+
+head(allmort)
+
+write.csv(allmort, "data/allmort.csv", row.names = F) # save as csv file
+save(allmort, file ="data/allmort.rdata") # save as Rdata file
+
+
+
+
+
+
+# order the columns the way we want it
+mort <- mort[, c("quadrat", "tag", "stemtag", "sp", "lx", "ly", ifelse(survey_year >= 2019, "dbh.2018", "dbh.2013"),
+                 grep("status", names(mort), value = T), "dbh.if.dead",
+                 "perc.crown", "crown.position", "fad1", "fad2", "fad3", "fad4",
+                 "DF", "liana.load", "fraxinus.crown.thinning", "fraxinus.epicormic.growth",
+                 "EABF","DE.count", "notes", "date", "surveyor")]
