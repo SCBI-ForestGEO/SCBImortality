@@ -293,6 +293,9 @@ for(survey_year in survey_years) {
 }
   
 
+# --------------continue revamping here -----------####
+
+
 # check all tags exist in core census data if any problem, add in "manual_fixes.csv" ####
 
 tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$StemTag, sep = "_")
@@ -350,15 +353,7 @@ names(data.2018) <- c("dbh.2018", "codes.2018", "status.2018", "date.2018", "agb
 full.census.data <- cbind(data.2008, data.2013, data.2018) # added local coordinates here
 head(full.census.data)
 
-# add local coordinates 
-x <- full.census.data
-x$lx <- x$gx - 20*((as.numeric(x$quadrat) %/% 100) - 1)
-x$ly <- x$gy - 20*((as.numeric(x$quadrat) %% 100) - 1)
 
-#round local coordinates to nearest tenth
-x$lx <- round(x$lx, digits = 1)
-x$ly <- round(x$ly, digits = 1)
-full.census.data <- x
 
 # order the columns
 
