@@ -53,6 +53,7 @@ mort[idx_empty_line-1, EAB_columns] <- mort[idx_empty_line, EAB_columns]
 # remove empty lines
 mort <- mort[!is.na(mort$Quad), ] # fix empty lines
 mort <- mort[!is.na(mort$Species), ] # fix empty lines
+mort <- mort[!is.na(mort$Tag), ] # fix empty lines
 
 # remove repeated columns
 mort <- mort[, unique(names(mort))]
