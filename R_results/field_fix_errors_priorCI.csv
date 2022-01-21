@@ -1,8 +1,0 @@
-"","missing_stem","species_code_error","duplicated_stems","missing_crown_position","missing_percent_crown_intact","missing_percent_crown_living","crown_living_greater_than_crown_intact","status_A_but_unhealthy","status_AU_but_DWR_selected","status_DS_or_DC_but_DBH_not_measured","status_AU_DS_or_DC_but_no_FAD","wounded_but_no_level","canker_but_no_level","rot_but_no_level","DE_but_no_exit_hole_count","exit_hole_count_no_DE_EABF","missing_EAB_info","crown_thinning_more_than_1_but_not_AU_or_dead","EABF_recorded_but_not_AU_or_dead","exit_hole_count_but_not_AU_or_dead","dead_but_epicormic_more_than_0","dead_but_crown_thinning_less_than_5"
-"X2014",NA,0,1,NA,NA,NA,NA,0,NA,195,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-"X2015",NA,0,1,NA,NA,NA,NA,0,NA,4,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-"X2016",NA,0,1,NA,NA,NA,NA,3,NA,2,35,NA,NA,NA,NA,NA,27,210,NA,NA,0,0
-"X2017",NA,0,0,NA,NA,NA,NA,55,NA,3,119,NA,NA,NA,NA,NA,4,248,NA,NA,0,0
-"X2018",NA,0,1,NA,NA,NA,NA,0,NA,3,143,NA,NA,NA,NA,NA,1,154,NA,NA,0,1
-"X2019",NA,0,1,NA,NA,NA,NA,24,NA,0,0,NA,NA,NA,NA,NA,0,150,NA,NA,0,1
-"X2020",NA,0,0,NA,NA,NA,NA,0,NA,7,0,NA,NA,NA,NA,NA,15,220,NA,NA,0,3
