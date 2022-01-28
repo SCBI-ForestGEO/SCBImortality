@@ -1,6 +1,7 @@
 #############################################################################
-# Purpose: clean and merge all mortality census data prior to CI, which was implemented in 2021
+# Purpose: clean raw mortality census data and unitfy all years to standardized format. Note: Continuous integration and Fast Field forms were implemented/used in 2021
 # Developped by: Valentine Herrmann - HerrmannV@si.edu
+# R version 4.0.3 (2020-10-10)
 ##########################################################################
 
 # Clean environment ####
@@ -313,7 +314,7 @@ for(survey_year in survey_years) {
   mort[is.na(m),]$lx <-  mort[is.na(m),]$gx - floor( mort[is.na(m),]$gx / 20)*20
   mort[is.na(m),]$ly <-  mort[is.na(m),]$gy - floor( mort[is.na(m),]$gy / 20)*20
   
-  # add info from pervious mortality census if we have it
+  # add info from previous mortality census if we have it
   if(survey_year %in% 2014) {
     previous_year_status <- ref_main$status[idx]
     previous_year_comment <- NA
@@ -328,8 +329,17 @@ for(survey_year in survey_years) {
   previous_year_status[previous_year_status %in% "P"] # leaving "P" for "Prior" (trees that did not exist yet)
   
   mort[is.na(m),]$previous_year_status <- ifelse(is.na( mort[is.na(m),]$previous_year_status) & !is.na(previous_year_status), previous_year_status, mort[is.na(m),]$previous_year_status)
+  
   mort[is.na(m),]$previous_year_comment <- ifelse(is.na( mort[is.na(m),]$previous_year_comment) & !is.na(previous_year_comment), previous_year_comment, mort[is.na(m),]$previous_year_comment)
 
+  
+  # add date, assuming it was sampled that year (to help calculate timeint - current_status is NA anyways so it will be excluded of analysis when calculating moratlity rates)
+  
+ date_per_quad <- tapply(mort$ExactDate, mort$quadrat, function(x) names(sort(table(x), decreasing = T))[1])
+  mort$ExactDate[is.na(m)] <- as.Date(date_per_quad[mort$quadrat[is.na(m)]])
+  
+  
+  # save
   
   assign(paste0("mort", survey_year), mort)
   
@@ -369,7 +379,7 @@ for(survey_year in survey_years) {
   
   ## calculate allometries ####
   
-  cat(paste("calculating alomertries for", survey_year), "...\n")
+  cat(paste("calculating allometries for", survey_year), "...\n")
   
   if(length(setdiff(mort$sp, scbi.spptable$sp)) > 0) stop ("There is one species that is not in scbi.spptable")
   
@@ -441,7 +451,24 @@ for(census in paste0("scbi.stem", 1:2)) {
   
 }
 
+# calculate time interval between each date the tree was censused ####
 
+for(survey_year in survey_years) {
+  
+  mort <- get(paste0("mort", survey_year))
+  
+  
+  if(survey_year == 2008) mort$timeint_days <- NA
+  if(survey_year > 2008) {
+    if(survey_year == 2013) ref_mort <- mort2008    else  ref_mort <- get(paste0("mort", survey_year-1))
+    mort$timeint_days <- difftime(mort$ExactDate, ref_mort$ExactDate, units = "days")
+    
+  }
+  
+  
+  assign(paste0("mort", survey_year), mort)
+}
+  
 
 # save all the data in the same format ####
 
@@ -451,7 +478,7 @@ columns_to_keep <- c("survey_year", # adding this column, it will be createid in
                      "tag", "StemTag", "sp", "genus", "species", 
                      "quadrat", "gy", "gx", "ly", "lx",
                      "last_main_census_dbh", "last_main_census_agb_Mg", "hom",
-                     "ExactDate", "surveyor",
+                     "ExactDate", "timeint_days",
                      "previous_year_status", "current_year_status", 
                      "last_main_cenus_status","last_main_census_codes",  
                      "cored",
@@ -471,16 +498,19 @@ columns_to_keep <- c("survey_year", # adding this column, it will be createid in
                      "fraxinus_eabf", "fraxinus_D_shaped_exit_hole_count",
                      "fraxinus_epicormic_growth", "fraxinus_score_crown_living",
                      
+                     "surveyor",
                      "current_year_comment", "previous_year_comment", "submission_id")
   
 
 
 
 
-## save mortality files
+## save mortality files and build up allmort
+allmort <- NULL
+
 for (survey_year in survey_years) {
   
-  print(paste("Preparing and saving final data set for", survey_year))
+  print(paste("Saving final data set for", survey_year))
   
   mort <- get(paste0("mort", survey_year))
   head(mort)
@@ -491,6 +521,11 @@ for (survey_year in survey_years) {
 
   assign(paste0("mort", survey_year), mort)
   write.csv(mort, file = paste0("data/mortality_", survey_year, ".csv"), row.names = F)
+  
+  allmort <- rbind(allmort, mort)
 }
 
+## save allmort
+write.csv(allmort, "data/allmort.csv", row.names = F)
+save(allmort, file = "data/allmort.RData")
 
