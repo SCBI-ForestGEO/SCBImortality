@@ -83,10 +83,12 @@ These data are public, but the more recent censuses may not yet have been used i
 | Meghan Ward |   | field assistant, SCBI | volunteered for 2019 census |
 | Alex Georgopolis |   | field assistant, SCBI | volunteered for 2019 census |
 | Cameron Dow | camerondow35 | research assistant, SCBI | led 2020 census |
-| Albert Y. Kim | rudeboybert | visiting scholar, SCBI | volunteered for 2020 census |
+| Albert Y. Kim | rudeboybert | research associate and 2020 sabbatical visitor, SCBI | volunteered for 2020 census, continuous integration |
+| Valentine Herrmann | ValentineHerr | ecologist, SCBI | data organization, coding, continuous integration |
 | Brianna Calkins | briannakcalkins | field assistant, SCBI | 2021 census leader |
 | Jennifer Jordan | jenajordan | field assistant, SCBI | 2021 census assistant |
 | Teagan Rogers | Troger4 | field assistant, SCBI | 2021 census assistant |
+
  
 *refers to position at time of main contribution to this repository
 
