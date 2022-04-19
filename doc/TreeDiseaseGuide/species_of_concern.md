@@ -19,6 +19,7 @@ The following list categorizes SCBI tree species based on their mortality rates.
 - amar
 - caco
 - ceoc
+- coal
 - cofl
 - frni
 - frpe
