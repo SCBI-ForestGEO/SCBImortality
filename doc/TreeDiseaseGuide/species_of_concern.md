@@ -7,10 +7,22 @@ The following list categorizes SCBI tree species based on their mortality rates.
 - dominant species (≥100 individuals of DBH ≥10 cm) with an overall increasing trend and ≥ 5 % yr-1 in the most recent year (2021)
 
 ### Species
+- amar
 - ceca
+- ceoc
+- cofl
 - fram
+- frni
+- frpe
+- havi
+- prav
+- qumi
 - qupr
 - quve
+- rops
+- saal
+- ulam
+- ulru
 
 ## Moderate concern
 
@@ -18,24 +30,13 @@ The following list categorizes SCBI tree species based on their mortality rates.
 - mortality rate (`estimate`) ≥ 5 % yr-1 in only one year (but does not meet criteria of dominant species with increasing trend)
 ### Species
 - aial 
-- amar
 - caco
-- ceoc
 - coal
 - cofl
-- frni
-- frpe
-- havi
 - juci
 - pato
 - pivi
-- prav
 - prse
-- qumi
-- rops
-- saal
-- ulam
-- ulru
 - vipr
 
 ## Low concern
