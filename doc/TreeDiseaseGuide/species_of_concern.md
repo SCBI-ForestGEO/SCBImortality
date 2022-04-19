@@ -10,6 +10,7 @@ The following list categorizes SCBI tree species based on their mortality rates.
 - ceca
 - fram
 - qupr
+- quve
 
 ## Moderate concern
 
@@ -31,7 +32,6 @@ The following list categorizes SCBI tree species based on their mortality rates.
 - prav
 - prse
 - qumi
-- quve
 - rops
 - saal
 - ulam
