@@ -55,7 +55,7 @@ ggplot(sp_mortrate_agbmort, aes(x = sp, y = estimate, fill= survey_year)) +
         strip.placement = "outside")
 
 
-ggsave("R_results/Barplots_MortalityRates_and_BiomassMortality.tiff", width = 10, height = 7, units = "in")
+ggsave("R_results/Barplots_MortalityRates_and_BiomassMortality.png", width = 10, height = 7, units = "in")
 
 
 # ggplot(sp_AtoAUrate_agbAtoAUrate, aes(x = sp, y = estimate, fill= survey_year)) + 
@@ -74,7 +74,7 @@ ggsave("R_results/Barplots_MortalityRates_and_BiomassMortality.tiff", width = 10
 #         strip.placement = "outside")
 # 
 # 
-# ggsave("R_results/Barplots_AtuAURates_and_BiomassAtuAU.tiff", width = 10, height = 7, units = "in")
+# ggsave("R_results/Barplots_AtuAURates_and_BiomassAtuAU.png", width = 10, height = 7, units = "in")
 
 
 # plot mortality and health decline by size class ####
@@ -91,7 +91,7 @@ ggplot(mortrate_by_size_class[mortrate_by_size_class$survey_year %in% c(2014:202
   xlab("Survey year")
   
 
-ggsave("R_results/MortalityRates_per_sp_and_size_classes.tiff", width = 12, height = 10, units = "in")
+ggsave("R_results/MortalityRates_per_sp_and_size_classes.png", width = 12, height = 10, units = "in")
 
 
 
@@ -105,4 +105,4 @@ ggsave("R_results/MortalityRates_per_sp_and_size_classes.tiff", width = 12, heig
 #   xlab("Survey year")
 # 
 # 
-# ggsave("R_results/AtoAURates_per_sp_and_size_classes.tiff", width = 12, height = 10, units = "in")
+# ggsave("R_results/AtoAURates_per_sp_and_size_classes.png", width = 12, height = 10, units = "in")
