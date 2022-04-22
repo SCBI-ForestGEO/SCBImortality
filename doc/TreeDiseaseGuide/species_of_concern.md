@@ -79,6 +79,24 @@ The following list categorizes SCBI tree species based on the proportion of livi
 - ≥20% of living trees were unhealthy in the latest (2021) census.
 
 #### Species
+- aial
+- caca
+- ceca
+- chvi
+- cofl
+- fram
+- frni
+- frpe
+- juci
+- qual
+- quco
+- qufa
+- qumi
+- quve
+- rops
+- saal
+- ulru
+- vipr
 
 
 ### Moderate concern
@@ -87,9 +105,38 @@ The following list categorizes SCBI tree species based on the proportion of livi
 #### Criteria
 - ≥10% of living trees were unhealthy in the latest (2021) census.
 #### Species
-
+- acne
+- acru
+- ceoc
+- havi
+- juni
+- pist
+- ploc
+- prav
+- qupr
+- quru
 
 ### Low concern
 
 #### Criteria
 - <10% of living trees were unhealthy in the latest (2021) census.
+#### Species
+- acpl
+- amar
+- aatr
+- caco
+- cade
+- cagl
+- caovl
+- cato
+- divi
+- fagr
+- frsp
+- litu
+- nysy
+- patopipu
+- pivi
+- prse
+- tiam
+- ulam
+- unk
