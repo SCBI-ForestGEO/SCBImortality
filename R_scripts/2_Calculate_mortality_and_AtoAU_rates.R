@@ -40,7 +40,7 @@ allmort <- allmort[!is.na(allmort$last_main_census_dbh) & allmort$last_main_cens
 ## Did tree died between now and previous census ?
 allmort$died <- grepl("A", allmort$previous_year_status) & grepl("D", allmort$current_year_status)
 
-## did tree went from A to AU between now and previous census ?
+# ## did tree went from A to AU between now and previous census ?
 allmort$AtoAU <- grepl("A$", allmort$previous_year_status) & grepl("AU", allmort$current_year_status)
 
 ## time interval between censused, in year
@@ -66,7 +66,7 @@ ninit <- tapply(mort$previous_year_status, mort[, c("survey_year", "sp")], funct
 ## get number of dead trees per species and year
 ndead <- tapply(mort$died, mort[, c("survey_year", "sp")], sum, na.rm = T)
 
-## get number of unhealthy trees per species and year
+# ## get number of unhealthy trees per species and year
 nAtoAU <- tapply(mort$AtoAU, mort[, c("survey_year", "sp")], sum, na.rm = T)
 
 
@@ -76,13 +76,13 @@ mntime <- tapply(mort$timeint, mort[, c("survey_year", "sp")], mean, na.rm = T)
 ## calculate mortality rates per species and year
 mortrate <- 100 * (1 - ((ninit - ndead) / ninit) ^ (1 / mntime))
 
-## calculate rate of health decline per species and year
+# ## calculate rate of health decline per species and year
 AtoAUrate <- 100 * (1 - ((ninit - nAtoAU) / ninit) ^ (1 / mntime))
 
 ## get biomass mortality
 agbmort <-  tapply(mort$agb_yr[mort$died], mort[mort$died, c("survey_year", "sp")], sum)/hectar
   
-## get biomass health decline
+# ## get biomass health decline
 agbAtoAU <-  tapply(mort$agb_yr[mort$AtoAU], mort[mort$AtoAU, c("survey_year", "sp")], sum)/hectar
 
 
@@ -122,7 +122,7 @@ ngrid = dim(dn)[3]
 boot_mort <- boot_agbmort <- array(NA, dim = c(dim(dn)[1:2], nreps), 
                    dimnames = c(dimnames(dn)[1:2], list(rep_id = 1:nreps)))
 
-boot_AtoAU <- boot_agbAtoAU <- array(NA, dim = c(dim(dn)[1:2], nreps), 
+boot_AtoAU <- boot_agbAtoAU <- array(NA, dim = c(dim(dn)[1:2], nreps),
                                    dimnames = c(dimnames(dn)[1:2], list(rep_id = 1:nreps)))
 
 pb <- progress_bar$new(
@@ -143,9 +143,9 @@ for(i in 1:nreps) {
   boot_agbmort[,,i]= apply(magbsum[,,whichgrids], c(1,2), sum, na.rm = T)
   
   boot_AtoAU[,,i] = 100 * (1 - ((apply(dn[,,whichgrids], c(1,2), sum, na.rm = T) - apply(atoausums[,,whichgrids], c(1,2), sum, na.rm =T)) / apply(dn[,,whichgrids],  c(1,2), sum, na.rm = T)) ^ (1 / (apply(tsums[,,whichgrids], c(1,2), sum, na.rm = T) / apply(dn[,,whichgrids],  c(1,2), sum, na.rm = T))))
-  
+
   boot_agbAtoAU[,,i]= apply(auagbsum[,,whichgrids], c(1,2), sum, na.rm = T)
-  
+
   
   ## get average timeint
   # apply(tsums[,,whichgrids], c(1,2), sum, na.rm = T) / apply(dn[,,whichgrids],  c(1,2), sum, na.rm = T) 
@@ -284,6 +284,7 @@ for(i in 1:nreps) {
   boot_mort[,,i] = 100 * (1 - ((apply(dn[,,whichgrids], c(1,2), sum, na.rm = T) - apply(msums[,,whichgrids], c(1,2), sum, na.rm =T)) / apply(dn[,,whichgrids],  c(1,2), sum, na.rm = T)) ^ (1 / (apply(tsums[,,whichgrids], c(1,2), sum, na.rm = T) / apply(dn[,,whichgrids],  c(1,2), sum, na.rm = T))))
   
   boot_AtoAU[,,i] = 100 * (1 - ((apply(dn[,,whichgrids], c(1,2), sum, na.rm = T) - apply(atoausums[,,whichgrids], c(1,2), sum, na.rm =T)) / apply(dn[,,whichgrids],  c(1,2), sum, na.rm = T)) ^ (1 / (apply(tsums[,,whichgrids], c(1,2), sum, na.rm = T) / apply(dn[,,whichgrids],  c(1,2), sum, na.rm = T))))
+  
   ## get average timeint
   # apply(tsums[,,whichgrids], c(1,2), sum, na.rm = T) / apply(dn[,,whichgrids],  c(1,2), sum, na.rm = T) 
 }
