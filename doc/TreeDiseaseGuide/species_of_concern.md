@@ -134,7 +134,8 @@ The following list categorizes SCBI tree species based on the proportion of livi
 - frsp
 - litu
 - nysy
-- patopipu
+- pato
+- pipu
 - pivi
 - prse
 - tiam
