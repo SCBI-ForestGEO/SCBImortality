@@ -19,8 +19,26 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
 
 \newpage
+# Tree Species of Concern
+**Table 1. Summary of the health/ mortality status of all tree species in the SCBI ForestGEO plot.** Included is IUCN status, n of living individuals in the SCBI ForestGEO plot, nnumbers of known species of forest insects or pathogens (FIP) and exotic FIP (EFIP) affecting the species, levels of concern based on mortality rates and "alive-unhealthy" (AU) status, and overall level of concern based on these metrics. Codes: H = high, M = moderate; L = low. Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
+```{r tree_species_summary , echo=FALSE}
+tree_species_summary <- read.csv("tree_species_summary.csv")
+names(tree_species_summary) <- stringr::str_replace_all(names(tree_species_summary), "\\.", " ")
+tree_species_summary[is.na(tree_species_summary)]<- "" #replace NAs with blanks
+
+library(knitr)
+library(kableExtra)
+knitr::kable(tree_species_summary,
+             format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE) %>%
+  kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
+  kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
+
+
+```
+
+\newpage
 # Tree- Disease Matrix
-**Table 1. Matrix of forest insects and pathogens likely to occur at the SCBI ForestGEO plot, and the tree taxa they affect.** Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
+**Table 2. Matrix of forest insects and pathogens likely to occur at the SCBI ForestGEO plot, and the tree taxa they affect.** Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
 ```{r matrix , echo=FALSE}
 TDmatrix <- read.csv("matrix.csv")
 TDmrowsum1 <- rowSums(TDmatrix[,3:34])
@@ -40,7 +58,7 @@ knitr::kable(TDmatrix1[2:ncol(TDmatrix1)],
   row_spec(which(TDmatrix1$exotic==1), bold = TRUE) %>%
   row_spec(1:nrow(TDmatrix1),hline_after=T) %>%
   column_spec(1, width = "3cm") %>% 
-  column_spec(2:ncol(TDmatrix1), width = ".035cm", border_left = F) %>%
+  column_spec(2:ncol(TDmatrix1), width = ".03cm", border_left = F) %>%
   kable_styling(bootstrap_options = "striped", font_size = 7) %>%
   kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
 
@@ -59,7 +77,7 @@ knitr::kable(TDmatrix2[2:ncol(TDmatrix2)],
   row_spec(which(TDmatrix2$exotic==1), bold = TRUE) %>%
   row_spec(1:nrow(TDmatrix2),hline_after=T) %>%
   column_spec(2, width = "3cm") %>% 
-  column_spec(3:ncol(TDmatrix2), width = ".035cm", border_left = F) %>%
+  column_spec(3:ncol(TDmatrix2), width = ".03cm", border_left = F) %>%
   kable_styling(bootstrap_options = "striped", font_size = 7) %>%
   kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
 
