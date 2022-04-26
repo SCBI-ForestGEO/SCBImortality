@@ -1,0 +1,59 @@
+---
+title: "SCBI Tree Disease Guide"
+output: pdf_document
+
+header-includes:  \usepackage{float}
+                  \usepackage{caption}
+                  \captionsetup[figure]{labelformat=empty}
+                  \captionsetup[table]{labelformat=empty}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
+
+\newpage
+# Tree- Disease Matrix
+**Table 1. Matrix of forest insects and pathogens likely to occur at the SCBI ForestGEO plot, and the tree taxa they affect.** Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
+```{r matrix , echo=FALSE}
+TDmatrix <- read.csv("matrix.csv")
+TDmatrix1 <- TDmatrix[,1:33]
+TDmatrix2 <- TDmatrix[,c(1,34:66)]
+
+library(knitr)
+library(kableExtra)
+knitr::kable(TDmatrix1,
+             caption = "Part 1/2: Tree species codes ACNE-LIBE",
+             format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE) %>%
+  kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
+  row_spec(0, bold = F, angle = 90) %>%
+  row_spec(1:68,hline_after=T) %>%
+  column_spec(1, width = "3cm") %>% 
+  column_spec(2:33, width = ".035cm", border_left = F) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 7) %>%
+  kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
+
+```
+\newpage
+
+```{r matrix2 , echo=FALSE}
+knitr::kable(TDmatrix2,
+             caption = "Part 2/2: Tree species codes LITU-VIRE",
+             format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE) %>%
+  kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
+  row_spec(0, bold = F, angle = 90) %>%
+  row_spec(1:68,hline_after=T) %>%
+  column_spec(1, width = "3cm") %>% 
+  column_spec(2:34, width = ".035cm", border_left = F) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 7) %>%
+  kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
+
+  
+```
+
