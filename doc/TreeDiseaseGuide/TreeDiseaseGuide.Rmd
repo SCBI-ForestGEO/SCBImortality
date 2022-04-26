@@ -23,8 +23,8 @@ When you click the **Knit** button a document will be generated that includes bo
 **Table 1. Matrix of forest insects and pathogens likely to occur at the SCBI ForestGEO plot, and the tree taxa they affect.** Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
 ```{r matrix , echo=FALSE}
 TDmatrix <- read.csv("matrix.csv")
-TDmatrix1 <- TDmatrix[,1:33]
-TDmatrix2 <- TDmatrix[,c(1,34:66)]
+TDmatrix1 <- TDmatrix[,2:34]
+TDmatrix2 <- TDmatrix[,c(2,35:67)]
 
 library(knitr)
 library(kableExtra)
@@ -33,6 +33,7 @@ knitr::kable(TDmatrix1,
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
   row_spec(0, bold = F, angle = 90) %>%
+  row_spec(which(TDmatrix$exotic==1), bold = TRUE) %>%
   row_spec(1:68,hline_after=T) %>%
   column_spec(1, width = "3cm") %>% 
   column_spec(2:33, width = ".035cm", border_left = F) %>%
@@ -48,6 +49,7 @@ knitr::kable(TDmatrix2,
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
   row_spec(0, bold = F, angle = 90) %>%
+  row_spec(which(TDmatrix$exotic==1), bold = TRUE) %>%
   row_spec(1:68,hline_after=T) %>%
   column_spec(1, width = "3cm") %>% 
   column_spec(2:34, width = ".035cm", border_left = F) %>%
