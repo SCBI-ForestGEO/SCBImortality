@@ -75,7 +75,9 @@ TDmrowsum2 <- rowSums(TDmatrix[,(ceiling((ncol(TDmatrix)-2)/2)+1):ncol(TDmatrix)
 TDmatrix1 <- TDmatrix[TDmrowsum1>0,1:(ceiling((ncol(TDmatrix)-2)/2))]
 TDmatrix2 <- TDmatrix[TDmrowsum2>0,c(1:2,(ceiling((ncol(TDmatrix)-2)/2)+1):ncol(TDmatrix))]
 
-
+TDconcern_index=paste0("",tree_species_summary$overall)
+TDconcern_index1 <- TDconcern_index[1:(ceiling((ncol(TDmatrix)-2)/2)-1)]
+TDconcern_index2 <- TDconcern_index[c(1,(ceiling((ncol(TDmatrix)-2)/2)-1):(ncol(TDmatrix)-2))]
 
 library(knitr)
 library(kableExtra)
@@ -88,6 +90,8 @@ knitr::kable(TDmatrix1[2:ncol(TDmatrix1)],
   row_spec(1:nrow(TDmatrix1)-1,hline_after=T) %>%
   column_spec(1, width = "5.27cm") %>% 
   column_spec(2:ncol(TDmatrix1), width = ".03cm", border_left = F) %>%
+  column_spec(which(TDconcern_index1=="H"),  color = "red") %>%
+  column_spec(which(TDconcern_index1=="M"),  color = "orange") %>%
   kable_styling(bootstrap_options = "striped", font_size = 9) %>%
   kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
 
@@ -107,6 +111,8 @@ knitr::kable(TDmatrix2[2:ncol(TDmatrix2)],
   row_spec(1:nrow(TDmatrix2)-1,hline_after=T) %>%
   column_spec(1, width = "5.27cm") %>% 
   column_spec(2:ncol(TDmatrix2), width = ".03cm", border_left = F) %>%
+  column_spec(which(TDconcern_index2=="H"),  color = "red") %>%
+  column_spec(which(TDconcern_index2=="M"),  color = "orange") %>%
   kable_styling(bootstrap_options = "striped", font_size = 9) %>%
   kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
 
