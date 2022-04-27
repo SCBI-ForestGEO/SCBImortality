@@ -1,66 +1,66 @@
-"Tree.species.code","IUCN.status","n.living","n.FIP","n.EFIP","mortality.rates","AU.status","overall"
-"acne","Least concern",NA,10,1,"","",""
-"acpl","Least concern",NA,9,1,"","",""
-"acru","Least concern",NA,11,1,"","",""
-"aial",NA,NA,1,1,"","",""
-"amar","Least concern",NA,0,0,"H","L",""
-"astr","Least concern",NA,0,0,"","",""
-"beth",NA,NA,0,0,"","",""
-"caca","Least concern",NA,0,0,"","",""
-"caco","Least concern",NA,5,0,"","",""
-"cagl","Least concern",NA,4,0,"","",""
-"caovl",NA,NA,4,0,"","",""
-"cato","Least concern",NA,4,0,"","",""
-"cade","Critically Endangered",NA,1,1,"","","H"
-"ceoc","Least concern",NA,0,0,"","",""
-"ceca","Least concern",NA,1,0,"H","H","M"
-"chvi","Least concern",NA,1,1,"","",""
-"coal","Least concern",NA,1,0,"","",""
-"cofl","Least concern",NA,3,1,"","",""
-"coam","Least concern",NA,0,0,"","",""
-"crpr","Least concern",NA,0,0,"","",""
-"divi","Least concern",NA,0,0,"","",""
-"elum","Least concern",NA,0,0,"","",""
-"eual",NA,NA,0,0,"","",""
-"fagr","Least concern",NA,7,2,"","",""
-"fram","Critically Endangered",NA,10,1,"","","H"
-"frni","Critically Endangered",NA,10,1,"","","H"
-"frpe","Critically Endangered",NA,9,1,"","","H"
-"havi","Least concern",NA,0,0,"","",""
-"ilve","Least concern",NA,0,0,"","",""
-"juci","Endangered",1,4,1,"M","H","H"
-"juni","Least concern",NA,4,0,"","",""
-"libe","Least concern",NA,0,0,"","",""
-"litu","Least concern",NA,4,0,"","",""
-"loma",NA,NA,0,0,"","",""
-"nysy","Least concern",NA,0,0,"","",""
-"pato",NA,NA,0,0,"","",""
-"pipu","Least concern",NA,12,0,"","",""
-"pist","Least concern",NA,14,0,"","",""
-"pivi","Least concern",NA,12,0,"","",""
-"ploc","Least concern",NA,1,0,"","",""
-"prav","",NA,2,0,"","",""
-"prpe","",NA,2,0,"","",""
-"prse","",NA,2,0,"","",""
-"qual","",NA,13,2,"","",""
-"quco","",NA,13,2,"","",""
-"qufa","",NA,13,2,"","",""
-"qumi","",NA,13,2,"","",""
-"qumu","",NA,13,2,"","",""
-"qupr","",NA,13,2,"","",""
-"quru","",NA,14,2,"","",""
-"quve","",NA,13,2,"","",""
-"rops","",NA,3,0,"","",""
-"rhpe","",NA,0,0,"","",""
-"romu","",NA,0,0,"","",""
-"rual","",NA,0,0,"","",""
-"rupe","",NA,0,0,"","",""
-"ruph","",NA,0,0,"","",""
-"saca","",NA,0,0,"","",""
-"saal","",NA,3,0,"","",""
-"tiam","",NA,4,2,"","",""
-"ulam","",NA,12,4,"","","H"
-"ulru","",NA,12,4,"","",""
-"viac","",NA,0,0,"","",""
-"vipr","",NA,0,0,"","",""
-"vire","",NA,0,0,"","",""
+Tree.species.code,IUCN.status,n.living,n.FIP,n.EFIP,mortality.rates,AU.status,overall
+acne,Least concern,NA,10,1,L,M,
+acpl,Least concern,NA,9,1,L,L,
+acru,Least concern,NA,11,1,L,M,
+aial,NA,NA,1,1,M,H,
+amar,Least concern,NA,0,0,H,L,
+astr,Least concern,NA,0,0,L,L,
+beth,NA,NA,0,0,L,L,
+caca,Least concern,NA,0,0,L,H,
+caco,Least concern,NA,5,0,M,L,
+cagl,Least concern,NA,4,0,L,L,
+caovl,NA,NA,4,0,L,L,
+cato,Least concern,NA,4,0,L,L,
+cade,Critically Endangered,NA,1,1,L,L,H
+ceoc,Least concern,NA,0,0,H,M,
+ceca,Least concern,NA,1,0,H,H,M
+chvi,Least concern,NA,1,1,L,H,
+coal,Least concern,NA,1,0,M,L,
+cofl,Least concern,NA,3,1,H,H,
+coam,Least concern,NA,0,0,L,L,
+crpr,Least concern,NA,0,0,L,L,
+divi,Least concern,NA,0,0,L,L,
+elum,Least concern,NA,0,0,L,L,
+eual,NA,NA,0,0,L,L,
+fagr,Least concern,NA,7,2,L,L,
+fram,Critically Endangered,NA,10,1,H,H,H
+frni,Critically Endangered,NA,10,1,H,H,H
+frpe,Critically Endangered,NA,9,1,H,H,H
+havi,Least concern,NA,0,0,H,M,
+ilve,Least concern,NA,0,0,L,L,
+juci,Endangered,1,4,1,M,H,H
+juni,Least concern,NA,4,0,L,M,
+libe,Least concern,NA,0,0,L,L,
+litu,Least concern,NA,4,0,L,L,
+loma,NA,NA,0,0,L,L,
+nysy,Least concern,NA,0,0,L,L,
+pato,NA,NA,0,0,M,L,
+pipu,Least concern,NA,12,0,L,L,
+pist,Least concern,NA,14,0,L,M,
+pivi,Least concern,NA,12,0,M,L,
+ploc,Least concern,NA,1,0,L,M,
+prav,Least concern,NA,2,0,H,M,
+prpe,NA,NA,2,0,L,L,
+prse,Least concern,NA,2,0,M,L,
+qual,Least concern,NA,13,2,L,H,
+quco,Least concern,NA,13,2,L,H,
+qufa,Least concern,NA,13,2,L,H,
+qumi,Least concern,NA,13,2,H,H,
+qumu,Least concern,NA,13,2,L,L,
+qupr,,NA,13,2,H,M,
+quru,Least concern,NA,14,2,L,M,
+quve,Least concern,NA,13,2,H,H,
+rops,Least concern,NA,3,0,H,H,
+rhpe,NA,NA,0,0,L,L,
+romu,NA,NA,0,0,L,L,
+rual,Na,NA,0,0,L,L,
+rupe,NA,NA,0,0,L,L,
+ruph,NA,NA,0,0,L,L,
+saca,NA,NA,0,0,L,L,
+saal,Least concern,NA,3,0,H,H,
+tiam,Least concern,NA,4,2,L,L,
+ulam,Endangered,NA,12,4,H,L,H
+ulru,Least concern,NA,12,4,H,H,
+viac,NA,NA,0,0,L,L,
+vipr,Least concern,NA,0,0,M,H,
+vire,Least concern,NA,0,0,L,L,
