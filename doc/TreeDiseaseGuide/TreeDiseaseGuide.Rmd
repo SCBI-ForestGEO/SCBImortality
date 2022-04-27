@@ -47,6 +47,13 @@ knitr::kable(tree_species_summary,
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
   add_header_above(c( " "= 5, "concern level"=3 )) %>%
+  column_spec(1, width = "1cm") %>% 
+  column_spec(2, width = "4cm") %>% 
+  column_spec(3:8, width = "1.2cm") %>% 
+  row_spec(1:nrow(tree_species_summary)-1,hline_after=T) %>%
+  row_spec(which(tree_species_summary$overall=="H"),  bold = T, color = "red") %>%
+  row_spec(which(tree_species_summary$overall=="M"),  bold = T, color = "orange") %>%
+  kable_styling(bootstrap_options = "striped", font_size = 9) %>%
   kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
 
 
@@ -72,7 +79,7 @@ knitr::kable(TDmatrix1[2:ncol(TDmatrix1)],
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
   row_spec(0, bold = F, angle = 90) %>%
   row_spec(which(TDmatrix1$exotic==1), bold = TRUE) %>%
-  row_spec(1:nrow(TDmatrix1),hline_after=T) %>%
+  row_spec(1:nrow(TDmatrix1)-1,hline_after=T) %>%
   column_spec(1, width = "3cm") %>% 
   column_spec(2:ncol(TDmatrix1), width = ".03cm", border_left = F) %>%
   kable_styling(bootstrap_options = "striped", font_size = 7) %>%
@@ -86,12 +93,12 @@ knitr::kable(TDmatrix1[2:ncol(TDmatrix1)],
 
 
 knitr::kable(TDmatrix2[2:ncol(TDmatrix2)],
-             caption = "Part 1/2: Tree species codes ACNE-LIBE",
+             caption = "Part 1/2: Tree species codes LITU-VIRE",
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
   row_spec(0, bold = F, angle = 90) %>%
   row_spec(which(TDmatrix2$exotic==1), bold = TRUE) %>%
-  row_spec(1:nrow(TDmatrix2),hline_after=T) %>%
+  row_spec(1:nrow(TDmatrix2)-1,hline_after=T) %>%
   column_spec(2, width = "3cm") %>% 
   column_spec(3:ncol(TDmatrix2), width = ".03cm", border_left = F) %>%
   kable_styling(bootstrap_options = "striped", font_size = 7) %>%
