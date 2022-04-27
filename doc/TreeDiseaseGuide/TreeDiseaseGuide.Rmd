@@ -11,8 +11,16 @@ header-includes:  \usepackage{float}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+# read in and manipulate tree- disease matrix
 TDmatrix <- read.csv("matrix.csv")
-n_EIP_by_species <- colSums (TDmatrix[3:ncol(TDmatrix)], na.rm = FALSE, dims = 1)
+n_FIP_by_species <- colSums (TDmatrix[3:ncol(TDmatrix)], na.rm = FALSE, dims = 1)
+n_EFIP_by_species <- colSums (TDmatrix[which(TDmatrix$exotic==1),3:ncol(TDmatrix)], na.rm = FALSE, dims = 1)
+
+# read in and manipulate tree_species_summary
+tree_species_summary <- read.csv("tree_species_summary.csv")
+tree_species_summary[,4]<-n_FIP_by_species
+tree_species_summary[,5]<-n_EFIP_by_species
+write.csv(tree_species_summary, "tree_species_summary.csv", row.names = FALSE)
 
 ```
 
@@ -24,13 +32,11 @@ When you click the **Knit** button a document will be generated that includes bo
 
 \newpage
 # Tree Species of Concern
-**Table 1. Summary of the health/ mortality status of all tree species in the SCBI ForestGEO plot.** Included is IUCN status, n of living individuals in the SCBI ForestGEO plot, nnumbers of known species of forest insects or pathogens (FIP) and exotic FIP (EFIP) affecting the species, levels of concern based on mortality rates and "alive-unhealthy" (AU) status, and overall level of concern based on these metrics. Codes: H = high, M = moderate; L = low. Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
+**Table 1. Summary of the health/ mortality status of all tree species in the SCBI ForestGEO plot.** Included is IUCN status, n of living individuals in the SCBI ForestGEO plot, numbers of known species of forest insects or pathogens (FIP) and exotic FIP (EFIP) affecting the species, levels of concern based on mortality rates and "alive-unhealthy" (AU) status, and overall level of concern based on these metrics. Codes: H = high, M = moderate; L = low. Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
 ```{r tree_species_summary , echo=FALSE}
-tree_species_summary <- read.csv("tree_species_summary.csv")
+
 names(tree_species_summary) <- stringr::str_replace_all(names(tree_species_summary), "\\.", " ")
 tree_species_summary[is.na(tree_species_summary)]<- "" #replace NAs with blanks
-
-tree_species_summary[,4]<-n_EIP_by_species
 
 library(knitr)
 library(kableExtra)
