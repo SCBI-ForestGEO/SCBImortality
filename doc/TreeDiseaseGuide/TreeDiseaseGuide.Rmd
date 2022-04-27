@@ -10,6 +10,10 @@ header-includes:  \usepackage{float}
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+TDmatrix <- read.csv("matrix.csv")
+n_EIP_by_species <- colSums (TDmatrix[3:ncol(TDmatrix)], na.rm = FALSE, dims = 1)
+
 ```
 
 # Introduction
@@ -26,6 +30,8 @@ tree_species_summary <- read.csv("tree_species_summary.csv")
 names(tree_species_summary) <- stringr::str_replace_all(names(tree_species_summary), "\\.", " ")
 tree_species_summary[is.na(tree_species_summary)]<- "" #replace NAs with blanks
 
+tree_species_summary[,4]<-n_EIP_by_species
+
 library(knitr)
 library(kableExtra)
 knitr::kable(tree_species_summary,
@@ -40,7 +46,7 @@ knitr::kable(tree_species_summary,
 # Tree- Disease Matrix
 **Table 2. Matrix of forest insects and pathogens likely to occur at the SCBI ForestGEO plot, and the tree taxa they affect.** Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
 ```{r matrix , echo=FALSE}
-TDmatrix <- read.csv("matrix.csv")
+
 TDmrowsum1 <- rowSums(TDmatrix[,3:34])
 TDmrowsum2 <- rowSums(TDmatrix[,35:67])
 TDmatrix1 <- TDmatrix[TDmrowsum1>0,1:34]
