@@ -70,14 +70,15 @@ knitr::kable(tree_species_summary,
 **Table 2. Matrix of forest insects and pathogens likely to occur at the SCBI ForestGEO plot, and the tree taxa they affect.** Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
 ```{r matrix , echo=FALSE}
 
-TDmrowsum1 <- rowSums(TDmatrix[,3:(ceiling((ncol(TDmatrix)-2)/2))])
-TDmrowsum2 <- rowSums(TDmatrix[,(ceiling((ncol(TDmatrix)-2)/2)+1):ncol(TDmatrix)])
-TDmatrix1 <- TDmatrix[TDmrowsum1>0,1:(ceiling((ncol(TDmatrix)-2)/2))]
-TDmatrix2 <- TDmatrix[TDmrowsum2>0,c(1:2,(ceiling((ncol(TDmatrix)-2)/2)+1):ncol(TDmatrix))]
+break_row = ceiling((ncol(TDmatrix)-2)/2)
+TDmrowsum1 <- rowSums(TDmatrix[,3:break_row])
+TDmrowsum2 <- rowSums(TDmatrix[,(break_row+1):ncol(TDmatrix)])
+TDmatrix1 <- TDmatrix[TDmrowsum1>0,1:break_row]
+TDmatrix2 <- TDmatrix[TDmrowsum2>0,c(1:2,(break_row+1):ncol(TDmatrix))]
 
 TDconcern_index=paste0("",tree_species_summary$overall)
-TDconcern_index1 <- TDconcern_index[1:(ceiling((ncol(TDmatrix)-2)/2)-1)]
-TDconcern_index2 <- TDconcern_index[c(1,(ceiling((ncol(TDmatrix)-2)/2)-1):(ncol(TDmatrix)-2))]
+TDconcern_index1 <- TDconcern_index[1:(break_row-1)]
+TDconcern_index2 <- TDconcern_index[c(1,(break_row-1):(ncol(TDmatrix)-2))]
 
 library(knitr)
 library(kableExtra)
