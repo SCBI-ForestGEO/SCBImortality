@@ -43,6 +43,7 @@ library(kableExtra)
 knitr::kable(tree_species_summary,
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
+  add_header_above(c( " "= 5, "concern level"=3 )) %>%
   kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
 
 
