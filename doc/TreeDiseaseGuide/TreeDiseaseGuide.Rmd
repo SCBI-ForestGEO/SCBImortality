@@ -1,6 +1,7 @@
 ---
 title: "SCBI Tree Disease Guide"
 output: pdf_document
+author: Isabella Dangler & Kristina J. Anderson-Teixeira
 
 header-includes:  \usepackage{float}
                   \usepackage{caption}
@@ -35,9 +36,26 @@ tree_species_summary <- tree_species_summary [which(tree_index),] # include only
 
 # Introduction
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+The aim of this guide is to identify tree species of concern within the SCBI ForestGEO plot, and the diseases that are most likely to affect them, so that we can properly identify the causes of decline.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
+# Methods & Definitions
+
+## Tree species concern levels
+
+We assigned concern levels -- high (H), moderate (M), or low (L) -- to each tree species based on results of the SCBI ForestGEO mortality census, IUCN status, and the presence and lethally of pest and pathogen species.
+
+Concern level based on observed tree mortality rates alone was defined as follows:
+
+Concern level based on the fraction of alive but unhealthy ("AU" status) trees observed in the latest census was defined as follows:
+
+Overall concern level was determined as follows:
+
+1. If IUCN Red List status was anything other than "Least Concern", the species was flagged as high concern
+2. If an exotic pest or disease with high / moderate lethality was known to be present in region, any species affected by that pest/ disease was flagged as H/M concern.
+3. If either mortality rate or AU concern level was M or H, overall concern was assigned to match the highest concern level, but lowered one level in the case of species with <50 individuals in the plot and only one M or H ranking.
+4. If IUCN Red List status was anything other than "Least Concern", there were no known highly lethal exotic pests or diseases present, and both mortality and AU concern levels were low, the species was flagged as low concern.
+
+## Identifying tree species - disease pairs
 
 \newpage
 # Tree Species of Concern
@@ -52,7 +70,7 @@ library(kableExtra)
 knitr::kable(tree_species_summary,
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE,row.names = F) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
-  add_header_above(c( " "= 5, "concern level"=3 )) %>%
+  add_header_above(c( " "= 5, "2021 concern level"=3 )) %>%
   column_spec(1, width = "1cm") %>% 
   column_spec(2, width = "4cm") %>% 
   column_spec(3:8, width = "1.2cm") %>% 
