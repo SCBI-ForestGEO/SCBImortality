@@ -138,3 +138,22 @@ knitr::kable(TDmatrix2[2:ncol(TDmatrix2)],
   
 ```
 
+\newpage
+# Pictoral guide to most important pests & diseases
+
+## Insect pests
+*(these should be arranged logically. My preference would be to organize by type (categories below, from Tree-and-Forest-Health-Guide.pdf), then alphabetically. To make this work, we'll need to insert a column with type in the matrix)*
+
+### Sapsuckers
+### Defoliators
+### Root/Shoot/Twig Insects
+### Bark Beetles/ Wood Borers
+#### (insect species )
+*(insert brief description of symptoms to look for, pictures)*
+
+## Diseases 
+### Rusts
+### Root
+### Cankers
+### Foliage
+### Vascular
