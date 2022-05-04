@@ -301,7 +301,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 
 
 # check that status 'DS' or 'DC' have a dbh within 2cm of most recent census DBH  ####
-warning_name <- "DBH_dead_suspicious"
+error_name <- "DBH_dead_suspicious"
 
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
@@ -311,8 +311,7 @@ idx_DBH_ouside_range <- !is.na(mort$'Dead DBH') & !is.na(as.numeric(mort$DBH)) &
 
 idx_errors <- idx_trees & idx_DBH_ouside_range
 
-
-if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name))
+if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 # check that newly censused 'AU', 'DS' or 'DC trees that were alive in previous census have at least one FAD is selected (OR level selected for `wounded main stem`,`canker,swelling,deformity`, `rotting main stem`) ####
 error_name <- "status_AU_DS_or_DC_but_no_FAD"
