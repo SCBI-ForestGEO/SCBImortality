@@ -16,6 +16,8 @@ knitr::opts_chunk$set(echo = TRUE)
 tree_sp_ecology<-read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv")
 tree_index <- tree_sp_ecology$life_form == "tree" | tree_sp_ecology$life_form == "small tree" | tree_sp_ecology$life_form == "shrub or small tree" # index for trees (trees and small trees)
 
+# read in and pull info from latest mortality census summary
+mortality_by_species<-read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/R_results/mortrates_and_agbmort_by_species.csv")
   
 # read in and manipulate tree- disease matrix
 TDmatrix <- read.csv("matrix.csv")
@@ -96,6 +98,7 @@ TDmatrix2 <- TDmatrix[TDmrowsum2>0,c(1:2,(break_row+1):ncol(TDmatrix))]
 
 TDconcern_index=paste0("",tree_species_summary$overall)
 TDconcern_index1 <- TDconcern_index[1:(break_row-1)]
+TDconcern_index1 <- TDconcern_index[c(1,1:(break_row-2))]
 TDconcern_index2 <- TDconcern_index[c(1,(break_row-1):(ncol(TDmatrix)-2))]
 
 library(knitr)
