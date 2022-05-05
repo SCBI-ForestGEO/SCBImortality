@@ -13,55 +13,68 @@ header-includes:  \usepackage{float}
 knitr::opts_chunk$set(echo = TRUE)
 
 ## latest complete survey
-latest_year = 2021
+# latest_year = 2021
 
 ## pull tree species ecology from GitHub and for species names, life form, and IUCN status 
-tree_sp_ecology<-read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv")
-tree_index <- tree_sp_ecology$life_form == "tree" | tree_sp_ecology$life_form == "small tree" | tree_sp_ecology$life_form == "shrub or small tree" # index for trees (trees and small trees)
+# tree_sp_ecology<-read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv")
+# tree_index <- tree_sp_ecology$life_form == "tree" | tree_sp_ecology$life_form == "small tree" | tree_sp_ecology$life_form == "shrub or small tree" # index for trees (trees and small trees)
 
 # read in and pull info from latest mortality census summary
 mortality_by_species<-read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/R_results/mortrates_and_agbmort_by_species.csv")
-mortality_rate_by_species_latest <- mortality_by_species[ which(mortality_by_species$variable=='mortality_rates' & mortality_by_species$survey_year == latest_year),]
+mortality_rate_by_species_latest <- mortality_by_species[ which(mortality_by_species$variable=='mortality_rates' & mortality_by_species$survey_year == max(mortality_by_species$survey_year)),] # keep mortality rates and only last year
 names(mortality_rate_by_species_latest)[names(mortality_rate_by_species_latest) == 'sp'] <- 'Tree.species.code'
-mortality_rate_by_species_latest$n_latest <- mortality_rate_by_species_latest$N0 - mortality_rate_by_species_latest$n_died
+mortality_rate_by_species_latest$n.living <- mortality_rate_by_species_latest$N0 - mortality_rate_by_species_latest$n_died
   
 # read in and manipulate tree- disease matrix
 TDmatrix <- read.csv("matrix.csv")
 n_FIP_by_species <- colSums (TDmatrix[3:ncol(TDmatrix)], na.rm = FALSE, dims = 1) #number of forest insects & pathogens
 n_EFIP_by_species <- colSums (TDmatrix[which(TDmatrix$exotic==1),3:ncol(TDmatrix)], na.rm = FALSE, dims = 1) #number of exotic forest insects & pathogens
-tree_indexTD <- c(TRUE, TRUE, tree_index)
-TDmatrix <- TDmatrix[,which(tree_indexTD)] # include only trees
 
-# read in and manipulate tree_species_summary
-tree_species_summary <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/578811f02ebd863fefb17d8aaa6a18c212fa6930/doc/TreeDiseaseGuide/tree_species_summary.csv") #pulling in an older version of the table with the original species order
+# read in species concerns status to create tree_species_summary
+tree_species_summary <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/R_results/concern_status.csv") 
+names(tree_species_summary)[names(tree_species_summary) %in% 'spcode'] <- 'Tree.species.code'
+names(tree_species_summary)[names(tree_species_summary) %in% 'IUCN_red_list_status'] <- 'IUCN.status'
 ## fill in numbers of pests/pathogens from matrix
-tree_species_summary$n.FIP<-n_FIP_by_species # this assumes same species order as matrix.csv
-tree_species_summary$n.EFIP<-n_EFIP_by_species # this assumes same species order as matrix.csv
-tree_species_summary$IUCN.status<-tree_sp_ecology$IUCN_red_list_status # this assumes same species order as SCBI_ForestGEO_sp_ecology.csv
-## merge with mortality_rate data frame, then rearrange and delete unwanted columns. THIS REORDERS THE TABLE, WHICH CREATES PROBLEMS
-tree_species_summary <- merge(tree_species_summary, mortality_rate_by_species_latest, by = "Tree.species.code", all.x = TRUE)  # merge tables
-tree_species_summary$n.living <- tree_species_summary$n_latest # put n_latest in desired column
-tree_species_summary = subset(tree_species_summary, select = -c(9:17) )  # remove columns from mortality_rate_by_species_latest
+tree_species_summary$n.FIP<-n_FIP_by_species[match(tree_species_summary$Tree.species.code, names(n_FIP_by_species))] # this assumes same species order as matrix.csv
+tree_species_summary$n.EFIP<-n_EFIP_by_species[match(tree_species_summary$Tree.species.code, names(n_EFIP_by_species))]  # this assumes same species order as matrix.csv
+
+## merge with mortality_rate data frame, then rearrange and delete unwanted columns. 
+tree_species_summary <- cbind(tree_species_summary, mortality_rate_by_species_latest[match(tree_species_summary$Tree.species.code, mortality_rate_by_species_latest$Tree.species.code),])  # merge tables
+
 ## fill in overall concern level based on other fields
-tree_species_summary$overall[] <- NA # clear previous entries
+tree_species_summary$overall <- NA 
 #1. If IUCN Red List status was anything other than "Least Concern", the species was flagged as high concern
-tree_species_summary$overall[which(tree_species_summary$IUCN.status != "Least concern") ] <- "H"
+tree_species_summary$overall[!tree_species_summary$IUCN.status %in% "Least concern" ] <- "H"
+
 #2. If an exotic pest or disease with high / moderate lethality was known to be present in region, any species affected by that pest/ disease was flagged as H/M concern.
   #This one would be more complicated to code, as it would require creating a field on pest/disease lethality. For now, I'll implement a manual patch (see #5 below)
-tree_species_summary$overall[which(tree_species_summary$Tree.species.code != "chvi") ] <- "H"
+tree_species_summary$overall[!tree_species_summary$Tree.species.code %in% "chvi" ] <- "H"
+
 #3. If either mortality rate or AU concern level was M or H, overall concern was assigned to match the highest concern level, but lowered one level in the case of species with <50 individuals in the plot and only one M or H ranking.
-tree_species_summary$overall[which((tree_species_summary$IUCN.status == "Least concern" | is.na(tree_species_summary$IUCN.status)==1) & (tree_species_summary$mortality.rates == "H" | tree_species_summary$AU.status == "H") & tree_species_summary$n.living >= 50) ] <- "H"
-tree_species_summary$overall[which((tree_species_summary$IUCN.status == "Least concern" | is.na(tree_species_summary$IUCN.status)==1) & (tree_species_summary$mortality.rates == "H" | tree_species_summary$AU.status == "H") & tree_species_summary$n.living < 50) ] <- "M"
-tree_species_summary$overall[which((tree_species_summary$IUCN.status == "Least concern" | is.na(tree_species_summary$IUCN.status)==1) & (tree_species_summary$mortality.rates == "M" & tree_species_summary$AU.status != "H") | (tree_species_summary$AU.status == "M" & tree_species_summary$mortality.rates != "H")  & tree_species_summary$n.living >= 50) ] <- "M"
-tree_species_summary$overall[which((tree_species_summary$IUCN.status == "Least concern" | is.na(tree_species_summary$IUCN.status)==1) & (tree_species_summary$mortality.rates == "M" & tree_species_summary$AU.status != "H") | (tree_species_summary$AU.status == "M" & tree_species_summary$mortality.rates != "H")  & tree_species_summary$n.living < 50) ] <- "L"
+tree_species_summary$overall[which((tree_species_summary$IUCN.status %in% "Least concern" | is.na(tree_species_summary$IUCN.status)) & (tree_species_summary$mortality_status %in% "H" | tree_species_summary$AU_status %in% "H") & tree_species_summary$n.living >= 50) ] <- "H"
+
+tree_species_summary$overall[which((tree_species_summary$IUCN.status == "Least concern" | is.na(tree_species_summary$IUCN.status)) & (tree_species_summary$mortality_status == "H" | tree_species_summary$AU_status == "H") & tree_species_summary$n.living < 50) ] <- "M"
+
+tree_species_summary$overall[which((tree_species_summary$IUCN.status == "Least concern" | is.na(tree_species_summary$IUCN.status)) & (tree_species_summary$mortality_status == "M" & tree_species_summary$AU_status != "H") | (tree_species_summary$AU_status == "M" & tree_species_summary$mortality_status != "H")  & tree_species_summary$n.living >= 50) ] <- "M"
+
+tree_species_summary$overall[which((tree_species_summary$IUCN.status == "Least concern" | is.na(tree_species_summary$IUCN.status)) & (tree_species_summary$mortality_status == "M" & tree_species_summary$AU_status != "H") | (tree_species_summary$AU_status == "M" & tree_species_summary$mortality_status != "H")  & tree_species_summary$n.living < 50) ] <- "L"
+
 #4. If IUCN Red List status was anything other than "Least Concern", there were no known highly lethal exotic pests or diseases present, and both mortality and AU concern levels were low, the species was flagged as low concern.
-tree_species_summary$overall[which((tree_species_summary$IUCN.status == "Least concern" | is.na(tree_species_summary$IUCN.status)==1) & tree_species_summary$mortality.rates == "L" & tree_species_summary$AU.status == "L") ] <- "L"
+tree_species_summary$overall[which((tree_species_summary$IUCN.status == "Least concern" | is.na(tree_species_summary$IUCN.status)) & tree_species_summary$mortality_status == "L" & tree_species_summary$AU_status == "L") ] <- "L"
+
 #5. Manual patches
 tree_species_summary$overall[which(tree_species_summary$Tree.species.code == "chvi") ] <- "H"
+
+
+# keep only columns we want and in specific order
+tree_species_summary = tree_species_summary [, c("Tree.species.code", "life_form", "IUCN.status","n.living","n.FIP","n.EFIP","mortality_status","AU_status","overall")] 
+
 ## save latest version
 write.csv(tree_species_summary, "tree_species_summary.csv", row.names = FALSE) # re-save file with latest numbers
+
 ## pare down table to include only trees for presentation in this document
-tree_species_summary <- tree_species_summary [which(tree_index),] # include only trees
+tree_species_summary <- tree_species_summary[tree_species_summary$life_form %in% "tree",]# include only trees
+tree_species_summary$life_form <- NULL
 ```
 
 # Introduction
@@ -92,7 +105,7 @@ Overall concern level was determined as follows:
 **Table 1. Summary of the health/ mortality status of all tree species in the SCBI ForestGEO plot.** Included is IUCN status, n of living individuals $\ge$ 10 cm DBH in the SCBI ForestGEO plot, numbers of known species of forest insects or pathogens (FIP) and exotic FIP (EFIP) affecting the species, levels of concern based on mortality rates and "alive-unhealthy" (AU) status, and overall level of concern based on these metrics. Codes: H = high, M = moderate; L = low. Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
 ```{r tree_species_summary , echo=FALSE}
 
-names(tree_species_summary) <- stringr::str_replace_all(names(tree_species_summary), "\\.", " ")
+names(tree_species_summary) <- stringr::str_replace_all(names(tree_species_summary), "\\.|_", " ")
 tree_species_summary[is.na(tree_species_summary)]<- "" #replace NAs with blanks
 
 library(knitr)
