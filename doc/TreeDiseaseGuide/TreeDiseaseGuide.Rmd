@@ -33,17 +33,24 @@ tree_indexTD <- c(TRUE, TRUE, tree_index)
 TDmatrix <- TDmatrix[,which(tree_indexTD)] # include only trees
 
 # read in and manipulate tree_species_summary
-tree_species_summary <- read.csv("tree_species_summary.csv")
-## merge with mortality_rate data frame, then rearrange and delete unwanted columns
-tree_species_summary <- merge(tree_species_summary, mortality_rate_by_species_latest, by = "Tree.species.code", all.x = TRUE)  # merge tables
-tree_species_summary[,3] <- tree_species_summary$n_latest # put n_latest in desired column
-tree_species_summary = subset(tree_species_summary, select = -c(9:17) )  # remove columns from mortality_rate_by_species_latest
-
+tree_species_summary <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/578811f02ebd863fefb17d8aaa6a18c212fa6930/doc/TreeDiseaseGuide/tree_species_summary.csv")
 ## fill in numbers of pests/pathogens from matrix
-tree_species_summary[,4]<-n_FIP_by_species
-tree_species_summary[,5]<-n_EFIP_by_species
-tree_species_summary[,2]<-tree_sp_ecology$IUCN_red_list_status
+tree_species_summary$n.FIP<-n_FIP_by_species
+tree_species_summary$n.EFIP<-n_EFIP_by_species
+tree_species_summary$IUCN.status<-tree_sp_ecology$IUCN_red_list_status
+## merge with mortality_rate data frame, then rearrange and delete unwanted columns. THIS REORDERS THE TABLE
+tree_species_summary <- merge(tree_species_summary, mortality_rate_by_species_latest, by = "Tree.species.code", all.x = TRUE)  # merge tables
+tree_species_summary$n.living <- tree_species_summary$n_latest # put n_latest in desired column
+tree_species_summary = subset(tree_species_summary, select = -c(9:17) )  # remove columns from mortality_rate_by_species_latest
+## fill in overall concern level based on other fields
+#1. If IUCN Red List status was anything other than "Least Concern", the species was flagged as high concern
+tree_species_summary$overall[which(tree_species_summary$IUCN.status != "Least concern") ] <- "H"
+#2. If an exotic pest or disease with high / moderate lethality was known to be present in region, any species affected by that pest/ disease was flagged as H/M concern.
+#3. If either mortality rate or AU concern level was M or H, overall concern was assigned to match the highest concern level, but lowered one level in the case of species with <50 individuals in the plot and only one M or H ranking.
+#4. If IUCN Red List status was anything other than "Least Concern", there were no known highly lethal exotic pests or diseases present, and both mortality and AU concern levels were low, the species was flagged as low concern.
+## save latest version
 write.csv(tree_species_summary, "tree_species_summary.csv", row.names = FALSE) # re-save file with latest numbers
+## pare down table to include only trees for presentation in this document
 tree_species_summary <- tree_species_summary [which(tree_index),] # include only trees
 ```
 
@@ -123,8 +130,8 @@ knitr::kable(TDmatrix1[2:ncol(TDmatrix1)],
   row_spec(1:nrow(TDmatrix1)-1,hline_after=T) %>%
   column_spec(1, width = "5.27cm") %>% 
   column_spec(2:ncol(TDmatrix1), width = ".03cm", border_left = F) %>%
-  column_spec(which(TDconcern_index1=="H"),  color = "red") %>%
-  column_spec(which(TDconcern_index1=="M"),  color = "orange") %>%
+  #column_spec(which(TDconcern_index1=="H"),  color = "red") %>%
+  #column_spec(which(TDconcern_index1=="M"),  color = "orange") %>%
   kable_styling(bootstrap_options = "striped", font_size = 9) %>%
   kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
 
@@ -144,8 +151,8 @@ knitr::kable(TDmatrix2[2:ncol(TDmatrix2)],
   row_spec(1:nrow(TDmatrix2)-1,hline_after=T) %>%
   column_spec(1, width = "5.27cm") %>% 
   column_spec(2:ncol(TDmatrix2), width = ".03cm", border_left = F) %>%
-  column_spec(which(TDconcern_index2=="H"),  color = "red") %>%
-  column_spec(which(TDconcern_index2=="M"),  color = "orange") %>%
+  #column_spec(which(TDconcern_index2=="H"),  color = "red") %>%
+  #column_spec(which(TDconcern_index2=="M"),  color = "orange") %>%
   kable_styling(bootstrap_options = "striped", font_size = 9) %>%
   kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
 
