@@ -88,8 +88,8 @@ table(unhealty_concern_status, useNA = "ifany") # should be no NA
 
 # put every thing together ####
 concern_status <- data.frame(species_list[, c("spcode", "life_form" , "IUCN_red_list_status")], 
-           mortality_concern_status = mortality_concern_status[match(species_list$spcode, names(mortality_concern_status))],
-           unhealty_concern_status = unhealty_concern_status[match(species_list$spcode, names(unhealty_concern_status))])
+           mortality_status = mortality_concern_status[match(species_list$spcode, names(mortality_concern_status))],
+           AU_status = unhealty_concern_status[match(species_list$spcode, names(unhealty_concern_status))])
 
 ## remove when we have NA on the whole line
 concern_status <- concern_status[apply(concern_status[,-c(1:2)], 1, function(x) any(!is.na(x))), ]
