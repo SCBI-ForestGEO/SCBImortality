@@ -18,6 +18,9 @@ tree_index <- tree_sp_ecology$life_form == "tree" | tree_sp_ecology$life_form ==
 
 # read in and pull info from latest mortality census summary
 mortality_by_species<-read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/R_results/mortrates_and_agbmort_by_species.csv")
+mortality_rate_by_species_2021 <- mortality_by_species[ which(mortality_by_species$variable=='mortality_rates' & mortality_by_species$survey_year == 2021),]
+names(mortality_rate_by_species_2021)[names(mortality_rate_by_species_2021) == 'sp'] <- 'Tree.species.code'
+mortality_rate_by_species_2021$n_latest <- mortality_rate_by_species_2021$N0 - mortality_rate_by_species_2021$n_died
   
 # read in and manipulate tree- disease matrix
 TDmatrix <- read.csv("matrix.csv")
@@ -28,6 +31,11 @@ TDmatrix <- TDmatrix[,which(tree_indexTD)] # include only trees
 
 # read in and manipulate tree_species_summary
 tree_species_summary <- read.csv("tree_species_summary.csv")
+## merge with mortality_rate data frame, then rearrange and delete unwanted columns
+tree_species_summary <- merge(tree_species_summary, mortality_rate_by_species_2021, by = "Tree.species.code", all.x = TRUE)  # merge tables
+tree_species_summary[,3] <- tree_species_summary$n_latest # put n_latest in desired column
+tree_species_summary = subset(tree_species_summary, select = -c(9:17) )  # remove columns from mortality_rate_by_species_2021
+
 ## fill in numbers of pests/pathogens from matrix
 tree_species_summary[,4]<-n_FIP_by_species
 tree_species_summary[,5]<-n_EFIP_by_species
