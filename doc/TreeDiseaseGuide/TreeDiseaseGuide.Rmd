@@ -12,15 +12,18 @@ header-includes:  \usepackage{float}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+## latest complete survey
+latest_year = 2021
+
 ## pull tree species ecology from GitHub and for species names, life form, and IUCN status 
 tree_sp_ecology<-read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv")
 tree_index <- tree_sp_ecology$life_form == "tree" | tree_sp_ecology$life_form == "small tree" | tree_sp_ecology$life_form == "shrub or small tree" # index for trees (trees and small trees)
 
 # read in and pull info from latest mortality census summary
 mortality_by_species<-read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/main/R_results/mortrates_and_agbmort_by_species.csv")
-mortality_rate_by_species_2021 <- mortality_by_species[ which(mortality_by_species$variable=='mortality_rates' & mortality_by_species$survey_year == 2021),]
-names(mortality_rate_by_species_2021)[names(mortality_rate_by_species_2021) == 'sp'] <- 'Tree.species.code'
-mortality_rate_by_species_2021$n_latest <- mortality_rate_by_species_2021$N0 - mortality_rate_by_species_2021$n_died
+mortality_rate_by_species_latest <- mortality_by_species[ which(mortality_by_species$variable=='mortality_rates' & mortality_by_species$survey_year == latest_year),]
+names(mortality_rate_by_species_latest)[names(mortality_rate_by_species_latest) == 'sp'] <- 'Tree.species.code'
+mortality_rate_by_species_latest$n_latest <- mortality_rate_by_species_latest$N0 - mortality_rate_by_species_latest$n_died
   
 # read in and manipulate tree- disease matrix
 TDmatrix <- read.csv("matrix.csv")
@@ -32,9 +35,9 @@ TDmatrix <- TDmatrix[,which(tree_indexTD)] # include only trees
 # read in and manipulate tree_species_summary
 tree_species_summary <- read.csv("tree_species_summary.csv")
 ## merge with mortality_rate data frame, then rearrange and delete unwanted columns
-tree_species_summary <- merge(tree_species_summary, mortality_rate_by_species_2021, by = "Tree.species.code", all.x = TRUE)  # merge tables
+tree_species_summary <- merge(tree_species_summary, mortality_rate_by_species_latest, by = "Tree.species.code", all.x = TRUE)  # merge tables
 tree_species_summary[,3] <- tree_species_summary$n_latest # put n_latest in desired column
-tree_species_summary = subset(tree_species_summary, select = -c(9:17) )  # remove columns from mortality_rate_by_species_2021
+tree_species_summary = subset(tree_species_summary, select = -c(9:17) )  # remove columns from mortality_rate_by_species_latest
 
 ## fill in numbers of pests/pathogens from matrix
 tree_species_summary[,4]<-n_FIP_by_species
@@ -80,7 +83,7 @@ library(kableExtra)
 knitr::kable(tree_species_summary,
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE,row.names = F) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
-  add_header_above(c( " "= 5, "2021 concern level"=3 )) %>%
+  add_header_above(c( " "= 5, "current concern level" = 3 )) %>% # paste(as.character(latest_year),"concern level")
   column_spec(1, width = "1cm") %>% 
   column_spec(2, width = "4cm") %>% 
   column_spec(3:8, width = "1.2cm") %>% 
