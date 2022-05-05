@@ -33,12 +33,12 @@ tree_indexTD <- c(TRUE, TRUE, tree_index)
 TDmatrix <- TDmatrix[,which(tree_indexTD)] # include only trees
 
 # read in and manipulate tree_species_summary
-tree_species_summary <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/578811f02ebd863fefb17d8aaa6a18c212fa6930/doc/TreeDiseaseGuide/tree_species_summary.csv")
+tree_species_summary <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/578811f02ebd863fefb17d8aaa6a18c212fa6930/doc/TreeDiseaseGuide/tree_species_summary.csv") #pulling in an older version of the table with the original species order
 ## fill in numbers of pests/pathogens from matrix
-tree_species_summary$n.FIP<-n_FIP_by_species
-tree_species_summary$n.EFIP<-n_EFIP_by_species
-tree_species_summary$IUCN.status<-tree_sp_ecology$IUCN_red_list_status
-## merge with mortality_rate data frame, then rearrange and delete unwanted columns. THIS REORDERS THE TABLE
+tree_species_summary$n.FIP<-n_FIP_by_species # this assumes same species order as matrix.csv
+tree_species_summary$n.EFIP<-n_EFIP_by_species # this assumes same species order as matrix.csv
+tree_species_summary$IUCN.status<-tree_sp_ecology$IUCN_red_list_status # this assumes same species order as SCBI_ForestGEO_sp_ecology.csv
+## merge with mortality_rate data frame, then rearrange and delete unwanted columns. THIS REORDERS THE TABLE, WHICH CREATES PROBLEMS
 tree_species_summary <- merge(tree_species_summary, mortality_rate_by_species_latest, by = "Tree.species.code", all.x = TRUE)  # merge tables
 tree_species_summary$n.living <- tree_species_summary$n_latest # put n_latest in desired column
 tree_species_summary = subset(tree_species_summary, select = -c(9:17) )  # remove columns from mortality_rate_by_species_latest
