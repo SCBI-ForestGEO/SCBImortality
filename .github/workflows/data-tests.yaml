@@ -1,24 +1,24 @@
 # This file determines when GitHub Actions (GA) is triggered and if so what
 # sequence of steps continous integration takes
 
-# When any of these files are modified trigger GAs:
+# When any of these files are modified trigger GAs (except for the ones with a '!'):
 on:
   push:
     paths:
       - 'raw_data/FFF_excel**'
       - '!raw_data/README.md'
-      - 'R_scripts/Generate_reports.R'
-      - 'R_scripts/Generate_warnings.R'
-      - 'R_scripts/Generate_map_of_reports.R'
-      - 'R_scripts/Generate_daily_progress_reports.R'
+      - 'R_scripts/CI_1_Generate_reports.R'
+      - 'R_scripts/CI_2_Generate_warnings.R'
+      - 'R_scripts/CI_3_Generate_map_of_reports.R'
+      - 'R_scripts/CI_4_Generate_daily_progress_reports.R'
   pull_request:
     paths:
       - 'raw_data/FFF_excel**'
       - '!raw_data/README.md'
-      - 'R_scripts/Generate_reports.R'
-      - 'R_scripts/Generate_warnings.R'
-      - 'R_scripts/Generate_map_of_reports.R'
-      - 'R_scripts/Generate_daily_progress_reports.R'
+      - 'R_scripts/CI_1_Generate_reports.R'
+      - 'R_scripts/CI_2_Generate_warnings.R'
+      - 'R_scripts/CI_3_Generate_map_of_reports.R'
+      - 'R_scripts/CI_4_Generate_daily_progress_reports.R'
 
 # Name the workflow as it will appear on GA status page
 # https://github.com/SCBI-ForestGEO/SCBImortality/actions
