@@ -1,55 +1,54 @@
-"spcode","life_form","IUCN_red_list_status","mortality_status","AU_status"
-"acne","tree","Least concern","L","M"
-"acpl","tree","Least concern","L","L"
-"acru","tree","Least concern","L","M"
-"aial","tree",NA,"M","H"
-"amar","small tree","Least concern","H","L"
-"astr","small tree","Least concern","L","L"
-"caca","small tree","Least concern","L","H"
-"caco","tree","Least concern","M","L"
-"cagl","tree","Least concern","L","L"
-"caovl","tree",NA,"L","L"
-"cato","tree","Least concern","L","L"
-"cade","tree","Critically Endangered","L","L"
-"ceoc","tree","Least concern","H","M"
-"ceca","shrub or small tree","Least concern","H","H"
-"chvi","shrub or small tree","Least concern",NA,"H"
-"coal","small tree","Least concern","M","H"
-"cofl","small tree","Least concern","H","H"
-"coam","shrub","Least concern",NA,NA
-"crpr","shrub","Least concern",NA,NA
-"divi","tree","Least concern","L","L"
-"elum","shrub","Least concern",NA,NA
-"fagr","tree","Least concern","L","L"
-"fram","tree","Critically Endangered","H","H"
-"frni","tree","Critically Endangered","H","H"
-"frpe","tree","Critically Endangered","H","H"
-"havi","shrub","Least concern","H","M"
-"ilve","shrub","Least concern",NA,"L"
-"juci","tree","Endangered","M","H"
-"juni","tree","Least concern","L","M"
-"libe","shrub","Least concern","M","L"
-"litu","tree","Least concern","L","L"
-"nysy","tree","Least concern","L","L"
-"pato","tree",NA,"M","L"
-"pipu","tree","Least concern","L","L"
-"pist","tree","Least concern","L","M"
-"pivi","tree","Least concern","M","L"
-"ploc","tree","Least concern","L","M"
-"prav","tree","Least concern","H","M"
-"prse","tree","Least concern","M","L"
-"qual","tree","Least concern","L","H"
-"quco","tree","Least concern","L","H"
-"qufa","tree","Least concern","L","H"
-"qumi","tree","Least concern","H","H"
-"qumu","tree","Least concern",NA,NA
-"qupr","tree","Least concern","H","M"
-"quru","tree","Least concern","L","M"
-"quve","tree","Least concern","H","H"
-"rops","tree","Least concern","H","H"
-"saal","tree","Least concern","H","H"
-"tiam","tree","Least concern","L","L"
-"ulam","tree","Endangered","H","L"
-"ulru","tree","Least concern","H","H"
-"vipr","shrub","Least concern","M","H"
-"vire","shrub","Least concern",NA,NA
+spcode,life_form,IUCN_red_list_status,mortality_status,AU_status
+acne,tree,Least concern,L,M
+acpl,tree,Least concern,L,L
+acru,tree,Least concern,L,M
+aial,tree,NA,M,H
+amar,small tree,Least concern,H,L
+astr,small tree,Least concern,L,L
+caca,small tree,Least concern,L,H
+caco,tree,Least concern,M,L
+cagl,tree,Least concern,L,L
+caovl,tree,NA,L,L
+cato,tree,Least concern,L,L
+cade,tree,Critically Endangered,L,L
+ceoc,tree,Least concern,H,M
+ceca,shrub or small tree,Least concern,H,H
+chvi,shrub or small tree,Least concern,NA,H
+coal,small tree,Least concern,M,H
+cofl,small tree,Least concern,H,H
+coam,shrub,Least concern,NA,NA
+crpr,shrub,Least concern,NA,NA
+divi,tree,Least concern,L,L
+elum,shrub,Least concern,NA,NA
+fagr,tree,Least concern,L,L
+fram,tree,Critically Endangered,H,H
+frni,tree,Critically Endangered,H,H
+frpe,tree,Critically Endangered,H,H
+havi,shrub,Least concern,H,M
+ilve,shrub,Least concern,NA,L
+juci,tree,Endangered,M,H
+juni,tree,Least concern,L,M
+libe,shrub,Least concern,M,L
+litu,tree,Least concern,L,L
+nysy,tree,Least concern,L,L
+pato,tree,NA,M,L
+pipu,tree,Least concern,L,L
+pist,tree,Least concern,L,M
+pivi,tree,Least concern,M,L
+ploc,tree,Least concern,L,M
+prav,tree,Least concern,H,M
+prse,tree,Least concern,M,L
+qual,tree,Least concern,L,H
+quco,tree,Least concern,L,H
+qufa,tree,Least concern,L,H
+qumi,tree,Least concern,H,H
+qupr,tree,Least concern,H,M
+quru,tree,Least concern,L,M
+quve,tree,Least concern,H,H
+rops,tree,Least concern,H,H
+saal,tree,Least concern,H,H
+tiam,tree,Least concern,L,L
+ulam,tree,Endangered,H,L
+ulru,tree,Least concern,H,H
+vipr,shrub,Least concern,M,H
+vire,shrub,Least concern,NA,NA
