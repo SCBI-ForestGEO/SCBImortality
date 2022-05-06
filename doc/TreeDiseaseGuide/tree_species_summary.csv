@@ -16,16 +16,16 @@
 "chvi","shrub or small tree","Least concern",NA,1,1,NA,"H","H"
 "coal","small tree","Least concern",0,1,0,"M","H","M"
 "cofl","small tree","Least concern",13,3,1,"H","H","M"
-"coam","shrub","Least concern",NA,0,0,NA,NA,"H"
-"crpr","shrub","Least concern",NA,0,0,NA,NA,"H"
+"coam","shrub","Least concern",NA,0,0,NA,NA,NA
+"crpr","shrub","Least concern",NA,0,0,NA,NA,NA
 "divi","tree","Least concern",1,0,0,"L","L","L"
-"elum","shrub","Least concern",NA,0,0,NA,NA,"H"
+"elum","shrub","Least concern",NA,0,0,NA,NA,NA
 "fagr","tree","Least concern",343,7,2,"L","L","L"
 "fram","tree","Critically Endangered",125,10,1,"H","H","H"
 "frni","tree","Critically Endangered",2,10,1,"H","H","H"
 "frpe","tree","Critically Endangered",10,9,1,"H","H","H"
 "havi","shrub","Least concern",11,0,0,"H","M","M"
-"ilve","shrub","Least concern",NA,0,0,NA,"L","H"
+"ilve","shrub","Least concern",NA,0,0,NA,"L",NA
 "juci","tree","Endangered",1,4,1,"M","H","H"
 "juni","tree","Least concern",107,4,0,"L","M","M"
 "libe","shrub","Least concern",NA,0,0,"M","L","L"
@@ -42,7 +42,7 @@
 "quco","tree","Least concern",1,13,2,"L","H","M"
 "qufa","tree","Least concern",1,13,2,"L","H","M"
 "qumi","tree","Least concern",2,13,2,"H","H","M"
-"qumu","tree","Least concern",NA,13,2,NA,NA,"H"
+"qumu","tree","Least concern",NA,13,2,NA,NA,NA
 "qupr","tree","Least concern",177,13,2,"H","M","H"
 "quru","tree","Least concern",311,14,2,"L","M","M"
 "quve","tree","Least concern",222,13,2,"H","H","H"
@@ -52,4 +52,4 @@
 "ulam","tree","Endangered",7,12,4,"H","L","H"
 "ulru","tree","Least concern",72,12,4,"H","H","H"
 "vipr","shrub","Least concern",12,0,0,"M","H","M"
-"vire","shrub","Least concern",NA,0,0,NA,NA,"H"
+"vire","shrub","Least concern",NA,0,0,NA,NA,NA
