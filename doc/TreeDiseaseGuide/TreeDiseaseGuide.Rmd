@@ -148,7 +148,7 @@ TDconcern_index2 <- TDconcern_index[c(1,(break_row-1):(ncol(TDmatrix)-2))]
 library(knitr)
 library(kableExtra)
 knitr::kable(TDmatrix1[2:ncol(TDmatrix1)],
-             caption = "Part 1/2: Tree species codes ACNE-FRPE",
+             caption = "Part 1/2: Tree species codes ACNE-JUNI",
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE,row.names = F) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
   row_spec(0, bold = F, angle = 90) %>%
@@ -169,7 +169,7 @@ knitr::kable(TDmatrix1[2:ncol(TDmatrix1)],
 
 
 knitr::kable(TDmatrix2[2:ncol(TDmatrix2)],
-             caption = "Part 2/2: Tree species codes JUCI-ULRU",
+             caption = "Part 2/2: Tree species codes LITU-ULRU",
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE,row.names = F) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
   row_spec(0, bold = F, angle = 90) %>%
