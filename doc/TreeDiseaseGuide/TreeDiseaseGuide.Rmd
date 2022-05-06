@@ -132,7 +132,7 @@ knitr::kable(tree_species_summary,
 ```{r matrix , echo=FALSE}
 
 names(TDmatrix)[2] <- ""
-TDmatrix <- TDmatrix[, c(1,2 which(names(TDmatrix) %in% tree_species_summary$Tree.species.code))] # keep only species shown in table 1
+TDmatrix <- TDmatrix[, c(1,2, which(names(TDmatrix) %in% tree_species_summary$Tree.species.code))] # keep only species shown in table 1
 
 break_row = ceiling((ncol(TDmatrix)-2)/2)
 TDmrowsum1 <- rowSums(TDmatrix[,3:break_row])
