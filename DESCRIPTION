@@ -4,17 +4,17 @@ Description: This is the private data portal for the SCBI ForestGEO plot tree mo
 License: MIT + file LICENSE
 Version: 0.1.0
 Authors@R: c(
-    person(given = "Kristina", family = "Anderson-Teixeira", role = "aut"),
-    person(given = "William", family = "McShea", role = "aut"),
-    person(given = "Erika", family = "Gonzalez-Akre", role = "aut"),
+    person(given = "Kristina", family = "Anderson-Teixeira", role = "aut", email = "teixeirak@si.edu", comment = c(ORCID = "0000-0001-8461-9713")),
+    person(given = "William", family = "McShea", role = "aut", comment = c(ORCID = "0000-0002-8102-0200")),
+    person(given = "Erika", family = "Gonzalez-Akre", role = "aut", comment = c(ORCID = "0000-0001-8305-6672")),
     person(given = "Victoria", family = "Meakem", role = "aut"),
-    person(given = "Ryan", family = "Helcoski", role = "aut"),
-    person(given = "Ian", family = "McGregor", role = "aut"),
+    person(given = "Ryan", family = "Helcoski", role = "aut", comment = c(ORCID = "0000-0003-3579-0121")),
+    person(given = "Ian", family = "McGregor", role = "aut", comment = c(ORCID = "0000-0002-5763-021X")),
     person(given = "Alyssa", family = "Terrell", role = "aut"),
     person(given = c("Albert", "Y."), family = "Kim", role = c("cre", "aut"), email = "albert.ys.kim@gmail.com", comment = c(ORCID = "0000-0001-7824-306X")),
     person(given = c("Valentine"), family = "Herrmann", role = c("aut"), email = "HerrmannV@si.edu", comment = c(ORCID = "0000-0002-4519-481X")),
     person(given = "Nidhi", family = "Vinod", role = "aut"),
-    person(given = "Cameron", family = "Dow", role = "aut"))
+    person(given = "Cameron", family = "Dow", role = "aut"), comment = c(ORCID = "0000-0002-8365-598X"))
 Depends: R (>= 4.0.0)
 Imports: 
     testthat,
