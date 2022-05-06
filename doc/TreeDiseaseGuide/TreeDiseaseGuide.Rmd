@@ -48,7 +48,6 @@ tree_species_summary$overall[!tree_species_summary$IUCN.status %in% "Least conce
 
 #2. If an exotic pest or disease with high / moderate lethality was known to be present in region, any species affected by that pest/ disease was flagged as H/M concern.
   #This one would be more complicated to code, as it would require creating a field on pest/disease lethality. For now, I'll implement a manual patch (see #5 below)
-# tree_species_summary$overall[!tree_species_summary$Tree.species.code %in% "chvi" ] <- "H"
 
 #3. If either mortality rate or AU concern level was M or H, overall concern was assigned to match the highest concern level, but lowered one level in the case of species with <50 individuals in the plot and only one M or H ranking.
 tree_species_summary$overall[which((tree_species_summary$IUCN.status %in% "Least concern" | is.na(tree_species_summary$IUCN.status)) & (tree_species_summary$mortality_status %in% "H" | tree_species_summary$AU_status %in% "H") & tree_species_summary$n.living >= 50) ] <- "H"
@@ -129,10 +128,11 @@ knitr::kable(tree_species_summary,
 \newpage
 # Tree- Disease Matrix
 **Table 2. Matrix of forest insects and pathogens likely to occur at the SCBI ForestGEO plot, and the tree taxa they affect.** Tree species codes are defined in the document [SCBI_ForestGEO_sp_ecology.csv](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv).
+
 ```{r matrix , echo=FALSE}
 
-names(TDmatrix)[2] <- ""
-TDmatrix <- TDmatrix[, c(1,2, which(names(TDmatrix) %in% tree_species_summary$Tree.species.code))] # keep only species shown in table 1
+colnames(TDmatrix)[2] <- ""
+TDmatrix <- TDmatrix[, c(1,2, which(colnames(TDmatrix) %in% tree_species_summary$`Tree species code`))] # keep only species shown in table 1
 
 break_row = ceiling((ncol(TDmatrix)-2)/2)
 TDmrowsum1 <- rowSums(TDmatrix[,3:break_row])
