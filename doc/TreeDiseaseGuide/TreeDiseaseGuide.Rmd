@@ -80,24 +80,13 @@ tree_species_summary$life_form <- NULL
 
 The aim of this guide is to identify tree species of concern within the SCBI ForestGEO plot, and the diseases that are most likely to affect them, so that we can properly identify the causes of decline.
 
-# Methods & Definitions
+This is designed as a field resource for our **Annual Tree Health & Mortality Census**, with the material likely to be most heavily referenced up front. 
+Methods are explained at the end.
 
-## Tree species concern levels
+# Using this guide
 
-We assigned concern levels -- high (H), moderate (M), or low (L) -- to each tree species based on results of the SCBI ForestGEO mortality census, IUCN status, and the presence and lethally of pest and pathogen species.
-
-Concern level based on observed tree mortality rates alone was defined as follows:
-
-Concern level based on the fraction of alive but unhealthy ("AU" status) trees observed in the latest census was defined as follows:
-
-Overall concern level was determined as follows:
-
-1. If IUCN Red List status was anything other than "Least Concern", the species was flagged as high concern
-2. If an exotic pest or disease with high / moderate lethality was known to be present in region, any species affected by that pest/ disease was flagged as H/M concern.
-3. If either mortality rate or AU concern level was M or H, overall concern was assigned to match the highest concern level, but lowered one level in the case of species with <50 individuals in the plot and only one M or H ranking.
-4. If IUCN Red List status was anything other than "Least Concern", there were no known highly lethal exotic pests or diseases present, and both mortality and AU concern levels were low, the species was flagged as low concern.
-
-## Identifying tree species - disease pairs
+1. Prior to beginning the census, technicians should familiarize themselves with the overall concern levels of the tree species in the plot (Table 1) and, ideally, familiarize themselves with the most common forest insects and diseases affecting species of moderate or high concern. We hope to add images to this guide, but in the meantime, please refer to the [*Tree and Forest Health Guide* of the Virginia Department of Forestry](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/doc/Protocols/Visual%20guides/Tree-and-Forest-Health-Guide.pdf). Memorizing the concern level of for common species will make the census process faster, as will knowing common signs of insects/ disease on high or moderate concern level species.
+2. In the field, check the concern level of each species you census (Table 1). If the species is of high or moderate concern and is AU or dead, refer to Table 2 to identify insects and diseases affecting the species. Then refer to the [*Tree and Forest Health Guide* of the Virginia Department of Forestry](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/doc/Protocols/Visual%20guides/Tree-and-Forest-Health-Guide.pdf) for symptoms of these causes.
 
 \newpage
 # Tree Species of Concern
@@ -187,9 +176,10 @@ knitr::kable(TDmatrix2[2:ncol(TDmatrix2)],
 
 \newpage
 # Pictoral guide to most important pests & diseases
+This is in progress. A complete guide is the [*Tree and Forest Health Guide* of the Virginia Department of Forestry](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/doc/Protocols/Visual%20guides/Tree-and-Forest-Health-Guide.pdf)
 
 ## Insect pests
-*(these should be arranged logically. My preference would be to organize by type (categories below, from Tree-and-Forest-Health-Guide.pdf), then alphabetically. To make this work, we'll need to insert a column with type in the matrix)*
+
 
 ### Sapsuckers
 ### Defoliators
@@ -204,3 +194,48 @@ knitr::kable(TDmatrix2[2:ncol(TDmatrix2)],
 ### Cankers
 ### Foliage
 ### Vascular
+
+\newpage
+# Methods & Definitions
+
+## Tree species concern levels
+
+We assigned concern levels -- high (H), moderate (M), or low (L) -- to each tree species based on results of the SCBI ForestGEO mortality census, IUCN status, and the presence and lethally of pest and pathogen species.
+
+### Concern level based on observed tree mortality rates
+
+*High concern:*
+
+- mortality rate $\ge$ 5 % yr^-1^ in more than one year, OR...
+- dominant species ($\ge$ 100 individuals of DBH $\ge$ 10 cm) with an overall increasing trend and $\ge$ 5 % yr^-1^ in the most recent year (2021)
+
+*Moderate concern:*
+
+- mortality rate $\ge$ 5 % yr^-1^ in only one year (but does not meet high concern criteria of dominant species with increasing trend)
+
+*Low concern:*
+
+- mortality rate < 5 % yr^-1^ in all census years
+
+### Concern level based on the fraction of alive but unhealthy ("AU" status) trees observed in the latest census 
+
+*High concern:* 
+
+- $\ge$ 20% of living trees were unhealthy in the latest census.
+
+*Moderate concern:*
+
+- $\ge$ 10% (but <20%) of living trees were unhealthy in the latest census.
+
+*Low concern:*
+
+- <10% of living trees were unhealthy in the latest census.
+
+### Overall concern level 
+
+- If IUCN Red List status was anything other than "Least Concern", the species was flagged as high concern
+- If an exotic pest or disease with high / moderate lethality was known to be present in region, any species affected by that pest/ disease was flagged as H/M concern. *(Note: we have not yet set up the data/ code infrastructure for this, but rather adjusted individual species as appropriate.)*
+- If either mortality rate or AU concern level was M or H, overall concern was assigned to match the highest concern level, but lowered one level in the case of species with <50 individuals in the plot and only one M or H ranking.
+- If IUCN Red List status was anything other than "Least Concern", there were no known highly lethal exotic pests or diseases present, and both mortality and AU concern levels were low, the species was flagged as low concern.
+
+## Identifying tree species - disease pairs
