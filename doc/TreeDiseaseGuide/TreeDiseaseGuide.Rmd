@@ -176,17 +176,24 @@ knitr::kable(TDmatrix2[2:ncol(TDmatrix2)],
 
 \newpage
 # Pictoral guide to most important pests & diseases
-This is in progress. A complete guide is the [*Tree and Forest Health Guide* of the Virginia Department of Forestry](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/doc/Protocols/Visual%20guides/Tree-and-Forest-Health-Guide.pdf)
+This is in progress. A complete guide is the [*Tree and Forest Health Guide* of the Virginia Department of Forestry](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/doc/Protocols/Visual%20guides/Tree-and-Forest-Health-Guide.pdf).
 
 ## Insect pests
 
 
-### Sapsuckers
+### Phloem feeders (Sapsuckers)
+Phloem feeders pierce plant tissues to access nutrient-rich phloem sap. 
+They are often quite small (e.g., adelgids, aphids, scale insects) but can be larger (e.g., cicadas, spotted lanternfly, brown marmorated stink bug).
+They are mostly in the insect order Hemiptera, including aphids, planthoppers, leafhoppers, treehoppers, whiteflies, cicadas, spittlebugs, scale insects, and shield bugs [@jiang_challenging_2019].
+Damage can range from negligible to mortality.
+They can transmit / enable bacterial or fungal infections.
+
+#### *Spotted Lanternfly* 
+
 ### Defoliators
 ### Root/Shoot/Twig Insects
 ### Bark Beetles/ Wood Borers
-#### (insect species )
-*(insert brief description of symptoms to look for, pictures)*
+
 
 ## Diseases 
 ### Rusts
