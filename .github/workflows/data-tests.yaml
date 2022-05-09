@@ -77,7 +77,7 @@ jobs:
           source("R_scripts/CI_3_Generate_map_of_reports.R")
         shell: Rscript {0}
         
-      # Run R script to generate map of reports:        
+      # Run R script to generate daily progress reports:        
       - name: Generate daily progress reports
         id: Generate_daily_progress_reports
         run: |
