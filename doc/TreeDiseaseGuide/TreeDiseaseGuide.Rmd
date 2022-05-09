@@ -26,8 +26,9 @@ names(mortality_rate_by_species_latest)[names(mortality_rate_by_species_latest) 
 mortality_rate_by_species_latest$n.living <- mortality_rate_by_species_latest$N0 - mortality_rate_by_species_latest$n_died
   
 # read in and manipulate tree- disease matrix
-n_extra_cols <- 3 # number of columns ahead of pest species name in TDmatrix
+n_extra_cols <- 5 # number of columns ahead of pest species name in TDmatrix
 TDmatrix <- read.csv("matrix.csv")
+TDmatrix <- TDmatrix[!(TDmatrix$currently.in.region==0 ),] # remove insects & diseases not currently in region
 n_FIP_by_species <- colSums (TDmatrix[(n_extra_cols+2):ncol(TDmatrix)], na.rm = FALSE, dims = 1) #number of forest insects & pathogens
 n_EFIP_by_species <- colSums (TDmatrix[which(TDmatrix$exotic==1),(n_extra_cols+2):ncol(TDmatrix)], na.rm = FALSE, dims = 1) #number of exotic forest insects & pathogens
 
@@ -73,7 +74,7 @@ tree_species_summary = tree_species_summary [, c("Tree.species.code", "life_form
 write.csv(tree_species_summary, "tree_species_summary.csv", row.names = FALSE) # re-save file with latest numbers
 
 ## pare down table to include only trees for presentation in this document
-tree_species_summary <- tree_species_summary[tree_species_summary$life_form %in% "tree",]# include only trees
+tree_species_summary <- tree_species_summary[(tree_species_summary$life_form %in% "tree" || tree_species_summary$life_form %in% "small tree"),]# include only trees
 tree_species_summary$life_form <- NULL
 ```
 
@@ -139,17 +140,17 @@ TDconcern_index2 <- c("",TDconcern_index[(break_row - n_extra_cols):ncol(TDmatri
 library(knitr)
 library(kableExtra)
 knitr::kable(TDmatrix1[(n_extra_cols+1):ncol(TDmatrix1)],
-             caption = "Part 1/2: Tree species codes ACNE-NYSY",
+             caption = "Part 1/2: Tree species codes ACNE-LIVE",
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE,row.names = F) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
   row_spec(0, bold = F, angle = 90) %>%
   row_spec(which(TDmatrix1$exotic==1), bold = TRUE) %>%
   row_spec(1:nrow(TDmatrix1)-1,hline_after=T) %>%
-  column_spec(1, width = "5.27cm") %>% 
-  column_spec(2:ncol(TDmatrix1), width = ".03cm", border_left = F) %>%
+  column_spec(1, width = "3.5cm") %>% 
+  column_spec(2:ncol(TDmatrix1), width = ".02cm", border_left = F) %>%
   column_spec(which(TDconcern_index1=="H"),  color = "red") %>%
   column_spec(which(TDconcern_index1=="M"),  color = "orange") %>%
-  kable_styling(bootstrap_options = "striped", font_size = 9) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 7) %>%
   kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
 
 
@@ -160,17 +161,17 @@ knitr::kable(TDmatrix1[(n_extra_cols+1):ncol(TDmatrix1)],
 
 
 knitr::kable(TDmatrix2[(n_extra_cols+1):ncol(TDmatrix2)],
-             caption = "Part 2/2: Tree species codes PATO-ULRU",
+             caption = "Part 2/2: Tree species codes JUCI-VIRE",
              format = "latex", booktabs = TRUE,  escape = F, longtable = TRUE,row.names = F) %>%
   kableExtra::kable_styling(full_width = TRUE, latex_options=c("repeat_header")) %>%
   row_spec(0, bold = F, angle = 90) %>%
   row_spec(which(TDmatrix2$exotic==1), bold = TRUE) %>%
   row_spec(1:nrow(TDmatrix2)-1,hline_after=T) %>%
-  column_spec(1, width = "5.27cm") %>% 
-  column_spec(2:ncol(TDmatrix2), width = ".03cm", border_left = F) %>%
+  column_spec(1, width = "3.5cm") %>% 
+  column_spec(2:ncol(TDmatrix2), width = ".02cm", border_left = F) %>%
   column_spec(which(TDconcern_index2=="H"),  color = "red") %>%
   column_spec(which(TDconcern_index2=="M"),  color = "orange") %>%
-  kable_styling(bootstrap_options = "striped", font_size = 9) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 7) %>%
   kable_styling(latex_options = c("scale_down", "hold_position"), protect_latex = T) 
 
   
