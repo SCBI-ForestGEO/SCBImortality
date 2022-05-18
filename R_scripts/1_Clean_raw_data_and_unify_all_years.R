@@ -39,7 +39,7 @@ f = "scbi.spptable"
 assign(f, read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/", f, ".csv")))
 
 
-### bring in table that unifies the colomn names across years ####
+### bring in table that unifies the column names across years ####
 unified_colnames <-  read.csv("raw_data/standardizing_colnames.csv")
 
 
