@@ -53,3 +53,5 @@ ID,issue_name,survey_years_to_apply_fix,fix,description_of_issue
 }",
 20,status 92465,c(2016),"mort$current_year_status[mort$tag %in% 92465] <- ""PD""",
 21,status 40853,c(2016),"mort$current_year_status[mort$tag %in% 40853 & mort$last_main_census_dbh %in% 297.5] <- ""AU""",
+22,"Trees marked dead found live when coring seee issue
+#60",c(2021),"mort$current_year_status[mort$tag %in% c(""150756"", ""60024"", ""120261"", ""80355"", ""70237"")] <- ""AU""",
