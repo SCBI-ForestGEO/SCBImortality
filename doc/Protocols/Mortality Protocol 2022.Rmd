@@ -93,7 +93,7 @@ Avoid giving a tree the DN status; you need to do a thorough search for all tree
 (6)	Record liana load*. 
 *record this information for remote sensing/crown delineation purposes 
 
-*If the status is “DC” & previously “DS”*: Record status and continue. 
+*If the status is “DC” & previously “DS” or "DC"*: Record status and continue. 
 
 ### --Additional Fields--
 #### *DWR* (Dead with resprouts)
@@ -134,7 +134,7 @@ This angle is measured in degrees from the base through the POM
 
 ![Lean angle (Taken from Arellano et al., 2020)](figures_tables/Tree_angle.png){ width=20% } 
 
-#### *Liana load (levels: 0 – 4)*
+#### *Liana load in tree crown (levels: 0 – 4)*
 **0** = lianas absent *from tree crown* (category includes trees with lianas present only on trunk)
 **1** = up to 25% of the tree crown covered by lianas 
 **2** = 26–50% liana cover 
@@ -147,20 +147,23 @@ This angle is measured in degrees from the base through the POM
 - For tree conditions or agents of mortality not specifically defined below, record diagnosis in the notes or comments section of the form. 
 
 #### *Wounded main axis (levels: 1 = small, 2 = large, 3 = massive)*
-**1** = small damage, smaller in area than a square of DBH **(SC)** DBH in shape.
-**2** = large damage, greater in area than a square of DBH **(SC)** DBH in shape.
+Size of wound on main trunk.
+**1** = small damage, smaller in area than a square of DBH $\times$ DBH in shape.
+**2** = large damage, greater in area than a square of DBH $\times$ DBH in shape.
 **3** = massive damage, affecting >50% of the basal area (i.e., a very deep and extensive wound) or >50% of the living length. These are cases of main stem breakage in which the breakage is not complete and the broken part is still connected and alive, and trunks that have been longitudinally split in two.
 
 ![Schematic of wound size (taken from Arellano et al., 2020)](figures_tables/Woundsize.png){ width=50% } 
 
-#### *Canker, swelling, deformity (levels: 1 = small, 2 = large, 3 = massive)*
-**1** = small canker/ deformity area, smaller in area than a square of DBH **(SC)** DBH in shape.
-**2**= big canker/ deformity, greater in area than a square of DBH **(SC)** DBH in shape.
+#### *Swelling, deformity (levels: 1 = small, 2 = large, 3 = massive)*
+Size of patch of swelling/deformity on trunk. Note: swelling or deformity is commonly caused by a canker. 
+**1** = small canker/ deformity area, smaller in area than a square of DBH $\times$ DBH in shape.
+**2**= big canker/ deformity, greater in area than a square of DBH $\times$ DBH in shape.
 **3** = massive deformity or canker, greater than >50% of the basal area or >50% of the main axis length.
 
 #### *Rotting trunk (levels: 1 = small, 2 = large, 3 = massive)*
-**1** = small rotting area, smaller in area than a square of DBH **(SC)** DBH in shape.
-**2** = big rotting area, greater in area than a square of DBH **(SC)** DBH in shape.
+Size of patch of rot (hollow) on/ in trunk. This may be caused by a canker/ fungal infection. 
+**1** = small rotting area, smaller in area than a square of DBH $\times$ DBH in shape.
+**2** = big rotting area, greater in area than a square of DBH $\times$ DBH in shape.
 **3** = massive rotting, affecting >50% of the basal area or >50% of the main axis length.
 
 #### *Notes*
