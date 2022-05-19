@@ -146,6 +146,29 @@ This angle is measured in degrees from the base through the POM
 - To scrutinize the FAD’s, look at our [Tree Disease Guide](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/doc/TreeDiseaseGuide/TreeDiseaseGuide.pdf) and [Visual Guides](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/Protocols/Visual%20guides/Tree%20Mortality%20Guide_2020.pdf).
 - For tree conditions or agents of mortality not specifically defined below, record diagnosis in the notes or comments section of the form. 
 
+FAD list : 
+**Broken stem** -
+**Crushed by other tree** -
+**Uprooted tree** -
+**Slope Failure** -
+**Lightning** -
+**Fire** -
+**Animal damage** -
+**Bark Beetles** -
+**Insect infection** -
+**Defoliation** -
+**Fungi visible** -
+**Canker swelling** -
+**Leaf damage** -
+**Rotting stem** -
+**Root damage** -
+**Armillaria root disease** -
+**Unable to determine** -
+**Wound** -
+**Overtopping** -
+**Hollow stem** -
+
+
 #### *Wounded main axis (levels: 1 = small, 2 = large, 3 = massive)*
 Size of wound on main trunk.
 **1** = small damage, smaller in area than a square of DBH $\times$ DBH in shape.
@@ -176,7 +199,6 @@ Record any relevant info for which there's no place in the form:
 #### *Take photos*
 Take a picture of every unhealthy or dead tree found. Include photos of all factors associated with death (FADs). Make nice close-ups if any insect or insect galleries are found. 
 
-\newpage
 
 ### Emerald Ash Borer Add-ons
 
