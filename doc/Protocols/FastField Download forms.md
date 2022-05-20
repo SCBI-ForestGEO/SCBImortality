@@ -2,7 +2,7 @@
 
 ## 1. Log into FastFieldForms
 URL: https://manage.fastfieldforms.com/Account/Login
-see [this](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/Protocols/FastField%20setup.md) if you need help to setup. 
+see [this](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/doc/Protocols/iPad%20%26%20FastField%20setup.md) if you need help to setup. 
 
 ## 2.Go to `Submissions`
 Make sure you are in the NEW portal. 
