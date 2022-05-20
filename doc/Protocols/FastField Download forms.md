@@ -7,7 +7,7 @@ see [this](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/Protocols/F
 ## 2.Go to `Submissions`
 Make sure you are in the NEW portal. 
 
-## 3. Highlight all the forms
+## 3. Highlight all the forms for the current year
 
 ## 4. click on `Download` and chose `Excel`
 
