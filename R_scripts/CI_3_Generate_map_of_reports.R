@@ -11,7 +11,7 @@ library(rgdal)
 library(readxl)
 
 # load map of quadrats ####
-quadrats <- rgdal::readOGR(file.path(here(""),"maps/20m_grid/20m_grid.shp"))
+quadrats <- rgdal::readOGR(file.path(here(""),"doc/maps/20m_grid/20m_grid.shp"))
 
 # load latest mortality data ####
 

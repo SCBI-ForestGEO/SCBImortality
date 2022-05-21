@@ -403,7 +403,7 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_canker <- !is.na(mort$FAD) & grepl("K", mort$FAD)
-idx_ckr_level <- !is.na(mort$'canker,swelling,deformity')
+idx_ckr_level <- !is.na(mort$'Canker; swelling, deformity')
 
 
 idx_errors <- idx_trees & idx_canker & !idx_ckr_level
@@ -421,7 +421,7 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_canker <- !is.na(mort$FAD) & grepl("K", mort$FAD)
-idx_ckr_level <- !is.na(mort$'canker,swelling,deformity')
+idx_ckr_level <- !is.na(mort$'Canker; swelling, deformity')
 
 
 idx_errors <- (!idx_trees & !idx_canker) & idx_ckr_level
@@ -439,7 +439,7 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_rot <- !is.na(mort$FAD) & grepl("R\\>", mort$FAD)
-idx_rot_level <- !is.na(mort$'rotting main stem')
+idx_rot_level <- !is.na(mort$'Rotting trunk')
 
 
 idx_errors <- idx_trees & idx_rot & !idx_rot_level
@@ -456,7 +456,7 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_rot <- !is.na(mort$FAD) & grepl("R\\>", mort$FAD)
-idx_rot_level <- !is.na(mort$'rotting main stem')
+idx_rot_level <- !is.na(mort$'Rotting trunk')
 
 
 idx_errors <- (!idx_trees & !idx_rot) & idx_rot_level
@@ -555,7 +555,7 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
-idx_epicormic <- !is.na(mort$`Epicormic growth`) & mort$`Epicormic growth` > 0
+idx_epicormic <- !is.na(mort$`Epicormic growth`) & mort$'Epicormic growth' > 0
 idx_status <- mort[, status_column] %in% c("AU")
 
 
@@ -572,7 +572,7 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
-idx_crown <- !is.na(mort$`Crown thinning`) & mort$`Crown thinning` > 1
+idx_crown <- !is.na(mort$'Crown thinning') & mort$'Crown thinning' > 1
 idx_status <- mort[, status_column] %in% c("A")
 
 
@@ -607,7 +607,7 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
-idx_exit_hole <- mort$`D-shaped exit hole count` > 0 & !is.na(mort$`D-shaped exit hole count`)
+idx_exit_hole <- mort$'D-shaped exit hole count' > 0 & !is.na(mort$'D-shaped exit hole count')
 idx_status <- mort[, status_column] %in% c("A")
 
 
@@ -626,7 +626,7 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
-idx_epicormic <- !is.na(mort$`Epicormic growth`) & mort$`Epicormic growth` > 0
+idx_epicormic <- !is.na(mort$'Epicormic growth') & mort$'Epicormic growth' > 0
 idx_status <- !mort[, status_column] %in% c("A", "AU")
 idx_previously_dead <- idx_previously_dead <- grepl("D", mort[,previous_status_column]) & !is.na(mort[,previous_status_column])
 
@@ -645,7 +645,7 @@ status_column <- rev(grep("Status", names(mort), value = T))[1]
 previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
-idx_crown <- !is.na(mort$`Crown thinning`) & mort$`Crown thinning` <5
+idx_crown <- !is.na(mort$'Crown thinning') & mort$'Crown thinning' <5
 idx_status <- !mort[, status_column] %in% c("A", "AU")
 idx_previously_dead <- grepl("D", mort[,previous_status_column]) & !is.na(mort[,previous_status_column])
 
@@ -672,7 +672,7 @@ require_field_fix_error_file <- require_field_fix_error_file[order(as.numeric(re
 
 will_auto_fix_error_file <- will_auto_fix_error_file[order(will_auto_fix_error_file$Quad, will_auto_fix_error_file$Tag, will_auto_fix_error_file$StemTag),]
 
-warning_file <- warning_file[order(warning_file$Quad, warning_file$Tag, warning_file$StemTag),]
+if(!is.null(warning_file)) warning_file <- warning_file[order(warning_file$Quad, warning_file$Tag, warning_file$StemTag),]
 
 
 # if errors/warnings exist save, else delete
@@ -711,7 +711,8 @@ if(!is.null(will_auto_fix_error_file) & nrow(will_auto_fix_error_file) > 0) {
 }
 
 
-if(!is.null(warning_file) & nrow(warning_file)>0) {
+if(!is.null(warning_file)) {
+   if (nrow(warning_file)>0) {
   write.csv(
     warning_file[, c(ncol(warning_file), 1:(ncol(warning_file) -1))], 
     file = file.path(here("testthat"), "reports/warnings/warnings_file.csv"), 
@@ -722,7 +723,7 @@ if(!is.null(warning_file) & nrow(warning_file)>0) {
 } else {
   if(file.exists(file.path(here("testthat"), "reports/warnings/warnings_file.csv"))) file.remove(file.path(here("testthat"), "reports/warnings/warnings_file.csv"))
   
-
+}
 }
 
 
