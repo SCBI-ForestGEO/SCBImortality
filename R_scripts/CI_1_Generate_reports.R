@@ -143,11 +143,11 @@ filename <- file.path(here("testthat"), "reports/will_auto_fix/quadrat_censused_
 idx_errors <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$StemTag))]
 
 
-if(length(idx_errors) > 0) {
+# if(length(idx_errors) > 0) {
   write.csv(mort[paste(mort$Tag, mort$StemTag) %in% idx_errors, ], file = filename, row.names = F)
-} else {
-  if(file.exists(filename) ) file.remove(filename)
-}
+# } else {
+#   if(file.exists(filename) ) file.remove(filename)
+# }
 
 
 
