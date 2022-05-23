@@ -158,7 +158,7 @@ date_range <- c(
   # Earliest census date
   min(stems_censused_per_day$date_time),
   # Lastest weekly cummulative summary date
-  max(error_rates$date_time)
+  max(stems_censused_per_day$date_time)
 )
 date_breaks <- seq.Date(
   from = date_range[1], 
