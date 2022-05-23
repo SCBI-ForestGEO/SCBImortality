@@ -139,13 +139,12 @@ error_rates <-
   # Aggregate by week: round up using ceiling_date
   mutate(date_time = ceiling_date(date_time, "week")) %>% 
   group_by(date_time, error_type) %>% 
-  summarize(n_errors = sum(n_errors), n_stems = sum(n_stems)) %>% 
-  # Compute error rate
+  summarize(n_errors = sum(n_errors, na.rm = TRUE), n_stems = sum(n_stems)) %>% 
+  # Compute error rate (filling in with 0's where necessary)
   mutate(errors_per_stem = n_errors / n_stems) %>%
   ungroup() %>% 
-  complete(date_time, error_type) %>%
-  filter(!is.na(error_type)) %>%
-  replace(is.na(.), 0) 
+  complete(date_time, error_type, fill = list(errors_per_stem = 0)) %>% 
+  filter(!is.na(error_type))
 
 
 
@@ -165,6 +164,9 @@ date_breaks <- seq.Date(
 ) %>% 
   ceiling_date("week") %>% 
   unique()
+if(length(date_breaks) == 1){
+  date_breaks <- c(date_range[1], date_breaks)
+}
 
 
 ## Daily new stems censused -----
@@ -176,6 +178,9 @@ census_rate_plot <- stems_censused_per_day %>%
   labs(
     x = "Census date", y = "# of new stems censused",
     title = "Daily new stems censused"
+  ) +
+  coord_cartesian(
+    ylim = c(0, NA)
   ) +
   theme_bw() +
   scale_x_date(limits = date_range, breaks = ymd(date_breaks), date_labels = "%b %d")
