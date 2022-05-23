@@ -151,8 +151,6 @@ error_rates <-
 
 
 # Generate all plots ---------------------------------------
-ci_start_date <- ymd("2021-07-06")
-
 # Standardize date ranges of plots
 date_range <- c(
   # Earliest census date
@@ -179,33 +177,15 @@ census_rate_plot <- stems_censused_per_day %>%
     x = "Census date", y = "# of new stems censused",
     title = "Daily new stems censused"
   ) +
-  geom_vline(xintercept = ci_start_date, col = "black", linetype = "dashed") +
   theme_bw() +
   scale_x_date(limits = date_range, breaks = ymd(date_breaks), date_labels = "%b %d")
 
 
 ## Daily new error analysis -----
-# Compute mean of daily error rate, for each type of error, for before
-# and after CI activation date
-mean_error_rates <- error_rates %>%
-  mutate(
-    start_date_time = ifelse(date_time <= ci_start_date, min(date_time), ci_start_date),
-    start_date_time = as_date(start_date_time),
-    end_date_time = ifelse(date_time <= ci_start_date, ci_start_date, max(date_time)),
-    end_date_time = as_date(end_date_time)
-  ) %>%
-  group_by(error_type, start_date_time, end_date_time) %>%
-  summarize(errors_per_stem = mean(errors_per_stem))
-
 error_rate_plot <- error_rates %>%
   ggplot(aes(x = date_time, y = errors_per_stem, col = error_type)) +
   geom_point() +
   geom_line() +
-  geom_segment(
-    data = mean_error_rates,
-    aes(x = start_date_time, xend = end_date_time, y = errors_per_stem, yend = errors_per_stem),
-    linetype = "dashed"
-  ) +
   labs(
     x = "Weekly cummulative summary date", y = "# of errors per stem censused",
     col = "Error type",
@@ -214,7 +194,6 @@ error_rate_plot <- error_rates %>%
   coord_cartesian(
     ylim = c(0, NA)
   ) +
-  geom_vline(xintercept = ymd("2021-07-06"), col = "black", linetype = "dashed") +
   theme_bw() +
   theme(legend.position = "bottom") +
   scale_x_date(limits = date_range, breaks = ymd(date_breaks), date_labels = "%b %d")
