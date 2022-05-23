@@ -1,0 +1,19 @@
+"SurveyorID","date","Submission Id","Quad","Tag","StemTag","Species","QX","QY","DBH","Status 2021","HOM","Status 2022","DWR","Crown position","Dead crown position","Dead DBH","Percentage of crown intact","Percentage of crown living","Lean angle if greater than 15 degrees","Lianas","FAD","Wounded main stem","Canker; swelling, deformity","Rotting trunk","Notes 2022","Crown thinning","Epicormic growth","EABF","D-shaped exit hole count","Crown position < 10 cm DBH"
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80560","1","frpe","3","4","130","DC","1.3","DC","False",NA,NA,130,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80573","1","cato","2.59999999999999","4.80000000000001","116","A","1.3","A",NA,"1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80596","1","fram","6.19999999999999","15.4","544","AU","1.3","AU","False","4",NA,NA,80,5,NA,"0","I",NA,NA,NA,NA,"4","2","SS,DE,W",1,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80562","1","cato","5.40000000000001","4.60000000000002","189","A","1.3","A",NA,"2",NA,NA,100,98,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80564","1","litu","14.8","1","123","A","1.3","A",NA,"1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80565","1","litu","17","0.300000000000011","529","A","1.3","A",NA,"4",NA,NA,100,98,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80569","1","litu","18.1","4.30000000000001","418","A","1.3","A",NA,"3",NA,NA,100,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80582","1","prav","17.6","14.7","261","A","1.3","AU","False","3",NA,NA,100,98,NA,"1","K",NA,"1",NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80570","1","pato","18.8","6.39999999999998","485","DC","1.3","DC","False",NA,NA,495,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80576","1","quve","3.5","8","585","A","1.3","A",NA,"4",NA,NA,75,60,NA,"0",NA,NA,NA,NA,"Replace nail",NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80579","1","cagl","11.8","11.1","529","A","1.3","A",NA,"4",NA,NA,98,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80580","1","acru","19.8","10.2","332","A","1.3","A",NA,"2",NA,NA,98,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80581","1","nysy","16.9","14.1","301","A","1.3","A",NA,"2",NA,NA,100,98,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80585","1","acru","19.1","18.1","110","A","1.3","AU","False","1",NA,NA,90,75,NA,"0","OT",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80591","1","qual","10.7","17.2","104","AU","1.3","AU","False","1",NA,NA,75,20,NA,"0","OT,W","1",NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80598","1","caco","5.5","18","297","A","1.3","A",NA,"3",NA,NA,98,96,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80600","1","caca","9.30000000000001","19.2","128","A","1.3","A",NA,"2",NA,NA,100,98,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EM","05-18-2022","d925e96e-0f5d-4695-ab34-56be8b535bcc","0815","80587","1","caca","15.1","18.4","145","A","1.3","A",NA,"1",NA,NA,98,95,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
