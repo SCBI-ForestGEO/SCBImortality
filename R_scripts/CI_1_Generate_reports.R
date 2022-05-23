@@ -234,7 +234,7 @@ idx_FAD <- !is.na(mort$FAD)
 idx_wound <- !is.na(mort$'Wounded main stem')
 idx_canker <- !is.na(mort$'Canker; swelling, deformity')
 idx_rot <- !is.na(mort$'Rotting trunk')
-idx_DWR <- !mort$'DWR' %in% "False"
+idx_DWR <- !is.na(mort$'DWR') & !mort$'DWR' %in% "False"
 
 
 idx_errors <- idx_trees & (idx_FAD | idx_wound | idx_wound | idx_canker | idx_rot | idx_DWR)
@@ -254,7 +254,7 @@ idx_FAD <- !is.na(mort$FAD)
 idx_wound <- !is.na(mort$'Wounded main stem')
 idx_canker <- !is.na(mort$'Canker; swelling, deformity')
 idx_rot <- !is.na(mort$'Rotting trunk')
-idx_DWR <- !mort$'DWR' %in% "False"
+idx_DWR <- !is.na(mort$'DWR') & !mort$'DWR' %in% "False"
 
 
 idx_errors <- !idx_trees & (idx_FAD | idx_wound | idx_wound | idx_canker | idx_rot | idx_DWR)
@@ -272,7 +272,7 @@ error_name <- "status_AU_but_DWR_selected"
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 idx_trees <- mort[, status_column] %in% "AU"
-idx_DWR <- !mort$'DWR' %in% "False"
+idx_DWR <- !is.na(mort$'DWR') & !mort$'DWR' %in% "False"
 
 
 idx_errors <- idx_trees & idx_DWR
