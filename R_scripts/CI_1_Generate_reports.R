@@ -668,9 +668,14 @@ will_auto_fix_error_file <- will_auto_fix_error_file[!is.na(will_auto_fix_error_
 warning_file <- warning_file[!is.na(warning_file$Tag),]
 
 ## order by quadrat and tag
-require_field_fix_error_file <- require_field_fix_error_file[order(as.numeric(require_field_fix_error_file$Quad), require_field_fix_error_file$Tag, require_field_fix_error_file$StemTag),]
+if(!is.null(require_field_fix_error_file)) {
+  require_field_fix_error_file <- require_field_fix_error_file[order(as.numeric(require_field_fix_error_file$Quad), require_field_fix_error_file$Tag, require_field_fix_error_file$StemTag),]
+}
 
-will_auto_fix_error_file <- will_auto_fix_error_file[order(will_auto_fix_error_file$Quad, will_auto_fix_error_file$Tag, will_auto_fix_error_file$StemTag),]
+if(!is.null(will_auto_fix_error_file)) {
+  will_auto_fix_error_file <- will_auto_fix_error_file[order(will_auto_fix_error_file$Quad, will_auto_fix_error_file$Tag, will_auto_fix_error_file$StemTag),]
+}
+
 
 if(!is.null(warning_file)) warning_file <- warning_file[order(warning_file$Quad, warning_file$Tag, warning_file$StemTag),]
 
@@ -679,16 +684,18 @@ if(!is.null(warning_file)) warning_file <- warning_file[order(warning_file$Quad,
 
 csv_mort_filename <-  gsub("xlsx", "csv", gsub("FFF_excel/", "", latest_FFFs))
 
-if(!is.null(require_field_fix_error_file) & nrow(require_field_fix_error_file>0)) {
-  write.csv(
-    require_field_fix_error_file[, c(ncol(require_field_fix_error_file), 1:(ncol(require_field_fix_error_file) -1))], 
-    file = file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"), 
-    row.names = F
-  )
-  
-  # if  error, delete any existing CSV mort file
-  if(file.exists(csv_mort_filename)) file.remove(csv_mort_filename)
-  
+if(!is.null(require_field_fix_error_file)) {
+  if(nrow(require_field_fix_error_file>0)) {
+    
+    write.csv(
+      require_field_fix_error_file[, c(ncol(require_field_fix_error_file), 1:(ncol(require_field_fix_error_file) -1))], 
+      file = file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"), 
+      row.names = F
+    )
+    
+    # if  error, delete any existing CSV mort file
+    if(file.exists(csv_mort_filename)) file.remove(csv_mort_filename)
+  }  
 } else {
   if(file.exists(file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"))) file.remove(file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"))
   
@@ -699,12 +706,14 @@ if(!is.null(require_field_fix_error_file) & nrow(require_field_fix_error_file>0)
 
 
 
-if(!is.null(will_auto_fix_error_file) & nrow(will_auto_fix_error_file) > 0) {
-  write.csv(
-    will_auto_fix_error_file[, c(ncol(will_auto_fix_error_file), 1:(ncol(will_auto_fix_error_file) -1))], 
-    file = file.path(here("testthat"), "reports/will_auto_fix/will_auto_fix_error_file.csv"), 
-    row.names = F
-  )
+if(!is.null(will_auto_fix_error_file) ) {
+  if(nrow(will_auto_fix_error_file) > 0) {
+    write.csv(
+      will_auto_fix_error_file[, c(ncol(will_auto_fix_error_file), 1:(ncol(will_auto_fix_error_file) -1))], 
+      file = file.path(here("testthat"), "reports/will_auto_fix/will_auto_fix_error_file.csv"), 
+      row.names = F
+    )
+  }
 } else {
   if(file.exists(file.path(here("testthat"), "reports/will_auto_fix/will_auto_fix_error_file.csv"))) file.remove(file.path(here("testthat"), "reports/will_auto_fix/will_auto_fix_error_file.csv"))
 }
