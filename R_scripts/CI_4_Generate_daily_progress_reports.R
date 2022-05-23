@@ -142,10 +142,10 @@ error_rates <-
   summarize(n_errors = sum(n_errors), n_stems = sum(n_stems)) %>% 
   # Compute error rate
   mutate(errors_per_stem = n_errors / n_stems) %>%
+  ungroup() %>% 
   complete(date_time, error_type) %>%
   filter(!is.na(error_type)) %>%
-  replace(is.na(.), 0) %>% 
-  ungroup()
+  replace(is.na(.), 0) 
 
 
 
