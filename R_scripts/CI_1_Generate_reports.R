@@ -245,22 +245,22 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 
 
 ## and vice-versa ####
-error_name <- "unhealthy_but_wrong_status"
-
-status_column <- rev(grep("Status", names(mort), value = T))[1]
-
-idx_trees <- mort[, status_column] %in% c("AU", "DC", "DS")
-idx_FAD <- !is.na(mort$FAD)
-idx_wound <- !is.na(mort$'Wounded main stem')
-idx_canker <- !is.na(mort$'Canker; swelling, deformity')
-idx_rot <- !is.na(mort$'Rotting trunk')
-idx_DWR <- !is.na(mort$'DWR') & !mort$'DWR' %in% "False"
-
-
-idx_errors <- !idx_trees & (idx_FAD | idx_wound | idx_wound | idx_canker | idx_rot | idx_DWR)
-
-if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
-
+# error_name <- "unhealthy_but_wrong_status"
+# 
+# status_column <- rev(grep("Status", names(mort), value = T))[1]
+# 
+# idx_trees <- mort[, status_column] %in% c("AU", "DC", "DS")
+# idx_FAD <- !is.na(mort$FAD)
+# idx_wound <- !is.na(mort$'Wounded main stem')
+# idx_canker <- !is.na(mort$'Canker; swelling, deformity')
+# idx_rot <- !is.na(mort$'Rotting trunk')
+# idx_DWR <- !is.na(mort$'DWR') & !mort$'DWR' %in% "False"
+# 
+# 
+# idx_errors <- !idx_trees & (idx_FAD | idx_wound | idx_wound | idx_canker | idx_rot | idx_DWR)
+# 
+# if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+# 
 
 
 
