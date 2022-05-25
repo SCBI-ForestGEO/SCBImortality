@@ -438,7 +438,7 @@ error_name <- "rot_but_no_level"
 status_column <- rev(grep("Status", names(mort), value = T))[1]
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
-idx_rot <- !is.na(mort$FAD) & grepl("R\\>", mort$FAD)
+idx_rot <- !is.na(mort$FAD) & grepl("\\<R\\>", mort$FAD)
 idx_rot_level <- !is.na(mort$'Rotting trunk')
 
 
@@ -695,6 +695,9 @@ if(!is.null(require_field_fix_error_file)) {
     
     # if  error, delete any existing CSV mort file
     if(file.exists(csv_mort_filename)) file.remove(csv_mort_filename)
+    
+    # also make quad a factor so other things work
+    require_field_fix_error_file$Quad <- factor(require_field_fix_error_file$Quad,  levels = sort(unique(mort$Quad)))
   }  
 } else {
   if(file.exists(file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"))) file.remove(file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"))
@@ -713,6 +716,9 @@ if(!is.null(will_auto_fix_error_file) ) {
       file = file.path(here("testthat"), "reports/will_auto_fix/will_auto_fix_error_file.csv"), 
       row.names = F
     )
+    
+    # also make quad a factor so other things work
+    will_auto_fix_error_file$Quad <- factor(will_auto_fix_error_file$Quad,  levels = sort(unique(mort$Quad)))
   }
 } else {
   if(file.exists(file.path(here("testthat"), "reports/will_auto_fix/will_auto_fix_error_file.csv"))) file.remove(file.path(here("testthat"), "reports/will_auto_fix/will_auto_fix_error_file.csv"))
@@ -727,7 +733,8 @@ if(!is.null(warning_file)) {
     row.names = F
   )
   
-
+     # also make quad a factor so other things work
+     warning_file$Quad <- factor(warning_file$Quad,  levels = sort(unique(mort$Quad)))
 } else {
   if(file.exists(file.path(here("testthat"), "reports/warnings/warnings_file.csv"))) file.remove(file.path(here("testthat"), "reports/warnings/warnings_file.csv"))
   
@@ -754,7 +761,10 @@ for(f in all_reports) {
 # quadrat_censused_missing_stems <- read.csv(file.path(here("testthat"), "reports/requires_field_fix/quadrat_censused_missing_stems.csv"))
 quadrat_censused_duplicated_stems <- read.csv(file.path(here("testthat"), "reports/will_auto_fix/quadrat_censused_duplicated_stems.csv"))
 
-quad_with_any_issue <- sort(unique(c(require_field_fix_error_file$Quad, will_auto_fix_error_file$Quad, warning_file$Quad, quadrat_censused_duplicated_stems$quadrat)))
+quad_with_any_issue <- sort(unique(c(as.character(require_field_fix_error_file$Quad), 
+                                     as.character(will_auto_fix_error_file$Quad), 
+                                     as.character(warning_file$Quad), 
+                                     as.character(quadrat_censused_duplicated_stems$quadrat))))
 
 quad_summary <- data.frame(Quad = quad_with_any_issue, 
                            n_tag_error_field_fix = c(table(require_field_fix_error_file$Quad[!require_field_fix_error_file$error_name %in% "missing_stem"]))[as.character(quad_with_any_issue)], 

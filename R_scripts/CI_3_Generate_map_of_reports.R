@@ -12,7 +12,7 @@ library(readxl)
 
 # load map of quadrats ####
 quadrats <- rgdal::readOGR(file.path(here(""),"doc/maps/20m_grid/20m_grid.shp"))
-quadrats$PLOT <- ifelse(nchar(quadrats$PLOT) == 3, paste0("0", quadrats$PLOT),  quadrats$PLOT) # left pad with 0
+# quadrats$PLOT <- ifelse(nchar(quadrats$PLOT) == 3, paste0("0", quadrats$PLOT),  quadrats$PLOT) # left pad with 0
 
 # load latest mortality data ####
 
@@ -46,7 +46,7 @@ png(filename, width = 9, height = 8, units = "in", res = 300)
 par(mar = c(0,3,0,0))
 
 plot(quadrats)
-plot(quadrats[quadrats$PLOT %in% mort$Quad,], col = "grey", add = T)
+plot(quadrats[quadrats$PLOT %in%  as.numeric(mort$Quad),], col = "grey", add = T)
 plot(quadrats[quadrats$PLOT %in%  quadrats_with_error, ], col = "orange", add = T)
 plot(quadrats[quadrats$PLOT %in%  quadrats_with_warnings, ], col = "yellow", add = T)
 plot(quadrats[quadrats$PLOT %in%  intersect(quadrats_with_warnings, quadrats_with_error), ], col = "red", add = T)
