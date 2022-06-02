@@ -102,7 +102,7 @@ if(sum(idx_errors) > 0) {
                   "QX",
                   "QY",
                   "DBH",
-                  "Status 2018",
+                  # "Status 2018",
                   "HOM")] <-
     main_census[idx_errors, c("quadrat", "tag", "StemTag", "sp", "gx", "gy", "dbh",  "status")]
 
