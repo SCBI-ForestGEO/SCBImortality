@@ -207,7 +207,7 @@ idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
 idx_errors <- !is.na(mort$'Percentage of crown living') & !is.na(mort$'Percentage of crown intact') & mort$'Percentage of crown living' > mort$'Percentage of crown intact' & idx_trees
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ] , error_name))   
+if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ] , error_name))
 
 
 # check percent newly censused trees (DS or DC)	have percentage of crown living = 0####
