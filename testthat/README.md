@@ -3,6 +3,11 @@
 
 # Data tests for mortality census
 
+All files of form `test-***.R` are run as tests. For example, the script
+`test-if-required-field-fixR.R` checks if a field fix error .csv exists
+in the repository, indicating there are unresolved field fix errors. If
+so, an alert notification is issued to the user.
+
 ## Table of tests
 
 | No | level   | category                          | applied to                                                                                                                               | test                                                                                                                                                                                  | warning (W) or error (E) | coded   | requires field fix? | auto fix (when applicable)                                                                                      | core or SCBI add-on? |
