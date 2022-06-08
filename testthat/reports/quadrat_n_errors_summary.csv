@@ -1,1 +1,5 @@
-"n_tag_error_field_fix","n_tag_error_auto_fix","n_tag_warnings","n_missing_tags","n_duplicated_tags","sum_missing_and_errors"
+"Quad","n_tag_error_field_fix","n_tag_error_auto_fix","n_tag_warnings","n_missing_tags","n_duplicated_tags","sum_missing_and_errors"
+"1021",0,0,0,1,2,1
+"1022",5,1,0,0,NA,5
+"1023",4,1,1,0,NA,4
+"1024",1,0,0,0,NA,1

@@ -86,8 +86,10 @@ These data are public, but the more recent censuses may not yet have been used i
 | Albert Y. Kim | rudeboybert | research associate and 2020 sabbatical visitor, SCBI | volunteered for 2020 census, continuous integration |
 | Valentine Herrmann | ValentineHerr | ecologist, SCBI | data organization, coding, continuous integration |
 | Brianna Calkins | briannakcalkins | field assistant, SCBI | 2021 census leader |
-| Jennifer Jordan | jenajordan | field assistant, SCBI | 2021 census assistant |
+| Jennifer Jordan | jenajordan | field assistant, SCBI | 2021, 2022 census assistant |
 | Teagan Rogers | Troger4 | field assistant, SCBI | 2021 census assistant |
+| Isabella Dangler | irdangler | SMSC student | tree disease guide |
+| Erin MacMonigle | emacmonigle | field assistant, SCBI | 2022 census leader |
 
  
 *refers to position at time of main contribution to this repository
