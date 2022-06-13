@@ -147,26 +147,31 @@ This angle is measured in degrees from the base through the POM
 - For tree conditions or agents of mortality not specifically defined below, record diagnosis in the notes or comments section of the form. 
 
 FAD list : 
-**Broken stem** -
-**Crushed by other tree** -
-**Uprooted tree** -
-**Slope Failure** -
-**Lightning** -
-**Fire** -
-**Animal damage** -
-**Bark Beetles** -
-**Insect infection** -
-**Defoliation** -
-**Fungi visible** -
-**Canker swelling** -
-**Leaf damage** -
-**Rotting stem** -
-**Root damage** -
-**Armillaria root disease** -
-**Unable to determine** -
-**Wound** -
-**Overtopping** -
-**Hollow stem** -
+
+**U = Unable to determine cause of death**
+
+*Mechanical Damage:*
+
+**B = Broken stem** (note cause, indicate level on tree);
+**CR = Crushed by other tree or tree parts**;
+**UP = Uprooted Tree** (root system exposed);
+**S = Slope failure** (evident landslide even if small. rare at SCBI);
+**L = Lightning** (tree splitting, straight scars from above);
+**FI = Fire** (stem charred, fire scars on bark. not expected at SCBI);
+
+*Biological agents:*
+
+**AN = Animal Damage** (this category excludes insects. specify animal in notes if possible);
+**BB = Bark beetles** (in the subfamily [Scolytinae](https://en.wikipedia.org/wiki/Bark_beetle)) and/or beetle galleries present. (At SCBI, elm bark beetles are in this category, but EAB are not.) *Note: BB is a sub-catagory of I, and it is not necessary to mark I if BB is selected.*);
+**I = Insect infection** *other than BB (bark beetles in subfamily [Scolytinae](https://en.wikipedia.org/wiki/Bark_beetle)* (e.g., EAB);
+**DF = Complete defoliation for a portion of stem** (record crown condition using Smith/Flower method below 1-5 scale);
+**F = Fungi visible** (includes fruiting mushroom bodies, fungal mats, and discoloration inside wounds or cankers. if canker is present, also record K. if would is present, record W. note that Armillaria root disease is its own category);
+**K = Canker or swelling present** (if fungi is visible, also record F. if open wound, also record W);
+**LF = Leaf damage** (Leaf spots, blotch, mildew, discoloration etc.);
+**W = Wound** (any situation where the bark has been removed and wood is exposed to the air or soil. not mutually exclusive with F or K);
+**R = Rotting stem**;
+**R1 = Root damage**;
+**R2 = Armillaria root disease** (subcateogry of F; including F not needed)
 
 
 #### *Wounded main axis (levels: 1 = small, 2 = large, 3 = massive)*
