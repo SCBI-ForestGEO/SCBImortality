@@ -249,3 +249,14 @@
 "missing_percent_crown_intact","EM","06-20-2022","5c67bbeb-db75-410b-bffd-601cfc097a6e",1326,132387,1,"frpe","H",14.9,11.9,52,52,"DS","1.3","DS",NA,"False",1,"S",52,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_living","EM","06-20-2022","5c67bbeb-db75-410b-bffd-601cfc097a6e",1326,132387,1,"frpe","H",14.9,11.9,52,52,"DS","1.3","DS",NA,"False",1,"S",52,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "rot_but_no_level","EM","06-20-2022","5c67bbeb-db75-410b-bffd-601cfc097a6e",1326,132409,1,"quru","M",9.7,4.2,792,792,"PD","1.3","DS","NN","False",3,"CD",NA,85,0,NA,2,"R",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,811,80630,1,"nysy",NA,141.5,205.10001,175,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_but_no_level","JJ","06-21-2022","10cb1813-b875-4d57-a527-96bc71aefd67",813,80537,1,"quru","M",1.3,8,449,449,"DS","1.3","DS",NA,"False",3,"CD",451,50,0,NA,0,"U,R,DF,I,W",NA,NA,2,NA,NA,NA,NA,NA,NA
+"status_AU_DS_or_DC_but_no_FAD","EM","06-20-2022","b86834b9-236c-45f8-9d93-2f03140382c1",1328,132431,1,"fram","H",2.1,14.3,61,61,"AU","1.3","DS",NA,"False",1,"S",62,90,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","06-20-2022","b86834b9-236c-45f8-9d93-2f03140382c1",1328,132431,1,"fram","H",2.1,14.3,61,61,"AU","1.3","DS",NA,"False",1,"S",62,90,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"EABF_recorded_but_not_AU_or_dead","EM","06-20-2022","b86834b9-236c-45f8-9d93-2f03140382c1",1328,132432,1,"fram","H",13.8,4.2,168,168,"AU","1.3","A",NA,NA,2,NA,NA,100,100,NA,0,NA,NA,NA,NA,"Switch QX and QY",1,0,"W",NA,NA
+"missing_percent_crown_intact","EM","06-20-2022","b86834b9-236c-45f8-9d93-2f03140382c1",1328,132506,1,"fram","H",14.6,11.1,109,109,"DS","1.3","DS",NA,"False",2,"I",109,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_living","EM","06-20-2022","b86834b9-236c-45f8-9d93-2f03140382c1",1328,132506,1,"fram","H",14.6,11.1,109,109,"DS","1.3","DS",NA,"False",2,"I",109,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,1329,132453,1,"litu",NA,243.39999,578.20001,533,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_crown_position","EM","06-22-2022","15d26205-4790-4ff3-8b5b-83f10b5bdd72",1330,132530,1,"quve","H",10.1,2.4,699,699,"PD","1.3","DS",NA,"False",NA,"S",NA,0,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_crown_position","EM","06-22-2022","e0133245-553e-4c77-90d3-68033992063c",1331,132465,1,"quve","H",3.8,15.2,715,715,"DS","1.3","DS","RT","False",NA,"CD",715,70,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_crown_position","EM","06-22-2022","e0133245-553e-4c77-90d3-68033992063c",1331,132536,1,"quve","H",11.7,4.6,548,548,"DS","1.3","DS",NA,"False",NA,"CD",548,75,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

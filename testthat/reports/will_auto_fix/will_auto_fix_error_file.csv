@@ -4,6 +4,7 @@
 "wounded_level_but_wrong_status_or_FAD","JJ","06-15-2022","9c0f6b80-3621-48d3-bfd1-347ce5ee62c3","0710","70423","1","caca","H","4.6","1.9","132",132,"AU","1.3","AU",NA,NA,"1",NA,NA,60,50,NA,"0","B,R,U","2",NA,"2",NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","JJ","06-15-2022","9c0f6b80-3621-48d3-bfd1-347ce5ee62c3","0710","70427","1","caca","H","8.1","4.1","122",122,"AU","1.3","AU",NA,NA,"1",NA,NA,70,60,NA,"0","B,R,U","1",NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","JJ","06-15-2022","9c0f6b80-3621-48d3-bfd1-347ce5ee62c3","0710","70513","1","caca","H","19.9","13.1","144",144,"AU","1.3","AU",NA,NA,"1",NA,NA,60,40,NA,"0","B,R,U","3",NA,"2",NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","06-21-2022","10cb1813-b875-4d57-a527-96bc71aefd67","0813","80532","1","cagl","L","7.4","5.6","209",209,"AU","1.3","AU",NA,NA,"1",NA,NA,90,85,NA,"0","HS","2",NA,"2",NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","EM","05-24-2022","90f32eb9-60dc-4e5f-86c8-501fd87343bb","0817","82014","1","caca","H","17.5","0.9","160",160,"AU","1.3","AU",NA,"False","1",NA,NA,65,60,NA,"0","B,R","2",NA,"1",NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","EM","05-24-2022","90f32eb9-60dc-4e5f-86c8-501fd87343bb","0817","82025","1","acru","M","15.8","10.2","116",116,"AU","1.3","DC",NA,"False",NA,NA,120,NA,NA,NA,"0",NA,"3",NA,NA,NA,NA,NA,NA,NA,NA
 "epicormic_growth_but_not_AU","EM","05-25-2022","bd159b4f-862d-4bdf-9c67-35520624f3c7","0820","82145","1","fram","H","11.9","18.5","78",78,"A","1.3","A",NA,NA,"1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,"1","5","none",NA,"S"
@@ -19,3 +20,4 @@
 "epicormic_growth_but_not_AU","EM","06-14-2022","83052fc8-8a78-45a4-82fb-6cb92b91847b","1227","122475","1","frpe","H","3","15.1","86",86,"AU","1.3","A",NA,NA,"2",NA,NA,100,98,NA,"0",NA,NA,NA,NA,NA,"2","3","SS",NA,"I"
 "epicormic_growth_but_not_AU","EM","06-14-2022","3ef3370b-4903-4366-80a5-926109dd0661","1228","122432","1","frpe","H","17.8","0.8","142",142,"AU","1.3","A",NA,NA,"2",NA,NA,90,88,NA,"0",NA,NA,NA,NA,NA,"2","2","AS,SS",NA,NA
 "wounded_level_but_wrong_status_or_FAD","EM","06-20-2022","4f36abe2-9635-4ef4-8026-0b3077ec2401","1320","132181","1","qual","H","0","19.2","234",234,"AU","1.3","AU",NA,NA,"2",NA,NA,90,90,NA,"1","B","1",NA,NA,"Large lean over dbh",NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","EM","06-20-2022","b86834b9-236c-45f8-9d93-2f03140382c1","1328","132434","1","litu","L","3.4","14.4","185",185,"AU","1.3","AU",NA,NA,"2",NA,NA,70,70,NA,"0","B","2",NA,NA,NA,NA,NA,NA,NA,NA
