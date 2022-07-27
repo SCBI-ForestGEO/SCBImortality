@@ -34,3 +34,8 @@
 "wounded_level_but_wrong_status_or_FAD","JJ","06-29-2022","e6356755-b68b-4ff1-83b7-dd3f0fcb3b93",806,80286,1,"qupr","H",2,0.7,197,197,"DS",1.3,"DS",NA,"False",2,"I",216,5,0,NA,0,"U,B,DF,R,F",2,NA,2,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","JJ","07-07-2022","6b04e756-21d5-430e-80f2-aa87d5e60c42",902,90104,1,"quve","H",11.7,11.8,535,535,"AU",1.3,"DS",NA,"False",3,"OG",545,NA,NA,NA,2,"U,F,DF,R",2,NA,2,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","JJ","07-07-2022","bd2d4d56-ced1-435c-9f1a-0178d9c71b8f",903,90131,1,"fram","H",10.4,12.9,619,619,"PD",1.3,"DS",NA,"False",3,"CD",610,50,0,NA,0,"I,DF,F,R",2,NA,2,NA,5,0,"DE,VB,W",5,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","07-20-2022","93bf91ea-dc56-46e0-953d-665d64fb7a91",904,90285,1,"litu","L",19.2,0.1,180,180,"A",1.3,"DS",NA,"False",2,"I",NA,20,0,NA,0,"U,R,B",2,2,2,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","EM","07-21-2022","b3682f2e-b277-4e52-96d4-eb4071362fa8",1424,142548,1,"qual","H",4,4.7,622,622,"AU",1.3,"AU",NA,NA,3,NA,NA,90,85,NA,0,"B",2,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","EM","07-21-2022","3f416e92-8e73-4cf4-952a-0e428877c0ff",1426,142577,1,"nysy","L",4.7,6.8,121,121,"AU",1.3,"AU",NA,NA,1,NA,NA,60,58,NA,0,"B",2,NA,NA,NA,NA,NA,NA,NA,NA
+"epicormic_growth_but_not_AU","EM","07-21-2022","423b50a4-6c2b-4a62-b840-d3427394908c",1427,142589,1,"fram","H",7.4,14.4,85,85,"AU",1.3,"A",NA,NA,3,NA,NA,100,95,NA,4,NA,NA,NA,NA,NA,1,2,"SS,VB",NA,"I"
+"wounded_level_but_wrong_status_or_FAD","EM","07-21-2022","85e67a9f-fa64-4b60-9370-2eddb4dd8cfe",1429,142628,1,"qual","H",0,0.8,592,592,"AU",1.3,"DS",NA,"False",NA,"I",599,0,0,NA,0,"B",3,NA,NA,NA,NA,NA,NA,NA,NA
