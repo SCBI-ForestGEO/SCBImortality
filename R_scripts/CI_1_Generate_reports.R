@@ -17,7 +17,10 @@ latest_FFFs <- latest_FFFs[which.max(as.numeric(regmatches(latest_FFFs, regexpr(
 
 ## load the latest mortality survey
 
-mort <- as.data.frame(read_xlsx(latest_FFFs, sheet = "subform_1", .name_repair = "minimal" ))
+mort1 <- as.data.frame(read_xlsx(latest_FFFs, sheet = "section_1", .name_repair = "minimal" ))
+mort2 <- as.data.frame(read_xlsx(latest_FFFs, sheet = "section_2", .name_repair = "minimal" ))
+
+mort <- merge(mort1, mort2, by = intersect(names(mort1), names(mort2)))
 
 mort_root <- as.data.frame(read_xlsx(latest_FFFs, sheet = "Root", .name_repair = "minimal" ))
 mort <- cbind(SurveyorID = mort_root$Personnel[match(mort$`Submission Id`, mort_root$`Submission Id`)],
@@ -752,7 +755,7 @@ for(f in all_reports) {
   new_f <- gsub("/reports/", "/reports/trace_of_reports/", f)
   new_f <- gsub("/requires_field_fix/|/will_auto_fix/|/warnings/", "",new_f)
   
-  if(file.exists(new_f)) write.csv(unique(rbind(read.csv(new_f), read.csv(f))), file = new_f, row.names = F)
+  if(file.exists(new_f)) write.csv(unique(rbind(read.csv(new_f), read.csv(f)[names(read.csv(new_f))])), file = new_f, row.names = F)
   else write.csv(read.csv(f), file = new_f, row.names = F)
   
 }

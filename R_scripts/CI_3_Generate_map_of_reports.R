@@ -23,7 +23,11 @@ latest_FFFs <- latest_FFFs[which.max(as.numeric(regmatches(latest_FFFs, regexpr(
 
 ## load the latest mortality survey
 
-mort <- as.data.frame(read_xlsx(latest_FFFs, sheet = "subform_1", .name_repair = "minimal" ))
+mort1 <- as.data.frame(read_xlsx(latest_FFFs, sheet = "section_1", .name_repair = "minimal" ))
+mort2 <- as.data.frame(read_xlsx(latest_FFFs, sheet = "section_2", .name_repair = "minimal" ))
+
+mort <- merge(mort1, mort2, by = intersect(names(mort1), names(mort2)))
+
 mort <- mort[, unique(names(mort))]# remove repeated columns
 
 
