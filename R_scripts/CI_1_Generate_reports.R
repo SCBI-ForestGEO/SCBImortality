@@ -27,6 +27,22 @@ mort <- cbind(SurveyorID = mort_root$Personnel[match(mort$`Submission Id`, mort_
               date = mort_root$"Date/Time"[match(mort$`Submission Id`, mort_root$`Submission Id`)],
               mort)
 
+### figure out previous and current status columns
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
+
+
+## load the previous mortality surveys and make code history 
+prev_mort <- read.csv(paste0("data/mortality_", regmatches(previous_status_column, regexpr("\\d{4}", previous_status_column)), ".csv"))
+
+all_prev_mort <- lapply(list.files("data/", pattern = "\\d{4}.csv", full.names = T), read.csv)
+StatusHistory <- cbind(all_prev_mort[[1]][, c("tag", "StemTag")], StatusHistory = apply(sapply(all_prev_mort, "[[", "current_year_status"), 1, paste, collapse = ";"))
+
+StemEverDC <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl("DC", StatusHistory$StatusHistory)] # this sto identify trees that should not be flagged as missed during current census (see https://github.com/SCBI-ForestGEO/SCBImortality/issues/93)
+StemTwicePDLast <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl("PD;PD$", StatusHistory$StatusHistory)]  # this sto identify trees that were PD in the last 2 censuses (see https://github.com/SCBI-ForestGEO/SCBImortality/issues/93)
+
+
+
 # load and clean up the 3rd main census ####
 main_census <-  read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/scbi.stem3.csv"))
 
@@ -51,7 +67,8 @@ idx_empty_line <- which(is.na(mort$Quad))
 EAB_columns <- c("Crown thinning","Epicormic growth","EABF","D-shaped exit hole count","Crown position < 10 cm DBH")
 
 # replace empty EAB column of line before by the EAB of empty lines
-mort[idx_empty_line-1, EAB_columns] <- mort[idx_empty_line, EAB_columns] 
+
+if(length(idx_empty_line) > 0) mort[idx_empty_line-1, EAB_columns] <- mort[idx_empty_line, EAB_columns] 
 
 # remove empty lines
 mort <- mort[!is.na(mort$Quad), ] # fix empty lines
@@ -89,15 +106,18 @@ error_name = "missing_stem"
 # idx_quadrat_censused <- main_census$quadrat %in% as.numeric(mort$Quad)
 
 
-idx_errors <- !paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag) & main_census$quadrat %in% as.numeric(mort$Quad)
+idx_errors <- !paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag) & main_census$quadrat %in% as.numeric(mort$Quad) &  # these are trees that are not in the quadrats censused so far
+  !paste(main_census$tag, main_census$StemTag) %in% StemEverDC & # this avoids flagging trees that were ever DC
+  !paste(main_census$tag, main_census$StemTag) %in%  StemTwicePDLast #this avoids flagging trees stems that were "PD" 2 censuses in a row before
 
 
+idx_errors_warn <- idx_errors & paste(main_census$tag, main_census$StemTag) %in%  paste(prev_mort$tag, prev_mort$StemTag)[prev_mort$current_year_status %in% "PD"] # only warn if tree was PD before
+idx_errors_err <- idx_errors & !paste(main_census$tag, main_census$StemTag) %in% paste(prev_mort$tag, prev_mort$StemTag)[prev_mort$current_year_status %in% "PD"] # error otherwise
 
-
-if(sum(idx_errors) > 0) {
+if(sum(idx_errors_warn) > 0) {
   # write.csv(main_census[paste(main_census$tag, main_census$StemTag) %in% idx_errors, ], file = filename, row.names = F)
-  data_to_add <- mort[1:sum(idx_errors),]
-  data_to_add[1:sum(idx_errors), ] <- NA
+  data_to_add <- mort[1:sum(idx_errors_warn),]
+  data_to_add[1:sum(idx_errors_warn), ] <- NA
   data_to_add[, c("Quad",
                   "Tag",
                   "StemTag",
@@ -107,9 +127,29 @@ if(sum(idx_errors) > 0) {
                   "DBH",
                   # "Status 2018",
                   "HOM")] <-
-    main_census[idx_errors, c("quadrat", "tag", "StemTag", "sp", "gx", "gy", "dbh",  "status")]
+    main_census[idx_errors_warn, c("quadrat", "tag", "StemTag", "sp", "gx", "gy", "dbh",  "status")]
 
-  require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(data_to_add, error_name))
+  warning_file <- rbind(warning_file, data.frame(data_to_add, warning_name = error_name)) # switched to warning
+  
+  
+  
+} 
+
+if(sum(idx_errors_err) > 0) {
+  data_to_add <- mort[1:sum(idx_errors_err),]
+  data_to_add[1:sum(idx_errors_err), ] <- NA
+  data_to_add[, c("Quad",
+                  "Tag",
+                  "StemTag",
+                  "Species",
+                  "QX",
+                  "QY",
+                  "DBH",
+                  # "Status 2018",
+                  "HOM")] <-
+    main_census[idx_errors_err, c("quadrat", "tag", "StemTag", "sp", "gx", "gy", "dbh",  "status")]
+  
+  require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(data_to_add, error_name)) # switched to warning
   
   
   
@@ -121,8 +161,6 @@ if(sum(idx_errors) > 0) {
 
 
 # remove any tree with current status DN as we don't need to check errors on those ####
-status_column <- rev(grep("Status", names(mort), value = T))[1]
-
 idx_trees <- !mort[, status_column] %in% c("DN")
 
 mort <- mort[idx_trees, ]
@@ -161,7 +199,7 @@ idx_errors <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$Stem
 error_name <- "missing_crown_position"
 
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
 
@@ -175,7 +213,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 error_name <- "missing_percent_crown_intact"
 
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
 
@@ -189,7 +227,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 error_name <- "missing_percent_crown_living"
 
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
 
@@ -203,7 +241,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 error_name <- "crown_living_greater_than_crown_intact"
 
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
 
@@ -217,7 +255,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 error_name <- "dead_but_crown_living_not_zero"
 
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("DS", "DC")
 
@@ -230,7 +268,7 @@ if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_fi
 # check that newly censused alive trees have no FAD selected; no record of wounded main stem, canker, or rotting trunk; DWR (dead with resprouts) not selected ####
 error_name <- "status_A_but_unhealthy"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% "A"
 idx_FAD <- !is.na(mort$FAD)
@@ -250,7 +288,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 ## and vice-versa ####
 # error_name <- "unhealthy_but_wrong_status"
 # 
-# status_column <- rev(grep("Status", names(mort), value = T))[1]
+# 
 # 
 # idx_trees <- mort[, status_column] %in% c("AU", "DC", "DS")
 # idx_FAD <- !is.na(mort$FAD)
@@ -272,7 +310,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that status 'AU' does not have 	DWR (dead with resprouts)  selected ####
 error_name <- "status_AU_but_DWR_selected"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% "AU"
 idx_DWR <- !is.na(mort$'DWR') & !mort$'DWR' %in% "False"
@@ -285,9 +323,6 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 
 # check that status 'DS' or 'DC' have a dbh measured  ####
 error_name <- "status_DS_or_DC_but_DBH_not_measured"
-
-status_column <- rev(grep("Status", names(mort), value = T))[1]
-previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
 
 idx_trees <- mort[, status_column] %in% c("DS", "DC")
 idx_previously_dead <- !mort[,previous_status_column] %in% c("AU","A") & !is.na(mort[,previous_status_column])
@@ -306,7 +341,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that status 'DS' or 'DC' have a dbh within 2cm of most recent census DBH  ####
 error_name <- "DBH_dead_suspicious"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("DS", "DC")
 idx_DBH_ouside_range <- !is.na(mort$'Dead DBH') & !is.na(as.numeric(mort$DBH)) & (abs(mort$'Dead DBH' - as.numeric(mort$DBH)) > 20)
@@ -318,9 +353,6 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 
 # check that newly censused 'AU', 'DS' or 'DC trees that were alive in previous census have at least one FAD is selected (OR level selected for `wounded main stem`,`canker,swelling,deformity`, `rotting main stem`) ####
 error_name <- "status_AU_DS_or_DC_but_no_FAD"
-
-status_column <- rev(grep("Status", names(mort), value = T))[1]
-previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_previously_dead <- idx_previously_dead <- grepl("D", mort[,previous_status_column]) & !is.na(mort[,previous_status_column])
@@ -346,7 +378,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that newly censused 'AU', 'DS' or 'DC trees have at one photo taken ####
 # filename <- file.path(here("testthat"), "reports/status_AU_DS_or_DC_but_no_photo.csv") # edit file name here
 # 
-# status_column <- rev(grep("Status", names(mort), value = T))[1]
+# 
 # 
 # idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 # idx_no_FAD <- is.na(mort$FAD)
@@ -365,7 +397,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that newly censused 'AU', 'DS' or 'DC with "wound" selected as FAD have selected a level for wounded main stem ####
 error_name <- "wounded_but_no_level"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_wounded <- !is.na(mort$FAD) & grepl("W", mort$FAD)
@@ -382,7 +414,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 ## and vice versa ####
 error_name <- "wounded_level_but_wrong_status_or_FAD"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_wounded <- !is.na(mort$FAD) & grepl("W", mort$FAD)
@@ -402,7 +434,7 @@ will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_
 # check that newly censused 'AU', 'DS' or 'DC with "canker" selected as FAD have selected a level for canker,swelling,deformity ####
 error_name <- "canker_but_no_level"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_canker <- !is.na(mort$FAD) & grepl("K", mort$FAD)
@@ -420,7 +452,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 ## and vice versa ####
 error_name <- "canker_level_but_wrong_status_or_FAD"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_canker <- !is.na(mort$FAD) & grepl("K", mort$FAD)
@@ -438,7 +470,7 @@ if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_fi
 # check that newly censused 'AU', 'DS' or 'DC with "rotting stem" selected as FAD have selected a level for rotting main stem ####
 error_name <- "rot_but_no_level"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_rot <- !is.na(mort$FAD) & grepl("\\<R\\>", mort$FAD)
@@ -455,7 +487,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 ## and vice versa ####
 error_name <- "rot_level_but_wrong_status_or_FAD"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_rot <- !is.na(mort$FAD) & grepl("R\\>", mort$FAD)
@@ -495,10 +527,6 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that newly censused 'A' or 'AU', were A or AU in previous year ####
 warning_name <- "Dead_but_now_alive"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
-previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
-
-
 idx_trees <- mort[, status_column] %in% c("AU","A")
 idx_previously_dead <- !mort[,previous_status_column] %in% c("AU","A") & !is.na(mort[,previous_status_column])
 
@@ -511,10 +539,6 @@ if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_
 
 # check that newly censused 'A' or 'AU' or 'DS', were not 'DC' in previous year ####
 warning_name <- "DC_but_now_A_AU_or_DS"
-
-status_column <- rev(grep("Status", names(mort), value = T))[1]
-previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
-
 
 idx_trees <- mort[, status_column] %in% c("AU","A", "DS")
 idx_previously_dead <- mort[,previous_status_column] %in% c("DC") & !is.na(mort[,previous_status_column])
@@ -535,10 +559,6 @@ idx_missing_crwn_pos <- !complete.cases(mort[, c("Crown position < 10 cm DBH")])
 idx_trees_less_10cm <-  !is.na( as.numeric(mort$DBH)) & as.numeric(mort$DBH) <100
      
 
-
-status_column <- rev(grep("Status", names(mort), value = T))[1]
-previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
-
 idx_status <- !mort[, status_column] %in% c("DN")
 idx_previously_dead <- idx_previously_dead <- grepl("D", mort[,previous_status_column]) & !is.na(mort[,previous_status_column])
 
@@ -546,7 +566,7 @@ idx_previously_dead <- idx_previously_dead <- grepl("D", mort[,previous_status_c
 idx_errors <- ((idx_trees & idx_missing_EAB_info) |  (idx_trees & idx_missing_crwn_pos & idx_trees_less_10cm)) & (idx_status& !idx_previously_dead)
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # downgraded from error to warning
 
 
 
@@ -554,7 +574,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if Epicormic growth>0, tree is AU ####
 error_name <- "epicormic_growth_but_not_AU"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
@@ -571,7 +591,7 @@ if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_fi
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if Crown thinning>1, tree is AU or dead ####
 error_name <- "crown_thinning_more_than_1_but_not_AU_or_dead"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
@@ -588,7 +608,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if any EABF recorded, tree is AU or dead ####
 error_name <- "EABF_recorded_but_not_AU_or_dead"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
@@ -606,7 +626,7 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if D-shaped exit hole count>0, tree is AU or dead ####
 error_name <- "exit_hole_count_but_not_AU_or_dead"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
+
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
@@ -625,9 +645,6 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if tree is dead, Epicormic growth=0 ####
 error_name <- "dead_but_epicormic_more_than_0"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
-previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
-
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
 idx_epicormic <- !is.na(mort$'Epicormic growth') & mort$'Epicormic growth' > 0
 idx_status <- !mort[, status_column] %in% c("A", "AU")
@@ -644,8 +661,6 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if tree is dead, Crown thinning=5 ####
 error_name <- "dead_but_crown_thinning_less_than_5"
 
-status_column <- rev(grep("Status", names(mort), value = T))[1]
-previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
 idx_crown <- !is.na(mort$'Crown thinning') & mort$'Crown thinning' <5
@@ -688,7 +703,7 @@ if(!is.null(warning_file)) warning_file <- warning_file[order(warning_file$Quad,
 csv_mort_filename <-  gsub("xlsx", "csv", gsub("FFF_excel/", "", latest_FFFs))
 
 if(!is.null(require_field_fix_error_file)) {
-  if(nrow(require_field_fix_error_file>0)) {
+  if(nrow(require_field_fix_error_file)>0) {
     
     write.csv(
       require_field_fix_error_file[, c(ncol(require_field_fix_error_file), 1:(ncol(require_field_fix_error_file) -1))], 
