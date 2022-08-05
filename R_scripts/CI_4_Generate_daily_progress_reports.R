@@ -40,13 +40,18 @@ census_quad_counts <- main_census %>%
 
 # Load quadrat info --------------------------------
 # Get latest FFF
-latest_FFFs <- list.files(here("raw_data/FFF_excel/"), pattern = ".xlsx", full.names = T)
-latest_FFFs <- latest_FFFs[which.max(as.numeric(regmatches(latest_FFFs, regexpr("20\\d\\d", latest_FFFs))))] # take the latest file only
+# latest_FFFs <- list.files(here("raw_data/FFF_excel/"), pattern = ".xlsx", full.names = T)
+# latest_FFFs <- latest_FFFs[which.max(as.numeric(regmatches(latest_FFFs, regexpr("20\\d\\d", latest_FFFs))))] # take the latest file only
+latest_FFFs <- "raw_data/FFF_excel/SCBI Mortality 2022.xlsx" #update this for census 2023
+static_FFFs <- "raw_data/FFF_excel/SCBI Mortality static 2022.xlsx" #this is static form that was used for one week during 2022 that is missing one column 
 
+latest_quadrat <- read_xlsx(latest_FFFs, sheet = "Root", .name_repair = "minimal") %>% clean_names()
+static_quadrat <- read_xlsx(static_FFFs, sheet = "Root", .name_repair = "minimal") %>% clean_names()
+
+quadrat_info <- rbind(latest_quadrat, static_quadrat)
 
 # Get info on all quadrats censused so far
-quadrat_info <- read_xlsx(latest_FFFs, sheet = "Root", .name_repair = "minimal") %>%
-  clean_names() %>%
+quadrat_info <- quadrat_info %>%
   select(-submitted_by, -starts_with("form")) %>%
   mutate(
     stem_count = as.numeric(stem_count),
@@ -208,3 +213,4 @@ error_rate_plot <- error_rates %>%
 filename <- file.path(here("testthat"), "reports/daily_progress.png")
 census_rate_plot / error_rate_plot
 ggsave(filename, device = "png", width = 16 / 2, height = 18 / 2.5, units = "in", dpi = 300)
+
