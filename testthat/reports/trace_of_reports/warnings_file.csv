@@ -1,21 +1,80 @@
 "warning_name","SurveyorID","date","Submission.Id","Quad","Tag","StemTag","Species","Disease.Concern.Level","QX","QY","DBH","DBH.numeric","Status.2021","HOM","Status.2022","Tag.maintenance","Dead.with.resprout","Crown.position","Dead.crown.position","Dead.DBH","Percentage.of.crown.intact","Percentage.of.crown.living","Lean.angle.if.greater.than.15.degrees","Lianas","FAD","Wounded.main.stem","Canker..swelling..deformity","Rotting.trunk","Notes.2022","Crown.thinning","Epicormic.growth","EABF","D.shaped.exit.hole.count","Crown.position...10.cm.DBH"
-"Dead_but_now_alive","EM","5/30/2022","f3db926d-357c-4b13-9b83-707bfe711b5c",102,10013,1,"fram","H",5.5,3.5,268,268,"DS",1.3,"AU","RT","FALSE",NA,NA,NA,60,5,NA,NA,"BB,R",NA,NA,2,"Large liana load >50",NA,NA,NA,NA,NA
-"Dead_but_now_alive","EM","5/30/2022","f3db926d-357c-4b13-9b83-707bfe711b5c",102,10134,1,"fram","H",16.8,7.3,511,511,"PD",1.3,"AU",NA,"FALSE",NA,NA,NA,90,0,NA,NA,NA,NA,NA,NA,NA,4,1,NA,NA,NA
-"Dead_but_now_alive","EM","5/31/2022","4511cd0f-17a6-4fdb-9020-76c2f2997d58",917,92029,1,"quru","M",11.5,14,594,594,"DS",1.3,"AU",NA,"FALSE",NA,NA,NA,90,70,NA,NA,"DF,F,R",NA,NA,2,"Epicormic sprouts",NA,NA,NA,NA,NA
-"Dead_but_now_alive","EM","6/6/2022","1e2d0f4c-698b-4fdb-93c5-0328a5de0ee6",1023,102266,1,"fram","H",7.8,2.9,93,93,"DS",1.3,"A",NA,NA,NA,NA,NA,100,98,NA,NA,NA,NA,NA,NA,NA,2,5,"SS",NA,"I"
-"Dead_but_now_alive","EM","05-30-2022","f3db926d-357c-4b13-9b83-707bfe711b5c",102,10013,1,"fram","H",5.5,3.5,268,268,"DS",1.3,"AU","RT","False",NA,NA,NA,60,5,NA,NA,"BB,R",NA,NA,2,"Large liana load >50",NA,NA,NA,NA,NA
-"Dead_but_now_alive","EM","05-30-2022","f3db926d-357c-4b13-9b83-707bfe711b5c",102,10134,1,"fram","H",16.8,7.3,511,511,"PD",1.3,"AU",NA,"False",NA,NA,NA,90,0,NA,NA,NA,NA,NA,NA,NA,4,1,NA,NA,NA
-"Dead_but_now_alive","EM","05-31-2022","4511cd0f-17a6-4fdb-9020-76c2f2997d58",917,92029,1,"quru","M",11.5,14,594,594,"DS",1.3,"AU",NA,"False",NA,NA,NA,90,70,NA,NA,"DF,F,R",NA,NA,2,"Epicormic sprouts",NA,NA,NA,NA,NA
-"Dead_but_now_alive","EM","06-06-2022","1e2d0f4c-698b-4fdb-93c5-0328a5de0ee6",1023,102266,1,"fram","H",7.8,2.9,93,93,"DS",1.3,"A",NA,NA,NA,NA,NA,100,98,NA,NA,NA,NA,NA,NA,NA,2,5,"SS",NA,"I"
-"Dead_but_now_alive","EM","06-13-2022","8a320031-4ba7-413d-adaf-3286c1b25afb",1122,112215,1,"pist","M",16.2,1.1,170,170,"M",1.3,"AU",NA,NA,2,NA,NA,55,20,NA,0,"DF,U",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","EM","06-14-2022","17d45384-7b7c-470c-b31b-1eb7f83a4dfe",1132,112496,1,"litu","L",10.4,1.6,129,129,"PD",1.3,"A",NA,NA,3,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","EM","06-15-2022","62e41024-3cf3-4728-917d-69610ad54c55",1220,122122,1,"pist","M",9.3,6.3,213,213,"DS",1.3,"AU",NA,NA,2,NA,NA,98,15,NA,0,"DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","EM","06-15-2022","62e41024-3cf3-4728-917d-69610ad54c55",1220,122149,1,"pist","M",2,17.4,151,151,"DS",1.3,"AU",NA,NA,1,NA,NA,98,5,NA,0,"DF,W",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","JJ","06-21-2022","10cb1813-b875-4d57-a527-96bc71aefd67",813,80538,1,"cagl","L",4.3,8.3,109,109,"M",1.3,"A",NA,NA,1,NA,NA,90,85,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","JJ","07-07-2022","c75e8453-be8c-42bd-ae94-e8dd394d50e6",703,70237,1,"saal","M",16.3,3.6,350,350,"DC",1.3,"A",NA,NA,3,NA,NA,90,80,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"DC_but_now_A_AU_or_DS","JJ","07-07-2022","c75e8453-be8c-42bd-ae94-e8dd394d50e6",703,70237,1,"saal","M",16.3,3.6,350,350,"DC",1.3,"A",NA,NA,3,NA,NA,90,80,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","JJ","06-29-2022","d9e2d387-e7b7-4b42-923b-05c39199fdc2",804,80191,1,"nysy","L",13.5,8.2,118,118,"M",1.3,"A",NA,NA,2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","5/30/2022","f3db926d-357c-4b13-9b83-707bfe711b5c",102,10013,1,"fram","H",5.5,3.5,268,268,"DS","1.3","AU","RT","FALSE",NA,NA,NA,60,5,NA,NA,"BB,R",NA,NA,2,"Large liana load >50",NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","5/30/2022","f3db926d-357c-4b13-9b83-707bfe711b5c",102,10134,1,"fram","H",16.8,7.3,511,511,"PD","1.3","AU",NA,"FALSE",NA,NA,NA,90,0,NA,NA,NA,NA,NA,NA,NA,4,1,NA,NA,NA
+"Dead_but_now_alive","EM","5/31/2022","4511cd0f-17a6-4fdb-9020-76c2f2997d58",917,92029,1,"quru","M",11.5,14,594,594,"DS","1.3","AU",NA,"FALSE",NA,NA,NA,90,70,NA,NA,"DF,F,R",NA,NA,2,"Epicormic sprouts",NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","6/6/2022","1e2d0f4c-698b-4fdb-93c5-0328a5de0ee6",1023,102266,1,"fram","H",7.8,2.9,93,93,"DS","1.3","A",NA,NA,NA,NA,NA,100,98,NA,NA,NA,NA,NA,NA,NA,2,5,"SS",NA,"I"
+"Dead_but_now_alive","EM","05-30-2022","f3db926d-357c-4b13-9b83-707bfe711b5c",102,10013,1,"fram","H",5.5,3.5,268,268,"DS","1.3","AU","RT","False",NA,NA,NA,60,5,NA,NA,"BB,R",NA,NA,2,"Large liana load >50",NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","05-30-2022","f3db926d-357c-4b13-9b83-707bfe711b5c",102,10134,1,"fram","H",16.8,7.3,511,511,"PD","1.3","AU",NA,"False",NA,NA,NA,90,0,NA,NA,NA,NA,NA,NA,NA,4,1,NA,NA,NA
+"Dead_but_now_alive","EM","05-31-2022","4511cd0f-17a6-4fdb-9020-76c2f2997d58",917,92029,1,"quru","M",11.5,14,594,594,"DS","1.3","AU",NA,"False",NA,NA,NA,90,70,NA,NA,"DF,F,R",NA,NA,2,"Epicormic sprouts",NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","06-06-2022","1e2d0f4c-698b-4fdb-93c5-0328a5de0ee6",1023,102266,1,"fram","H",7.8,2.9,93,93,"DS","1.3","A",NA,NA,NA,NA,NA,100,98,NA,NA,NA,NA,NA,NA,NA,2,5,"SS",NA,"I"
+"Dead_but_now_alive","EM","06-13-2022","8a320031-4ba7-413d-adaf-3286c1b25afb",1122,112215,1,"pist","M",16.2,1.1,170,170,"M","1.3","AU",NA,NA,2,NA,NA,55,20,NA,0,"DF,U",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","06-14-2022","17d45384-7b7c-470c-b31b-1eb7f83a4dfe",1132,112496,1,"litu","L",10.4,1.6,129,129,"PD","1.3","A",NA,NA,3,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","06-15-2022","62e41024-3cf3-4728-917d-69610ad54c55",1220,122122,1,"pist","M",9.3,6.3,213,213,"DS","1.3","AU",NA,NA,2,NA,NA,98,15,NA,0,"DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","06-15-2022","62e41024-3cf3-4728-917d-69610ad54c55",1220,122149,1,"pist","M",2,17.4,151,151,"DS","1.3","AU",NA,NA,1,NA,NA,98,5,NA,0,"DF,W",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","06-21-2022","10cb1813-b875-4d57-a527-96bc71aefd67",813,80538,1,"cagl","L",4.3,8.3,109,109,"M","1.3","A",NA,NA,1,NA,NA,90,85,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","07-07-2022","c75e8453-be8c-42bd-ae94-e8dd394d50e6",703,70237,1,"saal","M",16.3,3.6,350,350,"DC","1.3","A",NA,NA,3,NA,NA,90,80,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"DC_but_now_A_AU_or_DS","JJ","07-07-2022","c75e8453-be8c-42bd-ae94-e8dd394d50e6",703,70237,1,"saal","M",16.3,3.6,350,350,"DC","1.3","A",NA,NA,3,NA,NA,90,80,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","06-29-2022","d9e2d387-e7b7-4b42-923b-05c39199fdc2",804,80191,1,"nysy","L",13.5,8.2,118,118,"M","1.3","A",NA,NA,2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","JJ","06-29-2022","e6356755-b68b-4ff1-83b7-dd3f0fcb3b93",806,83628,1,"havi","M",2.2,14.5,103,103,"PD",NA,"A",NA,NA,1,NA,NA,90,70,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","JJ","06-29-2022","da49081c-b03f-4e0c-892c-3d5a91ed5672",807,80348,1,"acru","M",16.1,4.3,175,175,"M",1.3,"A",NA,NA,3,NA,NA,85,75,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","JJ","07-07-2022","6b04e756-21d5-430e-80f2-aa87d5e60c42",902,90236,1,"ulru","H",14.4,2.5,155,155,"M",1.3,"A",NA,NA,2,NA,NA,100,100,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Dead_but_now_alive","JJ","07-07-2022","bd2d4d56-ced1-435c-9f1a-0178d9c71b8f",903,90112,1,"litu","L",1.1,2.1,273,273,"M",1.3,"A",NA,NA,2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","06-29-2022","da49081c-b03f-4e0c-892c-3d5a91ed5672",807,80348,1,"acru","M",16.1,4.3,175,175,"M","1.3","A",NA,NA,3,NA,NA,85,75,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","07-07-2022","6b04e756-21d5-430e-80f2-aa87d5e60c42",902,90236,1,"ulru","H",14.4,2.5,155,155,"M","1.3","A",NA,NA,2,NA,NA,100,100,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","07-07-2022","bd2d4d56-ced1-435c-9f1a-0178d9c71b8f",903,90112,1,"litu","L",1.1,2.1,273,273,"M","1.3","A",NA,NA,2,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","05-30-2022","5e372782-d24c-4a1f-9f50-64c80273826b",101,13322,1,"fram","H",11.3,14.6,27,27,"A","1.3","A",NA,NA,2,NA,NA,100,95,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","05-30-2022","f3db926d-357c-4b13-9b83-707bfe711b5c",102,10157,1,"fram","H",4.3,18.9,489,489,"AU","1.3","DS","RT","False",3,"I",NA,0,0,NA,0,"I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","RB","07-28-2022","d7d9fd8c-21ed-491f-a739-d1c1261feb62",208,20602,1,"qual","H",7.8,11.8,343,343,"DS","1.3","AU",NA,NA,2,NA,NA,39,13,NA,0,"B,W",2,NA,NA,"Tree is alive",NA,NA,NA,NA,NA
+"missing_EAB_info","RB","07-28-2022","f93a2cd1-75ca-4e2a-a448-ed630df9ae29",212,20727,1,"fram","H",17.8,19.8,174,174,"AU","1.3","AU",NA,NA,1,NA,NA,87,28,NA,0,"I,W,DF",1,NA,NA,"EAB",NA,NA,NA,NA,NA
+"missing_EAB_info",NA,"07-28-2022","6805d258-4ef8-4c3e-9587-b6b85fe64c8c",302,30045,1,"fram","H",1.1,11.3,528,528,"AU","1.3","DS",NA,"False",3,"CD",NA,79,0,NA,0,"W,R,F,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","AS","07-28-2022","3be6530c-e349-4443-ab47-d684c8c693eb",309,30386,1,"fram","H",18.8,0.3,224,224,"AU","1.3","AU",NA,NA,4,NA,NA,100,29,NA,0,"DF,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","AS","07-28-2022","8477b1a8-fd24-48d2-be08-4015350c7b30",312,30435,1,"fram","H",16,15.1,305,305,"AU","1.3","DS",NA,"False",3,"CD",305,3,0,NA,1,"B,W,R,I,F,DF",2,NA,2,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","AS","07-28-2022","8477b1a8-fd24-48d2-be08-4015350c7b30",312,30435,1,"fram","H",16,15.1,305,305,"AU","1.3","DS",NA,"False",2,"CD",305,98,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","DJ","07-28-2022","8b1d7d10-1cd4-4335-acd5-ec91b2c193e3",401,40043,1,"fram","H",15.3,5.3,154,154,"AU","1.3","AU",NA,NA,1,NA,NA,70,3,NA,4,"I",NA,NA,NA,NA,5,NA,NA,NA,NA
+"missing_EAB_info","DJ","07-28-2022","df7cceaa-39c3-4847-a394-8cbed4490f97",410,40719,1,"fram","H",3.8,3.9,235,235,"AU","1.3","AU",NA,NA,3,NA,NA,78,64,NA,0,"I,DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","DJ","07-28-2022","e035406e-5b53-4d84-990e-737b90108c3e",418,42044,1,"fram","H",18.9,9.1,356,356,"AU","1.3","DS",NA,"False",2,"CD",NA,42,0,NA,0,"I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","07-28-2022","709dbd7f-cc3d-4c20-8dcc-b80050369ce8",501,50038,1,"fram","H",9.3,12.5,215,215,"DS","1.3","A","RT",NA,3,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","07-28-2022","978e5c03-4824-4065-9759-1fc9a60ada19",502,50160,1,"fram","H",7.4,11,908,908,"AU","1.3","DS","RT","False",3,"CD",907,85,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","08-01-2022","d6bc4a4a-841d-4830-a3d6-9a746702629b",512,50614,1,"fram","H",10.5,13.5,517,517,"AU","1.3","DS",NA,"False",3,"CD",516,98,0,NA,0,"AN",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","JJ","08-04-2022","7a563808-12a1-435b-b952-9b1f87c6fa12",608,60161,1,"qupr","H",17.5,11.7,869,869,"DS","1.3","AU",NA,NA,3,NA,NA,95,45,20,0,"U",NA,NA,NA,"2 stems - south stem dead steading, north alive",NA,NA,NA,NA,NA
+"missing_EAB_info","EM","05-25-2022","bf93d26d-c543-44cc-bdca-ccec855b030d",826,82297,1,"fram","H",2.3,7.2,76,76,"AU","1.3","AU",NA,"False",1,NA,NA,85,70,NA,0,"I",NA,NA,NA,NA,3,3,"AS,SS",NA,NA
+"missing_EAB_info","EM","05-26-2022","34774be7-0d76-4392-a934-c734c4f93704",829,82363,1,"fram","H",17.2,9,222,222,"A","1.3","DS",NA,"False",NA,NA,NA,80,0,NA,0,"I,U",NA,NA,NA,NA,NA,NA,"AS",NA,NA
+"missing_EAB_info","JJ","07-20-2022","f02da767-b280-4778-bb97-074170f6117d",906,93564,1,"fram","H",12.9,4.2,10,10,"A","1.3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","JJ","07-20-2022","d1c6ec89-ea1d-4985-8ad8-1d20a2cf9c93",913,93993,1,"fram","H",6.5,16.2,11,11,"A","1.3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","05-31-2022","86547df3-6bcb-4290-a244-28331a9887c1",916,90759,1,"frni","H",9.5,14.9,NA,0,"M","NULL","DC",NA,"False",NA,NA,93,NA,NA,NA,NA,NA,NA,NA,NA,"Tree previously dead, probably on the ground",NA,NA,NA,NA,NA
+"missing_EAB_info","EM","06-01-2022","7122e550-c18d-426f-bde0-c74d279e0b6f",927,92444,1,"frpe","H",6.5,0.2,58,58,"AU","1.3","A",NA,NA,1,NA,NA,95,90,NA,0,NA,NA,NA,NA,"Stump sprouts",2,NA,NA,NA,NA
+"missing_EAB_info","EM","06-08-2022","74d8f40f-6cb6-411a-a6e0-f429d6ef3b6b",1029,102453,1,"fram","H",19.3,17.7,NA,0,"M","NULL","DC",NA,"False",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","06-09-2022","902aca0b-1e6d-439b-b9c9-5883af474c54",1116,111290,1,"fram","H",17.4,8.3,NA,0,"M","NULL","DC",NA,"False",NA,NA,365,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","06-13-2022","2c5cde0b-19ad-43be-8ec4-e608f42e6c46",1124,112315,1,"frpe","H",4.6,0,216,216,"A","1.3","A",NA,NA,2,NA,NA,100,98,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","06-14-2022","7802157d-b5aa-4f51-bd7d-ee4ba125408b",1230,122555,1,"fram","H",2.2,12.8,121,121,"AU","1.3","DC",NA,"False",NA,"S",117,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","06-20-2022","b86834b9-236c-45f8-9d93-2f03140382c1",1328,132431,1,"fram","H",2.1,14.3,61,61,"AU","1.3","DS",NA,"False",1,"S",62,90,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","07-26-2022","17660912-db83-4876-b3ba-dae3fcf436ee",1413,141064,1,"fram","H",16.5,12,NA,0,"M","NULL","AU",NA,NA,1,NA,NA,80,80,59,0,"B,OT,W",2,NA,NA,NA,1,1,"SS,AS",NA,"S"
+"Dead_but_now_alive","EM","07-25-2022","9c99bb35-fe70-44a8-9681-39531788cf55",1416,141137,2,"chvi","H",17.3,16.9,66,66,"M","1.3","A",NA,NA,3,NA,NA,98,98,NA,0,NA,NA,NA,NA,NA,2,2,"SS",NA,"I"
+"Dead_but_now_alive","EM","07-25-2022","42d53bb4-7040-49b9-9b34-ff647aa357d5",1419,142178,1,"fram","H",7.3,4.6,557,557,"DS","1.3","AU",NA,NA,3,NA,NA,60,0,NA,0,"W",1,NA,NA,NA,5,0,"none",6,NA
+"Dead_but_now_alive","EM","07-25-2022","307c6685-0a10-40b0-8a69-f54804eb8ec6",1422,142333,1,"fram","H",17.5,6.7,464,464,"PD","1.3","A",NA,NA,3,NA,NA,50,0,NA,0,NA,NA,NA,NA,NA,5,0,"SS,VB,AS",NA,NA
+"Dead_but_now_alive","EM","07-26-2022","246ff212-ba33-4533-a901-4ba5fb147a3a",1518,152044,2,"qupr","H",4.6,4.5,352,352,"DS","1.3","A",NA,NA,3,NA,NA,100,98,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Dead_but_now_alive","EM","07-27-2022","58fa9c3a-0589-447c-979d-760d19c2b014",1524,152466,1,"qual","H",3,4.1,291,291,"PD","1.3","A",NA,NA,3,NA,NA,40,0,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,1528,152610,1,"fram",NA,296,546.59998,207,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,1528,152612,1,"fram",NA,289.5,547.40002,330,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","08-03-2022","0736e6a8-e741-4bd5-b14b-401f5b06b985",1528,152617,1,"fram","H",7.5,16.7,266,266,"AU","1.3","DS",NA,"False",3,"CD",264,90,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,1529,152642,1,"fram",NA,289,568.59998,237,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,1529,152644,1,"fram",NA,280.39999,571.29999,154,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","08-04-2022","7e37919f-e602-4fc3-80a2-d13b520bb09b",1602,160165,1,"fram","H",2.4,15.2,123,123,"AU","1.3","AU",NA,NA,2,NA,NA,90,90,39,4,"B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","08-04-2022","3263ed1c-f4e4-4bd6-ad85-5afae4461a55",1603,160651,1,"fram","H",3.8,0,144,144,"AU","1.3","DS",NA,"False",1,"S",147,90,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","08-04-2022","c49f9705-3662-42fa-b88c-f48fd077799e",1605,160749,1,"fram","H",13.4,17.4,103,103,"AU","1.3","DS",NA,"True",1,"S",NA,70,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","08-04-2022","afc2711e-ecc0-451e-bcff-53774663a23f",1606,160907,1,"fram","H",1.3,19.2,145,145,"AU","1.3","DS",NA,"True",1,"S",146,70,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,1611,171412,1,"litu",NA,319.79999,210.5,166,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,1612,160990,1,"fram",NA,319.70001,238.89999,487,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,207,20548,1,"fram",NA,23.5,126.2,655,NA,NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,208,20593,1,"frni",NA,38.4,144.2,164,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,212,20702,1,"cagl",NA,28.3,221.60001,117,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,304,30070,1,"juni",NA,40.3,63.3,431,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,304,30072,1,"fram",NA,44.2,62.4,140,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,305,30309,1,"caovl",NA,51.4,90,234,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,413,40888,1,"fram",NA,74.2,243,163,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,509,50473,1,"juni",NA,93.9,175.7,326,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,510,50479,1,"fram",NA,95.4,192.5,415,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,514,50638,1,"litu",NA,100,267.39999,193,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,518,52029,1,"fram",NA,84.1,340.5,309,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,526,52304,1,"cato",NA,90.6,511.79999,102,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,526,52307,1,"litu",NA,89.3,516.29999,167,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,530,52389,1,"caovl",NA,87.1,589.09998,304,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,530,52401,1,"litu",NA,88.3,596.40002,143,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,602,60023,1,"qupr",NA,114.3,22.3,172,NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
