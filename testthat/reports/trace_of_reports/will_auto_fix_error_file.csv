@@ -54,3 +54,14 @@
 "wounded_level_but_wrong_status_or_FAD","EM","07-27-2022","129bf0c5-ec62-4940-893d-ae60adb6f6b4",1522,152353,1,"caco","L",7.3,0.5,331,331,"AU",1.3,"AU",NA,NA,3,NA,NA,100,100,NA,0,"B",1,NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","EM","08-04-2022","4820da3c-f4b1-4fba-bd2c-db21cbc7f354",1608,160777,1,"litu","L",12.4,9.3,493,493,"A",1.3,"A","RT",NA,4,NA,NA,98,98,NA,NA,"W,CR",1,NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","EM","08-04-2022","4820da3c-f4b1-4fba-bd2c-db21cbc7f354",1608,160778,1,"litu","L",19.1,8.2,706,706,"A",1.3,"A",NA,NA,3,NA,NA,100,100,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","08-05-2022","483f964b-21e3-45f2-beeb-19d814d0ad62",608,60161,1,"qupr","H",17.5,11.7,869,869,"DS",1.3,"AU",NA,NA,4,NA,NA,85,45,NA,0,"U,R,LF,F",2,NA,2,"1 of 2 stems still alive",NA,NA,NA,NA,NA
+"epicormic_growth_but_not_AU","EM","05-25-2022","bd159b4f-862d-4bdf-9c67-35520624f3c7",820,82145,1,"fram","H",11.9,18.5,78,78,"A",1.3,"A",NA,NA,1,NA,NA,100,100,NA,0,NA,NA,NA,NA,NA,1,5,"none",NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","07-07-2022","bd2d4d56-ced1-435c-9f1a-0178d9c71b8f",903,90131,1,"fram","H",10.4,12.9,619,619,"PD",1.3,"DS",NA,"False",3,"CD",610,50,0,NA,0,"I,DF,F,R",2,NA,2,NA,5,0,"DE,VB,W",1,NA
+"epicormic_growth_but_not_AU","EM","06-01-2022","7122e550-c18d-426f-bde0-c74d279e0b6f",927,92458,1,"fram","H",10.4,15.9,63,63,"AU",1.3,"A",NA,NA,1,NA,NA,100,100,NA,NA,NA,NA,NA,NA,NA,2,3,"SS",NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","08-05-2022","c965acca-a731-485e-8b29-5db0f21147da",1006,101005,1,"nysy","L",7.2,9,616,616,"AU",1.1,"AU",NA,NA,3,NA,NA,100,100,NA,0,"U,R",2,NA,NA,NA,NA,NA,NA,NA,NA
+"epicormic_growth_but_not_AU","EM","06-06-2022","1e2d0f4c-698b-4fdb-93c5-0328a5de0ee6",1023,102266,1,"fram","H",7.8,2.9,93,93,"DS",1.3,"A",NA,NA,NA,NA,NA,100,98,NA,NA,NA,NA,NA,NA,NA,2,5,"SS",NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","08-05-2022","8feeb8ec-536b-4df1-96b3-d8a39f9165ea",1108,111046,1,"caca","H",9,1.8,106,106,"AU",1.3,"AU",NA,NA,1,NA,NA,90,80,NA,0,"U,R",2,NA,2,NA,NA,NA,NA,NA,NA
+"epicormic_growth_but_not_AU","EM","06-14-2022","83052fc8-8a78-45a4-82fb-6cb92b91847b",1227,122475,1,"frpe","H",3,15.1,86,86,"AU",1.3,"A",NA,NA,2,NA,NA,100,98,NA,0,NA,NA,NA,NA,NA,2,3,"SS",NA,NA
+"epicormic_growth_but_not_AU","EM","07-25-2022","9c99bb35-fe70-44a8-9681-39531788cf55",1416,141137,2,"chvi","H",17.3,16.9,66,66,"M",1.3,"A",NA,NA,3,NA,NA,98,98,NA,0,NA,NA,NA,NA,NA,2,2,"SS",NA,NA
+"epicormic_growth_but_not_AU","EM","07-21-2022","423b50a4-6c2b-4a62-b840-d3427394908c",1427,142589,1,"fram","H",7.4,14.4,85,85,"AU",1.3,"A",NA,NA,3,NA,NA,100,95,NA,4,NA,NA,NA,NA,NA,1,2,"SS,VB",NA,NA
+"wounded_level_but_wrong_status_or_FAD","EM","08-05-2022","d7f75d3c-5c5b-4a37-9567-8877c62ce2ca",1616,161572,1,"caco","L",7.4,5.6,405,405,"AU",1.3,"A","RT",NA,3,NA,NA,100,100,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
