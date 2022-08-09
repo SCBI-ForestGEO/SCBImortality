@@ -65,3 +65,14 @@
 "epicormic_growth_but_not_AU","EM","07-25-2022","9c99bb35-fe70-44a8-9681-39531788cf55",1416,141137,2,"chvi","H",17.3,16.9,66,66,"M",1.3,"A",NA,NA,3,NA,NA,98,98,NA,0,NA,NA,NA,NA,NA,2,2,"SS",NA,NA
 "epicormic_growth_but_not_AU","EM","07-21-2022","423b50a4-6c2b-4a62-b840-d3427394908c",1427,142589,1,"fram","H",7.4,14.4,85,85,"AU",1.3,"A",NA,NA,3,NA,NA,100,95,NA,4,NA,NA,NA,NA,NA,1,2,"SS,VB",NA,NA
 "wounded_level_but_wrong_status_or_FAD","EM","08-05-2022","d7f75d3c-5c5b-4a37-9567-8877c62ce2ca",1616,161572,1,"caco","L",7.4,5.6,405,405,"AU",1.3,"A","RT",NA,3,NA,NA,100,100,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
+"dead_but_crown_living_not_zero","JS","08-09-2022","cc3933c4-49ac-40ea-ae65-d9147fbcc2f9",107,10443,1,"caca","H",18.2,16.3,144,144,"DS",1.3,"DS",NA,"False",1,"S",143,45,55,NA,0,"W,OT,F",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JS","08-09-2022","2d8db082-28b0-4704-8697-0e5290e20328",116,10685,1,"cato","L",10.7,1.3,353,353,"AU",1.3,"AU",NA,NA,3,NA,NA,100,100,NA,NA,"R",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JS,JW,KW","08-08-2022","cd3715f2-8251-4b9c-bd39-4a4e46fcd688",215,20796,1,"fagr","L",2.9,6.6,148,148,"A",1.3,"AU",NA,NA,2,NA,NA,98,96,NA,0,"AN",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JS,JW,KW","08-08-2022","cd3715f2-8251-4b9c-bd39-4a4e46fcd688",215,20798,1,"nysy","L",6.8,2.8,191,191,"A",1.3,"AU",NA,NA,2,NA,NA,95,93,NA,0,"K,F",2,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","07-07-2022","bd2d4d56-ced1-435c-9f1a-0178d9c71b8f",903,90131,1,"fram","H",10.4,12.9,619,619,"PD",1.3,"DS",NA,"False",3,"CD",610,50,0,NA,0,"I,DF,F,R",2,NA,2,NA,NA,NA,NA,1,NA
+"wounded_level_but_wrong_status_or_FAD","EM","08-05-2022","77a45bd6-6d7a-43a3-95d8-9c2fdf6ac5da",1622,162366,1,"qual","H",14,11.7,682,682,"A",1.3,"AU",NA,NA,4,NA,NA,98,98,NA,2,"K",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","EM","08-05-2022","77a45bd6-6d7a-43a3-95d8-9c2fdf6ac5da",1622,162376,1,"qual","H",10.1,18.6,260,260,"A",1.3,"A",NA,NA,2,NA,NA,98,96,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","EM","08-08-2022","8542953b-f80f-4a48-a9e0-cd812a01febd",1625,162422,1,"cagl","L",15.9,13.8,412,412,"A",1.3,"A",NA,NA,3,NA,NA,100,100,NA,0,"W",1,NA,NA,"Sap sucker ring",NA,NA,NA,NA,NA
+"canker_level_but_wrong_status_or_FAD","EM","08-08-2022","1e4385de-97c5-4481-a3bd-5f201ad3c771",1626,162528,1,"fagr","L",1,12.3,105,105,"A",1.3,"A",NA,NA,1,NA,NA,100,98,NA,0,NA,NA,1,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","EM","08-09-2022","63e1ca27-4d1d-40a7-b0f6-d9ab7f1d7991",1630,162446,1,"quru","M",14.1,2.9,805,805,"A",1.3,"A",NA,NA,3,NA,NA,100,98,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","EM","08-09-2022","511a67b2-3593-4f1f-8ec1-4f7ea3a23d04",1727,172438,1,"cagl","L",19.8,6.9,257,257,"A",1.3,"A",NA,NA,3,NA,NA,100,100,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
