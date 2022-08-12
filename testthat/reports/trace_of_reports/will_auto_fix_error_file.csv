@@ -76,3 +76,5 @@
 "canker_level_but_wrong_status_or_FAD","EM","08-08-2022","1e4385de-97c5-4481-a3bd-5f201ad3c771",1626,162528,1,"fagr","L",1,12.3,105,105,"A",1.3,"A",NA,NA,1,NA,NA,100,98,NA,0,NA,NA,1,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","EM","08-09-2022","63e1ca27-4d1d-40a7-b0f6-d9ab7f1d7991",1630,162446,1,"quru","M",14.1,2.9,805,805,"A",1.3,"A",NA,NA,3,NA,NA,100,98,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_level_but_wrong_status_or_FAD","EM","08-09-2022","511a67b2-3593-4f1f-8ec1-4f7ea3a23d04",1727,172438,1,"cagl","L",19.8,6.9,257,257,"A",1.3,"A",NA,NA,3,NA,NA,100,100,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","08-11-2022","1a8a963b-2da7-4b17-aec5-48f22bd116a7",631,62425,1,"litu","L",8.3,2,146,146,"AU",1.3,"DS",NA,"False",2,"S",148,20,0,NA,0,"U,OT",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","EM","08-11-2022","92ad5de0-76b9-41af-be22-cc1e6fbf40e5",1705,171000,1,"rops","M",16.8,0.6,460,460,"AU",1.3,"AU","RT",NA,3,NA,NA,55,55,NA,0,"B,R",1,NA,NA,NA,NA,NA,NA,NA,NA
