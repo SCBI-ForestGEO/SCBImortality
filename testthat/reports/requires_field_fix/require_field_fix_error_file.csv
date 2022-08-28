@@ -106,7 +106,7 @@
 "missing_stem",NA,NA,NA,NA,"32251","1","323","tiam",NA,"50.3","450.29999","164",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"32299","1","324","frpe",NA,"43.6","473.39999","74",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"32331","1","325","frpe",NA,"41.5","498.10001","36",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_not_measured","LM","08-20-2022","e6758662-45e2-41a9-be60-431edad83b44",NA,"32371","2","0327","cagl","L","15","15.5","163",163,"AU","1.3","DS",NA,"False","1","S",NA,8,0,NA,NA,"B,R,W","1",NA,"3",NA,NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"08-20-2022","e6758662-45e2-41a9-be60-431edad83b44",NA,"32371","2","0327","cagl","L","15","15.5","163",163,"AU","1.3","DS",NA,"False","1","S",NA,8,0,NA,NA,"B,R,W","1",NA,"3",NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"32418","1","329","frpe",NA,"50","568.5","65",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"32515","1","332","nysy",NA,"47.5","620.40002","210",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"40042","1","401","fram",NA,"74.7","3.9","85",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -136,8 +136,10 @@
 "missing_stem",NA,NA,NA,NA,"42073","1","419","fram",NA,"62.6","369.79999","68",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"42113","1","420","fram",NA,"72.5","392.10001","68",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"42136","1","421","fram",NA,"70.7","407.39999","40",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_not_measured","LM","08-20-2022","d79062c6-6587-4050-b0d3-ab3d33f52517",NA,"42503","1","0429","juni","M","3.1","0.5","388",388,"AU","1.3","DC",NA,"False",NA,"CD",NA,0,0,NA,NA,"B,R,U",NA,NA,NA,"Check ailment from 2021",NA,NA,NA,NA,NA
-"rot_but_no_level","LM","08-20-2022","d79062c6-6587-4050-b0d3-ab3d33f52517",NA,"42503","1","0429","juni","M","3.1","0.5","388",388,"AU","1.3","DC",NA,"False",NA,"CD",NA,0,0,NA,NA,"B,R,U",NA,NA,NA,"Check ailment from 2021",NA,NA,NA,NA,NA
+"missing_stem",NA,NA,NA,NA,"42321","1","426","litu",NA,"61.4","505.20001","125",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"rot_but_no_level","LM","08-20-2022","03f7af5d-4aff-4897-80dc-f1ddea36efb5",NA,"42325","1","0426","quru","M","18.6","0.5","535",535,"A","1.3","AU",NA,NA,"3",NA,NA,98,95,NA,"0","R",NA,NA,NA,"Small rot at base",NA,NA,NA,NA,NA
+"status_DS_or_DC_but_DBH_not_measured",NA,"08-20-2022","d79062c6-6587-4050-b0d3-ab3d33f52517",NA,"42503","1","0429","juni","M","3.1","0.5","388",388,"AU","1.3","DC",NA,"False",NA,"CD",NA,0,0,NA,NA,"B,R,U",NA,NA,NA,"Check ailment from 2021",NA,NA,NA,NA,NA
+"rot_but_no_level",NA,"08-20-2022","d79062c6-6587-4050-b0d3-ab3d33f52517",NA,"42503","1","0429","juni","M","3.1","0.5","388",388,"AU","1.3","DC",NA,"False",NA,"CD",NA,0,0,NA,NA,"B,R,U",NA,NA,NA,"Check ailment from 2021",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"42568","1","431","caovl",NA,"72.3","615.29999","300",NA,NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious","EM","07-28-2022","709dbd7f-cc3d-4c20-8dcc-b80050369ce8",NA,"50016","1","0501","fram","H","8.2","6","143",143,"DS","1.3","DS",NA,"False","1","S",109,0,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"50048","2","502","chvi",NA,"87.9","30.2","21",NA,NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
