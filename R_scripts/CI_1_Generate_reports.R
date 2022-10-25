@@ -137,8 +137,9 @@ idx_errors <- !paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, 
   !paste(main_census$tag, main_census$StemTag) %in%  StemTwicePDLast #this avoids flagging trees stems that were "PD" 2 censuses in a row before
 
 
-idx_errors_warn <- idx_errors & paste(main_census$tag, main_census$StemTag) %in%  paste(prev_mort$tag, prev_mort$StemTag)[prev_mort$current_year_status %in% "PD"] # only warn if tree was PD before
-idx_errors_err <- idx_errors & !paste(main_census$tag, main_census$StemTag) %in% paste(prev_mort$tag, prev_mort$StemTag)[prev_mort$current_year_status %in% "PD"] # error otherwise
+idx_errors_warn <- idx_errors & (paste(main_census$tag, main_census$StemTag) %in%  paste(prev_mort$tag, prev_mort$StemTag)[prev_mort$current_year_status %in% "PD"] | main_census$sp %in% c( "fram", "frni", "frpe", "frsp", "chvi") & !is.na(main_census$dbh) & main_census$dbh <= 100) # only warn if tree was PD before or if is a fraxinus less than 10cm
+
+idx_errors_err <- idx_errors & !(paste(main_census$tag, main_census$StemTag) %in%  paste(prev_mort$tag, prev_mort$StemTag)[prev_mort$current_year_status %in% "PD"] | main_census$sp %in% c( "fram", "frni", "frpe", "frsp", "chvi") & !is.na(main_census$dbh) & main_census$dbh <= 100)# error otherwise
 
 if(sum(idx_errors_warn) > 0) {
   # write.csv(main_census[paste(main_census$tag, main_census$StemTag) %in% idx_errors, ], file = filename, row.names = F)
@@ -612,7 +613,8 @@ idx_status <- mort[, status_column] %in% c("AU")
 idx_errors <- idx_trees & idx_epicormic & !idx_status
 
 
-if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if Crown thinning>1, tree is AU or dead ####
 error_name <- "crown_thinning_more_than_1_but_not_AU_or_dead"
@@ -628,7 +630,7 @@ idx_status <- mort[, status_column] %in% c("A")
 
 idx_errors <- idx_trees & idx_crown & idx_status
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if any EABF recorded, tree is AU or dead ####
@@ -646,7 +648,7 @@ idx_status <- mort[, status_column] %in% c("A")
 idx_errors <- idx_trees & idx_EABF & idx_status
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if D-shaped exit hole count>0, tree is AU or dead ####
@@ -664,7 +666,7 @@ idx_status <- mort[, status_column] %in% c("A")
 idx_errors <- idx_trees & idx_exit_hole & idx_status
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) #  if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 
@@ -681,7 +683,7 @@ idx_errors <- idx_trees & idx_epicormic & (idx_status & !idx_previously_dead)
 
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if tree is dead, Crown thinning=5 ####
@@ -698,7 +700,7 @@ idx_previously_dead <- grepl("D", mort[,previous_status_column]) & !is.na(mort[,
 idx_errors <- idx_trees & idx_crown & (idx_status & !idx_previously_dead)
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 
