@@ -380,7 +380,7 @@ error_name <- "DBH_dead_suspicious"
 idx_trees <- mort[, status_column] %in% c("DS", "DC")
 idx_previously_dead <- grepl("D", mort[,previous_status_column]) & !is.na(mort[,previous_status_column])
 
-idx_DBH_ouside_range <- !is.na(mort$'Dead DBH') & !is.na(as.numeric(mort$DBH)) & (abs(mort$'Dead DBH' - as.numeric(mort$DBH)) > 20)
+idx_DBH_ouside_range <- !is.na(mort$'Dead DBH') & !is.na(as.numeric(mort$DBH)) & (abs(mort$'Dead DBH' - as.numeric(mort$DBH)) > 50)
 
 idx_errors <- idx_trees & !idx_previously_dead & idx_DBH_ouside_range
 
