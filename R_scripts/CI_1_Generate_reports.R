@@ -136,7 +136,7 @@ error_name = "missing_stem"
 
 idx_errors <- !paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag) & main_census$quadrat %in% as.numeric(mort$Quad) &  # these are trees that are not in the quadrats censused so far
   !(paste(main_census$tag, main_census$StemTag) %in% StemEverDC | # this avoids flagging trees that were ever DC
-  (paste(main_census$tag, main_census$StemTag) %in%  StemTwiceDeadLast & paste(main_census$tag, main_census$StemTag) %in%  DownOrMissingLast)) #this avoids flagging trees stems that were dead 2 censuses in a row AND down or missing in the last census
+  (paste(main_census$tag, main_census$StemTag) %in%  StemTwiceDead & paste(main_census$tag, main_census$StemTag) %in%  DownOrMissingLast)) #this avoids flagging trees stems that were dead 2 censuses in a row AND down or missing in the last census
 
 
 idx_errors_warn <- idx_errors & (paste(main_census$tag, main_census$StemTag) %in%  paste(prev_mort$tag, prev_mort$StemTag)[prev_mort$current_year_status %in% "PD"] | main_census$sp %in% c( "fram", "frni", "frpe", "frsp", "chvi") & !is.na(main_census$dbh) & main_census$dbh <= 100) # only warn if tree was PD before or if is a fraxinus less than 10cm
@@ -377,15 +377,21 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that status 'DS' or 'DC' have a dbh within 2cm of most recent census DBH  ####
 error_name <- "DBH_dead_suspicious"
 
-
-
 idx_trees <- mort[, status_column] %in% c("DS", "DC")
+idx_previously_dead <- grepl("D", mort[,previous_status_column]) & !is.na(mort[,previous_status_column])
+
 idx_DBH_ouside_range <- !is.na(mort$'Dead DBH') & !is.na(as.numeric(mort$DBH)) & (abs(mort$'Dead DBH' - as.numeric(mort$DBH)) > 20)
 
-
-idx_errors <- idx_trees & idx_DBH_ouside_range
+idx_errors <- idx_trees & !idx_previously_dead & idx_DBH_ouside_range
 
 if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+
+
+
+idx_errors <- idx_trees & idx_previously_dead & idx_DBH_ouside_range # need to fill dbh measurements with NA
+
+if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+
 
 # check that newly censused 'AU', 'DS' or 'DC trees that were alive in previous census have at least one FAD is selected (OR level selected for `wounded main stem`,`canker,swelling,deformity`, `rotting main stem`) ####
 error_name <- "status_AU_DS_or_DC_but_no_FAD"
