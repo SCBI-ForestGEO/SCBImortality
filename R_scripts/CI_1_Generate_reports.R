@@ -261,7 +261,7 @@ idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
 idx_errors <- is.na(mort$'Percentage of crown living') & idx_trees
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ] , error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ] , error_name))
 
 
 # check percent of crown living <=  percent of crown intact####
@@ -538,7 +538,7 @@ idx_exit_count <- !is.na(mort$"D-shaped exit hole count") & mort$"D-shaped exit 
 
 idx_errors <- idx_DE & !idx_exit_count
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) #if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 
@@ -548,7 +548,7 @@ error_name <- "exit_hole_count_no_DE_EABF"
 
 idx_errors <- !idx_DE & idx_exit_count
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 # check that newly censused 'A' or 'AU', were A or AU in previous year ####
