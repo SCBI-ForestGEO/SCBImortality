@@ -254,14 +254,21 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 error_name <- "missing_percent_crown_living"
 
 
-
-
-idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
+idx_trees <- mort[, status_column] %in% c("A", "AU")
 
 idx_errors <- is.na(mort$'Percentage of crown living') & idx_trees
 
 
-if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ] , error_name))
+if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ] , error_name))
+
+
+idx_trees <- mort[, status_column] %in% c("DS") # for DS trees: change to auto-fix error, will have to fill with "0".
+
+idx_errors <- is.na(mort$'Percentage of crown living') & idx_trees
+
+if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ] , error_name))
+
+
 
 
 # check percent of crown living <=  percent of crown intact####
