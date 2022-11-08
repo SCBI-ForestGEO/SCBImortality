@@ -64,10 +64,12 @@ prev_mort <- read.csv(paste0("data/mortality_", regmatches(previous_status_colum
 all_prev_mort <- lapply(list.files("data/", pattern = "\\d{4}.csv", full.names = T), read.csv)
 StatusHistory <- cbind(all_prev_mort[[1]][, c("tag", "StemTag")], StatusHistory = apply(sapply(all_prev_mort, "[[", "current_year_status"), 1, paste, collapse = ";"))
 
-StemEverDC <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl("DC", StatusHistory$StatusHistory)] # this sto identify trees that should not be flagged as missed during current census (see https://github.com/SCBI-ForestGEO/SCBImortality/issues/93)
-StemTwicePDLast <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl("PD;PD$", StatusHistory$StatusHistory)]  # this sto identify trees that were PD in the last 2 censuses (see https://github.com/SCBI-ForestGEO/SCBImortality/issues/93)
+StemEverDC <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl("DC", StatusHistory$StatusHistory)] # this is to identify trees that should not be flagged as missed during current census (see https://github.com/SCBI-ForestGEO/SCBImortality/issues/93)
 
+# StemTwicePDLast <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl("PD;PD$", StatusHistory$StatusHistory)]  # this is to identify trees that were PD in the last 2 censuses (see https://github.com/SCBI-ForestGEO/SCBImortality/issues/93)
+StemTwiceDead <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl("(PD|D|G|DC|DN|DS|NA);(PD|D|G|DC|DN|DS|NA)", StatusHistory$StatusHistory)] # this is to identify trees that were dead in the last 2 censuses (see https://github.com/SCBI-ForestGEO/SCBImortality/issues/93)
 
+DownOrMissingLast <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl(";(DC|DN|NA|PD)$", StatusHistory$StatusHistory)] 
 
 # load and clean up the 3rd main census ####
 main_census <-  read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/scbi.stem3.csv"))
@@ -133,8 +135,8 @@ error_name = "missing_stem"
 
 
 idx_errors <- !paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag) & main_census$quadrat %in% as.numeric(mort$Quad) &  # these are trees that are not in the quadrats censused so far
-  !paste(main_census$tag, main_census$StemTag) %in% StemEverDC & # this avoids flagging trees that were ever DC
-  !paste(main_census$tag, main_census$StemTag) %in%  StemTwicePDLast #this avoids flagging trees stems that were "PD" 2 censuses in a row before
+  !(paste(main_census$tag, main_census$StemTag) %in% StemEverDC | # this avoids flagging trees that were ever DC
+  (paste(main_census$tag, main_census$StemTag) %in%  StemTwiceDeadLast & paste(main_census$tag, main_census$StemTag) %in%  DownOrMissingLast)) #this avoids flagging trees stems that were dead 2 censuses in a row AND down or missing in the last census
 
 
 idx_errors_warn <- idx_errors & (paste(main_census$tag, main_census$StemTag) %in%  paste(prev_mort$tag, prev_mort$StemTag)[prev_mort$current_year_status %in% "PD"] | main_census$sp %in% c( "fram", "frni", "frpe", "frsp", "chvi") & !is.na(main_census$dbh) & main_census$dbh <= 100) # only warn if tree was PD before or if is a fraxinus less than 10cm
