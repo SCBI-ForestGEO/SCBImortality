@@ -154,8 +154,7 @@ if(sum(idx_errors_warn) > 0) {
                   "QX",
                   "QY",
                   "DBH",
-                  # "Status 2018",
-                  "HOM")] <-
+                  previous_status_column)] <-
     main_census[idx_errors_warn, c("quadrat", "tag", "StemTag", "sp", "gx", "gy", "dbh",  "status")]
 
   warning_file <- rbind(warning_file, data.frame(data_to_add, warning_name = error_name)) # switched to warning
@@ -174,8 +173,7 @@ if(sum(idx_errors_err) > 0) {
                   "QX",
                   "QY",
                   "DBH",
-                  # "Status 2018",
-                  "HOM")] <-
+                  previous_status_column)] <-
     main_census[idx_errors_err, c("quadrat", "tag", "StemTag", "sp", "gx", "gy", "dbh",  "status")]
   
   require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(data_to_add, error_name)) # switched to warning
