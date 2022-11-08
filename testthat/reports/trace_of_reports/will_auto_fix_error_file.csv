@@ -129,3 +129,11 @@
 "missing_percent_crown_living","KT","08-16-2022","4d9df686-392d-43fa-b946-e4f397b21d8d",1929,192547,1,"litu","L",17.4,7.3,544,544,"A",1.3,"DS",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_living","KT,KW","08-16-2022","fe99a808-eda3-4536-b633-b6390b362856",1931,192570,1,"fram","H",16.4,16.3,478,478,"DS",1.3,"DS",NA,"False",4,"D",478,NA,NA,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_percent_crown_living","KT,KW","08-16-2022","fe99a808-eda3-4536-b633-b6390b362856",1931,192575,1,"fram","H",6.2,14.7,402,402,"DS",1.3,"DS",NA,"False",4,"D",402,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"DBH_dead_suspicious","JS","08-08-2022","18ea5f35-1d2c-4e3c-9400-0852e355cbbd",219,22095,1,"nysy","L",13.3,2.2,298,298,"DS",1.3,"DS",NA,"False",NA,"I",275,NA,NA,NA,NA,"B,U",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"DBH_dead_suspicious","JS","08-10-2022","8c55cbfc-359f-46b9-8ff0-7bbc8119a9de",226,22333,1,"fram","H",5.5,2.7,430,430,"DS",1.3,"DS",NA,"True",2,"I",355,100,0,NA,0,"I",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"DBH_dead_suspicious","JS","08-10-2022","8c55cbfc-359f-46b9-8ff0-7bbc8119a9de",226,22333,2,"fram","H",5.5,2.7,378,378,"DS",1.4,"DS",NA,"True",2,"I",420,100,0,NA,0,"I",NA,NA,NA,"loose bark makes DBH inaccurate",NA,NA,NA,NA,NA
+"DBH_dead_suspicious","EM","07-28-2022","709dbd7f-cc3d-4c20-8dcc-b80050369ce8",501,50016,1,"fram","H",8.2,6,143,143,"DS",1.3,"DS",NA,"False",1,"S",109,0,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"DBH_dead_suspicious","JJ","06-29-2022","f7febdb8-d134-4c8b-b896-dec9d4d12746",805,80233,1,"quru","M",12.6,3.7,742,742,"DS",1.3,"DS",NA,"False",4,"D",765,75,0,NA,0,"U,R,DF,F",NA,NA,2,NA,NA,NA,NA,NA,NA
+"DBH_dead_suspicious","EM","06-13-2022","01b2e7eb-61dc-4ec1-8660-93d6cff869a1",1125,112322,1,"caovl","L",11.5,7.3,265,265,"PD",1.3,"DS",NA,"False",2,"S",2645,0,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"DBH_dead_suspicious","EM","06-14-2022","6dbbb382-518a-4eab-abce-e293b21f51f9",1229,122490,1,"quru","M",8.9,4.2,470,470,"PD",1.3,"DS","RT","False",2,"I",446,10,0,NA,0,"OT",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"DBH_dead_suspicious","EM","08-12-2022","b910b882-0743-4dd0-b432-577978e6d1f4",1813,180828,1,"fram","H",16.1,10.1,255,255,"DS",1.3,"DS",NA,"False",3,"CD",225,90,0,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
