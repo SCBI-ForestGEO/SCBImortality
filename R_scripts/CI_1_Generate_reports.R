@@ -69,7 +69,7 @@ StemEverDC <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl("DC", Status
 # StemTwicePDLast <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl("PD;PD$", StatusHistory$StatusHistory)]  # this is to identify trees that were PD in the last 2 censuses (see https://github.com/SCBI-ForestGEO/SCBImortality/issues/93)
 StemTwiceDead <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl("(PD|D|G|DC|DN|DS|NA);(PD|D|G|DC|DN|DS|NA)", StatusHistory$StatusHistory)] # this is to identify trees that were dead in the last 2 censuses (see https://github.com/SCBI-ForestGEO/SCBImortality/issues/93)
 
-DownOrMissingLast <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl(";(DC|DN|NA|PD)$", StatusHistory$StatusHistory)] 
+DownOrMissingLast <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl(";(DC|DN|NA)$", StatusHistory$StatusHistory)] 
 
 # load and clean up the 3rd main census ####
 main_census <-  read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/scbi.stem3.csv"))
@@ -108,7 +108,8 @@ mort <- mort[, unique(names(mort))]
 
 
 # give a % completion status ####
-percent_completion <- round(sum(paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag)) / nrow(main_census) * 100)
+# percent_completion <- round(sum(paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag)) / nrow(main_census) * 100)
+percent_completion <- round(sum(main_census$quadrat %in% as.numeric(mort$Quad))  / nrow(main_census) * 100)
 
 png(file.path(here("testthat"), "reports/percent_completion.png"), width = 1, height = 1, units = "in", res = 150)
 par(mar = c(0,0,0,0))
