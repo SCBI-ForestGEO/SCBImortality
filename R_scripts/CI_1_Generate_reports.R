@@ -368,7 +368,7 @@ idx_no_DBH_if_dead <- is.na(mort$'Dead DBH')
 idx_errors <- idx_trees & idx_no_DBH_if_dead & !idx_previously_dead
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 
