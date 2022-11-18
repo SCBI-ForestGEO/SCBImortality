@@ -447,7 +447,8 @@ idx_wnd_main_stem <- !is.na(mort$'Wounded main stem')
 
 idx_errors <- idx_trees & idx_wounded & !idx_wnd_main_stem
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+# require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 
@@ -485,7 +486,8 @@ idx_ckr_level <- !is.na(mort$'Canker; swelling, deformity')
 idx_errors <- idx_trees & idx_canker & !idx_ckr_level
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+ # require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 
@@ -521,7 +523,8 @@ idx_rot_level <- !is.na(mort$'Rotting trunk')
 idx_errors <- idx_trees & idx_rot & !idx_rot_level
 
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+# require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
 
