@@ -62,7 +62,7 @@ mort <- rbind(mort, static[,names(mort)])
 
 
 # load all report that need to be fixed ####
-all_errors_to_be_fixed <- list.files(file.path(here("testthat"), "reports/requires_field_fix/"), pattern = ".csv", full.names = T)
+all_errors_to_be_fixed <- list.files(file.path(here("testthat"), "reports/requires_field_fix/"), pattern = "_file.csv", full.names = T)
 all_warnings_to_be_fixed <- list.files(file.path(here("testthat"), "reports/warnings/"), pattern = ".csv", full.names = T)
 
 all_errors_to_be_fixed <- if(length(all_errors_to_be_fixed) >0) read.csv(all_errors_to_be_fixed) else NULL
@@ -87,3 +87,4 @@ legend("bottomleft", fill = c("grey", "yellow", "orange", "red"), legend = c("do
 dev.off()
 
 file.copy(from = filename, to = paste0(gsub("reports/map_of_error_and_warnings.png", "reports/sequence_of_maps/map_of_error_and_warnings_", filename), Sys.Date(), ".png"))
+
