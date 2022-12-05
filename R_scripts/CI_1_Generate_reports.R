@@ -76,7 +76,7 @@ setdiff(names(fldfix), names(mort))
 
 
 # stack and remove duplicated records in the data frames
-mort <- rbind(data.frame(what = "mort", mort), data.frame(what = "static", static), data.frame(what = "fldfix", fldfix))
+mort <- rbind(data.frame(what = "mort", mort, check.names = F), data.frame(what = "static", static, check.names = F), data.frame(what = "fldfix", fldfix, check.names = F))
 
 mort <- mort[!duplicated(mort), ]
 
