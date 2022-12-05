@@ -15,6 +15,7 @@ library(readxl)
 # latest_FFFs <- latest_FFFs[which.max(as.numeric(regmatches(latest_FFFs, regexpr("20\\d\\d", latest_FFFs))))] # take the latest file only
 latest_FFFs <- "raw_data/FFF_excel/SCBI Mortality 2022.xlsx" #update this for cencus 2023
 static_FFFs <- "raw_data/FFF_excel/SCBI Mortality static 2022.xlsx" #this is static form that was used for one week during 2022 that is missing one column 
+fieldFixes_FFF <- "raw_data/FFF_excel/SCBI Mortality field fixes 2022.xlsx" #this is a form that was filled after the quadrat with remaining issues were re-dispatched in Decemver 2022
 
 
 ## load the latest mortality survey
@@ -39,18 +40,102 @@ static <- cbind(SurveyorID = static_root$Personnel[match(static$`Submission Id`,
               date = static_root$"Date/Time"[match(static$`Submission Id`, static_root$`Submission Id`)],
               static)
 
-#confirm difference between mort and static 
+fldfix1 <- as.data.frame(read_xlsx(fieldFixes_FFF, sheet = "section_1", .name_repair = "minimal" ))
+fldfix2 <- as.data.frame(read_xlsx(fieldFixes_FFF, sheet = "section_2", .name_repair = "minimal" ))
+
+fldfix <- merge(fldfix1, fldfix2, by = intersect(names(fldfix1), names(fldfix2)))
+
+fldfix_root <- as.data.frame(read_xlsx(fieldFixes_FFF, sheet = "Root", .name_repair = "minimal" ))
+fldfix <- cbind(SurveyorID = "Katherina",
+                date = static_root$"Date/Time"[match(fldfix$`Submission Id`, fldfix_root$`Submission Id`)],
+                fldfix)
+fldfix$Quad <- ifelse(nchar(fldfix$Quad) == 3, paste0("0", fldfix$Quad), fldfix$Quad)
+
+
+
+
+
+#confirm difference between mort, static  and fldfix
 setdiff(names(mort), names(static))
 setdiff(names(static), names(mort))
 
+setdiff(names(mort), names(fldfix))
+setdiff(names(fldfix), names(mort))
+
 static$"Crown position < 10 cm DBH" <- NA
+
+mort$"Data Correction" <- NA
+static$"Data Correction" <- NA
 
 #confirm mort and static are same now 
 setdiff(names(mort), names(static))
 setdiff(names(static), names(mort))
 
-#stack mort and static
-mort <- rbind(mort, static[,names(mort)])
+setdiff(names(mort), names(fldfix))
+setdiff(names(fldfix), names(mort))
+
+
+# stack and remove duplicated records in the data frames
+mort <- rbind(data.frame(what = "mort", mort), data.frame(what = "static", static), data.frame(what = "fldfix", fldfix))
+
+mort <- mort[!duplicated(mort), ]
+
+# compare data -> if anything is duplicated remove the row with fewer info but leave both if ther is a conflict
+
+mort_dupST <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$StemTag))]
+
+for(st in mort_dupST) {
+  
+  x <- mort[paste(mort$Tag, mort$StemTag) %in% st, ]
+  
+  # cases where one or more of the rows are NA and one or more other have info
+   idx_col_to_impute <- which(!colSums(is.na(x)) %in% c(0, nrow(x))) 
+   
+    if(length(idx_col_to_impute)>0) {
+      for(j in idx_col_to_impute) {
+        
+        
+        idx_to_copy <- ifelse(all(x[!is.na(x[,j]),j] == x[!is.na(x[,j]),j][1]), 1, 0)
+        
+        if(names(x)[j] %in% "FAD" & idx_to_copy == 0) idx_to_copy  <- which.max(nchar(x[!is.na(x[,j]),j]))
+        
+        if(idx_to_copy > 0) {
+          
+          x[,j] <- x[!is.na(x[,j]),j][idx_to_copy] 
+          
+        } else { stop ("not all non-NA are equal")}
+      }
+    }
+   
+   
+  # now reduce by removing duplicated rows
+   x <- x[!duplicated(x[,-c(1:4)]), ]
+   
+   # if still more than one row
+  if(nrow(x) == 2) {
+    
+    # idx column with one NA and the other not NA
+
+    
+    # if any FALSE --> we know we won't be combining rows
+    can_reduce <- identical(all(x[1,] == x[2,]), TRUE)
+    
+    
+    if(can_reduce) stop("can reduce")
+    
+  } else {
+   if(nrow(x) > 1) stop("more than 2 rows")
+    }
+  
+  
+  # save changes (have to first delete the rows ad then rbind , since we may have reduced the number of rows)
+  mort <- mort[!paste(mort$Tag, mort$StemTag) %in% st, ]
+  mort <- rbind(mort, x)
+}
+
+# remove added columns
+mort$what <- NULL
+mort$Data.Correction <- NULL
 
 
 ### figure out previous and current status columns
