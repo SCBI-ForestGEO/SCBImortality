@@ -109,7 +109,7 @@ for(st in mort_dupST) {
    
    
   # now reduce by removing duplicated rows
-   x <- x[!duplicated(x[,-c(1:4)]), ]
+   x <- x[!duplicated(x[,-c(1:4, ncol(x))]), ]
    
    # if still more than one row
   if(nrow(x) == 2) {
@@ -135,7 +135,7 @@ for(st in mort_dupST) {
 
 # remove added columns
 mort$what <- NULL
-mort$Data.Correction <- NULL
+mort$"Data Correction" <- NULL
 
 
 ### figure out previous and current status columns
