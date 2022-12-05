@@ -254,3 +254,11 @@
 "wounded_but_no_level","EM","08-16-2022","69f24392-f0c7-4a12-948d-9ccdefbb115c",2028,202535,1,"ceoc","M",9,10.6,101,101,"A",1.3,"AU",NA,NA,1,NA,NA,100,98,NA,0,"W",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "wounded_but_no_level","EM","08-16-2022","69f24392-f0c7-4a12-948d-9ccdefbb115c",2028,202542,1,"cato","L",2.1,13,216,216,"A",1.3,"AU",NA,NA,3,NA,NA,100,100,NA,0,"W",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "canker_but_no_level","EM","08-16-2022","4f18b4bb-d256-46d9-923d-275e4b85ae4d",2029,202912,1,"litu","L",14.4,13.4,508,508,"A",1.44,"AU",NA,NA,3,NA,NA,100,100,NA,1,"K",1,NA,NA,NA,NA,NA,NA,NA,NA
+"DBH_dead_suspicious","EM","05-30-2022","f3db926d-357c-4b13-9b83-707bfe711b5c",102,10021,1,"fram","H",5.1,10.1,206,206,"DS",1.3,"DS","RT","False",3,"CD",0,80,0,0,NA,"I",NA,NA,NA,"Lilac ash borer",NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","08-05-2022","308865f5-6517-4da7-8e2e-2dac0d2e3cec",607,60141,1,"qupr","H",12,9.7,669,669,"AU",1.3,"AU",NA,NA,4,NA,NA,90,80,NA,0,"U,LF",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","08-05-2022","483f964b-21e3-45f2-beeb-19d814d0ad62",608,60161,1,"qupr","H",17.5,11.7,869,869,"DS",1.3,"AU",NA,NA,4,NA,NA,85,45,20,0,"U,R,LF,F",2,NA,2,"1 of 2 stems still alive",NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","08-04-2022","7a563808-12a1-435b-b952-9b1f87c6fa12",608,60161,1,"qupr","H",17.5,11.7,869,869,"DS",1.3,"AU",NA,NA,3,NA,NA,95,45,20,0,"U",2,NA,2,"2 stems - south stem dead steading, north alive",NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","EM","08-04-2022","4820da3c-f4b1-4fba-bd2c-db21cbc7f354",1608,160777,1,"litu","L",12.4,9.3,493,493,"A",1.3,"A","RT",NA,4,NA,NA,98,98,NA,0,"W,CR",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","08-20-2022","e69242b9-6838-47d6-b873-842fd9177591",1608,160777,1,"litu","L",12.4,9.3,493,493,"A",1.3,"A","RT",NA,4,NA,NA,100,100,NA,0,"W,CR",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","08-20-2022","e69242b9-6838-47d6-b873-842fd9177591",1608,160778,1,"litu","L",19.1,8.2,706,706,"A",1.3,"A",NA,NA,4,NA,NA,100,100,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
+"wounded_level_but_wrong_status_or_FAD","JJ","08-20-2022","822a0974-3a2e-4964-895f-f8e8c3d2b0c9",1609,160791,1,"quve","H",9.8,17.3,443,443,"A",1.3,"A",NA,NA,3,NA,NA,100,100,NA,0,"W",1,NA,NA,NA,NA,NA,NA,NA,NA
