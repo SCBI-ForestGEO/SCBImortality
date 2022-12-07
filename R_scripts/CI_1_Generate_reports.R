@@ -95,9 +95,9 @@ for(st in mort_dupST) {
       for(j in idx_col_to_impute) {
         
         
-        idx_to_copy <- ifelse(all(x[!is.na(x[,j]),j] == x[!is.na(x[,j]),j][1]), 1, 0)
+        idx_to_copy <- ifelse(all(x[!is.na(x[,j]),j] == x[!is.na(x[,j]),j][1]), 1, 0) # if all non-Na are the same give 1, else 0
         
-        if(names(x)[j] %in% "FAD" & idx_to_copy == 0) idx_to_copy  <- which.max(nchar(x[!is.na(x[,j]),j]))
+        if(names(x)[j] %in% "FAD" & idx_to_copy == 0) idx_to_copy  <- which.max(nchar(x[!is.na(x[,j]),j])) # if we are looking at FAD, take the most comprehensive value
         
         if(idx_to_copy > 0) {
           
@@ -114,11 +114,13 @@ for(st in mort_dupST) {
    # if still more than one row
   if(nrow(x) == 2) {
     
-    # idx column with one NA and the other not NA
-
+   
+    can_reduce <- identical(all(x[1,-c(1:4, ncol(x))] == x[2,-c(1:4, ncol(x))]), TRUE) # if any FALSE --> we know we won't be combining rows, unless one of them is from field fix
     
-    # if any FALSE --> we know we won't be combining rows
-    can_reduce <- identical(all(x[1,] == x[2,]), TRUE)
+    if(!can_reduce & any(x$what %in% "fldfix")) {
+      cat(x$Tag[1], ": keeping", names(x[,-c(1:4, ncol(x))])[which(x[1,-c(1:4, ncol(x))] != x[2,-c(1:4, ncol(x))])], "from field fix data where error was", x$"Data Correction"[x$what %in% "fldfix"], "\n")
+      x <- x[x$what %in% "fldfix", ]
+    }
     
     
     if(can_reduce) stop("can reduce")
