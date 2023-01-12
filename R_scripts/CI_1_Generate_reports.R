@@ -54,7 +54,6 @@ fldfix$Quad <- ifelse(nchar(fldfix$Quad) == 3, paste0("0", fldfix$Quad), fldfix$
 
 
 
-
 #confirm difference between mort, static  and fldfix
 setdiff(names(mort), names(static))
 setdiff(names(static), names(mort))
