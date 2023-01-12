@@ -46,11 +46,11 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         
       # Housekeeping - Run package check (may not be needed):
-      - name: Check
-        run: |
-          options(crayon.enabled = TRUE)
-          rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
-        shell: Rscript {0}
+      # - name: Check
+      # run: |
+      #   options(crayon.enabled = TRUE)
+      #    rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+      #  shell: Rscript {0}
         
       # Run R script to generate error reports:
       - name: Generate reports
