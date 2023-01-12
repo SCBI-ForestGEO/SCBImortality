@@ -313,14 +313,21 @@ idx_errors <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$Stem
 # check that all censused trees have a crown position recorded ####
 error_name <- "missing_crown_position"
 
+idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
+
+idx_errors <- is.na(mort$'Crown position') & is.na(mort$'Dead crown position') & idx_trees ### add "& is.na(mort$'Dead crown position')" to address this issue: https://github.com/SCBI-ForestGEO/SCBImortality/issues/103
+
+if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
+### add this bit to address this issue: https://github.com/SCBI-ForestGEO/SCBImortality/issues/103
+error_name <- "missing_crown_position_while_dead_crown_position_is_recorded"
 
 idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
 
-idx_errors <- is.na(mort$'Crown position') & idx_trees
+idx_errors <- is.na(mort$'Crown position')  & !is.na(mort$'Dead crown position') & idx_trees
 
-if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) 
 
 
 
