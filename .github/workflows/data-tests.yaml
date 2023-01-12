@@ -43,13 +43,7 @@ jobs:
         # Use this action: https://github.com/actions/checkout#checkout-v3
       - uses: r-lib/actions/setup-r@v1
         # Use this action: https://github.com/r-lib/actions/tree/v2/setup-r
-
-      # Housekeeping - Install all packages listed in DESCRIPTION file
-      - name: Install dependencies
-        run: |
-          install.packages(c("remotes", "rcmdcheck"))
-          remotes::install_deps(dependencies = TRUE)
-        shell: Rscript {0}
+      - uses: r-lib/actions/setup-r-dependencies@v2
         
       # Housekeeping - Run package check (may not be needed):
       - name: Check
