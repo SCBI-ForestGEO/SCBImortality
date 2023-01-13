@@ -1371,7 +1371,6 @@
 "missing_crown_position_while_dead_crown_position_is_recorded","EM","08-16-2022","fbe94a23-3403-4d60-9824-26f3be3a75d4",2031,202940,1,"fram","H",19.1,5.4,103,103,"DS","1.3","DS",NA,"True",NA,"I",103,15,0,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","Katherina","07-28-2022","3eac4c2b-7de3-4fbf-b458-eb3b94769878",102,10013,1,"fram","H",5.5,3.5,268,268,"DS","1.3","AU","RT","False",3,NA,NA,60,5,0,3,"R",NA,NA,2,"Large liana load >50",NA,NA,NA,NA,NA
 "missing_EAB_info","Katherina","07-28-2022","fe93c307-3e0a-42b1-9b23-93a40793f2aa",106,10285,1,"fram","H",10.5,3.4,254,254,"AU","1.3","DS","RT","False",3,"I",254,0,0,0,NA,"I",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","JS","08-09-2022","e907768d-fbf6-4949-9aa9-1c5bbc449897",125,12263,1,"fram","H",18.9,9.5,NA,NA,"AU","NULL","AU",NA,NA,2,NA,NA,85,80,NA,0,"I,B",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","07-28-2022","978e5c03-4824-4065-9759-1fc9a60ada19",502,50160,1,"fram","H",7.4,11,908,908,"AU","1.3","DS","RT","False",3,"CD",907,85,0,0,0,"AN,F",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","Katherina","07-28-2022","8ba49343-4970-40d9-ac4f-6dff4e37795a",829,82363,1,"fram","H",17.2,9,222,222,"A","1.3","DS",NA,"False",1,"S",223,80,0,0,0,"U",NA,NA,NA,NA,NA,NA,"AS",NA,NA
 "Dead_but_now_alive","Katherina","07-28-2022","b9bc59c5-5a6c-4a3d-b52e-44f31213b622",917,92029,1,"quru","M",11.5,14,594,594,"DS","1.3","AU",NA,"False",3,NA,NA,90,70,0,NA,"R",NA,NA,2,"Epicormic sprouts",NA,NA,NA,NA,NA
@@ -1383,3 +1382,6 @@
 "missing_EAB_info","Katherina","07-28-2022","c1ec8d53-9337-4c34-a3ca-b5963729f5ad",1116,111290,1,"fram","H",17.4,8.3,NA,NA,"M","NULL","DC",NA,"False",NA,NA,365,0,0,0,NA,"R",NA,NA,3,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","06-14-2022","7802157d-b5aa-4f51-bd7d-ee4ba125408b",1230,122555,1,"fram","H",2.2,12.8,121,121,"AU","1.3","DC",NA,"False",1,"S",117,0,0,0,0,"B",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","06-20-2022","b86834b9-236c-45f8-9d93-2f03140382c1",1328,132431,1,"fram","H",2.1,14.3,61,61,"AU","1.3","DS",NA,"False",1,"S",62,90,0,0,0,"W,I",2,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","JS","08-09-2022","e907768d-fbf6-4949-9aa9-1c5bbc449897",125,12263,1,"fram","H",18.9,9.5,NA,NA,"AU","NULL","AU",NA,NA,2,NA,NA,85,80,NA,0,"I,B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","Katherina","07-28-2022","9f52407f-c357-463e-8983-47a176eaa084",1029,102453,1,"fram","H",19.3,17.7,NA,NA,"M","NULL","DC",NA,"False",1,"S",195,0,0,0,NA,"U",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","Katherina","07-28-2022","c1ec8d53-9337-4c34-a3ca-b5963729f5ad",1116,111290,1,"fram","H",17.4,8.3,NA,NA,"M","NULL","DC",NA,"False",NA,NA,365,0,0,0,NA,"R",NA,NA,3,NA,NA,NA,NA,NA,NA
