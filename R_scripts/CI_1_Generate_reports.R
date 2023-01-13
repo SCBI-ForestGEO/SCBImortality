@@ -103,7 +103,7 @@ for(st in mort_dupST) {
           
           x[,j] <- x[!is.na(x[,j]),j][idx_to_copy] 
           
-        } else { stop ("not all non-NA are equal")}
+        } else { stop ("duplicated tag issue: not all non-NA are equal in ", st)}
       }
     }
    
@@ -123,10 +123,10 @@ for(st in mort_dupST) {
     }
     
     
-    if(can_reduce) stop("can reduce")
+    if(can_reduce) stop("duplicated tag issue: can reduce ", st)
     
   } else {
-   if(nrow(x) > 1) stop("more than 2 rows")
+   if(nrow(x) > 1) stop("duplicated tag issue: more than 2 rows in ", st)
     }
   
   
@@ -327,7 +327,7 @@ idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
 
 idx_errors <- is.na(mort$'Crown position')  & !is.na(mort$'Dead crown position') & idx_trees
 
-if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) 
+if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name = error_name)) 
 
 
 
