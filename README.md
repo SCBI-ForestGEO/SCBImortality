@@ -90,6 +90,8 @@ These data are public, but the more recent censuses may not yet have been used i
 | Teagan Rogers | Troger4 | field assistant, SCBI | 2021 census assistant |
 | Isabella Dangler | irdangler | SMSC student | tree disease guide |
 | Erin MacMonigle | emacmonigle | field assistant, SCBI | 2022 census leader |
+| Katherina Wilkins |  | field assistant, SCBI | 2022 census assistant, 2022 field fixes |
+| Lukas Magee | mageeluke | PhD Student, UFL | assisted with censusin 2022, 2023 |
 
  
 *refers to position at time of main contribution to this repository
