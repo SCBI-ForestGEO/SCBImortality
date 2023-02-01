@@ -74,6 +74,9 @@ setdiff(names(static), names(mort))
 setdiff(names(mort), names(fldfix))
 setdiff(names(fldfix), names(mort))
 
+### figure out previous and current status columns
+status_column <- rev(grep("Status", names(mort), value = T))[1]
+previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
 
 # stack and remove duplicated records in the data frames
 mort <- rbind(data.frame(what = "mort", mort, check.names = F), data.frame(what = "static", static, check.names = F), data.frame(what = "fldfix", fldfix, check.names = F))
@@ -99,11 +102,14 @@ for(st in mort_dupST) {
         
         if(names(x)[j] %in% "FAD" & idx_to_copy == 0) idx_to_copy  <- which.max(nchar(x[!is.na(x[,j]),j])) # if we are looking at FAD, take the most comprehensive value
         
+        if(names(x)[j] %in% "Dead DBH" & idx_to_copy == 0 & all(grepl("D", x[, status_column])) & all(grepl("A", x[, previous_status_column]))) idx_to_copy  <- which(!is.na(x[, j]) & x[, j] >0) # if we are looking at a newly dead tree and j in 'DBH Dead',  take the one with dbh measured
+        
         if(idx_to_copy > 0) {
           
           x[,j] <- x[!is.na(x[,j]),j][idx_to_copy] 
           
-        } else { stop ("duplicated tag issue: not all non-NA are equal in ", st)}
+        } else { 
+          stop ("duplicated tag issue: not all non-NA are equal in ", st)}
       }
     }
    
@@ -140,9 +146,7 @@ mort$what <- NULL
 mort$"Data Correction" <- NULL
 
 
-### figure out previous and current status columns
-status_column <- rev(grep("Status", names(mort), value = T))[1]
-previous_status_column <- rev(grep("Status", names(mort), value = T))[2]
+
 
 
 ## load the previous mortality surveys and make code history 
