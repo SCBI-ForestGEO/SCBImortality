@@ -38,7 +38,7 @@
 "missing_EAB_info","AS","07-28-2022","3be6530c-e349-4443-ab47-d684c8c693eb",NA,"30386","1","0309","fram","H","18.8","0.3","224","224","AU","1.3","AU",NA,NA,"4",NA,NA,100,29,NA,"0","DF,I",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","AS","07-28-2022","8477b1a8-fd24-48d2-be08-4015350c7b30",NA,"30435","1","0312","fram","H","16","15.1","305","305","AU","1.3","DS",NA,"False","3","CD",305,3,0,0,"1","B,W,R,I,F,DF","2",NA,"2","NA",NA,NA,NA,NA,NA
 "missing_EAB_info","AS","07-28-2022","8477b1a8-fd24-48d2-be08-4015350c7b30",NA,"30435","1","0312","fram","H","16","15.1","305","305","AU","1.3","DS",NA,"False","2","CD",305,98,0,0,"0","B,W,R,I,F,DF","2",NA,"2","NA",NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-28-2022","12e688da-512d-4aeb-9061-db0638fcd8bf",NA,"32057","1","0318","fram","H","12.1","6.7","245","245","AU","1.3","DS",NA,"False","3","CD",245,80,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","08-28-2022","12e688da-512d-4aeb-9061-db0638fcd8bf",NA,"32057","1","0318","fram","H","12.1","6.7","245","245","AU","1.3","DS",NA,"False","3","CD",245,80,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
 "missing_EAB_info","EM","08-28-2022","7626247a-15e6-4153-9892-05265deea874",NA,"32104","1","0320","fram","H","18.9","10","134","134","AU","1.3","DS",NA,"False","3","CD",134,90,0,NA,"0","I",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "status_DS_or_DC_but_DBH_not_measured",NA,"08-20-2022","e6758662-45e2-41a9-be60-431edad83b44",NA,"32371","2","0327","cagl","L","15","15.5","163","163","AU","1.3","DS",NA,"False","1","S",NA,8,0,NA,NA,"B,R,W","1",NA,"3",NA,NA,NA,NA,NA,NA
 "missing_EAB_info","DJ","07-28-2022","8b1d7d10-1cd4-4335-acd5-ec91b2c193e3",NA,"40043","1","0401","fram","H","15.3","5.3","154","154","AU","1.3","AU",NA,NA,"1",NA,NA,70,3,NA,"4","I",NA,NA,NA,NA,"5",NA,NA,NA,NA
@@ -74,7 +74,7 @@
 "epicormic_growth_but_not_AU","EM","05-25-2022","bd159b4f-862d-4bdf-9c67-35520624f3c7",NA,"82145","1","0820","fram","H","11.9","18.5","78","78","A","1.3","A",NA,NA,"1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,"1","5","none",NA,NA
 "missing_EAB_info",NA,"05-25-2022","2de095c1-64ac-445c-b6a8-a422c642a501",NA,"82236","1","0823","fram","H","13.4","16.1","60","60","AU","1.3","AU",NA,"True","1",NA,NA,90,15,NA,"0","F",NA,NA,NA,NA,"4","1","AS,SS",NA,NA
 "missing_EAB_info","EM","05-25-2022","bf93d26d-c543-44cc-bdca-ccec855b030d",NA,"82297","1","0826","fram","H","2.3","7.2","76","76","AU","1.3","AU",NA,"False","1",NA,NA,85,70,NA,"0","I",NA,NA,NA,NA,"3","3","AS,SS",NA,NA
-"missing_EAB_info","Katherina","07-28-2022","8ba49343-4970-40d9-ac4f-6dff4e37795a",NA,"82363","1","0829","fram","H","17.2","9","222","222","A","1.3","DS",NA,"False","1","S",223,80,0,0,"0","U",NA,NA,NA,"NA",NA,NA,"AS",NA,NA
+"missing_EAB_info","Katherina","05-26-2022","8ba49343-4970-40d9-ac4f-6dff4e37795a",NA,"82363","1","0829","fram","H","17.2","9","222","222","A","1.3","DS",NA,"False","1","S",223,80,0,0,"0","U",NA,NA,NA,"NA",NA,NA,"AS",NA,NA
 "missing_EAB_info","EM","05-26-2022","5e96f409-dbb9-4366-9a4d-9f3fb2c92861",NA,"82435","1","0832","fram","H","3.5","3.5","74","74","M","1.3","DS",NA,"True","1","S",74,0,0,NA,"0","CR,W","1",NA,NA,NA,"5","0","AS,SS,VB",NA,NA
 "Dead_but_now_alive","JJ","07-07-2022","6b04e756-21d5-430e-80f2-aa87d5e60c42",NA,"90236","1","0902","ulru","H","14.4","2.5","155","155","M","1.3","A",NA,NA,"2",NA,NA,100,100,NA,"3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","JJ","07-07-2022","6b04e756-21d5-430e-80f2-aa87d5e60c42",NA,"93678","1","0902","fram","H","1.1","13","11","11","A","1.3","A",NA,NA,"1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,"1","0",NA,0,NA
@@ -83,7 +83,7 @@
 "missing_EAB_info","JJ","07-20-2022","f02da767-b280-4778-bb97-074170f6117d",NA,"93564","1","0906","fram","H","12.9","4.2","10","10","A","1.3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","JJ","07-20-2022","d1c6ec89-ea1d-4985-8ad8-1d20a2cf9c93",NA,"93993","1","0913","fram","H","6.5","16.2","11","11","A","1.3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","05-31-2022","86547df3-6bcb-4290-a244-28331a9887c1",NA,"90759","1","0916","frni","H","9.5","14.9",NA,"0","M","NULL","DC",NA,"False",NA,NA,93,NA,NA,NA,NA,NA,NA,NA,NA,"Tree previously dead, probably on the ground",NA,NA,NA,NA,NA
-"Dead_but_now_alive","Katherina","07-28-2022","b9bc59c5-5a6c-4a3d-b52e-44f31213b622",NA,"92029","1","0917","quru","M","11.5","14","594","594","DS","1.3","AU",NA,"False","3",NA,NA,90,70,0,NA,"R",NA,NA,"2","Epicormic sprouts",NA,NA,NA,NA,NA
+"Dead_but_now_alive","Katherina","05-31-2022","b9bc59c5-5a6c-4a3d-b52e-44f31213b622",NA,"92029","1","0917","quru","M","11.5","14","594","594","DS","1.3","AU",NA,"False","3",NA,NA,90,70,0,NA,"R",NA,NA,"2","Epicormic sprouts",NA,NA,NA,NA,NA
 "status_DS_or_DC_but_DBH_not_measured","EM","05-31-2022","4511cd0f-17a6-4fdb-9020-76c2f2997d58",NA,"92029","2","0917","quru","M","11.5","14","520","520","A","1.3","DS","RT","False","3","CD",NA,60,0,NA,"0","R,F,DF,U",NA,NA,"2",NA,NA,NA,NA,NA,NA
 "status_DS_or_DC_but_DBH_not_measured","EM","05-31-2022","264c6348-024b-47ea-ad91-d477b1715a27",NA,"92105","1","0919","acru","M","15.6","8.2","117","117","AU","1.3","DS",NA,"False","2","I",NA,95,0,NA,"0","W,R",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","06-01-2022","7122e550-c18d-426f-bde0-c74d279e0b6f",NA,"92444","1","0927","frpe","H","6.5","0.2","58","58","AU","1.3","A",NA,NA,"1",NA,NA,95,90,NA,"0",NA,NA,NA,NA,"Stump sprouts","2",NA,NA,NA,NA
@@ -367,18 +367,17 @@
 "missing_stem",NA,NA,NA,NA,"152651","1","1529","quve",NA,"289.39999","575.40002","553",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"152723","1","1532","fram",NA,"298.89999","634.20001",NA,NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","08-04-2022","7e37919f-e602-4fc3-80a2-d13b520bb09b",NA,"160165","1","1602","fram","H","2.4","15.2","123","123","AU","1.3","AU",NA,NA,"2",NA,NA,90,90,39,"4","B",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-04-2022","3263ed1c-f4e4-4bd6-ad85-5afae4461a55",NA,"160651","1","1603","fram","H","3.8","0","144","144","AU","1.3","DS",NA,"False","1","S",147,90,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","Katherina","07-28-2022","46569c8a-dd19-4dc0-ac35-bed1a268e1ce",NA,"160651","1","1603","fram","H","3.8","20","144","144","AU","1.3","DS",NA,"False","1","S",147,90,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160710","1","1603","saal",NA,"316.60001","48.1","279",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160733","1","1604","fram",NA,"311.60001","62.2","63",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160733","2","1604","fram",NA,"311.60001","62.2","65",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160692","1","1605","fram",NA,"308.29999","94.4","66",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160746","1","1605","fram",NA,"310.70001","89","42",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"status_DS_or_DC_but_DBH_not_measured","EM","08-04-2022","c49f9705-3662-42fa-b88c-f48fd077799e",NA,"160749","1","1605","fram","H","13.4","17.4","103","103","AU","1.3","DS",NA,"True","1","S",NA,70,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-04-2022","c49f9705-3662-42fa-b88c-f48fd077799e",NA,"160749","1","1605","fram","H","13.4","17.4","103","103","AU","1.3","DS",NA,"True","1","S",NA,70,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","Katherina","07-28-2022","39573645-6b68-4c78-bafc-7dbd3b30df2b",NA,"160749","1","1605","fram","H","13.4","17.4","103","103","AU","1.3","DS",NA,"False","1","S",102,70,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160753","1","1606","fram",NA,"318.39999","108.5","95",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160757","1","1606","frpe",NA,"312.89999","109.2","76",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160902","1","1606","fram",NA,"308.60001","106.6","129",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-04-2022","afc2711e-ecc0-451e-bcff-53774663a23f",NA,"160907","1","1606","fram","H","1.3","19.2","145","145","AU","1.3","DS",NA,"True","1","S",146,70,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","Katherina","07-28-2022","ed168439-bcda-42a6-95c1-02dc6f75c70d",NA,"160907","1","1606","fram","H","1.3","19.2","145","145","AU","1.3","DS",NA,"False","1","S",146,70,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160771","1","1607","fram",NA,"316.39999","136.2","85",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160911","1","1607","fram",NA,"301.10001","124.7","74",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"160774","1","1608","fram",NA,"318.60001","141.89999","77",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -429,7 +428,7 @@
 "missing_EAB_info","EM","08-10-2022","f5a96c9c-f0e7-43a3-b7aa-bb314f7d7fdd",NA,"172264","1","1720","fram","H","19","12.8","147","147","AU","1.3","A",NA,NA,"2",NA,NA,100,98,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","08-10-2022","8ced505e-0a28-4a55-ade9-522494d83585",NA,"172332","1","1721","fram","H","3.3","15.5","250","250","AU","1.3","DS",NA,"False","1","S",243,0,0,NA,"0","I",NA,NA,NA,"EAB",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"172151","1","1722","vipr",NA,"321.39999","434.79999","109",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-10-2022","9f6fb715-73b1-4b17-94ef-a6ba08996558",NA,"172362","1","1722","fram","H","18.8","11.6","149","149","AU","1.3","DS",NA,"True","3","CD",140,90,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","Katherina","07-28-2022","11eb98b7-f3f6-463e-99de-c14d1ef31675",NA,"172362","1","1722","fram","H","18.8","11.6","149","149","AU","1.3","DS",NA,"False","3","CD",140,90,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"172155","1","1723","qual",NA,"327.39999","443.70001","275",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","08-10-2022","fc25971e-d009-4cf1-afd3-67dfc6b34275",NA,"172175","1","1724","fram","H","7.1","12.1","314","314","AU","1.3","AU",NA,NA,"3",NA,NA,100,90,NA,"0","DF",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","08-09-2022","e9710d28-a390-4070-87c1-2d63eee5c79d",NA,"172432","1","1726","fram","H","18.2","10.9","125","125","AU","1.3","AU",NA,NA,"1",NA,NA,100,95,NA,"0","CR",NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -491,7 +490,7 @@
 "missing_stem",NA,NA,NA,NA,"182371","1","1823","fram",NA,"340.10001","443.70001","93",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"182373","1","1823","fram",NA,"344.89999","441.79999","82",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","EM","08-12-2022","4e260921-0465-42ec-8dc0-89a1a2482e0f",NA,"182396","1","1824","fram","H","19.9","18.6","373","373","DS","1.3","A",NA,NA,"1",NA,NA,0,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-12-2022","9a2f5d5c-243f-40ed-ba53-c8607d538d0c",NA,"182401","1","1825","fram","H","11.6","4.8","448","448","AU","1.3","DS",NA,"False","3","CD",450,85,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","EM","08-12-2022","9a2f5d5c-243f-40ed-ba53-c8607d538d0c",NA,"182401","1","1825","fram","H","11.6","4.8","448","448","AU","1.3","DS",NA,"False","3","CD",450,85,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"182647","1","1826","fram",NA,"358.29999","516.29999","90",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","08-12-2022","b9e84ccf-c524-40fe-b56b-3856e5b9ee14",NA,"182423","1","1827","fram","H","0.8","1.7","137","137","AU","1.3","AU",NA,NA,"1",NA,NA,100,80,NA,"0","I",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"182672","1","1828","frpe",NA,"355.60001","551.59998","65",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -500,12 +499,12 @@
 "missing_stem",NA,NA,NA,NA,"182455","1","1829","fram",NA,"347.10001","563.59998","256",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"182469","1","1829","fram",NA,"343.89999","577.70001",NA,NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"182495","1","1831","fram",NA,"343.89999","617.90002",NA,NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-15-2022","ab97e86c-9318-4846-ad5a-8252bdda8c50",NA,"182497","1","1831","fram","H","3.6","16.3","115","115","AU","1.3","DS",NA,"True","1","S",119,90,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-15-2022","ab97e86c-9318-4846-ad5a-8252bdda8c50",NA,"182498","1","1831","fram","H","0.9","18.3","162","162","AU","1.3","DS",NA,"False","3","CD",148,80,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-15-2022","0ed50cd6-7eb8-40ac-868d-135ecf057d57",NA,"182500","1","1832","fram","H","11.2","0.4","421","421","AU","1.3","DS",NA,"False","4","D",422,70,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","Katherina","07-28-2022","006cc25b-8757-4774-8cfd-ec04c1dfe95b",NA,"182497","1","1831","fram","H","3.6","16.3","115","115","AU","1.3","DS",NA,"False","1","S",119,90,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
+"missing_EAB_info","EM","08-15-2022","ab97e86c-9318-4846-ad5a-8252bdda8c50",NA,"182498","1","1831","fram","H","0.9","18.3","162","162","AU","1.3","DS",NA,"False","3","CD",148,80,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
+"missing_EAB_info","EM","08-15-2022","0ed50cd6-7eb8-40ac-868d-135ecf057d57",NA,"182500","1","1832","fram","H","11.2","0.4","421","421","AU","1.3","DS",NA,"False","4","D",422,70,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
 "missing_EAB_info","EM","08-15-2022","0ed50cd6-7eb8-40ac-868d-135ecf057d57",NA,"182739","1","1832","fram","H","18.8","1.9","186","186","AU","1.3","AU",NA,NA,"1",NA,NA,80,20,NA,"0","I",NA,NA,NA,"Epicormic growth",NA,NA,NA,NA,NA
 "Dead_but_now_alive","EM","08-15-2022","0ed50cd6-7eb8-40ac-868d-135ecf057d57",NA,"182744","1","1832","fram","H","19","4.6","475","475","DS","1.3","AU",NA,NA,"4",NA,NA,90,30,NA,"0","I",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-15-2022","0ed50cd6-7eb8-40ac-868d-135ecf057d57",NA,"182747","1","1832","fram","H","14.1","11.6","315","315","AU","1.3","DS",NA,"True","3","CD",317,80,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","Katherina","07-28-2022","346a14f0-51f8-4a07-bf8b-e5ef752823a9",NA,"182747","1","1832","fram","H","14.1","11.6","315","315","AU","1.3","DS",NA,"False","3","CD",317,80,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"182749","1","1832","fram",NA,"356","639.20001","97",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"190058","1","1901","fram",NA,"379.5","19.6","46",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info",NA,"08-19-2022","8264ce2a-408b-456e-b248-89028449457d",NA,"190394","1","1903","fram","H","18.8","13.5","192","192","A","1.3","A","RT",NA,"1",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -618,7 +617,7 @@
 "missing_stem",NA,NA,NA,NA,"202580","1","2031","fram",NA,"387.20001","613.90002","121",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","08-16-2022","fbe94a23-3403-4d60-9824-26f3be3a75d4",NA,"202935","1","2031","fram","H","15.4","1.4","312","312","AU","1.3","AU",NA,NA,"3",NA,NA,95,85,NA,"2","AN",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_EAB_info","EM","08-16-2022","fbe94a23-3403-4d60-9824-26f3be3a75d4",NA,"202949","1","2031","fram","H","9.6","13.8","105","105","AU","1.3","AU","RT",NA,"1",NA,NA,90,70,NA,"1","W","1",NA,NA,NA,NA,NA,NA,NA,NA
-"missing_EAB_info","EM","08-16-2022","e3a539f0-b373-4574-86bc-0bf7d4c83ca6",NA,"202586","1","2032","fram","H","4.2","5.3","455","455","AU","1.3","DS",NA,"True","3","CD",460,90,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_EAB_info","Katherina","07-28-2022","823494d1-c98f-4ded-ac0a-949c3e09113b",NA,"202586","1","2032","fram","H","4.2","5.3","455","455","AU","1.3","DS","RT","False","3","CD",460,90,0,0,"0","I",NA,NA,NA,"NA",NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"202591","1","2032","fram",NA,"388.79999","631.59998","85",NA,"A",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "Dead_but_now_alive","EM","08-16-2022","e3a539f0-b373-4574-86bc-0bf7d4c83ca6",NA,"202595","1","2032","fram","H","8.7","16.8","492","492","DS","1.3","A",NA,NA,"3",NA,NA,80,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "missing_stem",NA,NA,NA,NA,"202960","1","2032","fram",NA,"394","628.09998","95",NA,"D",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
