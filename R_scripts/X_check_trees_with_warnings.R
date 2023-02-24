@@ -29,17 +29,20 @@ w <- read.csv("testthat/reports/trace_of_reports/warnings_file.csv")
 ## load allmort data 
 load("C:/Users/herrmannV/Dropbox (Smithsonian)/GitHub/SCBI-ForestGEO/SCBImortality/data/allmort.rdata") # load allmort data
 
+allmort <- reshape(allmort, idvar = c("tag", "StemTag"), timevar = "survey_year", direction = "wide" )
+
+
 ## look at types of warnings #### 
 table(w$warning_name) # add code if some are not adressed below
 
 # check status history of status issues ####
 x <- w[w$warning_name %in% "Dead_but_now_alive", ]
 
-status_history <- cbind(x[, c("Quad", "Tag", "StemTag", "DBH")], allmort[match(paste(x$Tag, x$StemTag), paste(allmort$tag, allmort$StemTag)), sort(grep("status", names(allmort), value = T))], "/" = "/", x[,grep("Status", names(x))], x["Notes.2021"])
+status_history <- cbind(x[, c("Quad", "Tag", "StemTag", "DBH")], allmort[match(paste(x$Tag, x$StemTag), paste(allmort$tag, allmort$StemTag)), sort(grep("status", names(allmort), value = T))], "/" = "/", x[,grep("Status", names(x))], x["Notes.2022"])
 
-status_history$status.2018.1 <- NULL
+status_history[, grep("previous|last", names(status_history), value = T)] <- NULL
 
-status_history <- status_history[order(status_history$Status.2018), ]
+status_history <- status_history[order(status_history$current_year_status.2021), ]
 
 View(status_history)
 
@@ -48,9 +51,12 @@ write.csv(status_history, "temporary_files_for_QA_QC/status_history_Dead_but_now
 
 
 # check dbh history of status issues ####
-x <- w[w$warning_name %in% "DBH_dead_suspicious", ]
+x <- w[w$warning_name %in% c("DBH_dead_suspicious"), ]
 
-dbh_history <- cbind(x[, c("Quad", "Tag", "StemTag")], allmort[match(paste(x$Tag, x$StemTag), paste(allmort$tag, allmort$StemTag)), sort(grep("dbh.\\d", names(allmort), value = T))], "/" = "/", x[, c("DBH", "Dead.DBH", "Notes.2021")])
+dbh_history <- cbind(x[, c("Quad", "Tag", "StemTag")], allmort[match(paste(x$Tag, x$StemTag), paste(allmort$tag, allmort$StemTag)), sort(grep("dbh.\\d", names(allmort), value = T))], "/" = "/", x[, c("DBH", "Dead.DBH", "Notes.2022")])
+
+dbh_history[, grep("previous|last", names(status_history), value = T)] <- NULL
+
 
 dbh_history <- dbh_history[order(dbh_history$DBH), ]
 
