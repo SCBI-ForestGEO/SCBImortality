@@ -1,58 +1,34 @@
 "Quad","Tag","StemTag","DBH","current_year_status.2008","current_year_status.2013","current_year_status.2014","current_year_status.2015","current_year_status.2016","current_year_status.2017","current_year_status.2018","current_year_status.2019","current_year_status.2020","current_year_status.2021","/","Status.2021","Status.2022","Notes.2022"
 703,70237,1,350,"A","A","A","A","A","A","A","A","AU","AU","/","DC","A",NA
 102,10013,1,268,"A","A","A","A","A","A","A","A","AU","DS","/","DS","AU","Large liana load >50"
-917,92029,1,594,"A","A","A","A","A","A","A","A","A","DS","/","DS","AU","Epicormic sprouts"
-1023,102266,1,93,"A","A","A",NA,"A","A","A","A","A","DS","/","DS","A",NA
-102,10013,1,268,"A","A","A","A","A","A","A","A","AU","DS","/","DS","AU","Large liana load >50"
+126,12323,1,393,"A","A","A","A","A","A","AU","AU","AU","DS","/","DS","AU","epicormic branches living, main crown topped"
+208,20602,1,343,"A","A","A","A","A","A","A","A","A","DS","/","DS","AU","Tree is alive"
+501,50038,1,215,"A","A","A","A","A","A","A","A","AU","DS","/","DS","A",NA
+608,60161,1,869,"A","A","A","A","A","A","A","AU","AU","DS","/","DS","AU","1 of 2 stems still alive"
+608,60161,1,869,"A","A","A","A","A","A","A","AU","AU","DS","/","DS","AU","2 stems - south stem dead steading, north alive"
 917,92029,1,594,"A","A","A","A","A","A","A","A","A","DS","/","DS","AU","Epicormic sprouts"
 1023,102266,1,93,"A","A","A",NA,"A","A","A","A","A","DS","/","DS","A",NA
 1220,122122,1,213,"A","A","A","A","A","A","A","A","A","DS","/","DS","AU",NA
 1220,122149,1,151,"A","A","A","A","A","AU","AU","AU","A","DS","/","DS","AU",NA
-208,20602,1,343,"A","A","A","A","A","A","A","A","A","DS","/","DS","AU","Tree is alive"
-501,50038,1,215,"A","A","A","A","A","A","A","A","AU","DS","/","DS","A",NA
-608,60161,1,869,"A","A","A","A","A","A","A","AU","AU","DS","/","DS","AU","2 stems - south stem dead steading, north alive"
 1419,142178,1,557,"A","A","A","A","A","A","A","A","AU","DS","/","DS","AU",NA
 1518,152044,2,352,"A","A","A","A","A","A","A","A","AU","DS","/","DS","A",NA
-608,60161,1,869,"A","A","A","A","A","A","A","AU","AU","DS","/","DS","AU","1 of 2 stems still alive"
-1023,102266,1,93,"A","A","A",NA,"A","A","A","A","A","DS","/","DS","A",NA
-1419,142178,1,557,"A","A","A","A","A","A","A","A","AU","DS","/","DS","AU",NA
 1617,162001,1,300,"A","A","A","A","A","AU","A","A","A","DS","/","DS","AU",NA
-1023,102266,1,93,"A","A","A",NA,"A","A","A","A","A","DS","/","DS","A",NA
-1419,142178,1,557,"A","A","A","A","A","A","A","A","AU","DS","/","DS","AU",NA
-126,12323,1,393,"A","A","A","A","A","A","AU","AU","AU","DS","/","DS","AU","epicormic branches living, main crown topped"
 1704,171104,1,130,"A","A","A","A","A","A","A","A","A","DS","/","DS","A","Epicormic growth"
 1802,180426,1,102,"A","A",NA,"A","A","A","A","A","AU","DS","/","DS","AU","EAB"
 1813,180829,1,107,"A","A","A","A","A","A","AU","AU","AU","DS","/","DS","AU","Large lean over dbh"
 1824,182396,1,373,"A","A","A","A","A","A","A","A","DS","DS","/","DS","A",NA
 1832,182744,1,475,"A","A","A","A","A","A","A","A","DS","DS","/","DS","AU",NA
 2032,202595,1,492,"A","A","A","A","A","A","A","A","A","DS","/","DS","A",NA
-102,10013,1,268,"A","A","A","A","A","A","A","A","AU","DS","/","DS","AU","Large liana load >50"
-102,10013,1,268,"A","A","A","A","A","A","A","A","AU","DS","/","DS","AU","Large liana load >50"
-608,60161,1,869,"A","A","A","A","A","A","A","AU","AU","DS","/","DS","AU","1 of 2 stems still alive"
-608,60161,1,869,"A","A","A","A","A","A","A","AU","AU","DS","/","DS","AU","2 stems - south stem dead steading, north alive"
-102,10013,1,268,"A","A","A","A","A","A","A","A","AU","DS","/","DS","AU","Large liana load >50"
-917,92029,1,594,"A","A","A","A","A","A","A","A","A","DS","/","DS","AU","Epicormic sprouts"
-1023,102266,1,93,"A","A","A",NA,"A","A","A","A","A","DS","/","DS","A",NA
-102,10013,1,268,"A","A","A","A","A","A","A","A","AU","DS","/","DS","AU","Large liana load >50"
-917,92029,1,594,"A","A","A","A","A","A","A","A","A","DS","/","DS","AU","Epicormic sprouts"
-102,10134,1,511,"A","A","A","A","A","AU","DS","PD","PD","PD","/","PD","AU",NA
-102,10134,1,511,"A","A","A","A","A","AU","DS","PD","PD","PD","/","PD","AU",NA
-1132,112496,1,129,"A","A","A","A","A","A","A","A","A","PD","/","PD","A",NA
+102,10134,1,511,"A","A","A","A","A","AU","DS","PD","PD","PD","/","PD","AU","Dead as of Nov. 23, 2022"
 806,83628,1,103,"P","P",NA,NA,NA,NA,NA,"A","AU","PD","/","PD","A",NA
+1132,112496,1,129,"A","A","A","A","A","A","A","A","A","PD","/","PD","A",NA
 1422,142333,1,464,"A","A","A","A","A","A","A","A","DS","PD","/","PD","A",NA
 1524,152466,1,291,"A","A","A","A","A","A","DS","PD","PD","PD","/","PD","A",NA
-102,10134,1,511,"A","A","A","A","A","AU","DS","PD","PD","PD","/","PD","AU",NA
-1422,142333,1,464,"A","A","A","A","A","A","A","A","DS","PD","/","PD","A",NA
-102,10134,1,511,"A","A","A","A","A","AU","DS","PD","PD","PD","/","PD","AU","Dead as of Nov. 23, 2022"
-1122,112215,1,170,"A","A","A","A","AU","AU","AU","AU","A",NA,"/","M","AU",NA
-813,80538,1,109,"A","A","A","A","A","AU","A","A","A",NA,"/","M","A",NA
 804,80191,1,118,"A","A","A","A","A","A","A","A","A",NA,"/","M","A",NA
 807,80348,1,175,"A","A","A","A","A","A","A","AU","AU",NA,"/","M","A",NA
+813,80538,1,109,"A","A","A","A","A","AU","A","A","A",NA,"/","M","A",NA
 902,90236,1,155,"A","A","A","A","A","A","A","A","A",NA,"/","M","A",NA
 903,90112,1,273,"A","A","A","A","A","A","A","A","A",NA,"/","M","A",NA
-1413,141064,1,NA,"A","D",NA,"PD","PD","PD","PD","PD","PD",NA,"/","M","AU",NA
-1416,141137,2,66,"A","A",NA,NA,NA,NA,"A",NA,"A",NA,"/","M","A",NA
-1413,141064,1,NA,"A","D",NA,"PD","PD","PD","PD","PD","PD",NA,"/","M","AU",NA
-1416,141137,2,66,"A","A",NA,NA,NA,NA,"A",NA,"A",NA,"/","M","A",NA
+1122,112215,1,170,"A","A","A","A","AU","AU","AU","AU","A",NA,"/","M","AU",NA
 1413,141064,1,NA,"A","D",NA,"PD","PD","PD","PD","PD","PD",NA,"/","M","AU",NA
 1416,141137,2,66,"A","A",NA,NA,NA,NA,"A",NA,"A",NA,"/","M","A",NA

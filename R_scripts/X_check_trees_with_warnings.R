@@ -16,7 +16,7 @@ setwd(".")
 # Load data ####
 
 ## warning files
-w <- read.csv("testthat/reports/trace_of_reports/warnings_file.csv")
+w <- read.csv("testthat/reports/warnings/warnings_file.csv")
 
 
 ## previous mortality census files
