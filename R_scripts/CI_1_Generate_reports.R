@@ -843,7 +843,7 @@ if(!is.null(warning_file)) warning_file <- warning_file[order(warning_file$Quad,
 
 # if errors/warnings exist save, else delete
 
-csv_mort_filename <-  gsub("xlsx", "csv", gsub("FFF_excel/", "", latest_FFFs))
+csv_mort_filename <-  paste0("raw_data/Mortality_Survey_", regmatches(latest_FFFs, regexpr("\\d{4}", latest_FFFs)), ".csv")# gsub("xlsx", "csv", gsub("FFF_excel/", "", latest_FFFs))
 
 if(!is.null(require_field_fix_error_file)) {
   if(nrow(require_field_fix_error_file)>0) {
@@ -937,4 +937,28 @@ quad_summary <- data.frame(Quad = quad_with_any_issue,
 quad_summary$sum_missing_and_errors <- quad_summary$n_missing_tags + quad_summary$n_tag_error_field_fix
 
 write.csv(quad_summary[order(as.numeric(quad_summary$Quad)), ], file.path(here("testthat"), "reports/quadrat_n_errors_summary.csv"), row.names = F)
+
+
+
+
+# create list of tag numbers that need replacement see https://github.com/SCBI-ForestGEO/2023census/issues/7
+
+# get all the lines with a value in Tag maintenance
+# x <- mort[!is.na(mort$`Tag maintenance`),]
+x <- mort[mort$`Tag maintenance` %in% "RT",]
+
+cat(paste(x$Tag, collapse = ","), file = paste0(dirname(getwd()), "/2023census/tags/list_tags_needing_new_tags.txt"), quote = F)
+
+
+write.csv(x[, c("Tag", "StemTag", "Quad", "Species", "QX", "QY", "DBH", "Status 2022", "Tag maintenance")], file = paste0(dirname(getwd()), "/2023census/tags/list_tags_needing_new_tags.csv"), row.names = F)
+
+
+
+x <- mort[mort$`Tag maintenance` %in% "NN",]
+dim(x)
+dput(x$Tag)
+
+cat(paste(x$Tag, collapse = ","), file=paste0(dirname(getwd()), "/2023census/tags/list_tags_needing_nails.txt"),  quote = F)
+
+write.csv(x[, c("Tag", "StemTag", "Quad", "Species", "QX", "QY", "DBH", "Status 2022", "Tag maintenance")], file = paste0(dirname(getwd()), "/2023census/tags/list_tags_needing_nails.csv"), row.names = F)
 
