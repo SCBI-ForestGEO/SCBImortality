@@ -147,7 +147,7 @@ mort$"Data Correction" <- NULL
 
 
 
-
+cat("data has been collated") # this is to troubleshoot CI on GitHub actions (see where errors happen)
 
 ## load the previous mortality surveys and make code history 
 prev_mort <- read.csv(paste0("data/mortality_", regmatches(previous_status_column, regexpr("\\d{4}", previous_status_column)), ".csv"))
@@ -165,6 +165,9 @@ DownOrMissingLast <- paste(StatusHistory$tag, StatusHistory$StemTag)[grepl(";(DC
 # load and clean up the 3rd main census ####
 main_census <-  read.csv(paste0("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/scbi.stem3.csv"))
 
+cat("Main census data loaded") # this is to troubleshoot CI on GitHub actions (see where errors happen)
+
+
 ## convert dbh to numeric
 main_census$dbh <- as.numeric(main_census$dbh)
 
@@ -179,6 +182,8 @@ main_census <- main_census[!grepl("DC|DN|DT", main_census$codes),] # see https:/
 # load species table ####
 
 spptable <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/tree_main_census/data/census-csv-files/scbi.spptable.csv")
+
+cat("spptable loaded") # this is to troubleshoot CI on GitHub actions (see where errors happen)
 
 
 # fix empty lines in mort ####
@@ -198,6 +203,9 @@ mort <- mort[!is.na(mort$Tag), ] # fix empty lines
 mort <- mort[, unique(names(mort))]
 
 
+cat("mort is ready") # this is to troubleshoot CI on GitHub actions (see where errors happen)
+
+
 # give a % completion status ####
 # percent_completion <- round(sum(paste(main_census$tag, main_census$StemTag) %in% paste(mort$Tag, mort$StemTag)) / nrow(main_census) * 100)
 percent_completion <- round(sum(main_census$quadrat %in% as.numeric(mort$Quad))  / nrow(main_census) * 100)
@@ -209,6 +217,7 @@ text(0,0, paste(percent_completion, "%"))
 dev.off()
 # write.table(percent_completion, file = file.path(here("testthat"), "reports/percent_completion.txt"),  col.names = F, row.names = F)
 
+cat("% completion status done") # this is to troubleshoot CI on GitHub actions (see where errors happen)
 
 # --- PERFORM CHECKS ---- ####
 
@@ -841,6 +850,9 @@ if(!is.null(will_auto_fix_error_file)) {
 if(!is.null(warning_file)) warning_file <- warning_file[order(warning_file$Quad, warning_file$Tag, warning_file$StemTag),]
 
 
+cat("reports prepared") # this is to troubleshoot CI on GitHub actions (see where errors happen)
+
+
 # if errors/warnings exist save, else delete
 
 csv_mort_filename <-  paste0("raw_data/Mortality_Survey_", regmatches(latest_FFFs, regexpr("\\d{4}", latest_FFFs)), ".csv")# gsub("xlsx", "csv", gsub("FFF_excel/", "", latest_FFFs))
@@ -854,6 +866,9 @@ if(!is.null(require_field_fix_error_file)) {
       row.names = F
     )
     
+    cat("require_field_fix_error_file was saved") # this is to troubleshoot CI on GitHub actions (see where errors happen)
+    
+    
     # if  error, delete any existing CSV mort file
     if(file.exists(csv_mort_filename)) file.remove(csv_mort_filename)
     
@@ -865,8 +880,10 @@ if(!is.null(require_field_fix_error_file)) {
   
   # if not error, save the current mort file as CSV
   write.csv(mort, file  = csv_mort_filename, row.names = F)
+  cat("csv_mort_filename was saved") # this is to troubleshoot CI on GitHub actions (see where errors happen)
   
 }
+
 
 
 
@@ -877,6 +894,7 @@ if(!is.null(will_auto_fix_error_file) ) {
       file = file.path(here("testthat"), "reports/will_auto_fix/will_auto_fix_error_file.csv"), 
       row.names = F
     )
+    cat("will_auto_fix_error_file was saved") # this is to troubleshoot CI on GitHub actions (see where errors happen)
     
     # also make quad a factor so other things work
     will_auto_fix_error_file$Quad <- factor(will_auto_fix_error_file$Quad,  levels = sort(unique(mort$Quad)))
@@ -894,6 +912,8 @@ if(!is.null(warning_file)) {
     row.names = F
   )
   
+     cat("warning_file was saved") # this is to troubleshoot CI on GitHub actions (see where errors happen)
+     
      # also make quad a factor so other things work
      warning_file$Quad <- factor(warning_file$Quad,  levels = sort(unique(mort$Quad)))
 } else {
