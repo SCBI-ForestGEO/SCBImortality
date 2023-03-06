@@ -1100,3 +1100,9 @@
 "DBH_dead_suspicious","AS","07-28-2022","21a809ce-f2d2-44e9-b602-0bcce69f441f",305,30305,1,"caco","L",0.9,19.7,275,275,"A","1.3","DS",NA,"False",3,"CD",0,5,0,0,4,"DF,W,R,F",2,NA,2,NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious","Katherina","07-28-2022","6c1703ac-700f-4395-b20b-15b6c396f5b3",305,30305,1,"caco","L",0.9,19.7,275,275,"A","1.3","DS",NA,"False",3,"CD",0,5,0,0,4,"R,W",2,NA,2,NA,NA,NA,NA,NA,NA
 "DBH_dead_suspicious","KT","08-16-2022","4d9df686-392d-43fa-b946-e4f397b21d8d",1929,192547,1,"litu","L",17.4,7.3,544,544,"A","1.3","DS",NA,"False",1,"S",248,60,0,NA,0,"U",NA,1,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_intact","JS","08-10-2022","55fdb047-58cb-4bcd-8c55-02970d2e285b",130,12474,1,"litu","L",2.5,16.7,198,198,"A","1.3","A","RT",NA,2,NA,NA,NA,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_intact","JS","08-10-2022","373c4b4b-b927-4feb-8d49-fa2cab8b24e6",222,22186,2,"tiam","L",17,7.5,330,330,"A","1.3","A",NA,NA,3,NA,NA,NA,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_intact","JS","08-10-2022","82132e96-dbe1-439f-884f-99ea064f519e",229,22522,1,"litu","L",8.8,18,598,598,"A","1.3","A","RT",NA,4,NA,NA,NA,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_intact","EM","06-16-2022","243e2fa9-a9f4-49cc-8766-38d2e6c49a7f",1315,131325,1,"caco","L",1.8,9.9,417,417,"A","1.3","A","RT",NA,3,NA,NA,NA,100,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_intact","EM","08-09-2022","61f1e89b-2052-4a02-8d08-fa62078e25cc",1629,162589,1,"quve","H",8,10,631,631,"A","1.3","A",NA,NA,3,NA,NA,NA,95,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"missing_percent_crown_intact","EM","08-12-2022","eec0026d-51b8-4a60-a87c-afeec1c36849",1817,182213,1,"cagl","L",4.2,17,114,114,"A","1.3","A",NA,NA,1,NA,NA,NA,98,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
