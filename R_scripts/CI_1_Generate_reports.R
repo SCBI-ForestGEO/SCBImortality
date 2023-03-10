@@ -689,9 +689,9 @@ if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_
 
 
 # check that newly censused 'A' or 'AU' or 'DS', were not 'DC' in previous year ####
-warning_name <- "DC_but_now_A_AU_or_DS"
+warning_name <- "DC_but_now_DS"
 
-idx_trees <- mort[, status_column] %in% c("AU","A", "DS")
+idx_trees <- mort[, status_column] %in% c("DS")
 idx_previously_dead <- mort[,previous_status_column] %in% c("DC") & !is.na(mort[,previous_status_column])
 
 
