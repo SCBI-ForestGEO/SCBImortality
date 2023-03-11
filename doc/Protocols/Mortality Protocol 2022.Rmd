@@ -100,6 +100,7 @@ Avoid giving a tree the DN status; you need to do a thorough search for all tree
 If the tree is dead but with living resprouts at its base, record as yes. Otherwise, leave as is.
 
 #### *Crown Position (aka Crown Illumination Index)* 
+This refers to the tree's *current* position (as opposed to where it may have been before it broke/fell).
 **5** = Canopy completely exposed to overhead and lateral light;
 **4** = Full overhead light; > 90% exposed to vertical light;
 **3** = some overhead light;
@@ -108,7 +109,8 @@ If the tree is dead but with living resprouts at its base, record as yes. Otherw
 
 ![*Crown Position (a.k.a., "Crown illumination"; taken from Arellano et al., 2020)*](figures_tables/Crown_illumination.png){ width=40% } 
 
-#### *Dead Crown Position (collected on dead trees only)* 
+#### *Dead Crown Position (collected on dead trees only)*
+For broken/fallen trees, this is an estimate of position before it died.
 **Dominant (D)**: Crown extends above the general level of the canopy receiving full sunlight. 
 **Codominant (CD)**: Crown forms main level of canopy, tree receives full sunlight from above. 
 **Intermediate (I)**: Shorter trees with smaller crowns, receive little light from above and none from sides. 
