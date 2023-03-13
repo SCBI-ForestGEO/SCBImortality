@@ -292,6 +292,21 @@ mort[idx_errors,]  # ignore # AUTO FIX
 auto_fixes <- c(auto_fixes, "missing_stem")
 
 
+# fixing/clarifying crown position fields #102
+## DC
+### set crown.position to NA for all
+### if dead.crown.position was recorded as S and DBH > 200 mm, replace with NA
+## DS
+### if crown.position is blank - For all trees with dead.crown.position but not crown.position, fill in corresponding values using R script #106 --> dealt with later
+
+idx_trees <- mort[, status_column] %in% "DC"
+mort$`Crown position`[idx_trees] <- NA
+
+idx_trees <- mort[, status_column] %in% "DC" & mort$`Dead crown position` %in% "S" & mort$DBH > 200
+mort$`Dead crown position`[idx_trees] <- NA
+
+
+
 # remove any tree with current status DN as we don't need to check errors on those ####
 idx_trees <- !mort[, status_column] %in% c("DN")
 
@@ -599,8 +614,8 @@ will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_
 }
 
 ## IMPLEMENT CONSISTENT FIX FOR wounded_level_but_wrong_status_or_FAD ####
-mort[idx_errors, "EABF"] <- ifelse(mort[idx_errors, "EABF"] == "none" | is.na(mort[idx_errors, "EABF"]), "W", paste0(mort[idx_errors, "EABF"], ",W")) # add W to EABF and make status AU # AUTO FIX
-mort[idx_errors, status_column] <- "AU" # add W to EABF and make status AU # AUTO FIX
+mort[idx_errors, "FAD"] <- gsub("W,W", "W", ifelse(mort[idx_errors, "FAD"] == "none" | is.na(mort[idx_errors, "FAD"]), "W", paste0(mort[idx_errors, "FAD"], ",W"))) # add W to FAD and make status AU # AUTO FIX
+mort[idx_errors, status_column] <- "AU" # add W to FAD and make status AU # AUTO FIX
 auto_fixes <- c(auto_fixes, "wounded_level_but_wrong_status_or_FAD")
 
 # check that newly censused 'AU', 'DS' or 'DC with "canker" selected as FAD have selected a level for canker,swelling,deformity ####
@@ -642,8 +657,8 @@ idx_errors <- (!idx_trees & !idx_canker) & idx_ckr_level
 if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 ## IMPLEMENT CONSISTENT FIX FOR canker_level_but_wrong_status_or_FAD ####
-mort[idx_errors, "EABF"] <- ifelse(mort[idx_errors, "EABF"] == "none" | is.na(mort[idx_errors, "EABF"]), "K", paste0(mort[idx_errors, "EABF"], ",K")) # add K to EABF and make status AU # AUTO FIX
-mort[idx_errors, status_column] <- "AU" # add K to EABF and make status AU # AUTO FIX
+mort[idx_errors, "FAD"] <- gsub("K,K", "K", ifelse(mort[idx_errors, "FAD"] == "none" | is.na(mort[idx_errors, "FAD"]), "K", paste0(mort[idx_errors, "FAD"], ",K"))) # add K to FAD and make status AU # AUTO FIX
+mort[idx_errors, status_column] <- "AU" # add K to FAD and make status AU # AUTO FIX
 auto_fixes <- c(auto_fixes, "canker_level_but_wrong_status_or_FAD")
 
 
@@ -679,7 +694,6 @@ idx_errors <- (!idx_trees & !idx_rot) & idx_rot_level
 
 
 if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
-
 
 
 
@@ -901,7 +915,6 @@ cat("reports prepared") # this is to troubleshoot CI on GitHub actions (see wher
 
 # if errors/warnings exist save, else delete
 
-csv_mort_filename <-  paste0("raw_data/Mortality_Survey_", regmatches(latest_FFFs, regexpr("\\d{4}", latest_FFFs)), ".csv")# gsub("xlsx", "csv", gsub("FFF_excel/", "", latest_FFFs))
 
 if(!is.null(require_field_fix_error_file)) {
   if(nrow(require_field_fix_error_file)>0) {
@@ -915,27 +928,28 @@ if(!is.null(require_field_fix_error_file)) {
     cat("require_field_fix_error_file was saved") # this is to troubleshoot CI on GitHub actions (see where errors happen)
     
     
-    # if  error, delete any existing CSV mort file
-    if(file.exists(csv_mort_filename)) file.remove(csv_mort_filename)
-    
+
     # also make quad a factor so other things work
     require_field_fix_error_file$Quad <- factor(require_field_fix_error_file$Quad,  levels = sort(unique(mort$Quad)))
   }  
 } else {
   if(file.exists(file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"))) file.remove(file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"))
+}
   
-  
-  if(all(c(will_auto_fix_error_file$error_name, warning_file$warning_name) %in% auto_fixes)) {
+csv_mort_filename <-  paste0("raw_data/Mortality_Survey_", regmatches(latest_FFFs, regexpr("\\d{4}", latest_FFFs)), ".csv")# gsub("xlsx", "csv", gsub("FFF_excel/", "", latest_FFFs))
+
+
+# if all errors and warning have been dealt with or we are okay to ignore:
+if(all(c(will_auto_fix_error_file$error_name, warning_file$warning_name) %in% auto_fixes)) {
      write.csv(mort, file  = csv_mort_filename, row.names = F)
   cat("csv_mort_filename was saved") # this is to troubleshoot CI on GitHub actions (see where errors happen)
   } else {
+    # if  error, delete any existing CSV mort file
+    if(file.exists(csv_mort_filename)) file.remove(csv_mort_filename)
+    
     warning(paste("-", setdiff(c(will_auto_fix_error_file$error_name, warning_file$warning_name), auto_fixes), collapse = "\n"), "\nstill needs to be dealt with the auto-fix")
   }
   # if no errors, and all things are dealt with with auto fix --> save the current mort file as CSV
- 
-  
-}
-
 
 
 
