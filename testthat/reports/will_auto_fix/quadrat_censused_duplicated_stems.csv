@@ -93,8 +93,8 @@ NA,"08-20-2022","336076ec-6845-436a-86ec-a8dc6182765a",NA,"32514","1","0332","li
 "EM","08-04-2022","c576a477-cd52-4d9e-818e-f24ce6f667b8",NA,"160961","1","1611","litu","L","9.2","10.8","739","739","A","1.3","A",NA,NA,"3",NA,NA,100,98,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "EM","06-22-2022","cae5e821-5930-454b-94df-b556e3b3be46",NA,"132523","1","1329","ceoc","M","11","9.7","279","279","A","1.3","A",NA,NA,"2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,"Epicormic sprouts",NA,NA,NA,NA,NA
 "EM","06-22-2022","cae5e821-5930-454b-94df-b556e3b3be46",NA,"132523","1","1329","ceoc","M","11","9.7","279","279","A","1.3","A",NA,NA,"4",NA,NA,100,100,NA,"0",NA,NA,NA,NA,"Epicormic sprouts",NA,NA,NA,NA,NA
-"JJ","08-05-2022","308865f5-6517-4da7-8e2e-2dac0d2e3cec",NA,"60134","1","0607","quve","H","18.4","11.8","530","530","A","1.3","DC",NA,"False","1","CD",530,0,0,NA,"0","CR,U",NA,NA,NA,"Pile of trees on ground … this may be one",NA,NA,NA,NA,NA
-"JJ","08-04-2022","e337dfad-20b1-4e04-bfba-a4668008552b",NA,"60134","1","0607","quve","H","18.4","11.8","530","530","A","1.3","DC",NA,"False","1","CD",530,0,0,NA,"0","CR,U",NA,NA,NA,"Multiple trees on ground. Uncertain if this is tree. Appears knocked down by other tree",NA,NA,NA,NA,NA
+"JJ","08-05-2022","308865f5-6517-4da7-8e2e-2dac0d2e3cec",NA,"60134","1","0607","quve","H","18.4","11.8","530","530","A","1.3","DC",NA,"False",NA,"CD",530,0,0,NA,"0","CR,U",NA,NA,NA,"Pile of trees on ground … this may be one",NA,NA,NA,NA,NA
+"JJ","08-04-2022","e337dfad-20b1-4e04-bfba-a4668008552b",NA,"60134","1","0607","quve","H","18.4","11.8","530","530","A","1.3","DC",NA,"False",NA,"CD",530,0,0,NA,"0","CR,U",NA,NA,NA,"Multiple trees on ground. Uncertain if this is tree. Appears knocked down by other tree",NA,NA,NA,NA,NA
 "JJ","08-05-2022","308865f5-6517-4da7-8e2e-2dac0d2e3cec",NA,"60138","1","0607","litu","L","13.4","7.2","235","235","A","1.3","A",NA,NA,"3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "JJ","08-04-2022","e337dfad-20b1-4e04-bfba-a4668008552b",NA,"60138","1","0607","litu","L","13.4","7.2","235","235","A","1.3","A",NA,NA,"2",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "JJ","08-05-2022","308865f5-6517-4da7-8e2e-2dac0d2e3cec",NA,"60140","1","0607","cagl","L","19.6","7.1","173","173","AU","1.3","AU",NA,NA,"2",NA,NA,70,70,NA,"0","B",NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -143,7 +143,7 @@ NA,"08-20-2022","336076ec-6845-436a-86ec-a8dc6182765a",NA,"32514","1","0332","li
 "JJ","08-20-2022","f104283c-7f63-4198-8a03-97f1609c2dfd",NA,"160919","1","1607","fagr","L","9","15.6","191","191","A","1.3","A",NA,NA,"3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "EM","08-04-2022","abfde136-3c0b-4dd0-a3d8-bb3cd4bbdc7e",NA,"160920","1","1607","litu","L","6.2","15.6","632","632","A","1.3","A",NA,NA,"4",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "JJ","08-20-2022","f104283c-7f63-4198-8a03-97f1609c2dfd",NA,"160920","1","1607","litu","L","6.2","15.6","632","632","A","1.3","A",NA,NA,"4",NA,NA,90,80,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"JJ","08-20-2022","2852f4de-4c51-4af6-86cd-940099d33936",NA,"160795","1","1610","quve","H","14.6","2.2","534","534","DS","1.3","DC",NA,"False","1","S",542,0,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"JJ","08-20-2022","2852f4de-4c51-4af6-86cd-940099d33936",NA,"160795","1","1610","quve","H","14.6","2.2","534","534","DS","1.3","DC",NA,"False",NA,NA,542,0,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "EM","08-04-2022","f804a758-250c-43ae-abae-c318948791fd",NA,"160795","1","1610","quve","H","14.6","2.2","534","534","DS","1.3","DS",NA,"False","1","S",542,0,0,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "JJ","08-20-2022","2852f4de-4c51-4af6-86cd-940099d33936",NA,"160798","1","1610","quve","H","11.2","0.6","549","549","A","1.3","A",NA,NA,"4",NA,NA,90,90,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "EM","08-04-2022","f804a758-250c-43ae-abae-c318948791fd",NA,"160798","1","1610","quve","H","11.2","0.6","549","549","A","1.3","A",NA,NA,"3",NA,NA,100,100,NA,"0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
