@@ -225,7 +225,7 @@ cat("% completion status done") # this is to troubleshoot CI on GitHub actions (
 require_field_fix_error_file <- NULL
 will_auto_fix_error_file <- NULL
 warning_file <- NULL
-
+auto_fixes <- NULL # this will hold the list of errors and warnings for which we have decided of auto fixes
 
 # for each quadrat censused, check all expected trees were censused ####
 # filename <- file.path(here("testthat"), "reports/requires_field_fix/quadrat_censused_missing_stems.csv")
@@ -287,6 +287,10 @@ if(sum(idx_errors_err) > 0) {
 # }
 
 
+## IMPLEMENT CONSISTENT FIX FOR missing_stem ####
+mort[idx_errors,]  # ignore # AUTO FIX
+auto_fixes <- c(auto_fixes, "missing_stem")
+
 
 # remove any tree with current status DN as we don't need to check errors on those ####
 idx_trees <- !mort[, status_column] %in% c("DN")
@@ -343,11 +347,18 @@ idx_errors <- is.na(mort$'Crown position')  & !is.na(mort$'Dead crown position')
 if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name = error_name)) 
 
 
+## IMPLEMENT CONSISTENT FIX FOR missing_crown_position_while_dead_crown_position_is_recorded ####
+mort[idx_errors,'Crown position'] <- c("S" = 1,
+  "I" = 2,
+  "C" = 3,
+  "CD" = 3,
+  "D" = 4,
+  "OG"= 5)[mort[idx_errors,'Dead crown position']]  # see issue #106 # AUTO FIX
+auto_fixes <- c(auto_fixes, "missing_crown_position_while_dead_crown_position_is_recorded")
+
 
 # check that all censused trees have a percent of crown intact recorded ####
 error_name <- "missing_percent_crown_intact"
-
-
 
 
 idx_trees <- mort[, status_column] %in% c("A", "AU", "DS")
@@ -376,6 +387,10 @@ idx_errors <- is.na(mort$'Percentage of crown living') & idx_trees
 
 if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ] , error_name))
 
+
+## IMPLEMENT CONSISTENT FIX FOR missing_percent_crown_living ####
+mort[idx_errors,'Percentage of crown living'] <- 0 # For DS trees, fill with 0 # AUTO FIX
+auto_fixes <- c(auto_fixes, "missing_percent_crown_living")
 
 
 
@@ -476,7 +491,9 @@ idx_errors <- idx_trees & idx_no_DBH_if_dead & !idx_previously_dead
 
 if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
-
+## IMPLEMENT CONSISTENT FIX FOR status_DS_or_DC_but_DBH_not_measured ####
+mort[idx_errors,'Dead DBH'] # Leave as NA # AUTO FIX
+auto_fixes <- c(auto_fixes, "status_DS_or_DC_but_DBH_not_measured")
 
 
 
@@ -497,6 +514,11 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 idx_errors <- idx_trees & idx_previously_dead & idx_DBH_ouside_range # need to fill dbh measurements with NA
 
 if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+
+
+## IMPLEMENT CONSISTENT FIX FOR DBH_dead_suspicious ####
+mort[idx_errors, 'Dead DBH'] <- NA # replace measurements with NA # AUTO FIX
+auto_fixes <- c(auto_fixes, "DBH_dead_suspicious")
 
 
 # check that newly censused 'AU', 'DS' or 'DC trees that were alive in previous census have at least one FAD is selected (OR level selected for `wounded main stem`,`canker,swelling,deformity`, `rotting main stem`) ####
@@ -545,8 +567,6 @@ if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_
 # check that newly censused 'AU', 'DS' or 'DC with "wound" selected as FAD have selected a level for wounded main stem ####
 error_name <- "wounded_but_no_level"
 
-
-
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_wounded <- !is.na(mort$FAD) & grepl("W", mort$FAD)
 idx_wnd_main_stem <- !is.na(mort$'Wounded main stem')
@@ -558,18 +578,18 @@ if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_fi
 # require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
-
+## IMPLEMENT CONSISTENT FIX FOR wounded_but_no_level ####
+mort[idx_errors,] # ignore (leave wound level as NA)  # AUTO FIX
+auto_fixes <- c(auto_fixes, "wounded_but_no_level")
 
 ## and vice versa ####
 error_name <- "wounded_level_but_wrong_status_or_FAD"
-
-
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_wounded <- !is.na(mort$FAD) & grepl("W", mort$FAD)
 idx_wnd_main_stem <- !is.na(mort$'Wounded main stem')
 
-idx_errors <- idx_trees & !idx_wounded & idx_wnd_main_stem
+idx_errors <- !idx_trees & !idx_wounded & idx_wnd_main_stem
 
 if(sum(idx_errors) > 0) {
   idx_errors <- (!idx_trees | !idx_wounded) & idx_wnd_main_stem
@@ -578,7 +598,10 @@ if(sum(idx_errors) > 0) {
 will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 }
 
-
+## IMPLEMENT CONSISTENT FIX FOR wounded_level_but_wrong_status_or_FAD ####
+mort[idx_errors, "EABF"] <- ifelse(mort[idx_errors, "EABF"] == "none" | is.na(mort[idx_errors, "EABF"]), "W", paste0(mort[idx_errors, "EABF"], ",W")) # add W to EABF and make status AU # AUTO FIX
+mort[idx_errors, status_column] <- "AU" # add W to EABF and make status AU # AUTO FIX
+auto_fixes <- c(auto_fixes, "wounded_level_but_wrong_status_or_FAD")
 
 # check that newly censused 'AU', 'DS' or 'DC with "canker" selected as FAD have selected a level for canker,swelling,deformity ####
 error_name <- "canker_but_no_level"
@@ -595,6 +618,10 @@ idx_errors <- idx_trees & idx_canker & !idx_ckr_level
 
 if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
  # require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
+
+## IMPLEMENT CONSISTENT FIX FOR canker_but_no_level ####
+mort[idx_errors,] # ignore (leave canker level as NA)  # AUTO FIX
+auto_fixes <- c(auto_fixes, "canker_but_no_level")
 
 
 
@@ -614,13 +641,14 @@ idx_errors <- (!idx_trees & !idx_canker) & idx_ckr_level
 
 if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
-
+## IMPLEMENT CONSISTENT FIX FOR canker_level_but_wrong_status_or_FAD ####
+mort[idx_errors, "EABF"] <- ifelse(mort[idx_errors, "EABF"] == "none" | is.na(mort[idx_errors, "EABF"]), "K", paste0(mort[idx_errors, "EABF"], ",K")) # add K to EABF and make status AU # AUTO FIX
+mort[idx_errors, status_column] <- "AU" # add K to EABF and make status AU # AUTO FIX
+auto_fixes <- c(auto_fixes, "canker_level_but_wrong_status_or_FAD")
 
 
 # check that newly censused 'AU', 'DS' or 'DC with "rotting stem" selected as FAD have selected a level for rotting main stem ####
 error_name <- "rot_but_no_level"
-
-
 
 idx_trees <- mort[, status_column] %in% c("AU","DS", "DC")
 idx_rot <- !is.na(mort$FAD) & grepl("\\<R\\>", mort$FAD)
@@ -633,7 +661,9 @@ idx_errors <- idx_trees & idx_rot & !idx_rot_level
 if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 # require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
-
+## IMPLEMENT CONSISTENT FIX FOR rot_but_no_level ####
+mort[idx_errors,] # ignore (leave rot level as NA)  # AUTO FIX
+auto_fixes <- c(auto_fixes, "rot_but_no_level")
 
 ## and vice versa ####
 error_name <- "rot_level_but_wrong_status_or_FAD"
@@ -665,8 +695,6 @@ idx_errors <- idx_DE & !idx_exit_count
 if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) #if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
-
-
 ## and vice versa ####
 error_name <- "exit_hole_count_no_DE_EABF"
 
@@ -674,6 +702,10 @@ idx_errors <- !idx_DE & idx_exit_count
 
 if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
+
+## IMPLEMENT CONSISTENT FIX FOR exit_hole_count_no_DE_EABF ####
+mort[idx_errors, "EABF"] <- ifelse(mort[idx_errors, "EABF"] == "none" | is.na(mort[idx_errors, "EABF"], "DE", paste0(mort[idx_errors, "EABF"], ",DE"))) # add DE to EABF # AUTO FIX
+auto_fixes <- c(auto_fixes, "exit_hole_count_no_DE_EABF")
 
 # check that newly censused 'A' or 'AU', were A or AU in previous year ####
 warning_name <- "Dead_but_now_alive"
@@ -686,6 +718,10 @@ idx_errors <- idx_trees & idx_previously_dead
 
 
 if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name)) 
+
+## IMPLEMENT CONSISTENT FIX FOR Dead_but_now_alive ####
+mort[idx_errors, ] # Leave as is and we will deal with when creating allmort # AUTO FIX
+auto_fixes <- c(auto_fixes, "Dead_but_now_alive")
 
 
 # check that newly censused 'A' or 'AU' or 'DS', were not 'DC' in previous year ####
@@ -720,12 +756,13 @@ idx_errors <- ((idx_trees & idx_missing_EAB_info) |  (idx_trees & idx_missing_cr
 if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # downgraded from error to warning
 
 
+## IMPLEMENT CONSISTENT FIX FOR missing_EAB_info ####
+mort[idx_errors,] # leave as is # AUTO FIX
+auto_fixes <- c(auto_fixes, "missing_EAB_info")
 
 
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if Epicormic growth>0, tree is AU ####
 error_name <- "epicormic_growth_but_not_AU"
-
-
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
@@ -740,10 +777,15 @@ idx_errors <- idx_trees & idx_epicormic & !idx_status
 
 if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) will_auto_fix_error_file <- rbind(will_auto_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
+
+## IMPLEMENT CONSISTENT FIX FOR epicormic_growth_but_not_AU ####
+mort[idx_errors, status_column] <- "AU" # change status to AU # AUTO FIX
+auto_fixes <- c(auto_fixes, "epicormic_growth_but_not_AU")
+
+
+
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if Crown thinning>1, tree is AU or dead ####
 error_name <- "crown_thinning_more_than_1_but_not_AU_or_dead"
-
-
 
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
@@ -757,11 +799,12 @@ idx_errors <- idx_trees & idx_crown & idx_status
 if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
 
+## IMPLEMENT CONSISTENT FIX FOR crown_thinning_more_than_1_but_not_AU_or_dead ####
+mort[idx_errors, status_column] <- "AU" # change status to AU # AUTO FIX
+auto_fixes <- c(auto_fixes, "crown_thinning_more_than_1_but_not_AU_or_dead")
+
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if any EABF recorded, tree is AU or dead ####
 error_name <- "EABF_recorded_but_not_AU_or_dead"
-
-
-
 
 idx_trees <- mort$Species %in% c( "fram", "frni", "frpe", "frsp", "chvi")
 idx_EABF <- !is.na(mort$EABF) & !mort$EABF %in% "none"
@@ -774,6 +817,9 @@ idx_errors <- idx_trees & idx_EABF & idx_status
 
 if(sum(idx_errors) > 0) warning_file <- rbind(warning_file, data.frame(mort[idx_errors, ], warning_name = error_name)) # if(sum(idx_errors) > 0) require_field_fix_error_file <- rbind(require_field_fix_error_file, data.frame(mort[idx_errors, ], error_name))
 
+## IMPLEMENT CONSISTENT FIX FOR EABF_recorded_but_not_AU_or_dead ####
+mort[idx_errors, status_column] <- "AU" # change status to AU # AUTO FIX
+auto_fixes <- c(auto_fixes, "EABF_recorded_but_not_AU_or_dead")
 
 # check that, for newly censused trees (FRAM, FRNI, FRPE, FRSP, or CHVI),	if D-shaped exit hole count>0, tree is AU or dead ####
 error_name <- "exit_hole_count_but_not_AU_or_dead"
@@ -878,9 +924,15 @@ if(!is.null(require_field_fix_error_file)) {
 } else {
   if(file.exists(file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"))) file.remove(file.path(here("testthat"), "reports/requires_field_fix/require_field_fix_error_file.csv"))
   
-  # if not error, save the current mort file as CSV
-  write.csv(mort, file  = csv_mort_filename, row.names = F)
+  
+  if(all(c(will_auto_fix_error_file$error_name, warning_file$warning_name) %in% auto_fixes)) {
+     write.csv(mort, file  = csv_mort_filename, row.names = F)
   cat("csv_mort_filename was saved") # this is to troubleshoot CI on GitHub actions (see where errors happen)
+  } else {
+    warning(paste("-", setdiff(c(will_auto_fix_error_file$error_name, warning_file$warning_name), auto_fixes), collapse = "\n"), "\nstill needs to be dealt with the auto-fix")
+  }
+  # if no errors, and all things are dealt with with auto fix --> save the current mort file as CSV
+ 
   
 }
 
