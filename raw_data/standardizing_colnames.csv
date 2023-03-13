@@ -246,3 +246,38 @@ main,NA,status,current_year_status,,
 main,NA,genus,genus,,
 main,NA,species,species,,
 main,NA,agb,last_main_census_agb_Mg,,
+mortality,2022,Wounded.main.stem,wounded_main_stem,,
+mortality,2022,Tag,tag,,
+mortality,2022,Tag.maintenance,delete,,
+mortality,2022,SurveyorID,surveyor,,
+mortality,2022,Submission.Id,submission_id,,
+mortality,2022,StemTag,StemTag,,
+mortality,2022,Status.2021,previous_year_status,,
+mortality,2022,Status.2022,current_year_status,,
+mortality,2022,Species,sp,,
+mortality,2022,Section.ID,delete,,
+mortality,2022,Rotting.trunk,rotting_trunk,,
+mortality,2022,QY,gy,will need to add quadrat coordinate,plot coordinate y
+mortality,2022,QX,gx,will need to add quadrat coordinate,plot coordinate x
+mortality,2022,Quad,quadrat,,
+mortality,2022,Percentage.of.crown.living,percent_of_crown_living,need to translate it into score_crown_intact column,
+mortality,2022,Percentage.of.crown.intact,percent_of_crown_intact,need to translate it into score_crown_living column,
+mortality,2022,Notes.2022,current_year_comment,,
+mortality,2022,Lianas,liana_load,,liana load if tree is dead or unhealthy
+mortality,2022,Lean.angle.if.greater.than.15.degrees,lean_angle_if_greater_than_15_degrees,,"lean angle if leaning more that 15 degrre, if tree is dead or unhealthy"
+mortality,2022,HOM,hom,,
+mortality,2022,FAD,fad,,factor associated to death if tree is dead or unhealthy
+mortality,2022,Epicormic.growth,fraxinus_epicormic_growth,,
+mortality,2022,EABF,fraxinus_eabf,,"EABF (Emerald Ash Borer Factors) VB = Vertical bark splitting, SS = Stump sprouts, AS = Ash snap of the branches/limbs, W = Bark blonding from woodpecker predation. In comment section, write
+percentage estimate. DE = D-shaped exit hole presence."
+mortality,2022,Disease.Concern.Level,delete,,
+mortality,2022,Dead.with.resprout,dead_with_resprout,,
+mortality,2022,Dead.DBH,dbh_if_dead,,
+mortality,2022,Dead.crown.position,crown_position_if_dead,,
+mortality,2022,DBH,last_main_census_dbh,,
+mortality,2022,date,ExactDate,,
+mortality,2022,D.shaped.exit.hole.count,fraxinus_D_shaped_exit_hole_count,,"For ash trees, count of all visible D-shaped holes arounde the circumberence of the tree in an area 50 cm high at breast height"
+mortality,2022,Crown.thinning,fraxinus_score_crown_living,,
+mortality,2022,Crown.position...10.cm.DBH,crown_position,,
+mortality,2022,Crown.position,crown_illumination,,
+mortality,2022,Canker..swelling..deformity,canker_swelling_deformity,,
