@@ -45,19 +45,20 @@ unified_colnames <-  read.csv("raw_data/standardizing_colnames.csv")
 
 ### bring in table for fixes we want to do ####
 manual_fixes <-  read.csv("raw_data/manual_fixes.csv")
-consistent_fixes <- read.csv("raw_data/consitent_fixes.csv")
+# consistent_fixes <- read.csv("raw_data/consitent_fixes.csv") # now all implemented in manual_fixes or in this script
 
 
 ## bring in raw mortality data + clean up and calculate allometries ####
 raw_data_path <- "raw_data/"
 
 survey_files <- list.files(raw_data_path, pattern = "Mortality_Survey_.*csv")
-survey_files <- survey_files[as.numeric(regmatches(survey_files, regexpr("20\\d\\d", survey_files))) <= 2021] # only consider files before 2021 as starting 2021 is the CI files
+# survey_files <- survey_files[as.numeric(regmatches(survey_files, regexpr("20\\d\\d", survey_files))) <= 2021] # only consider files before 2021 as starting 2021 is the CI files
 
 survey_years <- NULL
 
 
 eafb_recorded_on_wrong_species <- NULL
+A_afterD <- NULL
 
 for(survey_file in survey_files) {
   
@@ -123,6 +124,8 @@ for(survey_file in survey_files) {
   ## make sure status is defined
   mort$previous_year_status[mort$previous_year_status %in%"DT"] <- "DN" # this if for one case in 2014, where code was wrongly entered in status for that tree
   
+  mort$previous_year_status[mort$previous_year_status %in% "M"] <- NA # this are trees that were missed in 2019 and got a code "M" for the "previous_year_status" of 2022 survey
+  
   if(!all(na.omit(c(mort$previous_year_status,  mort$current_year_status)) %in% c("A", "AU", "DC", "DN", "DS", "PD"))) stop("some statuses are not defined ")
   
   ## fill in previous_year_status when not there
@@ -140,7 +143,7 @@ for(survey_file in survey_files) {
   
   ## record year and tag of non fr or ch genus that have fraxinus_eabf info
   
-  idx_issue <- !idx_fr_or_chvi & !(is.na(mort$fraxinus_eabf) | mort$fraxinus_eabf %in% c(""))
+  idx_issue <- !idx_fr_or_chvi & !(is.na(mort$fraxinus_eabf) | mort$fraxinus_eabf %in% c("", "none"))
   
   if(sum(idx_issue) > 0 ) eafb_recorded_on_wrong_species <- rbind(  eafb_recorded_on_wrong_species,
                                             data.frame(survey_year, mort[idx_issue,  c("sp", "tag", "fraxinus_eabf")]))
@@ -151,7 +154,7 @@ for(survey_file in survey_files) {
   mort$fraxinus_eabf <- gsub(";", ",", mort$fraxinus_eabf)
   
   
-  ## if fracinus or ch, replace "" or NA by "none", otherwise, change "" by NA (leaving "none" or other valuesi there in case we need to change speices ** TO EDIT MAYBE **)
+  ## if fraxinus or ch, replace "" or NA by "none", otherwise, change "" by NA (leaving "none" or other valuesi there in case we need to change speices ** TO EDIT MAYBE **)
 
   mort$fraxinus_eabf[idx_fr_or_chvi] <- ifelse(is.na(mort$fraxinus_eabf[idx_fr_or_chvi])| mort$fraxinus_eabf[idx_fr_or_chvi] %in% c(""), "none", mort$fraxinus_eabf[idx_fr_or_chvi])
   
@@ -220,27 +223,31 @@ for(survey_file in survey_files) {
   if(survey_year == 2020) date_format = "%m/%d/%y"
   if(survey_year > 2020) date_format = "%m-%d-%Y" 
   mort$ExactDate  <- as.Date(mort$ExactDate, format = date_format)
+
+  # # make consistent fixes #### NOW ALL IMPLEMENTED IN MANUAL FIXES
+  # for(i in 1:nrow(consistent_fixes)) {
+  #   
+  #   if(survey_year %in% eval(parse(text = consistent_fixes$survey_years_to_apply_fix[i]))) {
+  #     cat("Implementing consistent  fix ", consistent_fixes$ID[i], ": ", consistent_fixes$issue_name[i], "\n", sep = "")
+  #     eval(parse(text = consistent_fixes$fix[i]))
+  #     # print(head(mort))
+  #   }
+  #   
+  # }
   
+  # find issues of alive after dead 
+  idx <-  mort$current_year_status %in% c("A", "AU") & grepl("D", mort$previous_year_status)
   
-  # make consistent fixes ####
-  for(i in 1:nrow(consistent_fixes)) {
-    
-    if(survey_year %in% eval(parse(text = consistent_fixes$survey_years_to_apply_fix[i]))) {
-      cat("Implementing consistent  fix ", consistent_fixes$ID[i], ": ", consistent_fixes$issue_name[i], "\n", sep = "")
-      eval(parse(text = consistent_fixes$fix[i]))
-      # print(head(mort))
-    }
-    
-  }
+  if(sum(idx) > 0)   A_afterD <- rbind(A_afterD, cbind(year = survey_year, mort[idx, c("tag", "StemTag", "sp", "previous_year_status", "current_year_status", "dead_with_resprout", "previous_year_comment", "current_year_comment")]))
     
   # save
   assign(paste0("mort", survey_year), mort)
 
 }
 
-warning("check date format after 2021 is correct!")
+warning("check date format after 2022 is correct!")
 
-
+A_afterD
 
 
 
@@ -325,7 +332,7 @@ for(survey_year in survey_years) {
     
   }
   
-  previous_year_status[previous_year_status %in% "G"] <- "D" # stems that are "Gone" are considered dead hear... don't know if they are still standing or not so just giving status "D".
+  previous_year_status[previous_year_status %in% "G"] <- "D" # stems that are "Gone" are considered dead here... don't know if they are still standing or not so just giving status "D".
   previous_year_status[previous_year_status %in% "P"] # leaving "P" for "Prior" (trees that did not exist yet)
   
   mort[is.na(m),]$previous_year_status <- ifelse(is.na( mort[is.na(m),]$previous_year_status) & !is.na(previous_year_status), previous_year_status, mort[is.na(m),]$previous_year_status)
@@ -344,6 +351,7 @@ for(survey_year in survey_years) {
   assign(paste0("mort", survey_year), mort)
   
 }
+
 
 
 # Calculate allometries ####
