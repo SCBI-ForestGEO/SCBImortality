@@ -13,4 +13,4 @@ When there is no errors needing manual fixes, the  Mortality_Survey_[CURRENT_YEA
 
 
 # Manual_fixes.csv
-This file is read by the (data cleaning script)[https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/R_scripts/1_Clean_raw_data_and_unify_all_years.R]. It lists all the known issues and implements the best known fix to the moratlity data. Note that Fixes that need to happen in the census data happen in the (forestGEO data repo)[https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data] (see this (script)[https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/R_scripts/FIX_ISSUES_IN_MAIN_CENSUS.R])
+This file is read by the (data cleaning script)[https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/R_scripts/1_Clean_raw_data_and_unify_all_years.R]. It lists all the known issues and implements the best known fix to the mortality data. Note that Fixes that need to happen in the census data happen in the (forestGEO data repo)[https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data] (see this (script)[https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/R_scripts/FIX_ISSUES_IN_MAIN_CENSUS.R])
