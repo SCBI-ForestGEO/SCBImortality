@@ -136,7 +136,7 @@ for(survey_file in survey_files) {
 
   # standardize fraxinus_eabf ####
   
-  # make a logical column to say if species is susceptivle to emerald ash borer
+  # make a logical column to say if species is susceptible to emerald ash borer
   mort$sp_affected_by_eab <- grepl("fr|ch", mort$sp)
   
   idx_fr_or_chvi <-  mort$sp_affected_by_eab  # making it an object to simplify coding here 
@@ -158,7 +158,7 @@ for(survey_file in survey_files) {
 
   mort$fraxinus_eabf[idx_fr_or_chvi] <- ifelse(is.na(mort$fraxinus_eabf[idx_fr_or_chvi])| mort$fraxinus_eabf[idx_fr_or_chvi] %in% c(""), "none", mort$fraxinus_eabf[idx_fr_or_chvi])
   
-  mort$fraxinus_eabf[!idx_fr_or_chvi] <- ifelse(is.na(mort$fraxinus_eabf[!idx_fr_or_chvi])| mort$fraxinus_eabf[!idx_fr_or_chvi] %in% c(""),NA, mort$fraxinus_eabf[idx_fr_or_chvi])
+  mort$fraxinus_eabf[!idx_fr_or_chvi] <- ifelse(is.na(mort$fraxinus_eabf[!idx_fr_or_chvi])| mort$fraxinus_eabf[!idx_fr_or_chvi] %in% c(""),NA, mort$fraxinus_eabf[!idx_fr_or_chvi])
   
   ## check that what is in fraxinus_eabf is only what should be in there
   if(!any(unlist(strsplit(mort$fraxinus_eabf, ",")) %in% c("none", "VB", "SS", "AS", "W", "DE"))) stop("some fraxinus_eabf are not defined ")
