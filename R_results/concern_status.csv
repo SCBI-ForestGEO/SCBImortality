@@ -1,17 +1,17 @@
 spcode,life_form,IUCN_red_list_status,mortality_status,AU_status
-acne,tree,Least concern,L,M
+acne,tree,Least concern,L,H
 acpl,tree,Least concern,L,L
-acru,tree,Least concern,L,M
-aial,tree,NA,M,H
-amar,small tree,Least concern,H,L
-astr,small tree,Least concern,L,L
+acru,tree,Least concern,L,H
+aial,tree,NA,M,L
+amar,small tree,Least concern,H,H
+astr,small tree,Least concern,L,M
 caca,small tree,Least concern,L,H
-caco,tree,Least concern,M,L
+caco,tree,Least concern,M,M
 cagl,tree,Least concern,L,L
 caovl,tree,NA,L,L
 cato,tree,Least concern,L,L
-cade,tree,Critically Endangered,L,L
-ceoc,tree,Least concern,H,M
+cade,tree,Critically Endangered,M,L
+ceoc,tree,Least concern,H,H
 ceca,shrub or small tree,Least concern,H,H
 chvi,shrub or small tree,Least concern,NA,H
 coal,small tree,Least concern,M,H
@@ -20,35 +20,35 @@ coam,shrub,Least concern,NA,NA
 crpr,shrub,Least concern,NA,NA
 divi,tree,Least concern,L,L
 elum,shrub,Least concern,NA,NA
-fagr,tree,Least concern,L,L
+fagr,tree,Least concern,L,M
 fram,tree,Critically Endangered,H,H
 frni,tree,Critically Endangered,H,H
 frpe,tree,Critically Endangered,H,H
-havi,shrub,Least concern,H,M
+havi,shrub,Least concern,H,H
 ilve,shrub,Least concern,NA,L
 juci,tree,Endangered,M,H
-juni,tree,Least concern,L,M
+juni,tree,Least concern,L,H
 libe,shrub,Least concern,M,L
 litu,tree,Least concern,L,L
 nysy,tree,Least concern,L,L
-pato,tree,NA,M,L
-pipu,tree,Least concern,L,L
-pist,tree,Least concern,L,M
-pivi,tree,Least concern,M,L
-ploc,tree,Least concern,L,M
-prav,tree,Least concern,H,M
-prse,tree,Least concern,M,L
+pato,tree,NA,M,H
+pipu,tree,Least concern,L,H
+pist,tree,Least concern,L,H
+pivi,tree,Least concern,H,H
+ploc,tree,Least concern,L,L
+prav,tree,Least concern,H,H
+prse,tree,Least concern,L,M
 qual,tree,Least concern,L,H
-quco,tree,Least concern,L,H
+quco,tree,Least concern,L,L
 qufa,tree,Least concern,L,H
-qumi,tree,Least concern,H,H
+qumi,tree,Least concern,H,L
 qupr,tree,Least concern,H,M
 quru,tree,Least concern,L,M
 quve,tree,Least concern,H,H
 rops,tree,Least concern,H,H
 saal,tree,Least concern,H,H
-tiam,tree,Least concern,L,L
-ulam,tree,Endangered,H,L
+tiam,tree,Least concern,L,M
+ulam,tree,Endangered,H,H
 ulru,tree,Least concern,H,H
 vipr,shrub,Least concern,M,H
 vire,shrub,Least concern,NA,NA
