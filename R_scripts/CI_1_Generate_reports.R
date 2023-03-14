@@ -83,7 +83,7 @@ mort <- rbind(data.frame(what = "mort", mort, check.names = F), data.frame(what 
 
 mort <- mort[!duplicated(mort), ]
 
-# compare data -> if anything is duplicated remove the row with fewer info but leave both if ther is a conflict
+# compare data -> if anything is duplicated remove the row with fewer info but leave both if there is a conflict
 
 mort_dupST <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$StemTag))]
 
@@ -140,6 +140,13 @@ for(st in mort_dupST) {
   mort <- mort[!paste(mort$Tag, mort$StemTag) %in% st, ]
   mort <- rbind(mort, x)
 }
+
+# now, for those with conflict, randomly select one...
+mort_dupST <- paste(mort$Tag, mort$StemTag)[duplicated(paste(mort$Tag, mort$StemTag))]
+mort[paste(mort$Tag, mort$StemTag) %in% mort_dupST, ]
+
+mort <- mort[!duplicated(paste(mort$Tag, mort$StemTag)), ]
+
 
 # remove added columns
 mort$what <- NULL
