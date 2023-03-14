@@ -147,6 +147,7 @@ This angle is measured in degrees from the base through the POM
 - Record Factors associated with death (FAD) ***in order of importance*** (will be listed in order selected). 
 - To scrutinize the FAD’s, look at our [Tree Disease Guide](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/doc/TreeDiseaseGuide/TreeDiseaseGuide.pdf) and [Visual Guides](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/Protocols/Visual%20guides/Tree%20Mortality%20Guide_2020.pdf).
 - For tree conditions or agents of mortality not specifically defined below, record diagnosis in the notes or comments section of the form. 
+- *If wound, rot, or canker is recorded, it's level must also be recorded. Conversely, if a wound/rot/canker level is recorded, it must be included on the FAD list.*
 
 FAD list : 
 
@@ -177,7 +178,7 @@ FAD list :
 
 
 #### *Wounded main axis (levels: 1 = small, 2 = large, 3 = massive)*
-Size of wound on main trunk.
+Size of wound (any situation where the bark has been removed and wood is exposed to the air or soil) on main trunk.
 **1** = small damage, smaller in area than a square of DBH $\times$ DBH in shape.
 **2** = large damage, greater in area than a square of DBH $\times$ DBH in shape.
 **3** = massive damage, affecting >50% of the basal area (i.e., a very deep and extensive wound) or >50% of the living length. These are cases of main stem breakage in which the breakage is not complete and the broken part is still connected and alive, and trunks that have been longitudinally split in two.
@@ -191,7 +192,7 @@ Size of patch of swelling/deformity on trunk. Note: swelling or deformity is com
 **3** = massive deformity or canker, greater than >50% of the basal area or >50% of the main axis length.
 
 #### *Rotting trunk (levels: 1 = small, 2 = large, 3 = massive)*
-Size of patch of rot (hollow) on/ in trunk. This may be caused by a canker/ fungal infection. 
+Size of patch of rot (hollow) on/ in trunk. This may be caused by a fungal infection. 
 **1** = small rotting area, smaller in area than a square of DBH $\times$ DBH in shape.
 **2** = big rotting area, greater in area than a square of DBH $\times$ DBH in shape.
 **3** = massive rotting, affecting >50% of the basal area or >50% of the main axis length.
