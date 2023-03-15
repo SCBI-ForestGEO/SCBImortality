@@ -204,6 +204,9 @@ sp_agbAtoAU$mean_timeint_yr<- as.data.frame.table(mntime)$Freq
 sp_AtoAUrate_agbAtoAU <- rbind(sp_AtoAUrate, sp_agbAtoAU)
 sp_AtoAUrate_agbAtoAU <- sp_AtoAUrate_agbAtoAU[!is.na(sp_AtoAUrate_agbAtoAU$estimate), ]
 
+# round results ####
+sp_mortrate_agbmort[, sapply(sp_mortrate_agbmort, is.numeric)] <- round(sp_mortrate_agbmort[, sapply(sp_mortrate_agbmort, is.numeric)], 2)
+sp_AtoAUrate_agbAtoAU[, sapply(sp_AtoAUrate_agbAtoAU, is.numeric)] <- round(sp_AtoAUrate_agbAtoAU[, sapply(sp_AtoAUrate_agbAtoAU, is.numeric)], 2)
 
 # save ####
 write.csv(sp_mortrate_agbmort, file = "R_results/mortrates_and_agbmort_by_species.csv", row.names = F)
@@ -325,6 +328,10 @@ all_AtoAUrate <- rbind(all_AtoAUrate, sp_AtoAUrate)
 # remove NAs ####
 all_mortrate <- all_mortrate[!is.na(all_mortrate$mortality_rate), ]
 all_AtoAUrate <-  all_AtoAUrate[!is.na(all_AtoAUrate$AtoAU_rate), ]
+
+# round results ####
+all_mortrate[, sapply(all_mortrate, is.numeric)] <- round(all_mortrate[, sapply(all_mortrate, is.numeric)], 2)
+all_AtoAUrate[, sapply(all_AtoAUrate, is.numeric)] <- round(all_AtoAUrate[, sapply(all_AtoAUrate, is.numeric)], 2)
 
 # save ####
 write.csv(all_mortrate, file = "R_results/mortrates_by_size_class.csv", row.names = F)
