@@ -353,6 +353,32 @@ for(survey_year in survey_years) {
 }
 
 
+# Status corrections ####
+## change D to A or AU if tree was found A or AU later
+
+
+for(survey_year in survey_years) {
+  cat(paste("Filling info of missied stems in", survey_year), "...\n")
+  
+  mort <- get(paste0("mort", survey_year))
+ 
+  
+  # Change D to A
+  idx <- mort$current_year_status %in% c("A") & grepl("D", mort$previous_year_status)
+  if(sum(idx) > 0) mort$previous_year_status[idx] <- "A"
+  
+  # Change D to AU
+  idx <- mort$current_year_status %in% c("AU") & grepl("D", mort$previous_year_status)
+  if(sum(idx) > 0) mort$previous_year_status[idx] <- "AU"
+  
+  
+  # save
+  
+  assign(paste0("mort", survey_year), mort)
+  
+}
+
+
 
 # Calculate allometries ####
 
