@@ -70,7 +70,7 @@ As a resut of our annual surveys, We have been paying increasing attention to si
 
 ### Data use
 
-These data are public, but the more recent censuses may not yet have been used in publications. Censuses are led by early-career scientists, and we wish to see these individuals receive appropriate credit (coauthorship for census leaders, acknowledgement for volunteers) in the first publication that uses the data they collected. **Therefore, we ask that any researchers interested in using data that have not yet been used in a publication (currently 2020 forward) contact us to discuss collaboration.**
+These data are public, but the more recent censuses may not yet have been used in publications. Censuses are led by early-career scientists, and we wish to see these individuals receive appropriate credit (coauthorship for census leaders, acknowledgement for volunteers) in the first publication that uses the data they collected. **Therefore, we ask that any researchers interested in using data that have not yet been used in a publication (currently 2020 and 2022 forward) contact us to discuss collaboration.**
 
 ### Contributors
 | name | GitHub ID| position* | role |
