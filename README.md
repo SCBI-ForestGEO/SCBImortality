@@ -92,6 +92,13 @@ These data are public, but the more recent censuses may not yet have been used i
 | Erin MacMonigle | emacmonigle | field assistant, SCBI | 2022 census leader |
 | Katherina Wilkins |  | field assistant, SCBI | 2022 census assistant, 2022 field fixes |
 | Lukas Magee | mageeluke | PhD Student, UFL | assisted with censusin 2022, 2023 |
+| David Mitre | mitreds | research technician, STRI | 2023 census lead |
+| Jessica Shue | jess-shue | research technician, SERC | 2023 census prep, training & data support |
+|Iris Kennedy|Iriskennedy|ForestGEO Intern| 2023 census - Data collection  and data entry|
+| Krystal Bagnaschi | krystalbagnaschi | ForestGEO Intern | 2023 census - Data collection and entry |
+| Caroline Troy | CarolineTroy | ForestGEO Intern | 2023 census - Data collection and entry |
+| Rachel Hoffman | rmh24 | ForestGEO Intern | 2023 census - Data collection and entry |
+| Erin MacMonigle |emacmonigle | ForestGEO Intern | 2023 census -  Data collection and entry |
 
  
 *refers to position at time of main contribution to this repository
