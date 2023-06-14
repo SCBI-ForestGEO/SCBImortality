@@ -5,7 +5,9 @@
 
 ## Current Census Dashboard
 
-### data entry issues to resolve?
+The 2023 mortality census is combined with our main census, which is tracked in our [2023census repository](https://github.com/SCBI-ForestGEO/2023census).
+
+<!--### data entry issues to resolve?
 [![data-tests](https://github.com/SCBI-ForestGEO/SCBImortality/workflows/data-tests/badge.svg)](https://github.com/SCBI-ForestGEO/SCBImortality/tree/main/testthat/reports)
 
 
@@ -34,7 +36,7 @@ Ex: Horizontal lines before July 7 are averages over 5 weeks
 
 ![daily_progress](testthat/reports/daily_progress.png) 
 
-
+-->
 
 
 ## Census Info
