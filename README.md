@@ -120,3 +120,5 @@ Gonzalez-Akre, E. B., Meakem, V., Eng, C.Y., Tepley, A. J., Bourg, N. A., McShea
 *Data from this publication are published in [Dryad](http://dx.doi.org/10.5061/dryad.v5h24.)* 
 
 Anderson-Teixeira, K. J., V. Herrmann, W. B. Cass, A. B. Williams, S. J. Paull, E. B. Gonzalez-Akre, R. Helcoski, A. J. Tepley, N. A. Bourg, C. T. Cosma, A. E. Ferson, C. Kittle, V. Meakem, I. R. McGregor, M. N. Prestipino, M. K. Scott, A. R. Terrell, A. Alonso, F. Dallmeier, and W. J. McShea. 2020. [Long-Term Impacts of Invasive Insects and Pathogens on Composition, Biomass, and Diversity of Forests in Virginia’s Blue Ridge Mountains](https://link.springer.com/article/10.1007%2Fs10021-020-00503-w). Ecosystems.  DOI: 10.1007/s10021-020-00503-w.
+
+Kim, A. Y., V. Herrmann, R. Bareto, B. Calkins, E. Gonzalez-Akre, D. J. Johnson, J. A. Jordan, L. Magee, I. R. McGregor, N. Montero, K. Novak, T. Rogers, J. Shue, and K. J. Anderson-Teixeira. 2022. Implementing GitHub Actions continuous integration to reduce error rates in ecological data collection. Methods in Ecology and Evolution 13(11): 2572-2585. DOI: http://doi.org/10.1111/2041-210X.13982 
