@@ -65,6 +65,7 @@ Numbers of trees and species cored since 2017 is as follows:
 - 2021 - 
 - 2022 - no cores collected
 - 2023 - no cores collected
+- 2024 - no cores collected
 
 As a resut of our annual surveys, We have been paying increasing attention to signs of insect pests and pathogens on newly dead and unhealthy trees. A list of pests and pathogens that may affect trees at the SCBI plot is given [here](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/tree/master/species_lists/insects_pathogens).
 
