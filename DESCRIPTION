@@ -29,7 +29,8 @@ Imports:
     lubridate,
     patchwork,
     tidyr,
-    ggplot2
+    ggplot2,
+    data.table
 URL: https://github.com/SCBI-ForestGEO/SCBImortality
 BugReports: https://github.com/SCBI-ForestGEO/SCBImortality/issues
 Config/testthat/edition: 3
