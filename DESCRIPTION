@@ -30,7 +30,8 @@ Imports:
     patchwork,
     tidyr,
     ggplot2,
-    data.table
+    data.table,
+    tidyverse
 URL: https://github.com/SCBI-ForestGEO/SCBImortality
 BugReports: https://github.com/SCBI-ForestGEO/SCBImortality/issues
 Config/testthat/edition: 3
