@@ -6,16 +6,45 @@ rm(list = ls())
 
 # load libraries ####
 library(here)
-library(readxl)
+library(data.table)
+library(tidyverse)
+
 
 # load latest mortality data ####
 
-## get the name of latest excel form
-# latest_FFFs <- list.files(here("raw_data/FFF_excel/"), pattern = ".xlsx", full.names = T)
-# latest_FFFs <- latest_FFFs[which.max(as.numeric(regmatches(latest_FFFs, regexpr("20\\d\\d", latest_FFFs))))] # take the latest file only
-latest_FFFs <- "raw_data/FFF_excel/SCBI Mortality 2022.xlsx" #update this for cencus 2023
-static_FFFs <- "raw_data/FFF_excel/SCBI Mortality static 2022.xlsx" #this is static form that was used for one week during 2022 that is missing one column 
-fieldFixes_FFF <- "raw_data/FFF_excel/SCBI Mortality field fixes 2022.xlsx" #this is a form that was filled after the quadrat with remaining issues were re-dispatched in Decemver 2022
+tree <- fread("raw_data/Field_Maps/SCBI_trees_mortality_2024_0.csv")
+stem <- fread("raw_data/Field_Maps/SCBI_stems_mortality_2024_1.csv") 
+
+
+# collate tree and stem together ####
+setdiff(names(tree), names(stem))
+setdiff(names(stem), names(tree))
+
+## remove personel  (we only want personel list)
+tree$personnel <- NULL
+
+## remove x2 and y2
+range(tree[, x - x2])# super tiny, essentially same
+range(tree[, y - y2]) # super tiny, essentially same
+
+tree$x2 <- NULL
+tree$y2 <- NULL
+
+## add empty comment_motality_2023 into stem 
+stem$comment_mortality_2023 <- ""
+
+## remove dbh_if_dead_2023 from stem table
+stem$dbh_if_dead_2023 <- NULL
+
+## double check what is left
+setdiff(names(tree), names(stem))
+setdiff(names(stem), names(tree))
+
+## copy over c("lx", "ly", "x", "y", "personnel_list", "date_measured") from tree to stem
+setdiff(stem$tag, tree$tag)
+
+stem[, c("lx", "ly", "x", "y", "personnel_list", "date_measured")] <- tree[match(stem$tag, tree$tag), c("lx", "ly", "x", "y", "personnel_list", "date_measured")]
+
 
 
 ## load the latest mortality survey
