@@ -18,18 +18,7 @@ Authors@R: c(
     )
 Depends: R (>= 4.0.0)
 Imports: 
-    testthat,
     here,
-    readxl,
-    rgdal,
-    dplyr,
-    readr,
-    stringr,
-    janitor,
-    lubridate,
-    patchwork,
-    tidyr,
-    ggplot2,
     data.table,
     tidyverse
 URL: https://github.com/SCBI-ForestGEO/SCBImortality
