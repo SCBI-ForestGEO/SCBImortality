@@ -1,0 +1,1 @@
+This folder contains the list of current errors
