@@ -117,7 +117,7 @@ for (i in 1:nrow(checks)) {
 
 write.csv(allErrors, "QAQC_reports/allErrors.csv")
 
-# plot the quadrat done with errors...
+# plot the quadrat with errors...
 
 
 # thank you little VM for doing the job
