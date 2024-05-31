@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/368213779.svg)](https://zenodo.org/badge/latestdoi/368213779)
 
-
+<!--
 ## Current Census Dashboard
 
 ### data entry issues to resolve?
@@ -34,7 +34,7 @@ Ex: Horizontal lines before July 7 are averages over 5 weeks
 
 ![daily_progress](testthat/reports/daily_progress.png) 
 
-
+-->
 ## Census Info
 
 ### Sampling location
