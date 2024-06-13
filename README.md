@@ -35,6 +35,11 @@ Ex: Horizontal lines before July 7 are averages over 5 weeks
 ![daily_progress](testthat/reports/daily_progress.png) 
 
 -->
+## Survey Dashboard
+
+### Map of survey progress
+![map_of_completion](https://raw.githubusercontent.com/SCBI-ForestGEO/SCBImortality/doc/progress_map.png) 
+
 ## Census Info
 
 ### Sampling location
