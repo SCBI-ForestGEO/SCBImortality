@@ -49,7 +49,7 @@ progress_map <- ggplot(data = ggplot_data) +
   geom_sf(aes(fill = fill), color = "black", size = 0.1) +
   geom_sf(data = deer_exclosure, colour = "black", fill = NA,lwd = 1) +
   scale_fill_manual(name = "Completion Status", values = c("Finished" = "#5ab962", "In Progress" = "#f7d853", "Error/Warning" = "#841F27","Not Started" = "#808080")) +
-  theme_bw() +
+  theme_void() +
   theme(axis.text = element_blank(),
         plot.title = element_text(hjust = 0.5, size = 16)) +
   ggtitle("Progress Map")
