@@ -17,7 +17,7 @@ checks <- fread("R_scripts/GitHubAction_checks.csv")
 tree <- fread("raw_data/Field_Maps/SCBI_trees_mortality_2024_0.csv")
 stem <- fread("raw_data/Field_Maps/SCBI_stems_mortality_2024_1.csv") 
 
-
+ 
 # collate tree and stem together ####
 setdiff(names(tree), names(stem))
 setdiff(names(stem), names(tree))
