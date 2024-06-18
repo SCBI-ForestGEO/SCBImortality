@@ -55,6 +55,14 @@ jobs:
           source("R_scripts/CI_1_Generate_reports.R")
         shell: Rscript {0}
         
+      # Run R script to update progress map:
+      - name: Update Progress Map                
+        id: update_progress_map                   
+        run: |
+          source("R_scripts/CI_2_progress_map.R")      
+        shell: Rscript {0}
+
+        
         
       # Commit and push all new files, where commits are assigned to GA bot:
       - name: Commit new files
