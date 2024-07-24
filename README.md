@@ -74,11 +74,24 @@ As a resut of our annual surveys, We have been paying increasing attention to si
 ## New mortality census
 See this (README.md)[https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/raw_data/README.md]
 
-### Data use
+## Data use
 
-These data are public, but the more recent censuses may not yet have been used in publications. Censuses are led by early-career scientists, and we wish to see these individuals receive appropriate credit (coauthorship for census leaders, acknowledgement for volunteers) in the first publication that uses the data they collected. **Therefore, we ask that any researchers interested in using data that have not yet been used in a publication (currently 2020 and 2022 forward) contact us to discuss collaboration.**
+Data are published to this reposity immediately upon collection.
+We require that the (mostly early-career) members of our team who contributed to data collection be given the opportunity to contribute as coauthors (with full opportunity to comment on analysis plans and draft manuscripts) to the first scientific publication using the data.
+Data usage agreements thefore depend upon collection date, currently deliniated as specified below.
 
-### Contributors
+### Data from 2014-2019, 2021
+These data are licensed under the [Creative Commons Attribution 4.0 International](https://github.com/SCBI-ForestGEO/SCBImortality?tab=CC-BY-4.0-1-ov-file#readme) license.
+
+### Data from 2020, 2022 - present
+These data are covered by a custom data use agreement. 
+Please refer to the [data_use_agreement.md](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/data_use_agreement.md) file for details.
+*Data use requests may be denied if they compete with planned publications (particularly those led by early-career researchers) or fail to adhere to acceptable standards of scientific integrity and rigour.*
+We strongly advise contacting PI [Kristina Anderson-Texeira](teixeirak@si.edu) prior to beginning analysis of these data.
+
+
+
+## Contributors
 | name | GitHub ID| position* | role |
 | -----| ---- | ---- |---- |
 | Kristina Anderson-Teixeira | teixeirak | staff scientist, SCBI & STRI | PI overseeing project |
