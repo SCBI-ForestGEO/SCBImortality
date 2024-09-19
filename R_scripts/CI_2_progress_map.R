@@ -26,20 +26,31 @@ sf_data <- mortality_data_aggregate %>%
   rename(PLOT = quadrat) %>% 
   mutate(fill = NA) %>%
   mutate(fill = case_when(
-                between(completion_value, 0, 0) ~ "Finished", #sage = #6fc276, green = #5ab962
-                between(completion_value, 0.001, 1.999) ~ "In Progress", #blue = "#99c5c4", yellow = #f7d853
-                between(completion_value, 2, 10) ~ "Not Started") #grey = #808080
+                between(completion_value, 0, 0) ~ "Finished", 
+                between(completion_value, 0.001, 1.999) ~ "In Progress", 
+                between(completion_value, 2, 10) ~ "Not Started") 
   )
 
 # Prepare the error data
 error_quadrats <- errors %>%
+  filter(errorType == "error") %>%
+  filter(errorName != "missedStem") %>%
   select(quadrat) %>%
   rename(PLOT = quadrat)
 
+warning_quadrats <- errors %>%
+  filter(errorType == "warning") %>%
+  select(quadrat) %>%
+  rename(PLOT = quadrat)
+
+
 # Combine the error data with the sf_data
-sf_data_errors <- sf_data %>% 
-  mutate( 
-    fill = if_else(PLOT %in% error_quadrats$PLOT, "Error/Warning", fill))   # brick red = #841F27
+sf_data_errors <- sf_data %>%
+  mutate(
+    fill = case_when(
+      PLOT %in% error_quadrats$PLOT ~ "Error",
+      PLOT %in% warning_quadrats$PLOT ~ "Warning",
+      TRUE ~ fill))
 
 # Join the combined survey and error data with the shapefile
 ggplot_data <- quadrat_sf %>%
@@ -48,7 +59,8 @@ ggplot_data <- quadrat_sf %>%
 progress_map <- ggplot(data = ggplot_data) +
   geom_sf(aes(fill = fill), color = "black", size = 0.1) +
   geom_sf(data = deer_exclosure, colour = "black", fill = NA,lwd = 1) +
-  scale_fill_manual(name = "Completion Status", values = c("Finished" = "#5ab962", "In Progress" = "#f7d853", "Error/Warning" = "#841F27","Not Started" = "#808080")) +
+  scale_fill_manual(name = "Completion Status", values = c("Finished" = "#5ab962", "In Progress" = "#f7d853", "Error" = "#841F27", "Warning" = "#CC5500", "Not Started" = "#808080"), 
+                    breaks = c("Finished", "In Progress", "Warning", "Error", "Not Started")) +
   theme_void() +
   theme(axis.text = element_blank(),
         plot.title = element_text(hjust = 0.5, size = 16)) +
@@ -57,4 +69,3 @@ progress_map <- ggplot(data = ggplot_data) +
 progress_map
 
 ggsave(progress_map, filename = "doc/progress_map/progress_map.jpg", units = "in", height = 8, width = 10, dpi = 300)
-
