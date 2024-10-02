@@ -43,6 +43,13 @@ warning_quadrats <- errors %>%
   select(quadrat) %>%
   rename(PLOT = quadrat)
 
+### The following "Missed Stem" category has been added for this survey 
+  ### to account for stems that were not mapped due to missing location data
+missing_stems <- errors %>%
+  filter(errorName == "missedStem") %>%
+  select(quadrat) %>%
+  rename(PLOT = quadrat)
+
 
 # Combine the error data with the sf_data
 sf_data_errors <- sf_data %>%
@@ -50,6 +57,7 @@ sf_data_errors <- sf_data %>%
     fill = case_when(
       PLOT %in% error_quadrats$PLOT ~ "Error",
       PLOT %in% warning_quadrats$PLOT ~ "Warning",
+      PLOT %in% missing_stems$PLOT ~ "Missed Stem",
       TRUE ~ fill))
 
 # Join the combined survey and error data with the shapefile
@@ -59,8 +67,8 @@ ggplot_data <- quadrat_sf %>%
 progress_map <- ggplot(data = ggplot_data) +
   geom_sf(aes(fill = fill), color = "black", size = 0.1) +
   geom_sf(data = deer_exclosure, colour = "black", fill = NA,lwd = 1) +
-  scale_fill_manual(name = "Completion Status", values = c("Finished" = "#5ab962", "In Progress" = "#f7d853", "Error" = "#841F27", "Warning" = "#CC5500", "Not Started" = "#808080"), 
-                    breaks = c("Finished", "In Progress", "Warning", "Error", "Not Started")) +
+  scale_fill_manual(name = "Completion Status", values = c("Finished" = "#5ab962", "Missed Stem" = "#f7d853", "Error" = "#841F27", "Warning" = "#CC5500", "Not Started" = "#808080"), 
+                    breaks = c("Finished", "Missed Stem", "Warning", "Error", "Not Started")) +
   theme_void() +
   theme(axis.text = element_blank(),
         plot.title = element_text(hjust = 0.5, size = 16)) +
