@@ -56,8 +56,8 @@ sf_data_errors <- sf_data %>%
   mutate(
     fill = case_when(
       PLOT %in% error_quadrats$PLOT ~ "Error",
-      PLOT %in% warning_quadrats$PLOT ~ "Warning",
       PLOT %in% missing_stems$PLOT ~ "Missed Stem",
+      PLOT %in% warning_quadrats$PLOT ~ "Warning",
       TRUE ~ fill))
 
 # Join the combined survey and error data with the shapefile
