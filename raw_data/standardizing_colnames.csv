@@ -92,6 +92,7 @@ mortality,2019,date,ExactDate,,
 mortality,2020,date,ExactDate,,
 mortality,2021,date,ExactDate,,
 mortality,2022,date,ExactDate,,
+mortality,2023,ExactDate,ExactDate,,
 main,NA,ExactDate,ExactDate,,
 mortality,2024,ExactDate,ExactDate,,
 mortality,2021,FAD,fad,,factor associated to death if tree is dead or unhealthy
