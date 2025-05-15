@@ -5,18 +5,19 @@
 rm(list = ls())
 
 # load libraries ####
+library(here)
 library(data.table)
 library(tidyverse)
 
 # load the list (and code) of checks
-checks <- fread("R_scripts/GitHubAction_checks.csv") %>% filter(activateCheck == TRUE)
+checks <- fread("R_scripts/GitHubAction_checks.csv")
 
 # load latest mortality data ####
 
-tree <- fread("raw_data/Field_Maps/SCBI_trees_mortality_2025_0.csv")
-stem <- fread("raw_data/Field_Maps/SCBI_stems_mortality_2025_1.csv") 
+tree <- fread("raw_data/Field_Maps/SCBI_trees_mortality_2024_0.csv")
+stem <- fread("raw_data/Field_Maps/SCBI_stems_mortality_2024_1.csv") 
 
- 
+
 # collate tree and stem together ####
 setdiff(names(tree), names(stem))
 setdiff(names(stem), names(tree))
@@ -30,6 +31,12 @@ range(tree[, y - y2]) # super tiny, essentially same
 
 tree$x2 <- NULL
 tree$y2 <- NULL
+
+## add empty comment_motality_2023 into stem 
+stem$comment_mortality_2023 <- ""
+
+## remove dbh_if_dead_2023 from stem table
+stem$dbh_if_dead_2023 <- NULL
 
 ## double check what is left
 setdiff(names(tree), names(stem))
@@ -49,10 +56,17 @@ setdiff(names(stem), names(tree))  # should be empty
 stem <- bind_rows(tree, stem) # now stem is both trees and stems together
 
 
+
+
+# do more clean up
+stem$dbh_if_dead <- NULL
+
 # keep a copy of all these stems, and subset stem to the ones censused
 stem_all <- stem
 
 stem <- stem %>% filter(mort_census_status %in% "finished")
+
+
 
 
 # PERFORM CHECKS ------------------------------------------------------
