@@ -5,8 +5,8 @@ library(sf)
 library(ggplot2)
 
 # Read in the data
-mortality_trees <- read.csv("raw_data/Field_Maps/SCBI_trees_mortality_2024_0.csv")
-mortality_stems <- read.csv("raw_data/Field_Maps/SCBI_stems_mortality_2024_1.csv")
+mortality_trees <- read.csv("raw_data/Field_Maps/SCBI_trees_mortality_2025_0.csv")
+mortality_stems <- read.csv("raw_data/Field_Maps/SCBI_stems_mortality_2025_1.csv")
 errors <- read.csv("QAQC_reports/allErrors.csv")
 quadrat_sf <- read_sf("doc/progress_map/20m_grid/20m_grid.shp")
 deer_exclosure <- st_read("doc/progress_map/Deer Exclosure/deer_exclosure_2011.shp")
