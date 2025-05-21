@@ -75,7 +75,6 @@ As a resut of our annual surveys, We have been paying increasing attention to si
 See this (README.md)[https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/raw_data/README.md]
 
 ## Data use
-
 Data are published to this reposity immediately upon collection.
 We require that the (mostly early-career) members of our team who contributed to data collection be given the opportunity to contribute as coauthors (with full opportunity to comment on analysis plans and draft manuscripts) to the first scientific publication using the data.
 Data usage agreements therefore depend upon collection date, currently deliniated as specified below.
