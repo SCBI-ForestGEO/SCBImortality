@@ -1,5 +1,5 @@
 ---
-title: "SCBI-ForestGEO Tree Health and Mortality Census Protocol 2023"
+title: "SCBI-ForestGEO Tree Health and Mortality Census Protocol 2025"
 output: pdf_document
 ---
 
@@ -8,11 +8,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Supplies
-- [ ] iPad - set up with FastField and maps ([GitHub issue #6](https://github.com/SCBI-ForestGEO/SCBImortality/issues/6))
-- [ ] DBH tape, calipers
-- [ ] phone with clinometer app, or physical clinometer. I assume this could also be installed on the iPads.
-- [ ] Binoculars, IMPORTANT to check live status of very tall trees and to distinguish between leaves of lianas or tree under inspection.
-- [ ] Printed copies of visual guides, if desired (these could also be loaded on iPad)
+- [ ] iPad - set up with FieldMaps app and maps 
+- [ ] Binoculars, to check live status of very tall trees and to distinguish between leaves of lianas or tree under inspection.
+- [ ] Printed copies of visual guides, if desired
 - [ ] List of tree species codes, available [here](https://github.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/blob/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv), if desired
 - [ ] Personal gear/ safety equipment
 
@@ -22,73 +20,54 @@ knitr::opts_chunk$set(echo = TRUE)
 At the SCBI plot, a blue re-bar located in the SW corner gives the quadrat name (3 or 4 digits). 
 Locate the rebar and orientate yourself (N-S). 
 Coordinates (x, y) are given in reference to a 20x20m square. 
-We have prepared maps of each quadrat with the trees to be censused and their status in the previous census (in GitHub/ Dropbox under Doc/Maps).
-It is important to **locate and complete census for all trees within the quadrat you are working on before moving to the next quadrat**. 
+The iPad contains maps of each quadrat with the trees to be censused and their status in the previous census. 
+*It is important to locate and complete census for all trees within the quadrat you are working on before moving to the next quadrat.*
+To find a tree, review info (species, size, position) of tree for which you’re searching. 
+Locate the based on x-y coordinates and/or map, check tag to ensure you’ve got the right tree. 
+If you can’t find a tree: (1) double check that quadrat matches the FieldMaps App (2) look on the ground for fallen trees/ lost tags (3) check trees that otherwise don’t seem to match what you’re looking for (5) if a thorough search yields nothing, record it as not found DN status, or “Dead not found” in FieldMaps App. 
+Avoid giving a tree the DN status; you need to do a thorough search for all trees on the list. 
 
-To find a tree, review info (species, size, position) of tree for which you're searching. 
-Locate the based on x-y coordinates and/or map, check tag to ensure you've got the right tree.
 
-*If you can't find a tree:*
-(1) double check that quadrat matches data sheet/ Fastfield App
-(2) look on the ground for fallen trees/ lost tags
-(3) sometimes x and y coordinates get switched, so try switching and see if you find it (note wrong coordinates)
-(4) check trees that otherwise don't seem to match what you're looking for
-(5) if a thorough search yields nothing, record it as not found **DN** status, or "Dead not found" in FastField App.
-Avoid giving a tree the DN status; you need to do a thorough search for all trees on the list.
-*One of the challenges of this survey is getting frustrated when you can't find those little ash trees and wanting to give up. The solution is to go back another day or week with a fresh mind set and you'll usually find them. Sometimes they're just a stick on the ground, but they're there!* 
-
-### Data Entry in FastField
-#### Status
-**Alive (A)**= live with no FADs (see below), wounds, cankers, or rot.
-**Alive Unhealthy (AU)** = living but unhealthy ($\ge$ 1 FAD, possibly wounds, cankers, or rot).
+### Data Entry in FieldMaps
+#### Status (status_2025)
+**Alive (A)**= Alive.
 **Dead Standing (DS)** = dead with no living foliage above breast height (can be dead with resprouts; see below).
 **Dead on the ground (DC)** = dead (no living foliage) and fallen. Note: a tree that has fallen but has living foliage is AU.
 **Dead not found (DN)** = neither stem nor tag could not be found following a *thorough* search. Presumed dead.
 
 **Guide to measurements needed based on status:**
 
-*If the status us "A":*
+*If the status is "A":*
 (1) Mark status
-(2) Record crown position
-(3) Record percentage of crown still intact (%)
-(4) Record percentage of crown living (%)
+(2) Record percentage of crown still intact (%)
+(3) Record percentage of crown living (%)
+(4) Record lean angle (if leaning > 15$^\circ$)
+(5) Record liana load. 
 
-*If the status is "AU"*:
-(1) Record FADs in order of importance* (at least 1 factor)- See FAD codes below.
-(2)	Record crown position. 
-(3)	Record percentage of crown still intact (%). 
-(4)	Record percentage of crown living (%)
-(5)	Record lean angle (if leaning > 15$^\circ$)
-(6)	Record liana load. 
-(7)	Record wound, canker, or rot categories (if applicable), and their level
+**__If the percentage of crown living $\le$ 90%"**:
+(6) Record FADs in order of importance* (at least 1 factor)- See FAD codes below.
 
 *If the status is "DS" & previously "A":*
-(1)	Record FADs in order of importance (at least 1 factor)- See FAD codes below.
-(2)	Record crown position. 
-(3) Measure and record DBH (mm)
-(4)	Record Percentage of crown still intact (%). 
-(5)	Record percentage of crown living (%)
-(6)	Record lean angle (if leaning > 15$^\circ$)
-(7)	Record liana load. 
-(8)	Record wound, canker, or rot categories (if applicable), and their level
+(1) Mark status
+(2)	Record Percentage of crown still intact (%). 
+(3)	Record percentage of crown living (%)
+(4)	Record FADs in order of importance (at least 1 factor)- See FAD codes below.
+(5)	Record lean angle (if leaning > 15$^\circ$)
+(6)	Record liana load. 
  
 *If the status is “DC” & previously “A”:*
-(1)	Record FADs in order of importance (at least 1 factor)- See FAD codes below.
+(1) Mark status 
 (2) Record Percentage of crown still intact (%). 
 (3)	Record percentage of crown living (%)
-(4) Measure and record DBH (mm)
+(4)	Record FADs in order of importance (at least 1 factor)- See FAD codes below.
 (5)	Record liana load. 
-(6)	Record wound, canker, or rot categories (if applicable), and their level
-
 
 *If the status is “DS” & previously “DS”:*
 (1)	Mark status 
-(2)	Record crown position*. 
-(3)	Record percentage of crown still intact (%)*
-(4)	Record percentage of crown living (%)*
-(5)	Record lean angle (if leaning > 15^$\circ$)*
-(6)	Record liana load*. 
-*record this information for remote sensing/crown delineation purposes 
+(2)	Record percentage of crown still intact (%)*
+(3)	Record percentage of crown living (%)*
+(4)	Record lean angle (if leaning > 15^$\circ$)*
+(5)	Record liana load*. 
 
 *If the status is “DC” & previously “DS” or "DC"*: Record status and continue. 
 
@@ -96,35 +75,36 @@ Avoid giving a tree the DN status; you need to do a thorough search for all tree
 #### *DWR* (Dead with resprouts)
 If the tree is dead but with living resprouts at its base, record as yes. Otherwise, leave as is.
 
-#### *Crown Position (aka Crown Illumination Index)* 
-This refers to the tree's *current* position (as opposed to where it may have been before it broke/fell).
-**5** = Canopy completely exposed to overhead and lateral light;
-**4** = Full overhead light; > 90% exposed to vertical light;
-**3** = some overhead light;
-**2** = Lateral light; < 10% exposed to vertical light;
-**1** = No direct light; only receives light filtered through other trees
-
-![*Crown Position (a.k.a., "Crown illumination"; taken from Arellano et al., 2020)*](figures_tables/Crown_illumination.png){ width=40% } 
-
-#### *Dead DBH (diameter breast height in mm; collected on dead trees only)* 
-If a tree is dead, you will be prompted for a DBH measurement. Measure DBH, being sure to report **units in mm**. If a stem has fallen and it's DBH can't be measured with a tape, measure it later using a big caliper (find one in Radiotracking lab - Office Annex building). 
-
-
-\newpage
-
-#### *Percentage of Crown Intact*
+#### *Percentage of Crown Intact (levels: 1-5)*
 This is the percent of the crown intact. 
+
+**1** = <25% of the tree crown intact
+**2** = 25-50% of the tree crown intact
+**3** = 50-75% of the tree crown intact 
+**4** = 75-90% of the tree crown intact 
+**5** = >90% of the tree crown intact 
 
 ![Crown Assessment (taken from Arellano et al., 2020). Top left is 100% crown intact and 100% crown living, top right—100% intact and 90% living, middle left—90% intact and 70% living, middle right—90% intact and 50% living, bottom left—70% intact and 30% living, bottom right—40% intact and 0% living ](figures_tables/Crown_assessment.png){ width=40% } 
 
 
-#### *Percentage of Crown Living*
+#### *Percentage of Crown Living (levels: 1-5)*
 Percentage of crown living (indicated by live foliage). 
 **This is relative to an 100% intact crown, and therefore should be $\le$ Percentage of Crown Intact.**
 
-#### *Lean angle (%)*
-If tree is still rooted and is leaning, estimate the angle of lean in degrees from vertical. 
-This angle is measured in degrees from the base through the POM 
+**1** = <25% of the tree crown living
+**2** = 25-50% of the tree crown living 
+**3** = 50-75% of the tree crown living
+**4** = 75-90% of the tree crown living
+**5** = >90% of the tree crown living
+
+#### *Lean angle (levels 1-4)*
+If tree is still rooted and is leaning $ge$ 15$^\circ$, estimate the angle of lean in degrees from vertical. 
+This angle is measured in degrees from the base through the POM.
+
+**1** = <15$^\circ$ (no lean)
+**2** = 15-45$^\circ$
+**3** = >45$^\circ$
+**4** = On the ground
 
 ![Lean angle (Taken from Arellano et al., 2020)](figures_tables/Tree_angle.png){ width=20% } 
 
@@ -139,34 +119,24 @@ This angle is measured in degrees from the base through the POM
 - Record Factors associated with death (FAD) ***in order of importance*** (will be listed in order selected). 
 - To scrutinize the FAD’s, look at our [Tree Disease Guide](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/doc/TreeDiseaseGuide/TreeDiseaseGuide.pdf) and [Visual Guides](https://github.com/SCBI-ForestGEO/SCBImortality/blob/main/Protocols/Visual%20guides/Tree%20Mortality%20Guide_2020.pdf).
 - For tree conditions or agents of mortality not specifically defined below, record diagnosis in the notes or comments section of the form. 
-- *If wound, rot, or canker is recorded, it's level must also be recorded. Conversely, if a wound/rot/canker level is recorded, it must be included on the FAD list.*
 
 FAD list : 
-
-**U = Unable to determine cause of death**
 
 *Mechanical Damage:*
 
 **B = Broken stem** (note cause, indicate level on tree);
 **CR = Crushed by other tree or tree parts**;
-**UP = Uprooted Tree** (root system exposed);
-**S = Slope failure** (evident landslide even if small. rare at SCBI);
-**L = Lightning** (tree splitting, straight scars from above);
-**FI = Fire** (stem charred, fire scars on bark. not expected at SCBI);
+**UP = Uprooted tree or slope failure** (root system exposed or evident landslide even if small - rarely at SCBI);
 
 *Biological agents:*
 
-**AN = Animal Damage** (this category excludes insects. specify animal in notes if possible);
-**BB = Bark beetles** (in the subfamily [Scolytinae](https://en.wikipedia.org/wiki/Bark_beetle)) and/or beetle galleries present. (At SCBI, elm bark beetles are in this category, but EAB are not.) *Note: BB is a sub-catagory of I, and it is not necessary to mark I if BB is selected.*);
-**I = Insect infection** *other than BB (bark beetles in subfamily [Scolytinae](https://en.wikipedia.org/wiki/Bark_beetle)* (e.g., EAB);
+**I = Insect or pathogen infection** (e.g. EAB, Beech bark disease, Armillaria root disease etc.);
 **DF = Complete defoliation for a portion of stem** (record crown condition using Smith/Flower method below 1-5 scale);
-**F = Fungi visible** (includes fruiting mushroom bodies, fungal mats, and discoloration inside wounds or cankers. if canker is present, also record K. if would is present, record W. note that Armillaria root disease is its own category);
-**K = Canker or swelling present** (if fungi is visible, also record F. if open wound, also record W);
+**F = Fungi visible on stem** (includes fruiting mushroom bodies, fungal mats, and discoloration inside wounds or cankers. if canker is present, also record K. if wound is present, record W.; Note that Armillaria root disease is included in I instead);
+**K = Large canker or swelling present** Big canker/ deformity (Size 2 or 3). Greater in area than a square of DBH $\times$ DBH in shape.(if fungi is visible, also record F. if open wound, also record W);
 **LF = Leaf damage** (Leaf spots, blotch, mildew, discoloration etc.);
-**W = Wound** (any situation where the bark has been removed and wood is exposed to the air or soil. not mutually exclusive with F or K);
-**R = Rotting stem**;
-**R1 = Root damage**;
-**R2 = Armillaria root disease** (subcateogry of F; including F not needed)
+**W = Large wound** Big wound (Size 2 or 3). Greater in area than a square of DBH $\times$ DBH in shape.(any situation where the bark has been removed and wood is exposed to the air or soil. not mutually exclusive with F or K);
+**R = Large area of trunk rot**; Big rotting area (or hollow) on/ in trunk.(Size 2 or 3). Greater in area than a square of DBH $\times$ DBH in shape. (This may be caused by a fungal infection. not mutually exclusive with F or K);
 
 
 #### *Wounded main axis (levels: 1 = small, 2 = large, 3 = massive)*
