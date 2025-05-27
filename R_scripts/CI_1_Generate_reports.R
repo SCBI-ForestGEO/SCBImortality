@@ -54,6 +54,9 @@ stem_all <- stem
 
 stem <- stem %>% filter(mort_census_status %in% "finished")
 
+# in 2025 tag 50614 is duplicated in the app, so I am removing one here (global Id 8cc3add8-e71f-4f4d-82ce-4e90213b6b45)
+stem <- stem %>% filter(! GlobalID %in% "8cc3add8-e71f-4f4d-82ce-4e90213b6b45")
+
 
 # PERFORM CHECKS ------------------------------------------------------
 cat("Running main census checks") # this is to troubleshoot CI on GitHub actions (see where errors happen)
