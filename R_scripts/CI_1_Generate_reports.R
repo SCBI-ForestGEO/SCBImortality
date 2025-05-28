@@ -16,6 +16,16 @@ checks <- fread("R_scripts/GitHubAction_checks.csv") %>% filter(activateCheck ==
 tree <- fread("raw_data/Field_Maps/SCBI_trees_mortality_2025_0.csv")
 stem <- fread("raw_data/Field_Maps/SCBI_stems_mortality_2025_1.csv") 
 
+# in 2025 columns "CreationDate" "Creator"      "EditDate"     "Editor" were duplicated, second set is to be kept
+if(!all(names(tree)[which(duplicated(names(tree)))] == c("CreationDate", "Creator", "EditDate", "Editor"))) stop("set of duplicated columns is not as expected (2025 check)")
+tree <- tree[, -which(duplicated(names(tree), fromLast = T)), with = F]
+
+
+# in 2025 tree, 139 trees were duplicated in the app --> delete those
+if(sum(duplicated(tree$tag)) != 139) stop("different number of duplicates trees than expected (139 in 2025)")
+if((tree %>% group_by(tag, mort_census_status) %>% filter(n()>1) %>% nrow()) != 278) stop("some duplicates have different finish status --> need to figure out which one to keep ")
+
+tree <- tree %>% distinct(tag, .keep_all = TRUE)
  
 # collate tree and stem together ####
 setdiff(names(tree), names(stem))
@@ -53,9 +63,6 @@ stem <- bind_rows(tree, stem) # now stem is both trees and stems together
 stem_all <- stem
 
 stem <- stem %>% filter(mort_census_status %in% "finished")
-
-# in 2025 tag 50614 is duplicated in the app, so I am removing one here (global Id 8cc3add8-e71f-4f4d-82ce-4e90213b6b45)
-stem <- stem %>% filter(! GlobalID %in% "8cc3add8-e71f-4f4d-82ce-4e90213b6b45")
 
 
 # PERFORM CHECKS ------------------------------------------------------
