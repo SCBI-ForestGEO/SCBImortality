@@ -71,8 +71,10 @@ progress_map <- ggplot(data = ggplot_data) +
                     breaks = c("Finished", "Missed Stem", "Warning", "Error", "Not Started")) +
   theme_void() +
   theme(axis.text = element_blank(),
-        plot.title = element_text(hjust = 0.5, size = 16)) +
-  ggtitle("Progress Map")
+        plot.title = element_text(hjust = 0.5, size = 16),
+        plot.subtitle =  element_text(hjust = 0.5)) +
+  ggtitle("Progress Map",
+          subtitle = paste0(round(prop.table(table(mortality_data$mort_census_status)) *100,2)["finished"], "% stems finished"))
 
 progress_map
 
