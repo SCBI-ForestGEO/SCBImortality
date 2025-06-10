@@ -22,8 +22,8 @@ tree <- tree[, -which(duplicated(names(tree), fromLast = T)), with = F]
 
 
 # in 2025 tree, 139 trees were duplicated in the app --> delete those
-if(sum(duplicated(tree$tag)) != 139) stop("different number of duplicates trees than expected (139 in 2025)")
-if((tree %>% group_by(tag, mort_census_status) %>% filter(n()>1) %>% nrow()) != 278) stop("some duplicates have different finish status --> need to figure out which one to keep ")
+if(sum(duplicated(tree$tag)) >= 139) stop("different number of duplicates trees than expected (139 in 2025)")
+if((tree %>% group_by(tag, mort_census_status) %>% filter(n()>1) %>% nrow()) >= 278) stop("some duplicates have different finish status --> need to figure out which one to keep ")
 
 tree <- tree %>% distinct(tag, .keep_all = TRUE)
  
