@@ -29,9 +29,50 @@ for(f in paste0("scbi.stem", 1:3)) {
   x$dbh[ x$dbh %in% 0] <- NA # replace dbh 0 by NA... only occuring in second census, not sure why...
   x$gx <- round(x$gx,1)
   x$gy <- round(x$gy,1)
-  x$ExactDate <- as.Date(x$ExactDate, format = "%m/%d/%Y")
+  print(head(x$ExactDate))
+  x$ExactDate <- as.Date(x$ExactDate) #, format = "%m/%d/%Y")
   assign(f,x)
 }
+
+
+scbi.stem4 <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/2023census/refs/heads/main/processed_data/scbi.stem4.csv")
+col.scbi.stem3 <- colnames(scbi.stem3)
+col.scbi.stem4 <- colnames(scbi.stem4)
+shared_colnames <- intersect(names(scbi.stem3), names(scbi.stem4))
+missing_colnames <- setdiff(col.scbi.stem3, shared_colnames)
+print(missing_colnames)
+dropped_colnames <- c("treeID", "stemID", "MeasureID", "CensusID", "DFStatus")
+
+# add gx and gy to scbi.stem4
+scbi.stem4 <- scbi.stem4 %>%
+  mutate(quadrat = as.character(quadrat)) %>%
+  mutate(quadrat = if_else(nchar(quadrat) < 4, paste0("0", quadrat), (quadrat))) %>%
+  mutate(column = as.numeric(substr(as.character(quadrat), 1, 2))) %>%
+  mutate(row = as.numeric(substr(as.character(quadrat), 3, 4))) %>%
+  mutate(gx = ((column * 20) - 20) + lx) %>%
+  mutate(gy = ((row * 20) - 20) + ly)
+
+scbi.stem4 <- scbi.stem4 %>% 
+  mutate(CensusID = 4) %>%
+  rename(dbh = dbh_current) %>%
+  rename(codes = codes_current) %>%
+  rename(status = status_current) %>%
+  mutate(ExactDate = EditDate, date = EditDate)
+
+new_shared_colnames <- intersect(names(scbi.stem3), names(scbi.stem4))
+
+scbi.stem1 <- scbi.stem1 %>% select(all_of(new_shared_colnames))
+scbi.stem2 <- scbi.stem2 %>% select(all_of(new_shared_colnames))
+scbi.stem3 <- scbi.stem3 %>% select(all_of(new_shared_colnames))
+scbi.stem4 <- scbi.stem4 %>% select(all_of(new_shared_colnames))
+
+# final adjustments to scbi.stem4
+scbi.stem4$quadrat <-ifelse(nchar(scbi.stem4$quadrat) < 4, paste0("0",   scbi.stem4$quadrat),   scbi.stem4$quadrat)
+scbi.stem4$dbh[scbi.stem4$dbh %in% 0] <- NA 
+scbi.stem4$gx <- round(scbi.stem4$gx,1)
+scbi.stem4$gy <- round(scbi.stem4$gy,1)
+scbi.stem4 <- scbi.stem4 %>%
+  mutate(ExactDate = as.Date(cut(as.POSIXct(ExactDate, format = "%m/%d/%Y %I:%M:%S %p"), "day")))
 
 
 ### get the species table ####
@@ -81,7 +122,13 @@ for(survey_file in survey_files) {
   mort[, setdiff(unified_colnames[unified_colnames$survey_type %in% "mortality", ]$unified_column.name, colnames(mort))] <- NA
   
   ## delete columns we don't want
-  mort[, grep("delete", colnames(mort))] <- NULL
+  mort[, which(grepl("delete|^NA", colnames(mort)) | is.na(colnames(mort)))] <- NULL
+  
+  ## fixes in 
+  
+  mort <- mort %>%
+    mutate(current_year_status = if_else(current_year_status %in% "LI", current_year_living_status, current_year_status)) %>%
+    mutate(previous_year_status = if_else(previous_year_status == "LI", previous_year_living_status, previous_year_status))
   
   
   # make manual fixes ####
@@ -101,10 +148,14 @@ for(survey_file in survey_files) {
   if(survey_year <= 2018) {
     ref_main <- scbi.stem2
   }
-  if(survey_year > 2018 & survey_year <= 2022) {
+  if(survey_year > 2018 & survey_year < 2023) {
     ref_main <- scbi.stem3
   }
-  if(survey_year > 2022) stop("need to code for new main census")
+  if(survey_year >= 2023 & survey_year < 2028) {
+    ref_main <- scbi.stem4
+  }
+  
+  if(survey_year >= 2028) stop("need to code for new main census")
   
   idx <- match(paste(mort$tag, mort$StemTag), paste(ref_main$tag, ref_main$StemTag))
   mort$last_main_census_dbh <- ref_main$dbh[idx]
@@ -222,6 +273,8 @@ for(survey_file in survey_files) {
   if(survey_year <= 2019) date_format = "%m/%d/%Y"
   if(survey_year == 2020) date_format = "%m/%d/%y"
   if(survey_year > 2020) date_format = "%m-%d-%Y" 
+  if(survey_year >= 2023) date_format = "%Y-%m-%d"
+  if(survey_year >= 2024) date_format = "%m/%d/%Y %I:%M:%S %p"
   mort$ExactDate  <- as.Date(mort$ExactDate, format = date_format)
 
   # # make consistent fixes #### NOW ALL IMPLEMENTED IN MANUAL FIXES
@@ -240,6 +293,9 @@ for(survey_file in survey_files) {
   
   if(sum(idx) > 0)   A_afterD <- rbind(A_afterD, cbind(year = survey_year, mort[idx, c("tag", "StemTag", "sp", "previous_year_status", "current_year_status", "dead_with_resprout", "previous_year_comment", "current_year_comment")]))
     
+  # make sure sp is lower case
+  mort$sp <- tolower(mort$sp)
+  
   # save
   assign(paste0("mort", survey_year), mort)
 
@@ -250,14 +306,22 @@ warning("check date format after 2023 is correct!")
 A_afterD
 
 
-
-
 # check all tags exist in core census data if any problem, add in "manual_fixes.csv" ####
-
-tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$StemTag)
 
 for(survey_year in survey_years) {
   print(survey_year)
+  
+  if(survey_year <= 2018) {
+    ref_main <- scbi.stem2
+  }
+  if(survey_year > 2018 & survey_year < 2023) {
+    ref_main <- scbi.stem3
+  }
+  if(survey_year >= 2023 & survey_year <= 2028) {
+    ref_main <- scbi.stem4
+  }
+  
+  tag_stem_in_order <- paste(ref_main$tag, ref_main$StemTag)
   
   mort <- get(paste0("mort", survey_year))
   tag_stems <- paste(mort$tag, mort$StemTag)
@@ -273,84 +337,97 @@ for(survey_year in survey_years) {
 
 
 # Now re-order all data to all have same rows in same order + fill in missing info ####
-tag_stem_in_order <- paste(scbi.stem3$tag, scbi.stem3$StemTag)
-
-tag_stem_in_order <- tag_stem_in_order[tag_stem_in_order %in% unique(unlist(sapply(survey_years, function(survey_year) {
-  mort <- get(paste0("mort", survey_year))
-  paste(mort$tag, mort$StemTag)
-})))] # only keep the ones that were sampled for mortality at some point
-
-for(survey_year in survey_years) {
-  cat(paste("Filling info of missied stems in", survey_year), "...\n")
-  
-  mort <- get(paste0("mort", survey_year))
-  tag_stems <- paste(mort$tag, mort$StemTag)
-  
-  m <- match(tag_stem_in_order, tag_stems)
-  mort <- mort[m, ]
-  
-  # fill in info of trees that were not sampled
-  missing_stems <- tag_stem_in_order[is.na(m)]
-  
-  if(survey_year <= 2018) {
-    ref_main <- scbi.stem2
-  }
-  if(survey_year > 2018 & survey_year <= 2022) {
-    ref_main <- scbi.stem3
-  }
-  if(survey_year > 2022) stop("need to code for new main census")
-  
-  idx <- match(missing_stems, paste(ref_main$tag, ref_main$StemTag))
-  
-  mort[is.na(m), c(
-    "tag", "StemTag",
-    "sp",
-    "quadrat", "gx", "gy",
-    "last_main_census_dbh", "hom",
-    "last_main_cenus_status", "last_main_census_codes"
-  )] <-
-    ref_main[idx, c("tag", "StemTag",
-                    "sp",
-                    "quadrat", "gx", "gy",
-                    "dbh", "hom",
-                    "status",
-                    "codes")]
-  
-  mort[is.na(m),]$current_year_comment <- "stem not sampled, info automatically filled from previous year info"
-  mort[is.na(m),]$sp_affected_by_eab <- grepl("fr|ch", mort[is.na(m),]$sp)
-  mort[is.na(m),]$lx <-  mort[is.na(m),]$gx - floor( mort[is.na(m),]$gx / 20)*20
-  mort[is.na(m),]$ly <-  mort[is.na(m),]$gy - floor( mort[is.na(m),]$gy / 20)*20
-  
-  # add info from previous mortality census if we have it
-  if(survey_year %in% 2014) {
-    previous_year_status <- ref_main$status[idx]
-    previous_year_comment <- NA
-  }
-  if(survey_year> 2014) {
-    previous_year_status <- get(paste0("mort", survey_year-1))$current_year_status[is.na(m)]
-    previous_year_comment <- get(paste0("mort", survey_year-1))$current_year_comment[is.na(m)]
-    
-  }
-  
-  previous_year_status[previous_year_status %in% "G"] <- "D" # stems that are "Gone" are considered dead here... don't know if they are still standing or not so just giving status "D".
-  previous_year_status[previous_year_status %in% "P"] # leaving "P" for "Prior" (trees that did not exist yet)
-  
-  mort[is.na(m),]$previous_year_status <- ifelse(is.na( mort[is.na(m),]$previous_year_status) & !is.na(previous_year_status), previous_year_status, mort[is.na(m),]$previous_year_status)
-  
-  mort[is.na(m),]$previous_year_comment <- ifelse(is.na( mort[is.na(m),]$previous_year_comment) & !is.na(previous_year_comment), previous_year_comment, mort[is.na(m),]$previous_year_comment)
-
-  
-  # add date, assuming it was sampled that year (to help calculate timeint - current_status is NA anyways so it will be excluded of analysis when calculating moratlity rates)
-  
- date_per_quad <- tapply(mort$ExactDate, mort$quadrat, function(x) names(sort(table(x), decreasing = T))[1])
-  mort$ExactDate[is.na(m)] <- as.Date(date_per_quad[mort$quadrat[is.na(m)]])
-  
-  
-  # save
-  
-  assign(paste0("mort", survey_year), mort)
-  
-}
+# tag_stem_in_order <- paste(scbi.stem4$tag, scbi.stem4$StemTag)
+# 
+# tag_stem_in_order <- tag_stem_in_order[tag_stem_in_order %in% unique(unlist(sapply(survey_years, function(survey_year) {
+#   mort <- get(paste0("mort", survey_year))
+#   paste(mort$tag, mort$StemTag)
+# })))] # only keep the ones that were sampled for mortality at some point
+# 
+# for(survey_year in survey_years) {
+#   cat(paste("Filling info of missied stems in", survey_year), "...\n")
+#   
+#   mort <- get(paste0("mort", survey_year))
+#   tag_stems <- paste(mort$tag, mort$StemTag)
+#   
+#   m <- match(tag_stem_in_order, tag_stems)
+#   mort <- mort[m, ]
+#   
+#   # fill in info of trees that were not sampled
+# 
+#   
+#   if(survey_year <= 2018) {
+#     ref_main <- scbi.stem2
+#   }
+#   if(survey_year > 2018 & survey_year < 2023) {
+#     ref_main <- scbi.stem3
+#   }
+#   
+#   if(survey_year >= 2023 & survey_year < 2028) {
+#     ref_main <- scbi.stem4
+#   }
+#   
+#   if(survey_year >= 2028) stop("need to code for new main census")
+#   
+#   idx_missing_stems <-  is.na(m)
+#   idx_missed_stems <- is.na(m) & tag_stem_in_order %in% paste(ref_main$tag, ref_main$StemTag)
+#   idx_prior_stems <- is.na(m) & !tag_stem_in_order %in% paste(ref_main$tag, ref_main$StemTag)
+#   
+#   idx <- match(tag_stem_in_order[idx_missing_stems], paste(ref_main$tag, ref_main$StemTag))
+#   
+#   mort[idx_missing_stems, c(
+#     "tag", "StemTag",
+#     "sp",
+#     "quadrat", "gx", "gy",
+#     "last_main_census_dbh", "hom",
+#     "last_main_cenus_status", "last_main_census_codes"
+#   )] <-
+#     ref_main[idx, c("tag", "StemTag",
+#                     "sp",
+#                     "quadrat", "gx", "gy",
+#                     "dbh", "hom",
+#                     "status",
+#                     "codes")]
+#   
+#   mort[idx_missed_stems,]$current_year_comment <- "stem not sampled, info automatically filled from previous year info"
+#   if(sum(idx_prior_stems) > 0) mort[idx_prior_stems,]$current_year_comment <- "prior stem"
+#   
+#   mort[idx_missing_stems,]$sp_affected_by_eab <- grepl("fr|ch", mort[idx_missing_stems,]$sp)
+#   mort[idx_missing_stems,]$lx <-  mort[idx_missing_stems,]$gx - floor( mort[idx_missing_stems,]$gx / 20)*20
+#   mort[idx_missing_stems,]$ly <-  mort[idx_missing_stems,]$gy - floor( mort[idx_missing_stems,]$gy / 20)*20
+#   
+#   # add info from previous mortality census if we have it
+#   if(survey_year %in% 2014) {
+#     previous_year_status <- ref_main$status[idx]
+#     previous_year_comment <- NA
+#   }
+#   if(survey_year> 2014) {
+#     previous_year_status <- get(paste0("mort", survey_year-1))$current_year_status[idx_missing_stems]
+#     previous_year_comment <- get(paste0("mort", survey_year-1))$current_year_comment[idx_missing_stems]
+#     
+#   }
+#   
+#   previous_year_status[previous_year_status %in% "G"] <- "D" # stems that are "Gone" are considered dead here... don't know if they are still standing or not so just giving status "D".
+#   previous_year_status[previous_year_status %in% "P"] # leaving "P" for "Prior" (trees that did not exist yet)
+#   
+#   mort[idx_missing_stems,]$previous_year_status <- ifelse(is.na( mort[idx_missing_stems,]$previous_year_status) & !is.na(previous_year_status), previous_year_status, mort[idx_missing_stems,]$previous_year_status)
+#   if(sum(idx_prior_stems) > 0)  mort[idx_prior_stems,]$previous_year_status <- "P"
+#   
+#   mort[idx_missing_stems,]$previous_year_comment <- ifelse(is.na( mort[idx_missing_stems,]$previous_year_comment) & !is.na(previous_year_comment), previous_year_comment, mort[idx_missing_stems,]$previous_year_comment)
+# 
+#   
+#   # add date, assuming it was sampled that year (to help calculate timeint - current_status is NA anyways so it will be excluded of analysis when calculating moratlity rates)
+#   
+#  date_per_quad <- tapply(mort$ExactDate, mort$quadrat, function(x) names(sort(table(x), decreasing = T))[1])
+#   mort$ExactDate[idx_missing_stems] <- as.Date(date_per_quad[mort$quadrat[idx_missing_stems]])
+#   if(any(is.na(mort$ExactDate[idx_missed_stems] %>% unique()))) stop ("non should be NA") # none should be NA
+#   if(any(!is.na(mort$ExactDate[idx_prior_stems] %>% unique()))) stop("all should be NA") # should all be NA
+#   
+#   # save
+#   
+#   assign(paste0("mort", survey_year), mort)
+#   
+# }
 
 
 # Status corrections ####
@@ -364,7 +441,7 @@ for(survey_year in survey_years) {
  
   
   # Change D to A
-  idx <- mort$current_year_status %in% c("A") & grepl("D", mort$previous_year_status)
+  idx <- mort$current_year_status %in% "A"  & grepl("D", mort$previous_year_status)
   if(sum(idx) > 0) mort$previous_year_status[idx] <- "A"
   
   # Change D to AU
@@ -384,7 +461,7 @@ for(survey_year in survey_years) {
 
 ## on main census data
 
-for(census in paste0("scbi.stem", 1:3)) {
+for(census in paste0("scbi.stem", 1:4)) {
   
   cat("cleaning and calculating allometries on", census, "...\n")
   
@@ -445,7 +522,7 @@ for(survey_year in survey_years) {
 }
 
 
-# make two first main census data in the same format as mortality census ####
+# make the first main census data in the same format as mortality census ####
 
 for(census in paste0("scbi.stem", 1:2)) {
   
@@ -455,8 +532,8 @@ for(census in paste0("scbi.stem", 1:2)) {
   
   mort <- get(census)
   
-  # keep only tags later sampled in mortality
-  mort <- mort[paste(mort$tag, mort$StemTag) %in% tag_stem_in_order, ]
+  # keep only tags were later sampled in mortality
+  mort <- mort[paste(mort$tag, mort$StemTag) %in% paste(mort2014$tag, mort2014$StemTag), ]
   
   
   
@@ -475,7 +552,7 @@ for(census in paste0("scbi.stem", 1:2)) {
   # get previous main census status
   if(census == "scbi.stem1") mort$previous_year_status <- NA
   if(census == "scbi.stem2") mort$previous_year_status <- mort2008$current_year_status
-  
+ 
   # add a couple missing column that are not in the unified column table as they were created in this script ####
   mort$agb_if_dead_Mg <- NA
   mort$sp_affected_by_eab <- grepl("fr|ch", mort$sp)
@@ -488,6 +565,7 @@ for(census in paste0("scbi.stem", 1:2)) {
 # calculate time interval between each date the tree was censused ####
 
 for(survey_year in survey_years) {
+  print(survey_year)
   
   mort <- get(paste0("mort", survey_year))
   
@@ -495,7 +573,8 @@ for(survey_year in survey_years) {
   if(survey_year == 2008) mort$timeint_days <- NA
   if(survey_year > 2008) {
     if(survey_year == 2013) ref_mort <- mort2008    else  ref_mort <- get(paste0("mort", survey_year-1))
-    mort$timeint_days <- difftime(mort$ExactDate, ref_mort$ExactDate, units = "days")
+    m <- match(paste(mort$tag, mort$StemTag), paste(ref_mort$tag, ref_mort$StemTag))
+    mort$timeint_days <- difftime(mort$ExactDate, ref_mort$ExactDate[m], units = "days")
     
   }
   
