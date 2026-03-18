@@ -10,12 +10,12 @@ library(data.table)
 library(tidyverse)
 
 # load the list (and code) of checks
-checks <- fread("R_scripts/GitHubAction_checks.csv")
+checks <- fread("R_scripts/z_archive/GitHubAction_checks_2024.csv")
 
 # load latest mortality data ####
 
-tree <- fread("raw_data/Field_Maps/SCBI_trees_mortality_2024_0.csv")
-stem <- fread("raw_data/Field_Maps/SCBI_stems_mortality_2024_1.csv") 
+tree <- fread("raw_data/Field_Maps/z-archive/SCBI_trees_mortality_2024_0.csv")
+stem <- fread("raw_data/Field_Maps/z-archive/SCBI_stems_mortality_2024_1.csv") 
 
 
 # collate tree and stem together ####
