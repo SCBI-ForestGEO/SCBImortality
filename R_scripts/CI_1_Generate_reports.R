@@ -113,6 +113,8 @@ for (i in 1:nrow(checks)) {
 
 write.csv(allErrors, "QAQC_reports/allErrors.csv")
 
+if (nrow(allErrors) == 0) write.csv(stem,file = "raw_data/Mortality_Survey_2025.csv", row.names = F)
+
 # plot the quadrat with errors...
 
 
