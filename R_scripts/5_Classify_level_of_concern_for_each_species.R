@@ -11,7 +11,7 @@ mortality_by_species <- read.csv("R_results/mortrates_and_agbmort_by_species.csv
 
 prop_of_AU <- read.csv("R_results/proportion_AU_trees_per_sp.csv")
 
-species_list <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv ") # just to get what species we want to fill info with
+species_list <- read.csv("https://raw.githubusercontent.com/SCBI-ForestGEO/SCBI-ForestGEO-Data/master/species_lists/Tree%20ecology/SCBI_ForestGEO_sp_ecology.csv") # just to get what species we want to fill info with
 
 
 
