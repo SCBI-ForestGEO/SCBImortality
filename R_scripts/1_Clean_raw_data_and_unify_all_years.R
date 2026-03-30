@@ -43,6 +43,10 @@ missing_colnames <- setdiff(col.scbi.stem3, shared_colnames)
 print(missing_colnames)
 dropped_colnames <- c("treeID", "stemID", "MeasureID", "CensusID", "DFStatus")
 
+# fix status
+scbi.stem4 <- scbi.stem4 %>%
+  mutate(status_current = ifelse(status_current %in% "LI", ifelse(living_status == "", "A", living_status), status_current))
+
 # add gx and gy to scbi.stem4
 scbi.stem4 <- scbi.stem4 %>%
   mutate(quadrat = as.character(quadrat)) %>%
@@ -105,7 +109,7 @@ for(survey_file in survey_files) {
   
   survey_year <- as.numeric(gsub("Mortality_Survey_|\\.csv", "", survey_file))
   
-  survey_years <- c(survey_years, survey_year)
+  survey_years <- c(survey_years, survey_year) %>% unique()
   
   cat(paste("cleaning up", survey_year), "...\n")
   
@@ -124,12 +128,19 @@ for(survey_file in survey_files) {
   ## delete columns we don't want
   mort[, which(grepl("delete|^NA", colnames(mort)) | is.na(colnames(mort)))] <- NULL
   
-  ## fixes in 
+  ## fixes
   
-  mort <- mort %>%
-    mutate(current_year_status = if_else(current_year_status %in% "LI", current_year_living_status, current_year_status)) %>%
-    mutate(previous_year_status = if_else(previous_year_status == "LI", previous_year_living_status, previous_year_status))
-  
+  if(survey_year < 2025) {
+    if(all(is.na(mort$current_year_living_status)) & any(any(mort$current_year_status %in% "LI"))) stop("we don't have current_year_living_status")
+    mort <- mort %>%
+      mutate(current_year_status = ifelse(current_year_status %in% "LI", current_year_living_status, current_year_status)) %>%
+      mutate(previous_year_status = ifelse(previous_year_status  %in% "LI", previous_year_living_status, previous_year_status))
+  } else {
+    if(any(!is.na(mort$current_year_living_status))) stop("we do have current_year_living_status, this year needs to be passed in ef statement above")
+    mort <- mort %>%
+      mutate(current_year_status = ifelse(current_year_status %in% "LI", ifelse(is.na(fad), "A", "AU"), current_year_status)) %>%
+      mutate(previous_year_status = ifelse(previous_year_status  %in% "LI", ifelse(is.na(fad), "A", "AU"), previous_year_status))
+  }
   
   # make manual fixes ####
   
