@@ -131,15 +131,15 @@ for(survey_file in survey_files) {
   ## fixes
   
   if(survey_year < 2025) {
-    if(all(is.na(mort$current_year_living_status)) & any(any(mort$current_year_status %in% "LI"))) stop("we don't have current_year_living_status")
+    if(all(is.na(mort$current_year_living_status) | mort$current_year_living_status == "") & any(any(mort$current_year_status %in% "LI"))) stop("we don't have current_year_living_status")
     mort <- mort %>%
       mutate(current_year_status = ifelse(current_year_status %in% "LI", current_year_living_status, current_year_status)) %>%
       mutate(previous_year_status = ifelse(previous_year_status  %in% "LI", previous_year_living_status, previous_year_status))
   } else {
     if(any(!is.na(mort$current_year_living_status))) stop("we do have current_year_living_status, this year needs to be passed in ef statement above")
     mort <- mort %>%
-      mutate(current_year_status = ifelse(current_year_status %in% "LI", ifelse(is.na(fad), "A", "AU"), current_year_status)) %>%
-      mutate(previous_year_status = ifelse(previous_year_status  %in% "LI", ifelse(is.na(fad), "A", "AU"), previous_year_status))
+      mutate(current_year_status = ifelse(current_year_status %in% "LI", ifelse(is.na(fad)|fad == "", "A", "AU"), current_year_status)) %>%
+      mutate(previous_year_status = ifelse(previous_year_status  %in% "LI", ifelse(is.na(fad)|fad == "", "A", "AU"), previous_year_status))
   }
   
   # make manual fixes ####
