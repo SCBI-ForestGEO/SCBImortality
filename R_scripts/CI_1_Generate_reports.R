@@ -13,8 +13,8 @@ checks <- fread("R_scripts/GitHubAction_checks.csv") %>% filter(activateCheck ==
 
 # load latest mortality data ####
 
-tree <- fread("raw_data/Field_Maps/SCBI_trees_mortality_2025_0.csv")
-stem <- fread("raw_data/Field_Maps/SCBI_stems_mortality_2025_1.csv") 
+tree <- fread("raw_data/Field_Maps/NZCBI_trees_mortality_2026_0.csv")
+stem <- fread("raw_data/Field_Maps/NZCBI_stems_mortality_2026_1.csv") 
 
 # in 2025 columns "CreationDate" "Creator"      "EditDate"     "Editor" were duplicated, second set is to be kept
 if(!all(names(tree)[which(duplicated(names(tree)))] == c("CreationDate", "Creator", "EditDate", "Editor"))) stop("set of duplicated columns is not as expected (2025 check)")
