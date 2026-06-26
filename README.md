@@ -126,7 +126,9 @@ We strongly advise contacting PI [Kristina Anderson-Texeira](teixeirak@si.edu) p
 | Christopher Pate 	| christopherp8 	| ForestGEO Intern 	| 2023 census - Data collection and entry|
 | Rachel Hoffman | rmh24 | ForestGEO Intern | 2024 census - Data collection and entry |
 | El Raymond | e-raymond | ForestGEO Intern | 2025 census - Data collection and entry |
- 
+| Cody Konfrst | clkonfrst  | ForestGEO Intern | 2026 census - Data collection and entry |
+| Charlie Sivers IV | charlie-shiversiv | REU student | 2026 census - Data collection and entry |
+
 *refers to position at time of main contribution to this repository
 
 
