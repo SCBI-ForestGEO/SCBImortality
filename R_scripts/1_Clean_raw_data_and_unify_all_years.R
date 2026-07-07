@@ -14,7 +14,7 @@ setwd(".")
 
 ## to calculate allometries
 library(allodb) # remotes::install_github("forestgeo/allodb")
-
+library(tidyverse)
 
 # Load data ####
 
@@ -106,7 +106,7 @@ eafb_recorded_on_wrong_species <- NULL
 A_afterD <- NULL
 
 for(survey_file in survey_files) {
-  
+
   survey_year <- as.numeric(gsub("Mortality_Survey_|\\.csv", "", survey_file))
   
   survey_years <- c(survey_years, survey_year) %>% unique()
@@ -621,6 +621,7 @@ columns_to_keep <- c("survey_year", # adding this column, it will be createid in
                      "sp_affected_by_eab",
                      "fraxinus_eabf", "fraxinus_D_shaped_exit_hole_count",
                      "fraxinus_epicormic_growth", "fraxinus_score_crown_living",
+                     "Beech_Leaf_Disease",
                      
                      "surveyor",
                      "current_year_comment", "previous_year_comment", "submission_id")
