@@ -64,6 +64,21 @@ stem_all <- stem
 
 stem <- stem %>% filter(mort_census_status %in% "finished")
 
+# in 2026 1 secondary stem was forgotten in the app, adding it manually here so they don't show up in error log
+if(grepl(2026, Sys.Date())) {
+  # note the stem was not in the app because it was found dead in 2023
+  stem <- rbind(stem, 
+                structure(list(ObjectID = NA, quadrat = 416L, StemTag = 2L, 
+                               sp = "tiam", dbh_2023 = 431L, hom = 1.3, lx = 10.2, ly = 0.800000000000011, 
+                               status_2025 = NA, fad_2025 = "", comment_2025 = "", x = -78.14685983, 
+                               y = 38.89333384, status_2026 = "LI", mort_census_status = "finished", 
+                               fad_choices = "", fad_2026 = "", lean_angle = 1L, liana_load = 2L, 
+                               dead_with_resprout = 0L, crown_intact = 5L, crown_living = 5L, 
+                               crown_check = NA, personnel_list = "C", date_measured = "6/8/2026 6:49:03 PM", 
+                               comment_mortality_2026 = "", GlobalID = NA, 
+                               tag = 41016L, BLD = 0L, ParentGlobalID = "c2e0e6a2-5414-4385-9fe8-0421b1142f78"), row.names = c(NA, 
+                                                                                                      -1L), class = c("data.table", "data.frame")))
+}
 
 # PERFORM CHECKS ------------------------------------------------------
 cat("Running main census checks") # this is to troubleshoot CI on GitHub actions (see where errors happen)

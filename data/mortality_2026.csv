@@ -427,6 +427,7 @@
 2026,20581,1,"caca","Carpinus","caroliniana","0207",139.1,31.4,19.1,11.4,226,0.22,1.3,2026-06-10,343,"DS","DS","A","",NA,NA,NA,5,1,NA,NA,"B,W,U",1,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,20583,1,"caca","Carpinus","caroliniana","0207",139.9,36.2,19.9,16.2,145,0.07,1.3,2026-06-10,343,"A","A","A","",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,20585,1,"caca","Carpinus","caroliniana","0208",143.7,22.4,3.69999999999999,2.4,153,0.09,1.3,2026-06-10,343,"A","A","A","",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
+2026,20587,1,"litu","Liriodendron","tulipifera","0208",141.3,34.8,1.30000000000001,14.8,1310,15.48,1.3,2026-06-10,343,"A","A","A","BT",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","Has large secondary stem list not listed","",NA
 2026,20597,1,"chvi","Chionanthus","virginicus","0208",151.9,32.8,11.9,12.8,102,0.03,1.3,2026-06-10,343,"AU","DN","A","",NA,NA,NA,NA,NA,NA,NA,"",0,NA,NA,NA,1,0,NA,NA,NA,TRUE,"none",NA,NA,NA,0,"C","Probably crushed or overgrown","",NA
 2026,20598,1,"caco","Carya","cordiformis","0208",146.6,30.7,6.59999999999999,10.7,229,0.3,1.3,2026-06-10,343,"A","A","A","",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,20600,1,"vipr","Viburnum","prunifolium","0208",147.2,28,7.19999999999999,8,141,0.07,1.3,2026-06-10,343,"AU","AU","AU","I",NA,NA,NA,4,1,4,1,"W",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
@@ -1316,6 +1317,7 @@
 2026,40996,1,"caca","Carpinus","caroliniana","0416",310,69.2,10,9.2,124,0.05,1.3,2026-06-08,370,"AU","A","A","",NA,NA,NA,5,1,5,1,NA,2,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,40999,1,"caca","Carpinus","caroliniana","0416",314.9,65.5,14.9,5.5,161,0.1,1.3,2026-06-08,370,"AU","AU","AU","DV",NA,NA,NA,5,1,4,1,"B,F",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,41015,1,"caca","Carpinus","caroliniana","0416",280.5,70.4,0.5,10.4,122,0.05,1.3,2026-06-08,370,"AU","DS","A","",NA,NA,NA,2,1,NA,NA,"B,F,W",2,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
+2026,41016,1,"tiam","Tilia","americana","0416",280.8,70.2,0.800000000000011,10.2,475,1.39,1.3,2026-06-08,370,"A","A","A","",NA,NA,NA,5,1,5,1,NA,2,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","missing secondary stem","",NA
 2026,41019,1,"caovl","Carya","ovalis","0416",280.6,67.1,0.600000000000023,7.09999999999999,265,0.42,1.3,2026-06-08,370,"A","A","A","",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,41020,1,"fagr","Fagus","grandifolia","0416",304,79.1,4,19.1,102,0.04,1.3,2026-06-08,370,"A","A","A","DV,RT,SV",NA,NA,NA,5,1,5,1,NA,3,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,41021,1,"caca","Carpinus","caroliniana","0416",304.8,75.5,4.80000000000001,15.5,173,0.12,1.3,2026-06-08,370,"DS","DS","AU","I",NA,NA,NA,1,1,NA,NA,"B",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"","","2 other stems are alive",NA
@@ -7175,6 +7177,7 @@
 2026,40969,1,"tiam","Tilia","americana","0415",286.6,64.6,6.60000000000002,4.59999999999999,268,0.33,NA,2026-06-01,360,"DC","DC","DS","I,RT",NA,NA,NA,NA,NA,NA,NA,"",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"CK","","",NA
 2026,50019,1,"ploc","Platanus","occidentalis","0501",7.1,81.3,7.1,1.3,NA,NA,NA,2026-06-11,328,"DC","DC","DC","",NA,NA,NA,NA,NA,NA,NA,"",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,50169,1,"caca","Carpinus","caroliniana","0503",45.2,82.6,5.2,2.59999999999999,96,0.03,1.3,2026-06-11,309,"AU","AU","A","",NA,NA,NA,3,1,3,1,"W,R,B,F",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
+2026,50474,1,"litu","Liriodendron","tulipifera","0509",178,94.5,18,14.5,NA,NA,NA,2026-06-10,378,"DN","DN","DC","",NA,NA,NA,NA,NA,NA,NA,"D,U",0,NA,NA,NA,NA,NA,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,50515,1,"caca","Carpinus","caroliniana","0511",209.3,80,9.30000000000001,0,95,0.03,1.3,2026-06-09,382,"AU","AU","A","",NA,NA,NA,4,1,4,1,"W,F",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,60040,1,"cato","Carya","tomentosa","0603",43.7,114.3,3.7,14.3,NA,NA,NA,2026-06-10,378,"DS","DC","DS","RT",NA,NA,NA,1,1,NA,NA,"P",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"CK","","",NA
 2026,12130,2,"tiam","Tilia","americana","0101",407.9,16.8,7.89999999999998,16.8,209,0.18,1.3,2026-06-17,NA,"A","A","A","",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
@@ -7236,7 +7239,7 @@
 2026,50231,2,"nysy","Nyssa","sylvatica","0503",47.1,98.6,7.1,18.6,143,0.07,1.3,2026-06-10,NA,"A","A","AU","",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"CK","","Huge wounds along stem",NA
 2026,50469,2,"caco","Carya","cordiformis","0509",175.5,89.4,15.5,9.40000000000001,446,1.39,1.3,2026-06-10,NA,"A","A","AU","",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","Massive cankers",NA
 2026,50469,3,"caco","Carya","cordiformis","0509",175.5,89.4,15.5,9.40000000000001,406,1.12,1.3,2026-06-10,NA,"A","AU","AU","",NA,NA,NA,4,1,4,1,"K,B",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","Massive cankers",NA
-2026,50474,2,"litu","Liriodendron","tulipifera","0509",178,94.5,18,14.5,350,0.68,1.3,2026-06-10,NA,"A","DN","A","",NA,NA,NA,NA,NA,NA,NA,"",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","Does not appear to have a secondary stem","",NA
+2026,50474,2,"litu","Liriodendron","tulipifera","0509",178,94.5,18,14.5,350,0.68,1.3,2026-06-10,NA,"A","A","A","",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,50484,2,"quru","Quercus","rubra","0510",194.7,88.3,14.7,8.3,449,1.52,1.3,2026-06-10,NA,"AU","A","A","",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"CK","","",NA
 2026,50515,2,"caca","Carpinus","caroliniana","0511",209.3,80,9.30000000000001,0,102,0.03,1.3,2026-06-09,NA,"AU","AU","A","",NA,NA,NA,4,1,4,1,"F",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,50555,2,"litu","Liriodendron","tulipifera","0513",255.8,88.6,15.8,8.59999999999999,316,0.53,1.3,2026-06-03,NA,"AU","AU","A","",NA,NA,NA,5,1,1,1,"D,W",0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"CK","","",NA
@@ -7345,3 +7348,4 @@
 2026,200347,2,"ploc","Platanus","occidentalis","2002",30.8,394.4,10.8,14.4,382,0.79,1.3,2026-06-12,NA,"A","A","A","",NA,NA,NA,5,1,5,1,NA,0,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,202098,2,"caovl","Carya","ovalis","2022",423.3,398.4,3.30000000000001,18.4,121,0.07,1.3,2026-06-22,NA,"A","AU","A","DV",NA,NA,NA,4,1,4,1,"B",0,NA,NA,NA,2,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
 2026,202162,2,"litu","Liriodendron","tulipifera","2024",477.2,393.4,17.2,13.4,318,0.54,1.3,2026-06-22,NA,"A","AU","AU","DV,I",NA,NA,NA,4,1,4,1,"B",0,NA,NA,NA,2,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
+2026,41016,2,"tiam","Tilia","americana","0416",280.8,70.2,0.800000000000011,10.2,431,1.09,1.3,2026-06-08,NA,NA,"A","DN","",NA,NA,NA,5,1,5,1,NA,2,NA,NA,NA,1,0,NA,NA,NA,FALSE,NA,NA,NA,NA,0,"C","","",NA
